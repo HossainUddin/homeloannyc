@@ -1,5 +1,59 @@
 @import "tailwindcss";
 
+/* Default Theme (Orange) */
+:root {
+  --color-primary: #d96b27;
+  --color-title: #0f172a;
+  --color-w-color: #f1f5f9;
+  --color-primary-hover: #b45a20;
+}
+
+[data-theme="green"] {
+  --color-primary: #009966;
+  --color-title: #0F172A;
+  --color-w-color: #f8f8f8;
+  --color-primary-hover: #006045;
+}
+
+/* Red Theme */
+[data-theme="red"] {
+  --color-primary: #991B1B;
+  --color-title: #1E293B;
+  --color-w-color: #FAF9F6;
+  --color-primary-hover: #7f1616;
+}
+
+/* Purple Theme */
+[data-theme="purple"] {
+  --color-primary: #581C87;
+  --color-title: #1E293B;
+  --color-w-color: #FAF9F6;
+  --color-primary-hover: #4a166e;
+}
+
+/* Sky Blue Theme */
+[data-theme="sky-blue"] {
+  --color-primary: #0284C7;
+  --color-title: #0B2240;
+  --color-w-color: #FAFAFA;
+  --color-primary-hover: #0369a1;
+}
+
+/* Olive Green Theme */
+[data-theme="olive-green"] {
+  --color-primary: #606C38;
+  --color-title: #283618;
+  --color-w-color: #fafaf7;
+  --color-primary-hover: #4a532c;
+}
+
+@theme {
+  --color-primary: var(--color-primary);
+  --color-title: var(--color-title);
+  --color-w-color: var(--color-w-color);
+  --color-primary-hover: var(--color-primary-hover);
+}
+
 
 /* Theme 1 Main Green*/
 
@@ -7,67 +61,16 @@
   --color-primary: #009966;
   --color-title: #0F172A;
   --color-w-color: #f8f8f8;
-
   --color-primary-hover: #006045;
 } */
 
-/* Theme 2 Orange */
-
-@theme {
-  --color-primary: #d96b27;
-  --color-title: #0f172a;
-  --color-w-color: #f1f5f9;
-
-  --color-primary-hover: #b45a20;
-}
-
-/* Theme 3 Deep Blue*/
-
-/* @theme {
+/* 
+/* Deep Blue Theme 
+[data-theme="blue"] {
   --color-primary: #1E3A8A;
   --color-title: #1E293B;
   --color-w-color: #F8FAFC;
-
   --color-primary-hover: #0b3d8f;
-} */
-
-/* Theme 4 Red*/
-
-/* @theme {
-  --color-primary: #991B1B;
-  --color-title: #1E293B;
-  --color-w-color: #FAF9F6;
-
-  --color-primary-hover: #7f1616;
-} */
-
-/* Theme 5 Purple*/
-
-/* @theme {
-  --color-primary: #581C87;
-  --color-title: #1E293B;
-  --color-w-color: #FAF9F6;
-
-  --color-primary-hover: #7f1616;
-} */
-
-/* Theme 6 Sky Blue*/
-
-/* @theme {
-  --color-primary: #0284C7;
-  --color-title: #0B2240;
-  --color-w-color: #FAFAFA;
-
-  --color-primary-hover: #0369a1;
-} */
-
-/* Theme 7  Olive Green*/
-
-/* @theme {
-  --color-primary: #606C38;
-  --color-title: #283618;
-  --color-w-color: #fafaf7;
-
-  --color-primary-hover: #4a532c;
-} */
+}
+*/
 

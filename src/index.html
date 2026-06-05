@@ -37,6 +37,14 @@
         font-family: "Plus Jakarta Sans", sans-serif;
       }
     </style>
+
+    <!-- Must be first thing in <head>, before CSS loads -->
+  <script>
+    (function() {
+      const saved = localStorage.getItem('site-theme') || 'orange';
+      document.documentElement.setAttribute('data-theme', saved);
+    })();
+  </script>
 </head>
 <body class="bg-w-color text-title min-h-screen overflow-x-hidden">
     <!-- Navbar -->
@@ -206,6 +214,17 @@
                 class="block px-6 py-3 hover:bg-w-color hover:text-primary transition-colors"
                 >Apply Now</a
               >
+              <select
+                  id="themeSwitcher"
+                  class="px-4 py-2 rounded text-title"
+                >
+                  <option value="">Orange Theme</option>
+                  <option value="green">Green Theme</option>
+                  <option value="red">Red Theme</option>
+                  <option value="purple">Purple Theme</option>
+                  <option value="sky-blue">Sky Blue Theme</option>
+                  <option value="olive-green">Olive Green Theme</option>
+                </select>
             </div>
           </div>
         </div>
@@ -1687,6 +1706,7 @@
     <script src="../dist/js/nav.js"></script>
     <script src="../dist/js/slider.js"></script>
     <script src="../dist/js/rate.js"></script>
+    <script src="../dist/js/theme.js"></script>
   </body>
 </body>
 </html>
