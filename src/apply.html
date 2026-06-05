@@ -1,0 +1,1201 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Apply Now</title>
+    <link href="../dist/output.css" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <!-- FontAwosome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+      integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <!-- Slick CSS -->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css"
+    />
+    <!-- Slick Theme CSS -->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css"
+    />
+    <style>
+      body {
+        font-family: "Plus Jakarta Sans", sans-serif;
+      }
+
+      /* Chrome, Safari, Edge, Opera */
+      input[type="number"]::-webkit-outer-spin-button,
+      input[type="number"]::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+      }
+
+      /* Firefox */
+      input[type="number"] {
+        -moz-appearance: textfield;
+        appearance: textfield;
+      }
+    </style>
+  </head>
+
+  <body class="bg-w-color text-title min-h-screen overflow-x-hidden">
+    <!-- Navbar -->
+    <nav
+      class="sticky top-0 w-full z-50 bg-w-color backdrop-blur-md border-b border-black"
+    >
+      <div class="max-w-7xl mx-auto px-6 flex justify-between items-center">
+        <!-- Logo -->
+        <div class="w-30 h-25">
+          <a href="../src/index.html">
+            <img
+              src="../dist/images/logo.png"
+              alt="Logo"
+              class="w-full h-full object-cover"
+            />
+          </a>
+        </div>
+
+        <!-- Nav Links -->
+        <div
+          class="hidden lg:flex items-center gap-7 text-[15px] font-semibold text-title"
+        >
+          <!-- Shop Rates Dropdown -->
+          <div class="relative group">
+            <button
+              id="shop-rates-button"
+              class="flex items-center gap-1 hover:text-primary transition-colors py-2"
+            >
+              Shop rates
+              <svg
+                class="w-4 h-4 opacity-50 transition-transform duration-300"
+                id="shop-rates-arrow"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M19 9l-7 7-7-7"
+                ></path>
+              </svg>
+            </button>
+
+            <!-- Mega Menu Content -->
+            <div
+              id="shop-rates-dropdown"
+              class="hidden absolute top-full left-1/2 -translate-x-1/2 mt-4 w-[600px] bg-w-color rounded-3xl shadow-2xl border border-slate-200 overflow-hidden z-50 p-6"
+            >
+              <div class="grid grid-cols-2 gap-6 text-center">
+                <!-- Section 1 -->
+                <div
+                  class="p-6 rounded-2xl bg-w-color flex flex-col items-center"
+                >
+                  <h3 class="text-base font-bold text-title mb-4">
+                    Today's rates
+                  </h3>
+                  <a
+                    href="../src/rates.html"
+                    class="w-full bg-primary text-center text-w-color py-3 rounded-xl font-bold hover:bg-primary-hover transition-all shadow-lg shadow-primary/10"
+                  >
+                    Today's rates
+                  </a>
+                </div>
+
+                <!-- Section 2 -->
+                <div
+                  class="p-6 rounded-2xl bg-w-color flex flex-col items-center"
+                >
+                  <h3 class="text-base font-bold text-title mb-4">
+                    Get a free rate quote
+                  </h3>
+                  <a
+                    href="#"
+                    class="w-full text-center border-2 border-primary text-primary py-3 rounded-xl font-bold hover:bg-primary/5 transition-all"
+                  >
+                    Free rate quote
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Loan Programs Dropdown -->
+          <div class="relative group">
+            <button
+              id="loan-programs-button"
+              class="flex items-center gap-1 hover:text-primary transition-colors py-2"
+            >
+              Loan programs
+              <svg
+                class="w-4 h-4 opacity-50 transition-transform duration-300"
+                id="loan-programs-arrow"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M19 9l-7 7-7-7"
+                ></path>
+              </svg>
+            </button>
+            <div
+              id="loan-programs-dropdown"
+              class="hidden absolute top-full left-0 mt-4 min-w-[240px] bg-w-color rounded-2xl shadow-xl border border-slate-200 overflow-hidden z-50 py-2"
+            >
+              <a
+                href="../src/fixed_rate.html"
+                class="block px-6 py-3 hover:bg-w-color hover:text-primary transition-colors"
+                >Fixed-Rate Mortgage</a
+              >
+              <a
+                href="#"
+                class="block px-6 py-3 hover:bg-w-color hover:text-primary transition-colors"
+                >Demo</a
+              >
+            </div>
+          </div>
+
+          <a
+            href="../src/about.html"
+            class="flex items-center gap-1 hover:text-primary transition-colors"
+          >
+            About us</a
+          >
+
+          <a href="#" class="hover:text-primary transition-colors"
+            >Calculators</a
+          >
+
+          <a
+            href="../src/blog.html"
+            class="hover:text-primary transition-colors"
+            >Blogs</a
+          >
+
+          <!-- Join Us Dropdown -->
+          <div class="relative group">
+            <button
+              id="join-us-button"
+              class="flex items-center gap-1 hover:text-primary transition-colors py-2"
+            >
+              Join us
+              <svg
+                class="w-4 h-4 opacity-50 transition-transform duration-300"
+                id="join-us-arrow"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M19 9l-7 7-7-7"
+                ></path>
+              </svg>
+            </button>
+            <div
+              id="join-us-dropdown"
+              class="hidden absolute top-full left-0 mt-4 min-w-[200px] bg-w-color rounded-2xl shadow-xl border border-slate-200 overflow-hidden z-50 py-2"
+            >
+              <a
+                href="../src/officers.html"
+                class="block px-6 py-3 hover:bg-w-color hover:text-primary transition-colors"
+                >Loan Officers</a
+              >
+              <a
+                href="../src/policy.html"
+                class="block px-6 py-3 hover:bg-w-color hover:text-primary transition-colors"
+                >Privacy Policy</a
+              >
+            </div>
+          </div>
+        </div>
+
+        <!-- CTA Buttons & Mobile Toggle -->
+        <div class="flex items-center gap-4">
+          <a
+            href="../src/apply.html"
+            class="hidden sm:block text-[15px] font-bold text-primary px-6 py-2.5 rounded-full border border-primary/20 hover:bg-primary/5 transition-all"
+            >Apply now</a
+          >
+          <a
+            href="../src/quote.html"
+            class="hidden sm:block text-[15px] font-bold bg-primary text-w-color px-6 py-2.5 rounded-full hover:bg-primary-hover transition-all shadow-lg shadow-primary/10"
+            >Get a quote</a
+          >
+
+          <!-- Hamburger Button -->
+          <button
+            id="mobile-menu-button"
+            class="lg:hidden p-2 text-title hover:bg-w-color rounded-lg transition-colors"
+            aria-label="Toggle Menu"
+          >
+            <svg
+              class="w-6 h-6"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                id="menu-icon"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M4 6h16M4 12h16M4 18h16"
+              ></path>
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- Mobile Menu Overlay -->
+      <div
+        id="mobile-menu"
+        class="hidden lg:hidden absolute top-full left-0 w-full bg-w-color border-b border-slate-200 shadow-xl max-h-[90vh] overflow-y-auto animate-in slide-in-from-top-4 duration-200"
+      >
+        <div class="flex flex-col p-6 gap-4 font-semibold text-title">
+          <!-- Mobile Shop Rates Accordion -->
+          <div class="border-b border-w-color">
+            <button
+              id="mobile-shop-rates-btn"
+              class="w-full py-3 flex justify-between items-center text-left"
+            >
+              Shop rates
+              <svg
+                id="mobile-arrow"
+                class="w-4 h-4 opacity-50 transition-transform"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M19 9l-7 7-7-7"
+                ></path>
+              </svg>
+            </button>
+            <div id="mobile-shop-rates-content" class="hidden pb-4 space-y-3">
+              <div
+                class="p-6 bg-w-color rounded-2xl flex flex-col items-center text-center"
+              >
+                <a
+                  href="../src/rates.html"
+                  class="w-full bg-primary text-w-color py-4 rounded-xl font-bold hover:bg-primary-hover transition-all"
+                >
+                  Today's rates
+                </a>
+              </div>
+              <div
+                class="p-6 bg-w-color rounded-2xl flex flex-col items-center text-center"
+              >
+                <a
+                  href="#"
+                  class="w-full text-center border-2 border-primary text-primary py-4 rounded-xl font-bold hover:bg-primary/5 transition-all"
+                >
+                  Free rate quote
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Mobile Loan Programs Accordion -->
+          <div class="border-b border-w-color">
+            <button
+              id="mobile-loan-btn"
+              class="w-full py-3 flex justify-between items-center text-left"
+            >
+              Loan programs
+              <svg
+                id="mobile-loan-arrow"
+                class="w-4 h-4 opacity-50 transition-transform"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M19 9l-7 7-7-7"
+                ></path>
+              </svg>
+            </button>
+            <div id="mobile-loan-content" class="hidden pb-4 pl-4 space-y-3">
+              <a
+                href="../src/fixed_rate.html"
+                class="block py-2 text-sm opacity-80 hover:text-primary"
+                >Fixed-Rate Mortgage</a
+              >
+              <a
+                href="#"
+                class="block py-2 text-sm opacity-80 hover:text-primary"
+                >Demo</a
+              >
+            </div>
+          </div>
+
+          <a href="../src/about.html" class="py-3 border-b border-w-color"
+            >About us</a
+          >
+          <a href="#" class="py-3 border-b border-w-color">Calculators</a>
+          <a href="#" class="py-3 border-b border-w-color">Blogs</a>
+
+          <!-- Mobile Join Us Accordion -->
+          <div class="border-b border-w-color">
+            <button
+              id="mobile-join-btn"
+              class="w-full py-3 flex justify-between items-center text-left"
+            >
+              Join us
+              <svg
+                id="mobile-join-arrow"
+                class="w-4 h-4 opacity-50 transition-transform"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M19 9l-7 7-7-7"
+                ></path>
+              </svg>
+            </button>
+            <div id="mobile-join-content" class="hidden pb-4 pl-4 space-y-3">
+              <a
+                href="../src/officers.html"
+                class="block py-2 text-sm opacity-80 hover:text-primary"
+                >Loan Officers</a
+              >
+              <a
+                href="../src/policy.html"
+                class="block py-2 text-sm opacity-80 hover:text-primary"
+                >Privacy Policy</a
+              >
+            </div>
+          </div>
+
+          <!-- Mobile CTAs -->
+          <div class="grid grid-cols-1 gap-3 mt-4">
+            <a
+              href="../src/quote.html"
+              class="w-full text-center font-bold bg-primary text-w-color py-4 rounded-xl shadow-lg shadow-primary/20"
+              >Get a quote</a
+            >
+            <a
+              href="../src/apply.html"
+              class="w-full text-center font-bold text-primary py-4 rounded-xl border border-primary/20"
+              >Apply now</a
+            >
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Application Form Section -->
+    <section class="bg-w-color py-20 px-4 sm:px-6 lg:px-8">
+      <div class="max-w-4xl mx-auto">
+        <!-- Heading -->
+        <div class="w-full md:w-1/3 space-y-6 text-center mx-auto pb-16">
+          <span
+            class="text-[13px] font-black uppercase tracking-[0.2em] text-primary mb-4"
+          >
+            Digital Application
+          </span>
+          <h2 class="text-4xl md:text-5xl font-extrabold text-title">
+            Apply to Join
+          </h2>
+          <p class="text-title/70 text-center mx-auto leading-relaxed max-w-md">
+            Take the first step toward your new career. Please fill out the
+            details below with accuracy.
+          </p>
+        </div>
+
+        <!-- Form Card -->
+        <div
+          class="bg-slate-200 rounded-[2.5rem] shadow-2xl shadow-slate-200/60 border border-slate-100 overflow-hidden"
+        >
+          <form class="p-8 md:p-12 space-y-16">
+            <!-- Personal Information -->
+            <div class="space-y-8">
+              <div class="flex items-center gap-4">
+                <div
+                  class="w-12 h-12 rounded-2xl bg-primary flex items-center justify-center text-w-color shadow-lg shadow-primary/20"
+                >
+                  <svg
+                    class="w-6 h-6"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
+                    />
+                  </svg>
+                </div>
+                <h2 class="text-2xl font-bold text-title text-left">
+                  Personal Information
+                </h2>
+              </div>
+
+              <div class="grid sm:grid-cols-2 gap-x-8 gap-y-6">
+                <div class="space-y-2">
+                  <label class="block text-sm font-semibold text-title ml-1">
+                    First Name
+                  </label>
+                  <input
+                    type="text"
+                    placeholder="John"
+                    class="w-full bg-slate-50 border-none rounded-2xl px-5 py-4 focus:ring-2 focus:ring-primary transition-all placeholder:text-slate-400"
+                  />
+                </div>
+                <div class="space-y-2">
+                  <label class="block text-sm font-semibold text-title ml-1">
+                    Last Name
+                  </label>
+                  <input
+                    type="text"
+                    placeholder="Doe"
+                    class="w-full bg-slate-50 border-none rounded-2xl px-5 py-4 focus:ring-2 focus:ring-primary transition-all placeholder:text-slate-400"
+                  />
+                </div>
+                <div class="space-y-2">
+                  <label class="block text-sm font-semibold text-title ml-1">
+                    Email Address
+                  </label>
+                  <input
+                    type="email"
+                    placeholder="john@example.com"
+                    class="w-full bg-slate-50 border-none rounded-2xl px-5 py-4 focus:ring-2 focus:ring-primary transition-all placeholder:text-slate-400"
+                  />
+                </div>
+                <div class="space-y-2">
+                  <label class="block text-sm font-semibold text-title ml-1">
+                    Phone Number
+                  </label>
+                  <input
+                    type="tel"
+                    placeholder="(123) 456-7890"
+                    class="w-full bg-slate-50 border-none rounded-2xl px-5 py-4 focus:ring-2 focus:ring-primary transition-all placeholder:text-slate-400"
+                  />
+                </div>
+                <div class="space-y-2">
+                  <label class="block text-sm font-semibold text-title ml-1">
+                    Date of Birth
+                  </label>
+                  <input
+                    type="date"
+                    class="w-full bg-slate-50 border-none rounded-2xl px-5 py-4 focus:ring-2 focus:ring-primary transition-all text-title"
+                  />
+                </div>
+                <div class="space-y-2">
+                  <label class="block text-sm font-semibold text-title ml-1">
+                    Marital Status
+                  </label>
+                  <div
+                    class="relative custom-dropdown"
+                    data-placeholder="Select Status"
+                  >
+                    <button
+                      type="button"
+                      class="dropdown-trigger w-full bg-slate-50 border-none rounded-2xl px-5 py-4 flex items-center justify-between focus:ring-2 focus:ring-primary transition-all text-slate-400"
+                    >
+                      <span>Select Status</span>
+                      <svg
+                        class="w-5 h-5 transition-transform duration-300"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="2"
+                          d="M19 9l-7 7-7-7"
+                        />
+                      </svg>
+                    </button>
+                    <div
+                      class="dropdown-menu hidden absolute top-full left-0 w-full mt-2 bg-w-color rounded-2xl shadow-xl border border-slate-100 z-50 overflow-hidden"
+                    >
+                      <div
+                        class="dropdown-option px-5 py-3 hover:bg-emerald-50 hover:text-primary cursor-pointer transition-colors"
+                        data-value="Single"
+                      >
+                        Single
+                      </div>
+                      <div
+                        class="dropdown-option px-5 py-3 hover:bg-emerald-50 hover:text-primary cursor-pointer transition-colors"
+                        data-value="Married"
+                      >
+                        Married
+                      </div>
+                      <div
+                        class="dropdown-option px-5 py-3 hover:bg-emerald-50 hover:text-primary cursor-pointer transition-colors"
+                        data-value="Divorced"
+                      >
+                        Divorced
+                      </div>
+                    </div>
+                    <input type="hidden" name="marital_status" value="" />
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Employment Information -->
+            <div class="space-y-8">
+              <div class="flex items-center gap-4">
+                <div
+                  class="w-12 h-12 rounded-2xl bg-primary flex items-center justify-center text-w-color shadow-lg shadow-primary/20"
+                >
+                  <svg
+                    class="w-6 h-6"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+                    />
+                  </svg>
+                </div>
+                <h2 class="text-2xl font-bold text-title text-left">
+                  Employment Information
+                </h2>
+              </div>
+
+              <div class="grid sm:grid-cols-2 gap-x-8 gap-y-6">
+                <div class="space-y-2">
+                  <label class="block text-sm font-semibold text-title ml-1">
+                    Employer Name
+                  </label>
+                  <input
+                    type="text"
+                    placeholder="Enter employer name"
+                    class="w-full bg-slate-50 border-none rounded-2xl px-5 py-4 focus:ring-2 focus:ring-primary transition-all placeholder:text-slate-400"
+                  />
+                </div>
+                <div class="space-y-2">
+                  <label class="block text-sm font-semibold text-title ml-1">
+                    Job Title
+                  </label>
+                  <input
+                    type="text"
+                    placeholder="Enter job title"
+                    class="w-full bg-slate-50 border-none rounded-2xl px-5 py-4 focus:ring-2 focus:ring-primary transition-all placeholder:text-slate-400"
+                  />
+                </div>
+                <div class="space-y-2">
+                  <label class="block text-sm font-semibold text-title ml-1">
+                    Employment Type
+                  </label>
+                  <div
+                    class="relative custom-dropdown"
+                    data-placeholder="Full Time"
+                  >
+                    <button
+                      type="button"
+                      class="dropdown-trigger w-full bg-slate-50 border-none rounded-2xl px-5 py-4 flex items-center justify-between focus:ring-2 focus:ring-primary transition-all text-slate-400"
+                    >
+                      <span>Full Time</span>
+                      <svg
+                        class="w-5 h-5 transition-transform duration-300"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="2"
+                          d="M19 9l-7 7-7-7"
+                        />
+                      </svg>
+                    </button>
+                    <div
+                      class="dropdown-menu hidden absolute top-full left-0 w-full mt-2 bg-w-color rounded-2xl shadow-xl border border-slate-100 z-50 overflow-hidden"
+                    >
+                      <div
+                        class="dropdown-option px-5 py-3 hover:bg-emerald-50 hover:text-primary cursor-pointer transition-colors"
+                        data-value="Full Time"
+                      >
+                        Full Time
+                      </div>
+                      <div
+                        class="dropdown-option px-5 py-3 hover:bg-emerald-50 hover:text-primary cursor-pointer transition-colors"
+                        data-value="Part Time"
+                      >
+                        Part Time
+                      </div>
+                      <div
+                        class="dropdown-option px-5 py-3 hover:bg-emerald-50 hover:text-primary cursor-pointer transition-colors"
+                        data-value="Self Employed"
+                      >
+                        Self Employed
+                      </div>
+                      <div
+                        class="dropdown-option px-5 py-3 hover:bg-emerald-50 hover:text-primary cursor-pointer transition-colors"
+                        data-value="Contract"
+                      >
+                        Contract
+                      </div>
+                    </div>
+                    <input
+                      type="hidden"
+                      name="employment_type"
+                      value="Full Time"
+                    />
+                  </div>
+                </div>
+                <div class="space-y-2">
+                  <label class="block text-sm font-semibold text-title ml-1">
+                    Monthly Income ($)
+                  </label>
+                  <input
+                    type="number"
+                    placeholder="5000"
+                    class="w-full bg-slate-50 border-none rounded-2xl px-5 py-4 focus:ring-2 focus:ring-primary transition-all placeholder:text-slate-400"
+                  />
+                </div>
+              </div>
+            </div>
+
+            <!-- Property Information -->
+            <div class="space-y-8">
+              <div class="flex items-center gap-4">
+                <div
+                  class="w-12 h-12 rounded-2xl bg-primary flex items-center justify-center text-w-color shadow-lg shadow-primary/20"
+                >
+                  <svg
+                    class="w-6 h-6"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"
+                    />
+                  </svg>
+                </div>
+                <h2 class="text-2xl font-bold text-title text-left">
+                  Property Information
+                </h2>
+              </div>
+
+              <div class="grid sm:grid-cols-2 gap-x-8 gap-y-6">
+                <div class="sm:col-span-2 space-y-2">
+                  <label class="block text-sm font-semibold text-title ml-1">
+                    Property Address
+                  </label>
+                  <input
+                    type="text"
+                    placeholder="Enter full address"
+                    class="w-full bg-slate-50 border-none rounded-2xl px-5 py-4 focus:ring-2 focus:ring-primary transition-all placeholder:text-slate-400"
+                  />
+                </div>
+                <div class="space-y-2">
+                  <label class="block text-sm font-semibold text-title ml-1">
+                    Property Type
+                  </label>
+                  <div
+                    class="relative custom-dropdown"
+                    data-placeholder="Single Family Home"
+                  >
+                    <button
+                      type="button"
+                      class="dropdown-trigger w-full bg-slate-50 border-none rounded-2xl px-5 py-4 flex items-center justify-between focus:ring-2 focus:ring-primary transition-all text-slate-400"
+                    >
+                      <span>Single Family Home</span>
+                      <svg
+                        class="w-5 h-5 transition-transform duration-300"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="2"
+                          d="M19 9l-7 7-7-7"
+                        />
+                      </svg>
+                    </button>
+                    <div
+                      class="dropdown-menu hidden absolute top-full left-0 w-full mt-2 bg-w-color rounded-2xl shadow-xl border border-slate-100 z-50 overflow-hidden"
+                    >
+                      <div
+                        class="dropdown-option px-5 py-3 hover:bg-emerald-50 hover:text-primary cursor-pointer transition-colors"
+                        data-value="Single Family Home"
+                      >
+                        Single Family Home
+                      </div>
+                      <div
+                        class="dropdown-option px-5 py-3 hover:bg-emerald-50 hover:text-primary cursor-pointer transition-colors"
+                        data-value="Condo"
+                      >
+                        Condo
+                      </div>
+                      <div
+                        class="dropdown-option px-5 py-3 hover:bg-emerald-50 hover:text-primary cursor-pointer transition-colors"
+                        data-value="Townhouse"
+                      >
+                        Townhouse
+                      </div>
+                      <div
+                        class="dropdown-option px-5 py-3 hover:bg-emerald-50 hover:text-primary cursor-pointer transition-colors"
+                        data-value="Multi Family"
+                      >
+                        Multi Family
+                      </div>
+                    </div>
+                    <input
+                      type="hidden"
+                      name="property_type"
+                      value="Single Family Home"
+                    />
+                  </div>
+                </div>
+                <div class="space-y-2">
+                  <label class="block text-sm font-semibold text-title ml-1">
+                    Property Value ($)
+                  </label>
+                  <input
+                    type="number"
+                    placeholder="350000"
+                    class="w-full bg-slate-50 border-none rounded-2xl px-5 py-4 focus:ring-2 focus:ring-primary transition-all placeholder:text-slate-400"
+                  />
+                </div>
+              </div>
+            </div>
+
+            <!-- Submit Section -->
+            <div
+              class="pt-10 border-t border-slate-100 flex flex-col items-center space-y-8"
+            >
+              <label
+                class="flex items-start gap-4 cursor-pointer group max-w-lg"
+              >
+                <div class="relative flex items-center">
+                  <input
+                    type="checkbox"
+                    class="peer h-6 w-6 cursor-pointer appearance-none rounded-lg border-2 border-slate-200 bg-w-color transition-all checked:border-primary checked:bg-primary"
+                  />
+                  <svg
+                    class="pointer-events-none absolute left-1/2 top-1/2 h-4 w-4 -translate-x-1/2 -translate-y-1/2 text-w-color opacity-0 transition-opacity peer-checked:opacity-100"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="3"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M5 13l4 4L19 7"
+                    />
+                  </svg>
+                </div>
+                <span
+                  class="text-sm text-slate-500 leading-relaxed group-hover:text-title transition-colors"
+                >
+                  I certify that the information provided is accurate and
+                  authorize HomeLoanNYC to review my application for employment
+                  purposes.
+                </span>
+              </label>
+
+              <button
+                type="submit"
+                class="w-full sm:w-auto bg-primary text-w-color px-12 py-5 rounded-full font-bold text-lg shadow-xl shadow-primary/20 hover:bg-primary-hover hover:scale-[1.02] active:scale-[0.98] transition-all"
+              >
+                Submit Application
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="text-w-color bg-primary py-20">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="grid sm:grid-cols-2 md:grid-cols-4 gap-5 mb-16">
+          <!-- Brand Column -->
+          <div
+            class="flex flex-col items-center space-y-2 text-title rounded-3xl"
+          >
+            <!-- Logo -->
+            <div class="w-50 h-50 rounded-3xl">
+              <a href="../src/index.html">
+                <img
+                  src="../dist/images/logo-2.png"
+                  alt="Logo"
+                  class="w-full h-full object-cover rounded-3xl"
+                />
+              </a>
+            </div>
+
+            <div class="flex items-center gap-3 pt-2 pb-6">
+              <a
+                href="#"
+                class="w-10 h-10 rounded-full bg-w-color/15 flex items-center justify-center text-w-color hover:bg-primary-hover transition-colors"
+              >
+                <i class="fa-brands fa-facebook text-2xl"></i>
+              </a>
+              <a
+                href="#"
+                class="w-10 h-10 rounded-full bg-w-color/15 flex items-center justify-center text-w-color hover:bg-primary-hover transition-colors"
+              >
+                <i class="fa-brands fa-instagram text-2xl"></i>
+              </a>
+              <a
+                href="#"
+                class="w-10 h-10 rounded-full bg-w-color/15 flex items-center justify-center text-w-color hover:bg-primary-hover transition-colors"
+              >
+                <i class="fa-brands fa-linkedin text-2xl"></i>
+              </a>
+              <a
+                href="#"
+                class="w-10 h-10 rounded-full bg-w-color/15 flex items-center justify-center text-w-color hover:bg-primary-hover transition-colors"
+              >
+                <i class="fa-brands fa-square-x-twitter text-2xl"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- Resources Column -->
+          <div class="text-center">
+            <h3
+              class="text-w-color font-bold text-lg mb-8 underline decoration-w-color decoration-3 underline-offset-[16px]"
+            >
+              Resources
+            </h3>
+            <ul class="space-y-4">
+              <li>
+                <a href="#" class="hover:text-title transition-colors">Rates</a>
+              </li>
+              <li>
+                <a href="#" class="hover:text-title transition-colors"
+                  >Get a quote</a
+                >
+              </li>
+              <li>
+                <a href="#" class="hover:text-title transition-colors"
+                  >Reviews</a
+                >
+              </li>
+              <li>
+                <a href="#" class="hover:text-title transition-colors"
+                  >Calculators</a
+                >
+              </li>
+              <li>
+                <a href="#" class="hover:text-title transition-colors">Blogs</a>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Legal Info Column -->
+          <div class="text-center">
+            <h3
+              class="text-w-color font-bold text-lg mb-8 underline decoration-w-color decoration-3 underline-offset-[16px]"
+            >
+              Legal info
+            </h3>
+            <ul class="space-y-4">
+              <li>
+                <a href="#" class="hover:text-title transition-colors"
+                  >Terms of use</a
+                >
+              </li>
+              <li>
+                <a href="#" class="hover:text-title transition-colors"
+                  >Disclosures and licenses</a
+                >
+              </li>
+              <li>
+                <a href="#" class="hover:text-title transition-colors"
+                  >Mortgage assistance</a
+                >
+              </li>
+              <li>
+                <a href="#" class="hover:text-title transition-colors"
+                  >Privacy policy</a
+                >
+              </li>
+              <li>
+                <a href="#" class="hover:text-title transition-colors"
+                  >Notice at collection</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <!-- Contact Column -->
+          <div class="flex flex-col items-center">
+            <h3
+              class="text-w-color font-bold text-lg mb-8 underline decoration-w-color decoration-3 underline-offset-[16px]"
+            >
+              Contact us
+            </h3>
+            <ul class="text-center space-y-6">
+              <li class="flex items-center gap-3">
+                <i
+                  class="fa-solid fa-location-dot w-6 h-6 text-w-color text-xl"
+                ></i>
+                <span>185 Wythe Ave, Suite A2<br />Brooklyn, NY 11249</span>
+              </li>
+
+              <li class="flex items-center gap-3">
+                <i
+                  class="fa-solid fa-envelope w-6 h-6 text-w-color text-xl"
+                ></i>
+
+                <a href="mailto:HomeLoanNYC.com" class="hover:text-title"
+                  >HomeLoanNYC.com</a
+                >
+              </li>
+
+              <li class="flex items-center gap-3">
+                <i class="fa-solid fa-phone w-6 h-6 text-w-color text-xl"></i>
+                <a href="tel:123456789" class="hover:text-title"
+                  >(123) 456-789</a
+                >
+              </li>
+              <li class="flex items-center gap-3">
+                <i
+                  class="fa-solid fa-mobile-screen-button w-6 h-6 text-w-color text-xl"
+                ></i>
+                <a href="tel:8442217647" class="hover:text-title"
+                  >Toll Free: (844) 221-7647</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div
+          class="pt-10 border-t border-w-color flex flex-wrap justify-between items-center gap-6 text-sm"
+        >
+          <div class="flex items-center gap-2">
+            Made by
+            <a
+              href="https://hossainuddin.netlify.app/"
+              class="underline hover:text-title transition-colors"
+              >Hossain.Dev</a
+            >
+          </div>
+          <div class="flex gap-6 flex-wrap">
+            <a href="#" class="hover:text-title transition-colors"
+              >ADA Accessibility Statement</a
+            >
+            <a href="#" class="hover:text-title transition-colors"
+              >Privacy Policy</a
+            >
+            <a href="#" class="hover:text-title transition-colors"
+              >Government & Licensing Disclosures</a
+            >
+            <span>Copyright © HomeLoanNCY</span>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      // Mobile Menu toggle
+      const menuButton = document.getElementById("mobile-menu-button");
+      const mobileMenu = document.getElementById("mobile-menu");
+      const menuIcon = document.getElementById("menu-icon");
+
+      menuButton.addEventListener("click", () => {
+        const isHidden = mobileMenu.classList.contains("hidden");
+        if (isHidden) {
+          mobileMenu.classList.remove("hidden");
+          menuIcon.setAttribute("d", "M6 18L18 6M6 6l12 12");
+        } else {
+          mobileMenu.classList.add("hidden");
+          menuIcon.setAttribute("d", "M4 12h16M4 6h16M4 18h16");
+        }
+      });
+
+      // Generic Dropdown Toggle Helper
+      function setupDropdown(btnId, dropdownId, arrowId) {
+        const btn = document.getElementById(btnId);
+        const dropdown = document.getElementById(dropdownId);
+        const arrow = document.getElementById(arrowId);
+
+        btn.addEventListener("click", (e) => {
+          e.stopPropagation();
+          const isHidden = dropdown.classList.contains("hidden");
+
+          // Close all other dropdowns first
+          document
+            .querySelectorAll('[id$="-dropdown"]')
+            .forEach((d) => d.classList.add("hidden"));
+          document
+            .querySelectorAll('[id$="-arrow"]')
+            .forEach((a) => (a.style.transform = "rotate(0deg)"));
+          document
+            .querySelectorAll('[id$="-button"]')
+            .forEach((b) => b.classList.remove("text-primary"));
+
+          if (isHidden) {
+            dropdown.classList.remove("hidden");
+            if (arrow) arrow.style.transform = "rotate(180deg)";
+            btn.classList.add("text-primary");
+          }
+        });
+      }
+
+      setupDropdown(
+        "shop-rates-button",
+        "shop-rates-dropdown",
+        "shop-rates-arrow",
+      );
+      setupDropdown(
+        "loan-programs-button",
+        "loan-programs-dropdown",
+        "loan-programs-arrow",
+      );
+      setupDropdown("join-us-button", "join-us-dropdown", "join-us-arrow");
+
+      // Close dropdowns when clicking outside
+      window.addEventListener("click", (e) => {
+        document.querySelectorAll('[id$="-dropdown"]').forEach((dropdown) => {
+          if (!dropdown.contains(e.target)) {
+            dropdown.classList.add("hidden");
+            const arrowId = dropdown.id.replace("-dropdown", "-arrow");
+            const arrow = document.getElementById(arrowId);
+            if (arrow) arrow.style.transform = "rotate(0deg)";
+            const btnId = dropdown.id.replace("-dropdown", "-button");
+            const btn = document.getElementById(btnId);
+            if (btn) btn.classList.remove("text-primary");
+          }
+        });
+      });
+
+      // Mobile Accordion Helper
+      function setupMobileAccordion(btnId, contentId, arrowId) {
+        const btn = document.getElementById(btnId);
+        const content = document.getElementById(contentId);
+        const arrow = document.getElementById(arrowId);
+
+        btn.addEventListener("click", () => {
+          const isHidden = content.classList.contains("hidden");
+          if (isHidden) {
+            content.classList.remove("hidden");
+            arrow.style.transform = "rotate(180deg)";
+            btn.classList.add("text-primary");
+          } else {
+            content.classList.add("hidden");
+            arrow.style.transform = "rotate(0deg)";
+            btn.classList.remove("text-primary");
+          }
+        });
+      }
+
+      setupMobileAccordion(
+        "mobile-shop-rates-btn",
+        "mobile-shop-rates-content",
+        "mobile-arrow",
+      );
+      setupMobileAccordion(
+        "mobile-loan-btn",
+        "mobile-loan-content",
+        "mobile-loan-arrow",
+      );
+      setupMobileAccordion(
+        "mobile-join-btn",
+        "mobile-join-content",
+        "mobile-join-arrow",
+      );
+
+      // Custom Dropdown Logic
+      const dropdowns = document.querySelectorAll(".custom-dropdown");
+
+      dropdowns.forEach((dropdown) => {
+        const trigger = dropdown.querySelector(".dropdown-trigger");
+        const menu = dropdown.querySelector(".dropdown-menu");
+        const options = dropdown.querySelectorAll(".dropdown-option");
+        const hiddenInput = dropdown.querySelector('input[type="hidden"]');
+        const triggerText = trigger.querySelector("span");
+        const arrow = trigger.querySelector("svg");
+
+        trigger.addEventListener("click", (e) => {
+          e.stopPropagation();
+          const isOpen = !menu.classList.contains("hidden");
+
+          // Close all other dropdowns
+          document.querySelectorAll(".dropdown-menu").forEach((m) => {
+            if (m !== menu) m.classList.add("hidden");
+          });
+          document.querySelectorAll(".dropdown-trigger svg").forEach((a) => {
+            if (a !== arrow) a.style.transform = "rotate(0deg)";
+          });
+
+          if (isOpen) {
+            menu.classList.add("hidden");
+            arrow.style.transform = "rotate(0deg)";
+          } else {
+            menu.classList.remove("hidden");
+            arrow.style.transform = "rotate(180deg)";
+          }
+        });
+
+        options.forEach((option) => {
+          option.addEventListener("click", () => {
+            const value = option.getAttribute("data-value");
+            triggerText.innerText = value;
+            triggerText.classList.remove("text-slate-400");
+            triggerText.classList.add("text-title");
+            hiddenInput.value = value;
+            menu.classList.add("hidden");
+            arrow.style.transform = "rotate(0deg)";
+          });
+        });
+      });
+
+      // Close dropdowns when clicking outside
+      window.addEventListener("click", () => {
+        document.querySelectorAll(".dropdown-menu").forEach((m) => {
+          m.classList.add("hidden");
+        });
+        document.querySelectorAll(".dropdown-trigger svg").forEach((a) => {
+          a.style.transform = "rotate(0deg)";
+        });
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,1084 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Loan Officers</title>
+    <link href="../dist/output.css" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <!-- FontAwosome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+      integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <!-- Slick CSS -->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css"
+    />
+    <!-- Slick Theme CSS -->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css"
+    />
+    <style>
+      body {
+        font-family: "Plus Jakarta Sans", sans-serif;
+      }
+    </style>
+  </head>
+
+  <body class="bg-w-color text-title min-h-screen overflow-x-hidden">
+    <!-- Navbar -->
+    <nav
+      class="sticky top-0 w-full z-50 bg-w-color backdrop-blur-md border-b border-black"
+    >
+      <div class="max-w-7xl mx-auto px-6 flex justify-between items-center">
+        <!-- Logo -->
+        <div class="w-30 h-25">
+          <a href="../src/index.html">
+            <img
+              src="../dist/images/logo.png"
+              alt="Logo"
+              class="w-full h-full object-cover"
+            />
+          </a>
+        </div>
+
+        <!-- Nav Links -->
+        <div
+          class="hidden lg:flex items-center gap-7 text-[15px] font-semibold text-title"
+        >
+          <!-- Shop Rates Dropdown -->
+          <div class="relative group">
+            <button
+              id="shop-rates-button"
+              class="flex items-center gap-1 hover:text-primary transition-colors py-2"
+            >
+              Shop rates
+              <svg
+                class="w-4 h-4 opacity-50 transition-transform duration-300"
+                id="shop-rates-arrow"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M19 9l-7 7-7-7"
+                ></path>
+              </svg>
+            </button>
+
+            <!-- Mega Menu Content -->
+            <div
+              id="shop-rates-dropdown"
+              class="hidden absolute top-full left-1/2 -translate-x-1/2 mt-4 w-[600px] bg-w-color rounded-3xl shadow-2xl border border-slate-200 overflow-hidden z-50 p-6"
+            >
+              <div class="grid grid-cols-2 gap-6 text-center">
+                <!-- Section 1 -->
+                <div
+                  class="p-6 rounded-2xl bg-w-color flex flex-col items-center"
+                >
+                  <h3 class="text-base font-bold text-title mb-4">
+                    Today's rates
+                  </h3>
+                  <a
+                    href="../src/rates.html"
+                    class="w-full bg-primary text-center text-w-color py-3 rounded-xl font-bold hover:bg-primary-hover transition-all shadow-lg shadow-primary/10"
+                  >
+                    Today's rates
+                  </a>
+                </div>
+
+                <!-- Section 2 -->
+                <div
+                  class="p-6 rounded-2xl bg-w-color flex flex-col items-center"
+                >
+                  <h3 class="text-base font-bold text-title mb-4">
+                    Get a free rate quote
+                  </h3>
+                  <a
+                    href="#"
+                    class="w-full text-center border-2 border-primary text-primary py-3 rounded-xl font-bold hover:bg-primary/5 transition-all"
+                  >
+                    Free rate quote
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Loan Programs Dropdown -->
+          <div class="relative group">
+            <button
+              id="loan-programs-button"
+              class="flex items-center gap-1 hover:text-primary transition-colors py-2"
+            >
+              Loan programs
+              <svg
+                class="w-4 h-4 opacity-50 transition-transform duration-300"
+                id="loan-programs-arrow"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M19 9l-7 7-7-7"
+                ></path>
+              </svg>
+            </button>
+            <div
+              id="loan-programs-dropdown"
+              class="hidden absolute top-full left-0 mt-4 min-w-[240px] bg-w-color rounded-2xl shadow-xl border border-slate-200 overflow-hidden z-50 py-2"
+            >
+              <a
+                href="../src/fixed_rate.html"
+                class="block px-6 py-3 hover:bg-w-color hover:text-primary transition-colors"
+                >Fixed-Rate Mortgage</a
+              >
+              <a
+                href="#"
+                class="block px-6 py-3 hover:bg-w-color hover:text-primary transition-colors"
+                >Demo</a
+              >
+            </div>
+          </div>
+
+          <a
+            href="../src/about.html"
+            class="flex items-center gap-1 hover:text-primary transition-colors"
+          >
+            About us</a
+          >
+
+          <a href="#" class="hover:text-primary transition-colors"
+            >Calculators</a
+          >
+
+          <a
+            href="../src/blog.html"
+            class="hover:text-primary transition-colors"
+            >Blogs</a
+          >
+
+          <!-- Join Us Dropdown -->
+          <div class="relative group">
+            <button
+              id="join-us-button"
+              class="flex items-center gap-1 hover:text-primary transition-colors py-2"
+            >
+              Join us
+              <svg
+                class="w-4 h-4 opacity-50 transition-transform duration-300"
+                id="join-us-arrow"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M19 9l-7 7-7-7"
+                ></path>
+              </svg>
+            </button>
+            <div
+              id="join-us-dropdown"
+              class="hidden absolute top-full left-0 mt-4 min-w-[200px] bg-w-color rounded-2xl shadow-xl border border-slate-200 overflow-hidden z-50 py-2"
+            >
+              <a
+                href="../src/officers.html"
+                class="block px-6 py-3 hover:bg-w-color hover:text-primary transition-colors"
+                >Loan Officers</a
+              >
+              <a
+                href="../src/policy.html"
+                class="block px-6 py-3 hover:bg-w-color hover:text-primary transition-colors"
+                >Privacy Policy</a
+              >
+            </div>
+          </div>
+        </div>
+
+        <!-- CTA Buttons & Mobile Toggle -->
+        <div class="flex items-center gap-4">
+          <a
+            href="../src/apply.html"
+            class="hidden sm:block text-[15px] font-bold text-primary px-6 py-2.5 rounded-full border border-primary/20 hover:bg-primary/5 transition-all"
+            >Apply now</a
+          >
+          <a
+            href="../src/quote.html"
+            class="hidden sm:block text-[15px] font-bold bg-primary text-w-color px-6 py-2.5 rounded-full hover:bg-primary-hover transition-all shadow-lg shadow-primary/10"
+            >Get a quote</a
+          >
+
+          <!-- Hamburger Button -->
+          <button
+            id="mobile-menu-button"
+            class="lg:hidden p-2 text-title hover:bg-w-color rounded-lg transition-colors"
+            aria-label="Toggle Menu"
+          >
+            <svg
+              class="w-6 h-6"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                id="menu-icon"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M4 6h16M4 12h16M4 18h16"
+              ></path>
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- Mobile Menu Overlay -->
+      <div
+        id="mobile-menu"
+        class="hidden lg:hidden absolute top-full left-0 w-full bg-w-color border-b border-slate-200 shadow-xl max-h-[90vh] overflow-y-auto animate-in slide-in-from-top-4 duration-200"
+      >
+        <div class="flex flex-col p-6 gap-4 font-semibold text-title">
+          <!-- Mobile Shop Rates Accordion -->
+          <div class="border-b border-w-color">
+            <button
+              id="mobile-shop-rates-btn"
+              class="w-full py-3 flex justify-between items-center text-left"
+            >
+              Shop rates
+              <svg
+                id="mobile-arrow"
+                class="w-4 h-4 opacity-50 transition-transform"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M19 9l-7 7-7-7"
+                ></path>
+              </svg>
+            </button>
+            <div id="mobile-shop-rates-content" class="hidden pb-4 space-y-3">
+              <div
+                class="p-6 bg-w-color rounded-2xl flex flex-col items-center text-center"
+              >
+                <a
+                  href="../src/rates.html"
+                  class="w-full bg-primary text-w-color py-4 rounded-xl font-bold hover:bg-primary-hover transition-all"
+                >
+                  Today's rates
+                </a>
+              </div>
+              <div
+                class="p-6 bg-w-color rounded-2xl flex flex-col items-center text-center"
+              >
+                <a
+                  href="#"
+                  class="w-full text-center border-2 border-primary text-primary py-4 rounded-xl font-bold hover:bg-primary/5 transition-all"
+                >
+                  Free rate quote
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Mobile Loan Programs Accordion -->
+          <div class="border-b border-w-color">
+            <button
+              id="mobile-loan-btn"
+              class="w-full py-3 flex justify-between items-center text-left"
+            >
+              Loan programs
+              <svg
+                id="mobile-loan-arrow"
+                class="w-4 h-4 opacity-50 transition-transform"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M19 9l-7 7-7-7"
+                ></path>
+              </svg>
+            </button>
+            <div id="mobile-loan-content" class="hidden pb-4 pl-4 space-y-3">
+              <a
+                href="../src/fixed_rate.html"
+                class="block py-2 text-sm opacity-80 hover:text-primary"
+                >Fixed-Rate Mortgage</a
+              >
+              <a
+                href="#"
+                class="block py-2 text-sm opacity-80 hover:text-primary"
+                >Demo</a
+              >
+            </div>
+          </div>
+
+          <a href="../src/about.html" class="py-3 border-b border-w-color"
+            >About us</a
+          >
+          <a href="#" class="py-3 border-b border-w-color">Calculators</a>
+          <a href="#" class="py-3 border-b border-w-color">Blogs</a>
+
+          <!-- Mobile Join Us Accordion -->
+          <div class="border-b border-w-color">
+            <button
+              id="mobile-join-btn"
+              class="w-full py-3 flex justify-between items-center text-left"
+            >
+              Join us
+              <svg
+                id="mobile-join-arrow"
+                class="w-4 h-4 opacity-50 transition-transform"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M19 9l-7 7-7-7"
+                ></path>
+              </svg>
+            </button>
+            <div id="mobile-join-content" class="hidden pb-4 pl-4 space-y-3">
+              <a
+                href="../src/officers.html"
+                class="block py-2 text-sm opacity-80 hover:text-primary"
+                >Loan Officers</a
+              >
+              <a
+                href="../src/policy.html"
+                class="block py-2 text-sm opacity-80 hover:text-primary"
+                >Privacy Policy</a
+              >
+            </div>
+          </div>
+
+          <!-- Mobile CTAs -->
+          <div class="grid grid-cols-1 gap-3 mt-4">
+            <a
+              href="../src/quote.html"
+              class="w-full text-center font-bold bg-primary text-w-color py-4 rounded-xl shadow-lg shadow-primary/20"
+              >Get a quote</a
+            >
+            <a
+              href="../src/apply.html"
+              class="w-full text-center font-bold text-primary py-4 rounded-xl border border-primary/20"
+              >Apply now</a
+            >
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Fixed-Rate Mortgage -->
+    <section class="bg-slate-200">
+      <div class="max-w-7xl mx-auto px-6 py-24">
+        <!-- Heading Image -->
+        <div class="w-full max-w-[500px] mx-auto mb-12">
+          <img
+            class="mx-auto"
+            src="https://www.shutterstock.com/image-photo/dream-home-suburban-landscape-600nw-2681202879.jpg"
+            alt=""
+          />
+        </div>
+        <!-- Heading -->
+        <div class="w-full md:w-2/3 space-y-6 text-center mx-auto">
+          <span
+            class="text-primary uppercase tracking-[4px] text-sm font-bold mb-4"
+          >
+            your guide to
+          </span>
+
+          <h2 class="text-4xl md:text-5xl font-bold text-title">
+            Fixed-Rate Mortgage
+          </h2>
+
+          <p class="text-title/90 text-lg leading-relaxed">
+            A reliable home loan where the interest rate remains constant
+            throughout the entire loan term.
+          </p>
+
+          <a
+            href="#"
+            class="w-full sm:w-fit inline-block px-10 py-4 rounded-full bg-primary text-w-color font-bold text-sm hover:bg-primary-hover transition-all shadow-lg shadow-primary/20"
+          >
+            Get a free quote
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Our Customers -->
+    <section class="py-20 bg-w-color">
+      <div class="max-w-7xl mx-auto px-6">
+        <!-- Heading -->
+        <div class="w-full md:w-1/3 space-y-6 text-center mx-auto">
+          <span
+            class="text-primary uppercase tracking-[4px] text-sm font-bold mb-4"
+          >
+            Recent experience of our customers
+          </span>
+
+          <h2 class="text-4xl md:text-5xl font-bold text-title">
+            See what our customers say about us
+          </h2>
+        </div>
+        <div class="testimonial py-16">
+          <!-- Card -->
+          <div class="px-3">
+            <div
+              class="bg-w-color border-b-2 border-primary rounded-lg p-5 h-full shadow-lg"
+            >
+              <div class="flex items-center gap-3 mb-4">
+                <div class="w-10 h-10 bg-w-color rounded-full">
+                  <img
+                    src="https://cdn.pixabay.com/photo/2017/06/13/12/54/profile-2398783_1280.png"
+                    alt=""
+                  />
+                </div>
+
+                <div>
+                  <h4 class="font-semibold text-title">Bill Shafransky</h4>
+                  <div class="flex items-center gap-2 text-sm">
+                    <span class="text-amber-600">★★★★★</span>
+                    <span class="text-title/60">1 month ago</span>
+                  </div>
+                </div>
+              </div>
+
+              <p class="text-title text-sm leading-6">
+                We met Kris through our real estate agent when we first decided
+                to make a move with our living arrangements...
+              </p>
+
+              <a
+                href="#"
+                class="text-info text-sm font-medium mt-4 inline-block"
+              >
+                Read more
+              </a>
+            </div>
+          </div>
+
+          <!-- Card -->
+          <div class="px-3">
+            <div
+              class="bg-w-color border-b-2 border-primary rounded-lg p-5 h-full shadow-lg"
+            >
+              <div class="flex items-center gap-3 mb-4">
+                <div class="w-10 h-10 bg-w-color rounded-full">
+                  <img
+                    src="https://cdn.pixabay.com/photo/2017/06/13/12/54/profile-2398783_1280.png"
+                    alt=""
+                  />
+                </div>
+
+                <div>
+                  <h4 class="font-semibold text-title">Bill Shafransky</h4>
+                  <div class="flex items-center gap-2 text-sm">
+                    <span class="text-amber-600">★★★★★</span>
+                    <span class="text-title/60">1 month ago</span>
+                  </div>
+                </div>
+              </div>
+
+              <p class="text-title text-sm leading-6">
+                We met Kris through our real estate agent when we first decided
+                to make a move with our living arrangements...
+              </p>
+
+              <a
+                href="#"
+                class="text-info text-sm font-medium mt-4 inline-block"
+              >
+                Read more
+              </a>
+            </div>
+          </div>
+
+          <!-- Card -->
+          <div class="px-3">
+            <div
+              class="bg-w-color border-b-2 border-primary rounded-lg p-5 h-full shadow-lg"
+            >
+              <div class="flex items-center gap-3 mb-4">
+                <div class="w-10 h-10 bg-w-color rounded-full">
+                  <img
+                    src="https://cdn.pixabay.com/photo/2017/06/13/12/54/profile-2398783_1280.png"
+                    alt=""
+                  />
+                </div>
+
+                <div>
+                  <h4 class="font-semibold text-title">Bill Shafransky</h4>
+                  <div class="flex items-center gap-2 text-sm">
+                    <span class="text-amber-600">★★★★★</span>
+                    <span class="text-title/60">1 month ago</span>
+                  </div>
+                </div>
+              </div>
+
+              <p class="text-title text-sm leading-6">
+                We met Kris through our real estate agent when we first decided
+                to make a move with our living arrangements...
+              </p>
+
+              <a
+                href="#"
+                class="text-info text-sm font-medium mt-4 inline-block"
+              >
+                Read more
+              </a>
+            </div>
+          </div>
+
+          <!-- Card -->
+          <div class="px-3">
+            <div
+              class="bg-w-color border-b-2 border-primary rounded-lg p-5 h-full shadow-lg"
+            >
+              <div class="flex items-center gap-3 mb-4">
+                <div class="w-10 h-10 bg-w-color rounded-full">
+                  <img
+                    src="https://cdn.pixabay.com/photo/2017/06/13/12/54/profile-2398783_1280.png"
+                    alt=""
+                  />
+                </div>
+
+                <div>
+                  <h4 class="font-semibold text-title">Bill Shafransky</h4>
+                  <div class="flex items-center gap-2 text-sm">
+                    <span class="text-amber-600">★★★★★</span>
+                    <span class="text-title/60">1 month ago</span>
+                  </div>
+                </div>
+              </div>
+
+              <p class="text-title text-sm leading-6">
+                We met Kris through our real estate agent when we first decided
+                to make a move with our living arrangements...
+              </p>
+
+              <a
+                href="#"
+                class="text-info text-sm font-medium mt-4 inline-block"
+              >
+                Read more
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Team -->
+    <section class="py-10 bg-w-color">
+      <div class="max-w-7xl mx-auto px-6">
+        <!-- Heading -->
+        <div class="w-full md:w-1/3 space-y-6 text-center mx-auto">
+          <span
+            class="text-primary uppercase tracking-[4px] text-sm font-bold mb-4"
+          >
+            Our Team
+          </span>
+
+          <h2 class="text-4xl md:text-5xl font-bold text-title">
+            Meet our team of mortgage experts
+          </h2>
+        </div>
+
+        <!-- Team Grid -->
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 py-16">
+          <!-- Card -->
+          <div
+            class="rounded-3xl overflow-hidden bg-w-color border-primary border border-b-2 border-r-0 border-t-2 border-l-0"
+          >
+            <div class="h-44 bg-[#EEF4F4]"></div>
+
+            <div class="relative px-8 pb-8 text-center">
+              <img
+                src="https://img.magnific.com/free-photo/portrait-w-color-man-isolated_53876-40306.jpg?semt=ais_hybrid&w=740&q=80"
+                class="w-24 h-24 rounded-full object-cover mx-auto -mt-12 border-4 border-w-color"
+              />
+
+              <h3 class="mt-4 text-2xl font-semibold text-title">
+                Abraham Gluck
+              </h3>
+
+              <p class="text-title mt-1">Loan Officer | NMLS #62257</p>
+
+              <p class="text-title mb-6">Phone: (718) 415-5410</p>
+
+              <a
+                href="#"
+                class="inline-block px-6 py-3 border border-primary font-bold text-primary rounded-full hover:bg-primary-hover hover:text-w-color transition"
+              >
+                View Profile
+              </a>
+            </div>
+          </div>
+
+          <!-- Duplicate cards -->
+          <div
+            class="rounded-3xl overflow-hidden bg-w-color border-primary border border-b-2 border-r-0 border-t-2 border-l-0"
+          >
+            <div class="h-44 bg-[#EEF4F4]"></div>
+
+            <div class="relative px-8 pb-8 text-center">
+              <img
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRCIyTZVXyb90oYHRiiX6YkNUc0CnzGwWjI3Q&s"
+                class="w-24 h-24 rounded-full object-cover mx-auto -mt-12 border-4 border-w-color"
+              />
+
+              <h3 class="mt-4 text-2xl font-semibold text-title]">
+                Adam Gjerulff
+              </h3>
+
+              <p class="text-title mt-1">Loan Officer | NMLS #278745</p>
+
+              <p class="text-title mb-6">Phone: (301) 760-6899</p>
+
+              <a
+                href="#"
+                class="inline-block px-6 py-3 border border-primary font-bold text-primary rounded-full hover:bg-primary-hover hover:text-w-color transition"
+              >
+                View Profile
+              </a>
+            </div>
+          </div>
+
+          <div
+            class="rounded-3xl overflow-hidden bg-w-color border-primary border border-b-2 border-r-0 border-t-2 border-l-0"
+          >
+            <div class="h-44 bg-[#EEF4F4]"></div>
+
+            <div class="relative px-8 pb-8 text-center">
+              <img
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTGyogBYaoFIZhcm9Ei2LB4Vb3gczmCpLod4Q&s"
+                class="w-24 h-24 rounded-full object-cover mx-auto -mt-12 border-4 border-w-color"
+              />
+
+              <h3 class="mt-4 text-2xl font-semibold text-title">
+                Alan Schtein
+              </h3>
+
+              <p class="text-title mt-1">Loan Officer | NMLS #2126949</p>
+
+              <p class="text-title mb-6">Phone: (925) 337-4933</p>
+
+              <a
+                href="#"
+                class="inline-block px-6 py-3 border border-primary font-bold text-primary rounded-full hover:bg-primary-hover hover:text-w-color transition"
+              >
+                View Profile
+              </a>
+            </div>
+          </div>
+        </div>
+        <!-- Bottom Button -->
+        <div class="text-center">
+          <a
+            href="#"
+            class="inline-block px-10 py-4 border font-bold border-primary text-primary rounded-full hover:bg-primary-hover hover:text-w-color transition"
+          >
+            View All Experts
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Take your first step towards your home loan journey -->
+    <section class="p-6 lg:p-0">
+      <div
+        class="md:flex max-w-7xl mx-auto px-6 my-16 py-8 border-4 bg-slate-100 border-primary rounded-xl"
+      >
+        <div
+          class="flex flex-col justify-center items-center md:items-start py-10"
+        >
+          <h3
+            class="text-primary uppercase tracking-[4px] text-sm font-bold pb-8"
+          >
+            Become a GORASCAL LO
+          </h3>
+
+          <h3 class="text-4xl font-bold text-title">
+            Join the happiest home for loan officers.
+          </h3>
+          <a
+            href="#"
+            class="w-full sm:w-fit inline-block text-center px-10 py-4 mt-10 rounded-full bg-primary text-w-color font-bold text-xl hover:bg-primary-hover transition-all shadow-lg shadow-primary/20"
+          >
+            Schedule a call
+          </a>
+        </div>
+        <div class="w-full max-w-[500px] m-auto rounded-xl">
+          <img
+            class="mx-auto"
+            src="https://i.pinimg.com/736x/fb/bf/ce/fbbfcee86e2bb57a897b356c4e17d6d1.jpg"
+            alt=""
+          />
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="text-w-color bg-primary py-20">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="grid sm:grid-cols-2 md:grid-cols-4 gap-5 mb-16">
+          <!-- Brand Column -->
+          <div
+            class="flex flex-col items-center space-y-2 text-title rounded-3xl"
+          >
+            <!-- Logo -->
+            <div class="w-50 h-50 rounded-3xl">
+              <a href="../src/index.html">
+                <img
+                  src="../dist/images/logo-2.png"
+                  alt="Logo"
+                  class="w-full h-full object-cover rounded-3xl"
+                />
+              </a>
+            </div>
+
+            <div class="flex items-center gap-3 pt-2 pb-6">
+              <a
+                href="#"
+                class="w-10 h-10 rounded-full bg-w-color/15 flex items-center justify-center text-w-color hover:bg-primary-hover transition-colors"
+              >
+                <i class="fa-brands fa-facebook text-2xl"></i>
+              </a>
+              <a
+                href="#"
+                class="w-10 h-10 rounded-full bg-w-color/15 flex items-center justify-center text-w-color hover:bg-primary-hover transition-colors"
+              >
+                <i class="fa-brands fa-instagram text-2xl"></i>
+              </a>
+              <a
+                href="#"
+                class="w-10 h-10 rounded-full bg-w-color/15 flex items-center justify-center text-w-color hover:bg-primary-hover transition-colors"
+              >
+                <i class="fa-brands fa-linkedin text-2xl"></i>
+              </a>
+              <a
+                href="#"
+                class="w-10 h-10 rounded-full bg-w-color/15 flex items-center justify-center text-w-color hover:bg-primary-hover transition-colors"
+              >
+                <i class="fa-brands fa-square-x-twitter text-2xl"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- Resources Column -->
+          <div class="text-center">
+            <h3
+              class="text-w-color font-bold text-lg mb-8 underline decoration-w-color decoration-3 underline-offset-[16px]"
+            >
+              Resources
+            </h3>
+            <ul class="space-y-4">
+              <li>
+                <a href="#" class="hover:text-title transition-colors">Rates</a>
+              </li>
+              <li>
+                <a href="#" class="hover:text-title transition-colors"
+                  >Get a quote</a
+                >
+              </li>
+              <li>
+                <a href="#" class="hover:text-title transition-colors"
+                  >Reviews</a
+                >
+              </li>
+              <li>
+                <a href="#" class="hover:text-title transition-colors"
+                  >Calculators</a
+                >
+              </li>
+              <li>
+                <a href="#" class="hover:text-title transition-colors">Blogs</a>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Legal Info Column -->
+          <div class="text-center">
+            <h3
+              class="text-w-color font-bold text-lg mb-8 underline decoration-w-color decoration-3 underline-offset-[16px]"
+            >
+              Legal info
+            </h3>
+            <ul class="space-y-4">
+              <li>
+                <a href="#" class="hover:text-title transition-colors"
+                  >Terms of use</a
+                >
+              </li>
+              <li>
+                <a href="#" class="hover:text-title transition-colors"
+                  >Disclosures and licenses</a
+                >
+              </li>
+              <li>
+                <a href="#" class="hover:text-title transition-colors"
+                  >Mortgage assistance</a
+                >
+              </li>
+              <li>
+                <a href="#" class="hover:text-title transition-colors"
+                  >Privacy policy</a
+                >
+              </li>
+              <li>
+                <a href="#" class="hover:text-title transition-colors"
+                  >Notice at collection</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <!-- Contact Column -->
+          <div class="flex flex-col items-center">
+            <h3
+              class="text-w-color font-bold text-lg mb-8 underline decoration-w-color decoration-3 underline-offset-[16px]"
+            >
+              Contact us
+            </h3>
+            <ul class="text-center space-y-6">
+              <li class="flex items-center gap-3">
+                <i
+                  class="fa-solid fa-location-dot w-6 h-6 text-w-color text-xl"
+                ></i>
+                <span>185 Wythe Ave, Suite A2<br />Brooklyn, NY 11249</span>
+              </li>
+
+              <li class="flex items-center gap-3">
+                <i
+                  class="fa-solid fa-envelope w-6 h-6 text-w-color text-xl"
+                ></i>
+
+                <a href="mailto:HomeLoanNYC.com" class="hover:text-title"
+                  >HomeLoanNYC.com</a
+                >
+              </li>
+
+              <li class="flex items-center gap-3">
+                <i class="fa-solid fa-phone w-6 h-6 text-w-color text-xl"></i>
+                <a href="tel:123456789" class="hover:text-title"
+                  >(123) 456-789</a
+                >
+              </li>
+              <li class="flex items-center gap-3">
+                <i
+                  class="fa-solid fa-mobile-screen-button w-6 h-6 text-w-color text-xl"
+                ></i>
+                <a href="tel:8442217647" class="hover:text-title"
+                  >Toll Free: (844) 221-7647</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div
+          class="pt-10 border-t border-w-color flex flex-wrap justify-between items-center gap-6 text-sm"
+        >
+          <div class="flex items-center gap-2">
+            Made by
+            <a
+              href="https://hossainuddin.netlify.app/"
+              class="underline hover:text-title transition-colors"
+              >Hossain.Dev</a
+            >
+          </div>
+          <div class="flex gap-6 flex-wrap">
+            <a href="#" class="hover:text-title transition-colors"
+              >ADA Accessibility Statement</a
+            >
+            <a href="#" class="hover:text-title transition-colors"
+              >Privacy Policy</a
+            >
+            <a href="#" class="hover:text-title transition-colors"
+              >Government & Licensing Disclosures</a
+            >
+            <span>Copyright © HomeLoanNCY</span>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- jQuery and Slick Carousel -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"></script>
+
+    <script>
+      // Mobile Menu toggle
+      const menuButton = document.getElementById("mobile-menu-button");
+      const mobileMenu = document.getElementById("mobile-menu");
+      const menuIcon = document.getElementById("menu-icon");
+
+      menuButton.addEventListener("click", () => {
+        const isHidden = mobileMenu.classList.contains("hidden");
+        if (isHidden) {
+          mobileMenu.classList.remove("hidden");
+          menuIcon.setAttribute("d", "M6 18L18 6M6 6l12 12");
+        } else {
+          mobileMenu.classList.add("hidden");
+          menuIcon.setAttribute("d", "M4 12h16M4 6h16M4 18h16");
+        }
+      });
+
+      // Generic Dropdown Toggle Helper
+      function setupDropdown(btnId, dropdownId, arrowId) {
+        const btn = document.getElementById(btnId);
+        const dropdown = document.getElementById(dropdownId);
+        const arrow = document.getElementById(arrowId);
+
+        btn.addEventListener("click", (e) => {
+          e.stopPropagation();
+          const isHidden = dropdown.classList.contains("hidden");
+
+          // Close all other dropdowns first
+          document
+            .querySelectorAll('[id$="-dropdown"]')
+            .forEach((d) => d.classList.add("hidden"));
+          document
+            .querySelectorAll('[id$="-arrow"]')
+            .forEach((a) => (a.style.transform = "rotate(0deg)"));
+          document
+            .querySelectorAll('[id$="-button"]')
+            .forEach((b) => b.classList.remove("text-primary"));
+
+          if (isHidden) {
+            dropdown.classList.remove("hidden");
+            if (arrow) arrow.style.transform = "rotate(180deg)";
+            btn.classList.add("text-primary");
+          }
+        });
+      }
+
+      setupDropdown(
+        "shop-rates-button",
+        "shop-rates-dropdown",
+        "shop-rates-arrow",
+      );
+      setupDropdown(
+        "loan-programs-button",
+        "loan-programs-dropdown",
+        "loan-programs-arrow",
+      );
+      setupDropdown("join-us-button", "join-us-dropdown", "join-us-arrow");
+
+      // Close dropdowns when clicking outside
+      window.addEventListener("click", (e) => {
+        document.querySelectorAll('[id$="-dropdown"]').forEach((dropdown) => {
+          if (!dropdown.contains(e.target)) {
+            dropdown.classList.add("hidden");
+            const arrowId = dropdown.id.replace("-dropdown", "-arrow");
+            const arrow = document.getElementById(arrowId);
+            if (arrow) arrow.style.transform = "rotate(0deg)";
+            const btnId = dropdown.id.replace("-dropdown", "-button");
+            const btn = document.getElementById(btnId);
+            if (btn) btn.classList.remove("text-primary");
+          }
+        });
+      });
+
+      // Mobile Accordion Helper
+      function setupMobileAccordion(btnId, contentId, arrowId) {
+        const btn = document.getElementById(btnId);
+        const content = document.getElementById(contentId);
+        const arrow = document.getElementById(arrowId);
+
+        btn.addEventListener("click", () => {
+          const isHidden = content.classList.contains("hidden");
+          if (isHidden) {
+            content.classList.remove("hidden");
+            arrow.style.transform = "rotate(180deg)";
+            btn.classList.add("text-primary");
+          } else {
+            content.classList.add("hidden");
+            arrow.style.transform = "rotate(0deg)";
+            btn.classList.remove("text-primary");
+          }
+        });
+      }
+
+      setupMobileAccordion(
+        "mobile-shop-rates-btn",
+        "mobile-shop-rates-content",
+        "mobile-arrow",
+      );
+      setupMobileAccordion(
+        "mobile-loan-btn",
+        "mobile-loan-content",
+        "mobile-loan-arrow",
+      );
+      setupMobileAccordion(
+        "mobile-join-btn",
+        "mobile-join-content",
+        "mobile-join-arrow",
+      );
+    </script>
+
+    <!-- Slick Slider -->
+    <script>
+      $(document).ready(function () {
+        $(".testimonial").slick({
+          infinite: true,
+          slidesToShow: 3,
+          slidesToScroll: 1,
+          autoplay: true,
+          autoplaySpeed: 3000,
+          arrows: false,
+          dots: false,
+          responsive: [
+            {
+              breakpoint: 1024,
+              settings: {
+                slidesToShow: 2,
+              },
+            },
+            {
+              breakpoint: 640,
+              settings: {
+                slidesToShow: 1,
+              },
+            },
+          ],
+        });
+      });
+    </script>
+  </body>
+</html>
