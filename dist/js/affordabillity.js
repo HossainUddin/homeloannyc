@@ -148,16 +148,25 @@ function calculateAffordability() {
   const isUnlocked = sessionStorage.getItem("resultsUnlocked") === "true";
   const dataContainer = document.getElementById("results-data-container");
   const overlay = document.getElementById("results-unlock-overlay");
+  const wrapper = document.getElementById("results-wrapper");
 
   if (isUnlocked) {
     dataContainer.classList.remove("blur-md", "pointer-events-none", "select-none");
     overlay.classList.add("hidden");
+    if (wrapper) wrapper.classList.remove("max-h-[720px]", "overflow-hidden");
   } else {
     dataContainer.classList.add("blur-md", "pointer-events-none", "select-none");
     overlay.classList.remove("hidden");
+    if (wrapper) wrapper.classList.add("max-h-[720px]", "overflow-hidden");
   }
 
   nextStep(4);
+  
+  // Scroll to results top so form is centered and visible on mobile
+  const wizard = document.getElementById("affordability-wizard");
+  if (wizard) {
+    wizard.scrollIntoView({ behavior: "smooth" });
+  }
 }
 
 // Add formatters for currency inputs
@@ -201,10 +210,15 @@ function unlockResults() {
   // Unlock UI
   const dataContainer = document.getElementById("results-data-container");
   const overlay = document.getElementById("results-unlock-overlay");
+  const wrapper = document.getElementById("results-wrapper");
   
   dataContainer.classList.remove("blur-md", "pointer-events-none", "select-none");
   overlay.classList.add("hidden");
+  if (wrapper) wrapper.classList.remove("max-h-[720px]", "overflow-hidden");
 
   // Scroll to results top
-  document.getElementById("affordability-wizard").scrollIntoView({ behavior: "smooth" });
+  const wizard = document.getElementById("affordability-wizard");
+  if (wizard) {
+    wizard.scrollIntoView({ behavior: "smooth" });
+  }
 }
