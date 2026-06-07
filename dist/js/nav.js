@@ -50,6 +50,8 @@ setupDropdown(
   "loan-programs-arrow",
 );
 setupDropdown("join-us-button", "join-us-dropdown", "join-us-arrow");
+// Calculators dropdown (click-to-toggle)
+setupDropdown("calculators-button", "calculators-dropdown", "calculators-arrow");
 
 // Close dropdowns when clicking outside
 window.addEventListener("click", (e) => {
@@ -100,4 +102,11 @@ setupMobileAccordion(
   "mobile-join-btn",
   "mobile-join-content",
   "mobile-join-arrow",
+);
+
+// Mobile Calculators accordion
+setupMobileAccordion(
+  "mobile-calculators-btn",
+  "mobile-calculators-content",
+  "mobile-calculators-arrow",
 );

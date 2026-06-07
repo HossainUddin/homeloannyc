@@ -1,0 +1,1716 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home Loan NYC</title>
+    <link href="../dist/output.css" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <!-- FontAwosome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+      integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <style>
+      body {
+        font-family: "Plus Jakarta Sans", sans-serif;
+      }
+      /* Chrome, Safari, Edge, Opera */
+      input[type="number"]::-webkit-outer-spin-button,
+      input[type="number"]::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+      }
+
+      /* Firefox */
+      input[type="number"] {
+        -moz-appearance: textfield;
+        appearance: textfield;
+      }
+    </style>
+
+    <!-- Must be first thing in <head>, before CSS loads -->
+    <script>
+      (function () {
+        const saved = localStorage.getItem("site-theme") || "orange";
+        document.documentElement.setAttribute("data-theme", saved);
+      })();
+    </script>
+  </head>
+  <body class="bg-white text-title min-h-screen overflow-x-hidden">
+    <!-- Navbar -->
+    <nav
+      class="sticky top-0 w-full z-50 bg-w-color backdrop-blur-md border-b border-black"
+    >
+      <div class="max-w-7xl mx-auto px-6 flex justify-between items-center">
+        <!-- Logo -->
+        <div class="w-30 h-25">
+          <a href="../src/index.html">
+            <img
+              src="../dist/images/logo.png"
+              alt="Logo"
+              class="w-full h-full object-cover"
+            />
+          </a>
+        </div>
+
+        <!-- Nav Links -->
+        <div
+          class="hidden lg:flex items-center gap-7 text-[15px] font-semibold text-title"
+        >
+          <!-- Shop Rates Dropdown -->
+          <div class="relative group">
+            <button
+              id="shop-rates-button"
+              class="flex items-center gap-1 hover:text-primary transition-colors py-2"
+            >
+              Shop rates
+              <svg
+                class="w-4 h-4 opacity-50 transition-transform duration-300"
+                id="shop-rates-arrow"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M19 9l-7 7-7-7"
+                ></path>
+              </svg>
+            </button>
+
+            <!-- Mega Menu Content -->
+            <div
+              id="shop-rates-dropdown"
+              class="hidden absolute top-full left-1/2 -translate-x-1/2 mt-4 w-[600px] bg-w-color rounded-3xl shadow-2xl border border-slate-200 overflow-hidden z-50 p-6"
+            >
+              <div class="grid grid-cols-2 gap-6 text-center">
+                <!-- Section 1 -->
+                <div
+                  class="p-6 rounded-2xl bg-w-color flex flex-col items-center"
+                >
+                  <h3 class="text-base font-bold text-title mb-4">
+                    Today's rates
+                  </h3>
+                  <a
+                    href="../src/rates.html"
+                    class="w-full bg-primary text-center text-w-color py-3 rounded-xl font-bold hover:bg-primary-hover transition-all shadow-lg shadow-primary/10"
+                  >
+                    Today's rates
+                  </a>
+                </div>
+
+                <!-- Section 2 -->
+                <div
+                  class="p-6 rounded-2xl bg-w-color flex flex-col items-center"
+                >
+                  <h3 class="text-base font-bold text-title mb-4">
+                    Get a free rate quote
+                  </h3>
+                  <a
+                    href="#"
+                    class="w-full text-center border-2 border-primary text-primary py-3 rounded-xl font-bold hover:bg-primary/5 transition-all"
+                  >
+                    Free rate quote
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Loan Programs Dropdown -->
+          <div class="relative group">
+            <button
+              id="loan-programs-button"
+              class="flex items-center gap-1 hover:text-primary transition-colors py-2"
+            >
+              Loan programs
+              <svg
+                class="w-4 h-4 opacity-50 transition-transform duration-300"
+                id="loan-programs-arrow"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M19 9l-7 7-7-7"
+                ></path>
+              </svg>
+            </button>
+            <div
+              id="loan-programs-dropdown"
+              class="hidden absolute top-full left-0 mt-4 min-w-[240px] bg-w-color rounded-2xl shadow-xl border border-slate-200 overflow-hidden z-50 py-2"
+            >
+              <a
+                href="../src/fixed_rate.html"
+                class="block px-6 py-3 hover:bg-w-color hover:text-primary transition-colors"
+                >Fixed-Rate Mortgage</a
+              >
+              <a
+                href="#"
+                class="block px-6 py-3 hover:bg-w-color hover:text-primary transition-colors"
+                >Demo</a
+              >
+            </div>
+          </div>
+
+          <a
+            href="../src/about.html"
+            class="flex items-center gap-1 hover:text-primary transition-colors"
+          >
+            About us</a
+          >
+
+          <div class="relative">
+            <button
+              id="calculators-button"
+              class="flex items-center gap-1 hover:text-primary transition-colors py-2"
+            >
+              Calculators
+              <svg
+                class="w-4 h-4 opacity-50 transition-transform duration-300"
+                id="calculators-arrow"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M19 9l-7 7-7-7"
+                ></path>
+              </svg>
+            </button>
+            <div
+              id="calculators-dropdown"
+              class="hidden absolute top-full left-0 mt-4 min-w-[240px] bg-w-color rounded-2xl shadow-xl border border-slate-200 overflow-hidden z-50 py-2"
+            >
+              <a
+                href="../src/mortgage.html"
+                class="block px-6 py-3 hover:bg-w-color hover:text-primary transition-colors"
+                >Mortgage calculator</a
+              >
+              <a
+                href="../src/affordability.html"
+                class="block px-6 py-3 hover:bg-w-color hover:text-primary transition-colors"
+                >Affordability calculator</a
+              >
+            </div>
+          </div>
+
+          <a
+            href="../src/blog.html"
+            class="hover:text-primary transition-colors"
+            >Blogs</a
+          >
+
+          <!-- Join Us Dropdown -->
+          <div class="relative group">
+            <button
+              id="join-us-button"
+              class="flex items-center gap-1 hover:text-primary transition-colors py-2"
+            >
+              Join us
+              <svg
+                class="w-4 h-4 opacity-50 transition-transform duration-300"
+                id="join-us-arrow"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M19 9l-7 7-7-7"
+                ></path>
+              </svg>
+            </button>
+            <div
+              id="join-us-dropdown"
+              class="hidden absolute top-full left-0 mt-4 min-w-[200px] bg-w-color rounded-2xl shadow-xl border border-slate-200 overflow-hidden z-50 py-2"
+            >
+              <a
+                href="../src/officers.html"
+                class="block px-6 py-3 hover:bg-w-color hover:text-primary transition-colors"
+                >Loan Officers</a
+              >
+              <a
+                href="../src/apply.html"
+                class="block px-6 py-3 hover:bg-w-color hover:text-primary transition-colors"
+                >Apply Now</a
+              >
+              <select id="themeSwitcher" class="px-4 py-2 rounded text-title">
+                <option value="">Orange Theme</option>
+                <option value="green">Green Theme</option>
+                <option value="red">Red Theme</option>
+                <option value="purple">Purple Theme</option>
+                <option value="sky-blue">Sky Blue Theme</option>
+                <option value="olive-green">Olive Green Theme</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <!-- CTA Buttons & Mobile Toggle -->
+        <div class="flex items-center gap-4">
+          <a
+            href="tel:123456789"
+            class="hidden lg:block text-[15px] font-bold text-primary px-6 py-2.5 rounded-full border border-primary/20 hover:bg-primary/5 transition-all"
+            ><i class="fa-solid fa-phone pr-2"></i> (123) 456-789</a
+          >
+          <a
+            href="../src/quote.html"
+            class="hidden lg:block text-[15px] font-bold bg-primary text-w-color px-6 py-2.5 rounded-full hover:bg-primary-hover transition-all shadow-lg shadow-primary/10"
+            >Get a quote</a
+          >
+
+          <!-- Hamburger Button -->
+          <button
+            id="mobile-menu-button"
+            class="lg:hidden p-2 text-title hover:bg-w-color rounded-lg transition-colors"
+            aria-label="Toggle Menu"
+          >
+            <svg
+              class="w-6 h-6"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                id="menu-icon"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M4 6h16M4 12h16M4 18h16"
+              ></path>
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- Mobile Menu Overlay -->
+      <div
+        id="mobile-menu"
+        class="hidden lg:hidden absolute top-full left-0 w-full bg-w-color border-b border-slate-200 shadow-xl max-h-[90vh] overflow-y-auto animate-in slide-in-from-top-4 duration-200"
+      >
+        <div class="flex flex-col p-6 gap-4 font-semibold text-title">
+          <!-- Mobile Shop Rates Accordion -->
+          <div class="border-b border-w-color">
+            <button
+              id="mobile-shop-rates-btn"
+              class="w-full py-3 flex justify-between items-center text-left"
+            >
+              Shop rates
+              <svg
+                id="mobile-arrow"
+                class="w-4 h-4 opacity-50 transition-transform"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M19 9l-7 7-7-7"
+                ></path>
+              </svg>
+            </button>
+            <div id="mobile-shop-rates-content" class="hidden pb-4 space-y-3">
+              <div
+                class="p-6 bg-w-color rounded-2xl flex flex-col items-center text-center"
+              >
+                <a
+                  href="../src/rates.html"
+                  class="w-full bg-primary text-w-color py-4 rounded-xl font-bold hover:bg-primary-hover transition-all"
+                >
+                  Today's rates
+                </a>
+              </div>
+              <div
+                class="p-6 bg-w-color rounded-2xl flex flex-col items-center text-center"
+              >
+                <a
+                  href="#"
+                  class="w-full text-center border-2 border-primary text-primary py-4 rounded-xl font-bold hover:bg-primary/5 transition-all"
+                >
+                  Free rate quote
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Mobile Loan Programs Accordion -->
+          <div class="border-b border-w-color">
+            <button
+              id="mobile-loan-btn"
+              class="w-full py-3 flex justify-between items-center text-left"
+            >
+              Loan programs
+              <svg
+                id="mobile-loan-arrow"
+                class="w-4 h-4 opacity-50 transition-transform"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M19 9l-7 7-7-7"
+                ></path>
+              </svg>
+            </button>
+            <div id="mobile-loan-content" class="hidden pb-4 pl-4 space-y-3">
+              <a
+                href="../src/fixed_rate.html"
+                class="block py-2 text-sm opacity-80 hover:text-primary"
+                >Fixed-Rate Mortgage</a
+              >
+              <a
+                href="#"
+                class="block py-2 text-sm opacity-80 hover:text-primary"
+                >Demo</a
+              >
+            </div>
+          </div>
+
+          <a href="../src/about.html" class="py-3 border-b border-w-color"
+            >About us</a
+          >
+          <!-- Mobile Calculators Accordion -->
+          <div class="border-b border-w-color">
+            <button
+              id="mobile-calculators-btn"
+              class="w-full py-3 flex justify-between items-center text-left"
+            >
+              Calculators
+              <svg
+                id="mobile-calculators-arrow"
+                class="w-4 h-4 opacity-50 transition-transform"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M19 9l-7 7-7-7"
+                ></path>
+              </svg>
+            </button>
+            <div
+              id="mobile-calculators-content"
+              class="hidden pb-4 pl-4 space-y-3"
+            >
+              <a
+                href="../src/quote.html"
+                class="block py-2 text-sm opacity-80 hover:text-primary"
+                >Mortgage calculator</a
+              >
+              <a
+                href="#"
+                class="block py-2 text-sm opacity-80 hover:text-primary"
+                >Affordability calculator</a
+              >
+            </div>
+          </div>
+          <a href="#" class="py-3 border-b border-w-color">Blogs</a>
+
+          <!-- Mobile Join Us Accordion -->
+          <div class="border-b border-w-color">
+            <button
+              id="mobile-join-btn"
+              class="w-full py-3 flex justify-between items-center text-left"
+            >
+              Join us
+              <svg
+                id="mobile-join-arrow"
+                class="w-4 h-4 opacity-50 transition-transform"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M19 9l-7 7-7-7"
+                ></path>
+              </svg>
+            </button>
+            <div id="mobile-join-content" class="hidden pb-4 pl-4 space-y-3">
+              <a
+                href="../src/officers.html"
+                class="block py-2 text-sm opacity-80 hover:text-primary"
+                >Loan Officers</a
+              >
+              <a
+                href="../src/apply.html"
+                class="block py-2 text-sm opacity-80 hover:text-primary"
+                >Apply Now</a
+              >
+            </div>
+          </div>
+
+          <!-- Mobile CTAs -->
+          <div class="grid grid-cols-1 gap-3 mt-4">
+            <a
+              href="../src/quote.html"
+              class="w-full text-center font-bold bg-primary text-w-color py-4 rounded-xl shadow-lg shadow-primary/20"
+              >Get a quote</a
+            >
+            <a
+              href="../src/apply.html"
+              class="w-full text-center font-bold text-primary py-4 rounded-xl border border-primary/20"
+              ><i class="fa-solid fa-phone pr-2"></i> (123) 456-789</a
+            >
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <main class="pt-24 pb-16 px-6 bg-slate-50 min-h-[calc(100vh-80px)]">
+      <div class="max-w-4xl mx-auto">
+        <!-- Wizard Container -->
+        <div
+          id="affordability-wizard"
+          class="bg-white rounded-3xl shadow-2xl border border-slate-200 overflow-hidden min-h-[600px] flex flex-col"
+        >
+          <!-- Progress Bar -->
+          <div id="progress-container" class="hidden h-1.5 bg-slate-100 w-full">
+            <div
+              id="progress-bar"
+              class="h-full bg-primary transition-all duration-500 w-0"
+            ></div>
+          </div>
+
+          <!-- Splash Page: Human Confirmation -->
+          <div
+            id="step-pre-captcha"
+            class="step active flex flex-col items-center justify-center p-12 text-center flex-1"
+          >
+            <h2
+              class="text-[40px] md:text-[50px] font-medium text-primary mb-8 max-w-md leading-tight"
+            >
+              Let's confirm you are human
+            </h2>
+            <p class="text-title mb-12 max-w-lg text-lg leading-relaxed">
+              Complete the security check before continuing. This step verifies
+              that you are not a bot, which helps to protect your account and
+              prevent spam.
+            </p>
+            <button
+              onclick="showCaptcha()"
+              class="bg-primary text-w-color px-12 py-3 rounded-md font-bold hover:bg-primary-hover transition-all flex items-center gap-2 text-xl shadow-sm"
+            >
+              Begin <span class="ml-1 text-2xl leading-none">></span>
+            </button>
+          </div>
+
+          <!-- Step 0: CAPTCHA -->
+          <div
+            id="step-0"
+            class="step hidden flex flex-col items-center justify-center p-12 text-center flex-1"
+          >
+            <div
+              class="w-16 h-16 bg-emerald-100 rounded-2xl flex items-center justify-center mb-6"
+            >
+              <svg
+                class="w-8 h-8 text-primary"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"
+                />
+              </svg>
+            </div>
+            <h2 class="text-3xl font-extrabold text-title mb-4">
+              Affordability Calculator
+            </h2>
+            <p class="text-title mb-8 max-w-md">
+              Unlock the tool to discover exactly how much home you can
+              comfortably afford.
+            </p>
+            <div class="inline-block">
+              <div
+                class="g-recaptcha"
+                data-sitekey="6LcsEBAtAAAAADgHZ1hUjLanhXxNMlUjAN8gGffY"
+                data-callback="onCaptchaSuccess"
+              ></div>
+            </div>
+          </div>
+
+          <!-- Step 1: Income & Debt -->
+          <div id="step-1" class="step hidden p-8 md:p-12 flex-1">
+            <div
+              class="flex flex-col md:flex-row justify-between items-start md:items-center mb-8 gap-4"
+            >
+              <div>
+                <h2 class="text-2xl font-extrabold text-title">
+                  Income & Debt
+                </h2>
+                <p class="text-slate-500 text-sm mt-1">
+                  Tell us about your finances.
+                </p>
+              </div>
+              <div class="text-sm font-bold text-slate-400">STEP 01 / 03</div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div class="space-y-2">
+                <label class="text-sm font-bold text-title"
+                  >Annual gross income</label
+                >
+                <div class="relative">
+                  <span
+                    class="absolute left-4 top-1/2 -translate-y-1/2 text-slate-400 font-bold"
+                    >$</span
+                  >
+                  <input
+                    type="text"
+                    id="annualIncome"
+                    value="100,000"
+                    class="w-full pl-8 pr-4 py-3.5 bg-slate-50 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary transition-all font-semibold"
+                  />
+                </div>
+              </div>
+              <div class="space-y-2">
+                <label class="text-sm font-bold text-title"
+                  >Monthly debt (optional)</label
+                >
+                <div class="relative">
+                  <span
+                    class="absolute left-4 top-1/2 -translate-y-1/2 text-slate-400 font-bold"
+                    >$</span
+                  >
+                  <input
+                    type="text"
+                    id="monthlyDebt"
+                    value="500"
+                    class="w-full pl-8 pr-4 py-3.5 bg-slate-50 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary transition-all font-semibold"
+                  />
+                </div>
+              </div>
+            </div>
+
+            <div class="flex justify-end mt-12">
+              <button
+                onclick="nextStep(2)"
+                class="bg-primary text-white px-10 py-4 rounded-xl font-bold hover:bg-primary-hover transition-all shadow-lg flex items-center gap-2 group"
+              >
+                Next Step
+                <svg
+                  class="w-5 h-5 group-hover:translate-x-1 transition-transform"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M14 5l7 7m0 0l-7 7m7-7H3"
+                  />
+                </svg>
+              </button>
+            </div>
+          </div>
+
+          <!-- Step 2: Loan Details -->
+          <div id="step-2" class="step hidden p-8 md:p-12 flex-1">
+            <div
+              class="flex flex-col md:flex-row justify-between items-start md:items-center mb-8 gap-4"
+            >
+              <div>
+                <h2 class="text-2xl font-extrabold text-title">Loan Details</h2>
+                <p class="text-slate-500 text-sm mt-1">
+                  Set your preferred loan terms.
+                </p>
+              </div>
+              <div class="text-sm font-bold text-slate-400">STEP 02 / 03</div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div class="space-y-2">
+                <label class="text-sm font-bold text-title">Down payment</label>
+                <div class="relative">
+                  <span
+                    class="absolute left-4 top-1/2 -translate-y-1/2 text-slate-400 font-bold"
+                    >$</span
+                  >
+                  <input
+                    type="number"
+                    id="downPayment"
+                    value="0"
+                    class="w-full pl-8 pr-4 py-3.5 bg-slate-50 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary transition-all font-semibold"
+                  />
+                </div>
+              </div>
+              <div class="space-y-2">
+                <label class="text-sm font-bold text-title"
+                  >Interest rate (%)</label
+                >
+                <div class="relative">
+                  <input
+                    type="number"
+                    id="interestRate"
+                    value="6.56"
+                    class="w-full px-4 py-3.5 bg-slate-50 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary transition-all font-semibold"
+                  />
+                  <span
+                    class="absolute right-4 top-1/2 -translate-y-1/2 text-slate-400 font-bold"
+                    >%</span
+                  >
+                </div>
+              </div>
+
+              <!-- A Pt -->
+              <div class="space-y-2">
+                <label class="block font-semibold text-title ml-1">
+                  Loan term
+                </label>
+
+                <div
+                  class="relative custom-dropdown"
+                  data-placeholder="Select Loan Term"
+                >
+                  <button
+                    type="button"
+                    class="dropdown-trigger w-full bg-slate-50 border-2 border-slate-200 rounded-2xl px-5 py-4 flex items-center justify-between focus:ring-2 focus:ring-primary transition-all text-slate-900"
+                  >
+                    <span>30 year fixed</span>
+
+                    <svg
+                      class="w-5 h-5 transition-transform duration-300"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M19 9l-7 7-7-7"
+                      />
+                    </svg>
+                  </button>
+
+                  <div
+                    class="dropdown-menu hidden absolute top-full left-0 w-full mt-2 bg-w-color rounded-2xl shadow-xl border border-slate-100 z-50 overflow-hidden"
+                  >
+                    <div
+                      class="dropdown-option px-5 py-3 hover:bg-primary/10 hover:text-primary cursor-pointer transition-colors"
+                      data-value="30"
+                    >
+                      30 year fixed
+                    </div>
+
+                    <div
+                      class="dropdown-option px-5 py-3 hover:bg-primary/10 hover:text-primary cursor-pointer transition-colors"
+                      data-value="20"
+                    >
+                      20 year fixed
+                    </div>
+
+                    <div
+                      class="dropdown-option px-5 py-3 hover:bg-primary/10 hover:text-primary cursor-pointer transition-colors"
+                      data-value="15"
+                    >
+                      15 year fixed
+                    </div>
+                  </div>
+
+                  <input
+                    type="hidden"
+                    id="loanTerm"
+                    name="loanTerm"
+                    value="30"
+                  />
+                </div>
+              </div>
+            </div>
+
+            <div class="flex justify-between mt-12">
+              <button
+                onclick="nextStep(1)"
+                class="text-title px-8 py-4 rounded-xl font-bold hover:bg-slate-100 flex items-center gap-2"
+              >
+                Back
+              </button>
+              <button
+                onclick="nextStep(3)"
+                class="bg-primary text-white px-10 py-4 rounded-xl font-bold hover:bg-primary-hover transition-all shadow-lg flex items-center gap-2 group"
+              >
+                Next Step
+              </button>
+            </div>
+          </div>
+
+          <!-- Step 3: Taxes & Fees -->
+          <div id="step-3" class="step hidden p-8 md:p-12 flex-1">
+            <div
+              class="flex flex-col md:flex-row justify-between items-start md:items-center mb-8 gap-4"
+            >
+              <div>
+                <h2 class="text-2xl font-extrabold text-title">Taxes & Fees</h2>
+                <p class="text-slate-500 text-sm mt-1">
+                  Estimate your monthly out-of-pocket costs.
+                </p>
+              </div>
+              <div class="text-sm font-bold text-slate-400">STEP 03 / 03</div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div class="space-y-2">
+                <label class="text-sm font-bold text-title"
+                  >Property tax /mo</label
+                >
+                <div class="relative">
+                  <span
+                    class="absolute left-4 top-1/2 -translate-y-1/2 text-slate-400 font-bold"
+                    >$</span
+                  >
+                  <input
+                    type="number"
+                    id="propTax"
+                    value="281"
+                    class="w-full pl-8 pr-4 py-3.5 bg-slate-50 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary transition-all font-semibold"
+                  />
+                </div>
+              </div>
+              <div class="space-y-2">
+                <label class="text-sm font-bold text-title"
+                  >Homeowner's insurance /mo</label
+                >
+                <div class="relative">
+                  <span
+                    class="absolute left-4 top-1/2 -translate-y-1/2 text-slate-400 font-bold"
+                    >$</span
+                  >
+                  <input
+                    type="number"
+                    id="homeIns"
+                    value="78"
+                    class="w-full pl-8 pr-4 py-3.5 bg-slate-50 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary transition-all font-semibold"
+                  />
+                </div>
+              </div>
+              <div class="space-y-2">
+                <label class="text-sm font-bold text-title">PMI /mo</label>
+                <div class="relative">
+                  <span
+                    class="absolute left-4 top-1/2 -translate-y-1/2 text-slate-400 font-bold"
+                    >$</span
+                  >
+                  <input
+                    type="number"
+                    id="pmi"
+                    value="0"
+                    class="w-full pl-8 pr-4 py-3.5 bg-slate-50 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary transition-all font-semibold"
+                  />
+                </div>
+              </div>
+              <div class="space-y-2">
+                <label class="text-sm font-bold text-title">HOA fees /mo</label>
+                <div class="relative">
+                  <span
+                    class="absolute left-4 top-1/2 -translate-y-1/2 text-slate-400 font-bold"
+                    >$</span
+                  >
+                  <input
+                    type="number"
+                    id="hoa"
+                    value="0"
+                    class="w-full pl-8 pr-4 py-3.5 bg-slate-50 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary transition-all font-semibold"
+                  />
+                </div>
+              </div>
+            </div>
+
+            <div class="flex justify-between mt-12">
+              <button
+                onclick="nextStep(2)"
+                class="text-title px-8 py-4 rounded-xl font-bold hover:bg-slate-100 flex items-center gap-2"
+              >
+                Back
+              </button>
+              <button
+                onclick="calculateAffordability()"
+                class="bg-primary text-white px-10 py-4 rounded-xl font-bold hover:bg-primary-hover transition-all shadow-lg flex items-center gap-2"
+              >
+                Calculate Affordability
+              </button>
+            </div>
+          </div>
+
+          <!-- Step 4: Results -->
+          <div id="step-4" class="step hidden p-8 md:p-12 flex-1 scroll-reveal">
+            <div
+              class="flex flex-col md:flex-row justify-between items-start md:items-center mb-12 gap-4 border-b border-slate-100 pb-6"
+            >
+              <div>
+                <h2 class="text-2xl font-extrabold text-title">
+                  Your Home Affordability
+                </h2>
+                <p class="text-slate-500 text-sm mt-1">
+                  Based on your income, debt, and terms.
+                </p>
+              </div>
+              <button
+                onclick="location.reload()"
+                class="text-primary font-bold hover:underline flex items-center gap-1"
+              >
+                <svg
+                  class="w-4 h-4"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"
+                  />
+                </svg>
+                Recalculate
+              </button>
+            </div>
+
+            <div id="results-wrapper" class="relative">
+              <!-- Blurred Results Container -->
+              <div
+                id="results-data-container"
+                class="filter blur-md pointer-events-none select-none transition-all duration-500"
+              >
+                <div
+                  class="grid grid-cols-1 md:grid-cols-2 gap-8 items-stretch"
+                >
+                  <!-- Column 1 (Left): Selected Details Summary -->
+                  <div
+                    class="bg-white p-6 rounded-2xl border border-slate-100 shadow-sm flex flex-col justify-between h-full w-full"
+                  >
+                    <div>
+                      <h3
+                        class="font-extrabold text-title mb-6 pb-3 border-b border-slate-200/60 flex items-center gap-2"
+                      >
+                        <i class="fa-solid fa-circle-info text-primary"></i>
+                        Selected Details
+                      </h3>
+                      <div class="space-y-4">
+                        <!-- Annual Income -->
+                        <div
+                          class="flex items-center justify-between p-4 bg-slate-50 border border-slate-100 rounded-xl hover:bg-slate-100/50 transition-all"
+                        >
+                          <div class="flex items-center gap-4">
+                            <div
+                              class="w-11 h-11 rounded-xl bg-white shadow-sm flex items-center justify-center text-slate-500 text-lg border border-slate-100"
+                            >
+                              <i class="fa-solid fa-wallet text-slate-500"></i>
+                            </div>
+                            <div
+                              class="flex flex-col text-xs font-bold text-slate-500 leading-tight"
+                            >
+                              <span>Annual</span>
+                              <span>Income</span>
+                            </div>
+                          </div>
+                          <span
+                            class="font-black text-title text-base md:text-lg"
+                            id="summaryAnnualIncome"
+                            >$0</span
+                          >
+                        </div>
+
+                        <!-- Monthly Debt -->
+                        <div
+                          class="flex items-center justify-between p-4 bg-slate-50 border border-slate-100 rounded-xl hover:bg-slate-100/50 transition-all"
+                        >
+                          <div class="flex items-center gap-4">
+                            <div
+                              class="w-11 h-11 rounded-xl bg-white shadow-sm flex items-center justify-center text-slate-500 text-lg border border-slate-100"
+                            >
+                              <i
+                                class="fa-solid fa-credit-card text-slate-500"
+                              ></i>
+                            </div>
+                            <div
+                              class="flex flex-col text-xs font-bold text-slate-500 leading-tight"
+                            >
+                              <span>Monthly</span>
+                              <span>Debt</span>
+                            </div>
+                          </div>
+                          <span
+                            class="font-black text-title text-base md:text-lg text-right"
+                            id="summaryMonthlyDebt"
+                            >$0</span
+                          >
+                        </div>
+
+                        <!-- Down Payment -->
+                        <div
+                          class="flex items-center justify-between p-4 bg-slate-50 border border-slate-100 rounded-xl hover:bg-slate-100/50 transition-all"
+                        >
+                          <div class="flex items-center gap-4">
+                            <div
+                              class="w-11 h-11 rounded-xl bg-white shadow-sm flex items-center justify-center text-slate-500 text-lg border border-slate-100"
+                            >
+                              <i
+                                class="fa-solid fa-hand-holding-dollar text-slate-500"
+                              ></i>
+                            </div>
+                            <div
+                              class="flex flex-col text-xs font-bold text-slate-500 leading-tight"
+                            >
+                              <span>Down</span>
+                              <span>Payment</span>
+                            </div>
+                          </div>
+                          <span
+                            class="font-black text-title text-base md:text-lg text-right"
+                            id="summaryDownPayment"
+                            >$0</span
+                          >
+                        </div>
+
+                        <!-- Loan Term -->
+                        <div
+                          class="flex items-center justify-between p-4 bg-slate-50 border border-slate-100 rounded-xl hover:bg-slate-100/50 transition-all"
+                        >
+                          <div class="flex items-center gap-4">
+                            <div
+                              class="w-11 h-11 rounded-xl bg-white shadow-sm flex items-center justify-center text-slate-500 text-lg border border-slate-100"
+                            >
+                              <i
+                                class="fa-solid fa-calendar-days text-slate-500"
+                              ></i>
+                            </div>
+                            <div
+                              class="flex flex-col text-xs font-bold text-slate-500 leading-tight"
+                            >
+                              <span>Loan</span>
+                              <span>Term</span>
+                            </div>
+                          </div>
+                          <span
+                            class="font-black text-title text-base md:text-lg text-right"
+                            id="summaryLoanTerm"
+                            >0 years</span
+                          >
+                        </div>
+
+                        <!-- Interest Rate -->
+                        <div
+                          class="flex items-center justify-between p-4 bg-slate-50 border border-slate-100 rounded-xl hover:bg-slate-100/50 transition-all"
+                        >
+                          <div class="flex items-center gap-4">
+                            <div
+                              class="w-11 h-11 rounded-xl bg-white shadow-sm flex items-center justify-center text-slate-500 text-lg border border-slate-100"
+                            >
+                              <i class="fa-solid fa-percent text-slate-500"></i>
+                            </div>
+                            <div
+                              class="flex flex-col text-xs font-bold text-slate-500 leading-tight"
+                            >
+                              <span>Interest</span>
+                              <span>Rate</span>
+                            </div>
+                          </div>
+                          <span
+                            class="font-black text-title text-base md:text-lg text-right"
+                            id="summaryInterestRate"
+                            >0%</span
+                          >
+                        </div>
+
+                        <!-- Property Tax -->
+                        <div
+                          class="flex items-center justify-between p-4 bg-slate-50 border border-slate-100 rounded-xl hover:bg-slate-100/50 transition-all"
+                        >
+                          <div class="flex items-center gap-4">
+                            <div
+                              class="w-11 h-11 rounded-xl bg-white shadow-sm flex items-center justify-center text-slate-500 text-lg border border-slate-100"
+                            >
+                              <i
+                                class="fa-solid fa-calculator text-slate-500"
+                              ></i>
+                            </div>
+                            <div
+                              class="flex flex-col text-xs font-bold text-slate-500 leading-tight"
+                            >
+                              <span>Property</span>
+                              <span>Tax</span>
+                            </div>
+                          </div>
+                          <span
+                            class="font-black text-title text-base md:text-lg text-right"
+                            id="summaryPropTax"
+                            >$0</span
+                          >
+                        </div>
+
+                        <!-- Homeowner's Insurance -->
+                        <div
+                          class="flex items-center justify-between p-4 bg-slate-50 border border-slate-100 rounded-xl hover:bg-slate-100/50 transition-all"
+                        >
+                          <div class="flex items-center gap-4">
+                            <div
+                              class="w-11 h-11 rounded-xl bg-white shadow-sm flex items-center justify-center text-slate-500 text-lg border border-slate-100"
+                            >
+                              <i
+                                class="fa-solid fa-shield-halved text-slate-500"
+                              ></i>
+                            </div>
+                            <div
+                              class="flex flex-col text-xs font-bold text-slate-500 leading-tight"
+                            >
+                              <span>Home</span>
+                              <span>Insurance</span>
+                            </div>
+                          </div>
+                          <span
+                            class="font-black text-title text-base md:text-lg text-right"
+                            id="summaryHomeIns"
+                            >$0</span
+                          >
+                        </div>
+
+                        <!-- PMI -->
+                        <div
+                          class="flex items-center justify-between p-4 bg-slate-50 border border-slate-100 rounded-xl hover:bg-slate-100/50 transition-all"
+                        >
+                          <div class="flex items-center gap-4">
+                            <div
+                              class="w-11 h-11 rounded-xl bg-white shadow-sm flex items-center justify-center text-slate-500 text-lg border border-slate-100"
+                            >
+                              <i
+                                class="fa-solid fa-file-invoice-dollar text-slate-500"
+                              ></i>
+                            </div>
+                            <div
+                              class="flex flex-col text-xs font-bold text-slate-500 leading-tight"
+                            >
+                              <span>PMI</span>
+                              <span>Amount</span>
+                            </div>
+                          </div>
+                          <span
+                            class="font-black text-title text-base md:text-lg text-right"
+                            id="summaryPmi"
+                            >$0</span
+                          >
+                        </div>
+
+                        <!-- HOA Fees -->
+                        <div
+                          class="flex items-center justify-between p-4 bg-slate-50 border border-slate-100 rounded-xl hover:bg-slate-100/50 transition-all"
+                        >
+                          <div class="flex items-center gap-4">
+                            <div
+                              class="w-11 h-11 rounded-xl bg-white shadow-sm flex items-center justify-center text-slate-500 text-lg border border-slate-100"
+                            >
+                              <i
+                                class="fa-solid fa-building text-slate-500"
+                              ></i>
+                            </div>
+                            <div
+                              class="flex flex-col text-xs font-bold text-slate-500 leading-tight"
+                            >
+                              <span>HOA</span>
+                              <span>Fees</span>
+                            </div>
+                          </div>
+                          <span
+                            class="font-black text-title text-base md:text-lg text-right"
+                            id="summaryHoa"
+                            >$0</span
+                          >
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Column 2 (Right): Recommended + Max Budgets -->
+                  <div class="flex flex-col gap-8">
+                    <!-- Recommended Budget -->
+                    <div
+                      class="bg-white border-2 border-primary/20 rounded-3xl p-8 pt-16 relative overflow-hidden group hover:border-primary/50 transition-all shadow-xl"
+                    >
+                      <div
+                        class="absolute top-0 right-0 bg-primary text-white px-6 py-2 rounded-bl-2xl text-xs font-black uppercase tracking-widest"
+                      >
+                        Recommended Budget
+                      </div>
+                      <div class="space-y-6 mt-4">
+                        <div
+                          class="flex justify-between items-end border-b pb-4"
+                        >
+                          <span class="text-slate-500 font-bold"
+                            >Price of home</span
+                          >
+                          <span
+                            class="text-3xl font-black text-title"
+                            id="recHomePrice"
+                            >$0</span
+                          >
+                        </div>
+                        <div
+                          class="flex justify-between items-end border-b pb-4"
+                        >
+                          <span class="text-slate-500 font-bold"
+                            >Monthly payment</span
+                          >
+                          <span
+                            class="text-2xl font-extrabold text-title"
+                            id="recMonthly"
+                            >$0</span
+                          >
+                        </div>
+                        <div class="flex justify-between items-end">
+                          <span class="text-slate-500 font-bold"
+                            >Est. closing costs</span
+                          >
+                          <span
+                            class="text-xl font-bold text-title"
+                            id="recClosing"
+                            >$0</span
+                          >
+                        </div>
+                        <p class="text-sm text-slate-500 leading-relaxed pt-4">
+                          Your recommended budget should be a comfortable fit
+                          within your overall finances. You should aim to keep
+                          housing expenses below 28% of your monthly gross
+                          income.
+                        </p>
+                      </div>
+                    </div>
+
+                    <!-- Max Purchase Budget -->
+                    <div
+                      class="bg-white border-2 border-slate-200 rounded-3xl p-8 pt-16 relative overflow-hidden hover:border-primary/20 transition-all shadow-lg"
+                    >
+                      <div
+                        class="absolute top-0 right-0 bg-title text-white px-6 py-2 rounded-bl-2xl text-xs font-black uppercase tracking-widest"
+                      >
+                        Max Purchase Budget
+                      </div>
+                      <div class="space-y-6 mt-4">
+                        <div
+                          class="flex justify-between items-end border-b pb-4"
+                        >
+                          <span class="text-slate-500 font-bold"
+                            >Price of home</span
+                          >
+                          <span
+                            class="text-3xl font-black text-title"
+                            id="maxHomePrice"
+                            >$0</span
+                          >
+                        </div>
+                        <div
+                          class="flex justify-between items-end border-b pb-4"
+                        >
+                          <span class="text-slate-500 font-bold"
+                            >Monthly payment</span
+                          >
+                          <span
+                            class="text-2xl font-extrabold text-title"
+                            id="maxMonthly"
+                            >$0</span
+                          >
+                        </div>
+                        <div class="flex justify-between items-end">
+                          <span class="text-slate-500 font-bold"
+                            >Est. closing costs</span
+                          >
+                          <span
+                            class="text-xl font-bold text-title"
+                            id="maxClosing"
+                            >$0</span
+                          >
+                        </div>
+                        <p class="text-sm text-slate-500 leading-relaxed pt-4">
+                          Your max purchase budget is the loan amount that
+                          lenders could probably give you based on what you’ve
+                          told us (about 43% of your total debts).
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div
+                  class="bg-slate-50 rounded-2xl p-8 flex flex-col md:flex-row items-center justify-between gap-6 mt-12"
+                >
+                  <div>
+                    <h4 class="text-xl font-extrabold text-title mb-2">
+                      Almost ready to start your property search?
+                    </h4>
+                    <p class="text-title text-sm">
+                      Getting prequalified helps you understand how much you can
+                      afford.
+                    </p>
+                  </div>
+                  <button
+                    onclick="location.reload()"
+                    class="bg-primary text-white px-10 py-4 rounded-xl font-bold hover:bg-primary-hover transition-all shadow-lg flex items-center gap-2"
+                  >
+                    Get started
+                    <svg
+                      class="w-5 h-5"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M14 5l7 7m0 0l-7 7m7-7H3"
+                      />
+                    </svg>
+                  </button>
+                </div>
+              </div>
+
+              <!-- Unlock Form Overlay -->
+              <div
+                id="results-unlock-overlay"
+                class="absolute inset-0 z-20 flex flex-col items-center justify-start md:justify-center bg-white/80 backdrop-blur-md transition-all duration-500 rounded-3xl overflow-y-auto py-12 px-4"
+              >
+                <div
+                  class="w-full max-w-lg bg-white rounded-3xl border border-slate-200 shadow-2xl p-6 md:p-8 relative flex flex-col gap-4 space-y-4"
+                >
+                  <!-- Accent top bar -->
+                  <div
+                    class="absolute top-0 left-0 right-0 h-2 bg-gradient-to-r from-primary to-primary-hover rounded-t-3xl"
+                    style="background-color: #5d5fe1"
+                  ></div>
+
+                  <!-- Icon and text -->
+                  <div class="text-center">
+                    <div
+                      class="inline-flex items-center justify-center w-16 h-16 bg-primary/10 text-primary rounded-2xl mb-4 animate-bounce"
+                    >
+                      <i class="fa-solid fa-lock text-3xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-extrabold text-title">
+                      Unlock Your Calculation
+                    </h3>
+                    <p class="text-slate-500 text-sm mt-2 max-w-md mx-auto">
+                      Enter your details below to instantly unlock your detailed
+                      breakdown and affordability results.
+                    </p>
+                  </div>
+
+                  <!-- Form inputs -->
+                  <form
+                    id="unlockForm"
+                    onsubmit="
+                      event.preventDefault();
+                      unlockResults();
+                    "
+                    class="space-y-4 text-left"
+                  >
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                      <div class="space-y-1">
+                        <label
+                          class="text-xs font-bold text-title uppercase tracking-wider"
+                          >First Name</label
+                        >
+                        <input
+                          type="text"
+                          id="firstName"
+                          placeholder="First name"
+                          onkeypress="return /[a-zA-Z\s]/.test(event.key);"
+                          oninput="
+                            this.value = this.value.replace(/[^a-zA-Z\s]/g, '')
+                          "
+                          class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary focus:bg-white transition-all font-semibold text-sm"
+                          required
+                        />
+                      </div>
+                      <div class="space-y-1">
+                        <label
+                          class="text-xs font-bold text-title uppercase tracking-wider"
+                          >Last Name</label
+                        >
+                        <input
+                          type="text"
+                          id="lastName"
+                          placeholder="Last name"
+                          onkeypress="return /[a-zA-Z\s]/.test(event.key);"
+                          oninput="
+                            this.value = this.value.replace(/[^a-zA-Z\s]/g, '')
+                          "
+                          class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary focus:bg-white transition-all font-semibold text-sm"
+                          required
+                        />
+                      </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                      <div class="space-y-1">
+                        <label
+                          class="text-xs font-bold text-title uppercase tracking-wider"
+                          >Email</label
+                        >
+                        <input
+                          type="email"
+                          id="email"
+                          placeholder="example@email.com"
+                          class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary focus:bg-white transition-all font-semibold text-sm"
+                          required
+                        />
+                      </div>
+                      <div class="space-y-1">
+                        <label
+                          class="text-xs font-bold text-title uppercase tracking-wider"
+                          >Phone Number</label
+                        >
+                        <input
+                          type="number"
+                          id="phoneNumber"
+                          placeholder="(000) 000-0000"
+                          class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary focus:bg-white transition-all font-semibold text-sm"
+                          required
+                        />
+                      </div>
+                    </div>
+
+                    <!-- Dropdown for suffix -->
+                    <div class="space-y-1">
+                      <label
+                        class="block text-xs font-bold text-title uppercase tracking-wider"
+                        >Select Suffix (optional)</label
+                      >
+                      <div
+                        class="relative custom-dropdown"
+                        data-placeholder="Select Suffix"
+                      >
+                        <button
+                          type="button"
+                          class="dropdown-trigger w-full bg-slate-50 border-2 border-slate-200 rounded-xl px-4 py-3 flex items-center justify-between focus:ring-2 focus:ring-primary transition-all text-slate-400 text-sm"
+                        >
+                          <span>Select Suffix</span>
+                          <svg
+                            class="w-4 h-4 transition-transform duration-300"
+                            fill="none"
+                            stroke="currentColor"
+                            viewBox="0 0 24 24"
+                          >
+                            <path
+                              stroke-linecap="round"
+                              stroke-linejoin="round"
+                              stroke-width="2"
+                              d="M19 9l-7 7-7-7"
+                            />
+                          </svg>
+                        </button>
+                        <div
+                          class="dropdown-menu hidden absolute top-full left-0 w-full mt-2 bg-w-color rounded-xl shadow-xl border border-slate-100 z-50 overflow-hidden text-sm"
+                        >
+                          <div
+                            class="dropdown-option px-4 py-2 hover:bg-primary/10 hover:text-primary cursor-pointer transition-colors"
+                            data-value="JR"
+                          >
+                            Jr.
+                          </div>
+                          <div
+                            class="dropdown-option px-4 py-2 hover:bg-primary/10 hover:text-primary cursor-pointer transition-colors"
+                            data-value="SR"
+                          >
+                            Sr.
+                          </div>
+                          <div
+                            class="dropdown-option px-4 py-2 hover:bg-primary/10 hover:text-primary cursor-pointer transition-colors"
+                            data-value="II"
+                          >
+                            II
+                          </div>
+                          <div
+                            class="dropdown-option px-4 py-2 hover:bg-primary/10 hover:text-primary cursor-pointer transition-colors"
+                            data-value="III"
+                          >
+                            III
+                          </div>
+                        </div>
+                        <input
+                          type="hidden"
+                          id="suffix"
+                          name="suffix"
+                          value=""
+                        />
+                      </div>
+                    </div>
+
+                    <div class="flex items-start gap-3 mt-4">
+                      <div class="relative flex items-center mt-0.5">
+                        <input
+                          type="checkbox"
+                          id="smsConsent"
+                          required
+                          class="peer h-5 w-5 cursor-pointer appearance-none rounded-md border border-slate-200 bg-w-color transition-all checked:border-primary checked:bg-primary"
+                        />
+                        <svg
+                          class="pointer-events-none absolute left-1/2 top-1/2 h-3.5 w-3.5 -translate-x-1/2 -translate-y-1/2 text-w-color opacity-0 transition-opacity peer-checked:opacity-100"
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-width="3"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            d="M5 13l4 4L19 7"
+                          />
+                        </svg>
+                      </div>
+                      <label
+                        for="smsConsent"
+                        class="text-xs text-slate-500 leading-relaxed cursor-pointer select-none"
+                      >
+                        I agree to receive text messages about HomeLoanNYC
+                        promotions. Data rates may apply. Reply STOP to
+                        unsubscribe.
+                      </label>
+                    </div>
+
+                    <button
+                      type="submit"
+                      class="w-full bg-primary text-white py-3.5 rounded-xl font-bold hover:bg-primary-hover transition-all shadow-lg shadow-primary/20 flex items-center justify-center gap-2 group mt-4 text-sm"
+                    >
+                      <i
+                        class="fa-solid fa-lock-open group-hover:scale-110 transition-transform"
+                      ></i>
+                      Unlock Calculation
+                    </button>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="text-w-color bg-primary py-20">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="grid sm:grid-cols-2 md:grid-cols-4 gap-5 mb-16">
+          <!-- Brand Column -->
+          <div
+            class="flex flex-col items-center space-y-2 text-title rounded-3xl"
+          >
+            <!-- Logo -->
+            <div class="w-50 h-50 rounded-3xl">
+              <a href="../src/index.html">
+                <img
+                  src="../dist/images/logo-2.png"
+                  alt="Logo"
+                  class="w-full h-full object-cover rounded-3xl"
+                />
+              </a>
+            </div>
+
+            <div class="flex items-center gap-3 pt-2 pb-6">
+              <a
+                href="#"
+                class="w-10 h-10 rounded-full bg-w-color/15 flex items-center justify-center text-w-color hover:bg-primary-hover transition-colors"
+              >
+                <i class="fa-brands fa-facebook text-2xl"></i>
+              </a>
+              <a
+                href="#"
+                class="w-10 h-10 rounded-full bg-w-color/15 flex items-center justify-center text-w-color hover:bg-primary-hover transition-colors"
+              >
+                <i class="fa-brands fa-instagram text-2xl"></i>
+              </a>
+              <a
+                href="#"
+                class="w-10 h-10 rounded-full bg-w-color/15 flex items-center justify-center text-w-color hover:bg-primary-hover transition-colors"
+              >
+                <i class="fa-brands fa-linkedin text-2xl"></i>
+              </a>
+              <a
+                href="#"
+                class="w-10 h-10 rounded-full bg-w-color/15 flex items-center justify-center text-w-color hover:bg-primary-hover transition-colors"
+              >
+                <i class="fa-brands fa-square-x-twitter text-2xl"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- Resources Column -->
+          <div class="text-center">
+            <h3
+              class="text-w-color font-bold text-lg mb-8 underline decoration-w-color decoration-3 underline-offset-[16px]"
+            >
+              Resources
+            </h3>
+            <ul class="space-y-4">
+              <li>
+                <a href="#" class="hover:text-title transition-colors">Rates</a>
+              </li>
+              <li>
+                <a href="#" class="hover:text-title transition-colors"
+                  >Get a quote</a
+                >
+              </li>
+              <li>
+                <a href="#" class="hover:text-title transition-colors"
+                  >Reviews</a
+                >
+              </li>
+              <li>
+                <a href="#" class="hover:text-title transition-colors"
+                  >Calculators</a
+                >
+              </li>
+              <li>
+                <a href="#" class="hover:text-title transition-colors">Blogs</a>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Legal Info Column -->
+          <div class="text-center">
+            <h3
+              class="text-w-color font-bold text-lg mb-8 underline decoration-w-color decoration-3 underline-offset-[16px]"
+            >
+              Legal info
+            </h3>
+            <ul class="space-y-4">
+              <li>
+                <a href="#" class="hover:text-title transition-colors"
+                  >Terms of use</a
+                >
+              </li>
+              <li>
+                <a href="#" class="hover:text-title transition-colors"
+                  >Disclosures and licenses</a
+                >
+              </li>
+              <li>
+                <a href="#" class="hover:text-title transition-colors"
+                  >Mortgage assistance</a
+                >
+              </li>
+              <li>
+                <a
+                  href="../src/policy.html"
+                  class="hover:text-title transition-colors"
+                  >Privacy policy</a
+                >
+              </li>
+              <li>
+                <a href="#" class="hover:text-title transition-colors"
+                  >Notice at collection</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <!-- Contact Column -->
+          <div class="flex flex-col items-center">
+            <h3
+              class="text-w-color font-bold text-lg mb-8 underline decoration-w-color decoration-3 underline-offset-[16px]"
+            >
+              Contact us
+            </h3>
+            <ul class="text-center space-y-6">
+              <li class="flex items-center gap-3">
+                <i
+                  class="fa-solid fa-location-dot w-6 h-6 text-w-color text-xl"
+                ></i>
+                <span>185 Wythe Ave, Suite A2<br />Brooklyn, NY 11249</span>
+              </li>
+
+              <li class="flex items-center gap-3">
+                <i
+                  class="fa-solid fa-envelope w-6 h-6 text-w-color text-xl"
+                ></i>
+
+                <a href="mailto:HomeLoanNYC.com" class="hover:text-title"
+                  >HomeLoanNYC.com</a
+                >
+              </li>
+
+              <li class="flex items-center gap-3">
+                <i class="fa-solid fa-phone w-6 h-6 text-w-color text-xl"></i>
+                <a href="tel:123456789" class="hover:text-title"
+                  >(123) 456-789</a
+                >
+              </li>
+              <li class="flex items-center gap-3">
+                <i
+                  class="fa-solid fa-mobile-screen-button w-6 h-6 text-w-color text-xl"
+                ></i>
+                <a href="tel:8442217647" class="hover:text-title"
+                  >Toll Free: (844) 221-7647</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div
+          class="pt-10 border-t border-w-color flex flex-wrap justify-between items-center gap-6 text-sm"
+        >
+          <div class="flex items-center gap-2">
+            Made by
+            <a
+              href="https://hossainuddin.netlify.app/"
+              class="underline hover:text-title transition-colors"
+              >Hossain.Dev</a
+            >
+          </div>
+          <div class="flex gap-6 flex-wrap">
+            <a href="#" class="hover:text-title transition-colors"
+              >ADA Accessibility Statement</a
+            >
+            <a href="#" class="hover:text-title transition-colors"
+              >Privacy Policy</a
+            >
+            <a href="#" class="hover:text-title transition-colors"
+              >Government & Licensing Disclosures</a
+            >
+            <span>Copyright © HomeLoanNCY</span>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="../dist/js/affordabillity.js"></script>
+    <script src="../dist/js/nav.js"></script>
+    <script src="../dist/js/theme.js"></script>
+    <script src="../dist/js/customDinput.js"></script>
+  </body>
+</html>

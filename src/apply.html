@@ -181,9 +181,43 @@
             About us</a
           >
 
-          <a href="#" class="hover:text-primary transition-colors"
-            >Calculators</a
-          >
+          <div class="relative">
+            <button
+              id="calculators-button"
+              class="flex items-center gap-1 hover:text-primary transition-colors py-2"
+            >
+              Calculators
+              <svg
+                class="w-4 h-4 opacity-50 transition-transform duration-300"
+                id="calculators-arrow"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M19 9l-7 7-7-7"
+                ></path>
+              </svg>
+            </button>
+            <div
+              id="calculators-dropdown"
+              class="hidden absolute top-full left-0 mt-4 min-w-[240px] bg-w-color rounded-2xl shadow-xl border border-slate-200 overflow-hidden z-50 py-2"
+            >
+              <a
+                href="../src/quote.html"
+                class="block px-6 py-3 hover:bg-w-color hover:text-primary transition-colors"
+                >Mortgage calculator</a
+              >
+              <a
+                href="#"
+                class="block px-6 py-3 hover:bg-w-color hover:text-primary transition-colors"
+                >Affordability calculator</a
+              >
+            </div>
+          </div>
 
           <a
             href="../src/blog.html"
@@ -359,7 +393,41 @@
           <a href="../src/about.html" class="py-3 border-b border-w-color"
             >About us</a
           >
-          <a href="#" class="py-3 border-b border-w-color">Calculators</a>
+          <!-- Mobile Calculators Accordion -->
+          <div class="border-b border-w-color">
+            <button
+              id="mobile-calculators-btn"
+              class="w-full py-3 flex justify-between items-center text-left"
+            >
+              Calculators
+              <svg
+                id="mobile-calculators-arrow"
+                class="w-4 h-4 opacity-50 transition-transform"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M19 9l-7 7-7-7"
+                ></path>
+              </svg>
+            </button>
+            <div id="mobile-calculators-content" class="hidden pb-4 pl-4 space-y-3">
+              <a
+                href="../src/quote.html"
+                class="block py-2 text-sm opacity-80 hover:text-primary"
+                >Mortgage calculator</a
+              >
+              <a
+                href="#"
+                class="block py-2 text-sm opacity-80 hover:text-primary"
+                >Affordability calculator</a
+              >
+            </div>
+          </div>
           <a href="#" class="py-3 border-b border-w-color">Blogs</a>
 
           <!-- Mobile Join Us Accordion -->
@@ -545,19 +613,19 @@
                       class="dropdown-menu hidden absolute top-full left-0 w-full mt-2 bg-w-color rounded-2xl shadow-xl border border-slate-100 z-50 overflow-hidden"
                     >
                       <div
-                        class="dropdown-option px-5 py-3 hover:bg-emerald-50 hover:text-primary cursor-pointer transition-colors"
+                        class="dropdown-option px-5 py-3 hover:bg-primary/10 hover:text-primary cursor-pointer transition-colors"
                         data-value="Single"
                       >
                         Single
                       </div>
                       <div
-                        class="dropdown-option px-5 py-3 hover:bg-emerald-50 hover:text-primary cursor-pointer transition-colors"
+                        class="dropdown-option px-5 py-3 hover:bg-primary/10 hover:text-primary cursor-pointer transition-colors"
                         data-value="Married"
                       >
                         Married
                       </div>
                       <div
-                        class="dropdown-option px-5 py-3 hover:bg-emerald-50 hover:text-primary cursor-pointer transition-colors"
+                        class="dropdown-option px-5 py-3 hover:bg-primary/10 hover:text-primary cursor-pointer transition-colors"
                         data-value="Divorced"
                       >
                         Divorced
@@ -646,25 +714,25 @@
                       class="dropdown-menu hidden absolute top-full left-0 w-full mt-2 bg-w-color rounded-2xl shadow-xl border border-slate-100 z-50 overflow-hidden"
                     >
                       <div
-                        class="dropdown-option px-5 py-3 hover:bg-emerald-50 hover:text-primary cursor-pointer transition-colors"
+                        class="dropdown-option px-5 py-3 hover:bg-primary/10 hover:text-primary cursor-pointer transition-colors"
                         data-value="Full Time"
                       >
                         Full Time
                       </div>
                       <div
-                        class="dropdown-option px-5 py-3 hover:bg-emerald-50 hover:text-primary cursor-pointer transition-colors"
+                        class="dropdown-option px-5 py-3 hover:bg-primary/10 hover:text-primary cursor-pointer transition-colors"
                         data-value="Part Time"
                       >
                         Part Time
                       </div>
                       <div
-                        class="dropdown-option px-5 py-3 hover:bg-emerald-50 hover:text-primary cursor-pointer transition-colors"
+                        class="dropdown-option px-5 py-3 hover:bg-primary/10 hover:text-primary cursor-pointer transition-colors"
                         data-value="Self Employed"
                       >
                         Self Employed
                       </div>
                       <div
-                        class="dropdown-option px-5 py-3 hover:bg-emerald-50 hover:text-primary cursor-pointer transition-colors"
+                        class="dropdown-option px-5 py-3 hover:bg-primary/10 hover:text-primary cursor-pointer transition-colors"
                         data-value="Contract"
                       >
                         Contract
@@ -757,25 +825,25 @@
                       class="dropdown-menu hidden absolute top-full left-0 w-full mt-2 bg-w-color rounded-2xl shadow-xl border border-slate-100 z-50 overflow-hidden"
                     >
                       <div
-                        class="dropdown-option px-5 py-3 hover:bg-emerald-50 hover:text-primary cursor-pointer transition-colors"
+                        class="dropdown-option px-5 py-3 hover:bg-primary/10 hover:text-primary cursor-pointer transition-colors"
                         data-value="Single Family Home"
                       >
                         Single Family Home
                       </div>
                       <div
-                        class="dropdown-option px-5 py-3 hover:bg-emerald-50 hover:text-primary cursor-pointer transition-colors"
+                        class="dropdown-option px-5 py-3 hover:bg-primary/10 hover:text-primary cursor-pointer transition-colors"
                         data-value="Condo"
                       >
                         Condo
                       </div>
                       <div
-                        class="dropdown-option px-5 py-3 hover:bg-emerald-50 hover:text-primary cursor-pointer transition-colors"
+                        class="dropdown-option px-5 py-3 hover:bg-primary/10 hover:text-primary cursor-pointer transition-colors"
                         data-value="Townhouse"
                       >
                         Townhouse
                       </div>
                       <div
-                        class="dropdown-option px-5 py-3 hover:bg-emerald-50 hover:text-primary cursor-pointer transition-colors"
+                        class="dropdown-option px-5 py-3 hover:bg-primary/10 hover:text-primary cursor-pointer transition-colors"
                         data-value="Multi Family"
                       >
                         Multi Family
@@ -1034,7 +1102,7 @@
         </div>
       </div>
     </footer>
-
+    <script src="../dist/js/customDinput.js"></script>
     <script src="../dist/js/nav.js"></script>
     <script src="../dist/js/theme.js"></script>
   </body>
