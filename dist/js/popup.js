@@ -167,6 +167,12 @@ function updateWizardUI() {
   const pct = progressMap[currentWizardStep] || 0;
   document.getElementById("wizard-progress-bar").style.width = `${pct}%`;
   document.getElementById("wizard-progress-text").innerText = `${pct}%`;
+
+  // Scroll wizard container to top of viewport
+  const stepsContainer = document.querySelector("#wizard-modal .flex-1.overflow-y-auto");
+  if (stepsContainer) {
+    stepsContainer.scrollTop = 0;
+  }
 }
 
 // Select residency type card (Step 1)
@@ -271,9 +277,9 @@ function submitWizardForm(event) {
   renderWizardResults();
 
   // Scroll wizard container to top
-  const stepsWrapper = document.getElementById("wizard-step-10");
-  if (stepsWrapper) {
-    stepsWrapper.scrollIntoView({ behavior: "smooth" });
+  const stepsContainer = document.querySelector("#wizard-modal .flex-1.overflow-y-auto");
+  if (stepsContainer) {
+    stepsContainer.scrollTop = 0;
   }
 
   nextWizardStep();
