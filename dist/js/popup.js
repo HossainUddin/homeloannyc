@@ -2,6 +2,7 @@
 
 // Global Wizard State
 let currentWizardStep = 1;
+let minWizardStep = 1;
 let wizardData = {
   intent: "purchase", // "purchase" or "refinance"
   residencyType: "",
@@ -44,51 +45,80 @@ const zipDatabase = [
   { zip: "11230", city: "Brooklyn", state: "NY" }
 ];
 
-// Open Wizard Modal
-function openWizard(intent) {
-  wizardData.intent = intent;
-  currentWizardStep = 1;
-  
-  // Reset fields to defaults
-  document.getElementById("wizard-info-form").reset();
-  
-  // Set up step 6 values based on intent
+// Set up Step 6 values based on intent
+function setupStep6ForIntent(intent) {
   const range6 = document.getElementById("wizard-range-6");
   const minLabel = document.getElementById("wizard-range-6-min-label");
   const maxLabel = document.getElementById("wizard-range-6-max-label");
   const dpPctContainer = document.getElementById("wizard-dp-pct-container");
   const step6Title = document.getElementById("wizard-step-6-title");
 
+  if (!range6) return;
+
   if (intent === "purchase") {
-    step6Title.innerText = "Estimated down payment";
+    if (step6Title) step6Title.innerText = "Estimated down payment";
     range6.min = 10000;
     range6.max = 400000;
     range6.step = 5000;
     range6.value = 50000;
-    minLabel.innerText = "$10K";
-    maxLabel.innerText = "$400K+";
-    dpPctContainer.classList.remove("hidden");
+    if (minLabel) minLabel.innerText = "$10K";
+    if (maxLabel) maxLabel.innerText = "$400K+";
+    if (dpPctContainer) dpPctContainer.classList.remove("hidden");
   } else {
-    step6Title.innerText = "Current mortgage balance";
+    if (step6Title) step6Title.innerText = "Current mortgage balance";
     range6.min = 50000;
     range6.max = 1500000;
     range6.step = 10000;
     range6.value = 300000;
-    minLabel.innerText = "$50K";
-    maxLabel.innerText = "$1.5M+";
-    dpPctContainer.classList.add("hidden");
+    if (minLabel) minLabel.innerText = "$50K";
+    if (maxLabel) maxLabel.innerText = "$1.5M+";
+    if (dpPctContainer) dpPctContainer.classList.add("hidden");
+  }
+}
+
+// Select intent (Step 0)
+function selectIntent(intent) {
+  wizardData.intent = intent;
+  setupStep6ForIntent(intent);
+  nextWizardStep();
+}
+
+// Open Wizard Modal
+function openWizard(intent) {
+  // Reset fields to defaults
+  document.getElementById("wizard-info-form").reset();
+  
+  const step0 = document.getElementById("wizard-step-0");
+  if (step0 && (!intent || intent === "choose")) {
+    wizardData.intent = "";
+    currentWizardStep = 0;
+    minWizardStep = 0;
+  } else {
+    wizardData.intent = intent || "purchase";
+    currentWizardStep = 1;
+    minWizardStep = 1;
+  }
+
+  if (wizardData.intent) {
+    setupStep6ForIntent(wizardData.intent);
   }
 
   // Reset Zip Code
   const zipInput = document.getElementById("wizard-zip-input");
-  zipInput.value = "";
-  document.getElementById("wizard-zip-next-btn").disabled = true;
+  if (zipInput) zipInput.value = "";
+  const zipNextBtn = document.getElementById("wizard-zip-next-btn");
+  if (zipNextBtn) zipNextBtn.disabled = true;
 
   // Sync inputs
-  updateSliderProgress(document.getElementById("wizard-range-5"));
-  updateSliderProgress(range6);
-  updateSliderProgress(document.getElementById("wizard-range-7"));
-  updateSliderProgress(document.getElementById("wizard-range-8"));
+  const range5 = document.getElementById("wizard-range-5");
+  const range6 = document.getElementById("wizard-range-6");
+  const range7 = document.getElementById("wizard-range-7");
+  const range8 = document.getElementById("wizard-range-8");
+
+  if (range5) updateSliderProgress(range5);
+  if (range6) updateSliderProgress(range6);
+  if (range7) updateSliderProgress(range7);
+  if (range8) updateSliderProgress(range8);
   
   syncSliderValue(5);
   syncSliderValue(6);
@@ -118,7 +148,7 @@ function nextWizardStep() {
 
 // Navigate to Previous Step
 function prevWizardStep() {
-  if (currentWizardStep > 1) {
+  if (currentWizardStep > minWizardStep) {
     currentWizardStep--;
     updateWizardUI();
   }
@@ -139,15 +169,18 @@ function updateWizardUI() {
 
   // Handle Back Button visibility
   const prevBtn = document.getElementById("wizard-prev-btn");
-  if (currentWizardStep > 1 && currentWizardStep < 10) {
-    prevBtn.classList.remove("hidden");
-  } else {
-    prevBtn.classList.add("hidden");
+  if (prevBtn) {
+    if (currentWizardStep > minWizardStep && currentWizardStep < 10) {
+      prevBtn.classList.remove("hidden");
+    } else {
+      prevBtn.classList.add("hidden");
+    }
   }
 
   // Calculate and update progress percentage
   // Logical progress mappings
   const progressMap = {
+    0: 5,
     1: 10,
     2: 20,
     3: 30,
@@ -161,8 +194,10 @@ function updateWizardUI() {
   };
   
   const pct = progressMap[currentWizardStep] || 0;
-  document.getElementById("wizard-progress-bar").style.width = `${pct}%`;
-  document.getElementById("wizard-progress-text").innerText = `${pct}%`;
+  const progressBar = document.getElementById("wizard-progress-bar");
+  if (progressBar) progressBar.style.width = `${pct}%`;
+  const progressText = document.getElementById("wizard-progress-text");
+  if (progressText) progressText.innerText = `${pct}%`;
 
   // Scroll wizard container to top of viewport
   const stepsContainer = document.querySelector("#wizard-modal .flex-1.overflow-y-auto");
@@ -446,6 +481,12 @@ document.addEventListener("DOMContentLoaded", () => {
   if (btnRefinance) {
     btnRefinance.addEventListener("click", () => openWizard("refinance"));
   }
+
+  // Bind class-based triggers for fixed_rate.html
+  const openWizardBtns = document.querySelectorAll(".btn-open-wizard");
+  openWizardBtns.forEach(btn => {
+    btn.addEventListener("click", () => openWizard("choose"));
+  });
 
   // Setup slider listeners
   for (let i = 5; i <= 8; i++) {

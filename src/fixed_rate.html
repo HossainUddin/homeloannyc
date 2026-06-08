@@ -32,6 +32,7 @@
       type="text/css"
       href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css"
     />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <style>
       body {
         font-family: "Plus Jakarta Sans", sans-serif;
@@ -433,8 +434,8 @@
           </p>
 
           <a
-            href="#"
-            class="w-full sm:w-fit inline-block px-10 py-4 rounded-full bg-primary text-w-color font-bold text-sm hover:bg-primary-hover transition-all shadow-lg shadow-primary/20"
+            href="javascript:void(0)"
+            class="btn-open-wizard w-full sm:w-fit inline-block px-10 py-4 rounded-full bg-primary text-w-color font-bold text-sm hover:bg-primary-hover transition-all shadow-lg shadow-primary/20"
           >
             Get a free quote
           </a>
@@ -500,8 +501,8 @@
         </ul>
 
         <a
-          href="#"
-          class="w-full text-center inline-block px-10 py-4 my-6 rounded-full bg-primary text-w-color font-bold text-sm hover:bg-primary-hover transition-all shadow-lg shadow-primary/20"
+          href="javascript:void(0)"
+          class="btn-open-wizard w-full text-center inline-block px-10 py-4 my-6 rounded-full bg-primary text-w-color font-bold text-sm hover:bg-primary-hover transition-all shadow-lg shadow-primary/20"
         >
           Get a quote
         </a>
@@ -520,8 +521,8 @@
             Take your first step towards your home loan journey
           </h3>
           <a
-            href="#"
-            class="w-full sm:w-fit inline-block text-center px-10 py-4 mt-10 rounded-full bg-primary text-w-color font-bold text-xl hover:bg-primary-hover transition-all shadow-lg shadow-primary/20"
+            href="javascript:void(0)"
+            class="btn-open-wizard w-full sm:w-fit inline-block text-center px-10 py-4 mt-10 rounded-full bg-primary text-w-color font-bold text-xl hover:bg-primary-hover transition-all shadow-lg shadow-primary/20"
           >
             Get a quote
           </a>
@@ -731,7 +732,1039 @@
       </div>
     </footer>
 
+    <!-- Multi-step Wizard Modal -->
+    <div
+      id="wizard-modal"
+      class="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm hidden p-4"
+    >
+      <div
+        class="relative w-full max-w-4xl bg-white rounded-3xl shadow-2xl flex flex-col justify-between overflow-hidden min-h-[450px] md:min-h-[600px] max-h-[90vh] md:max-h-none border border-slate-200 animate-in fade-in zoom-in-95 duration-200"
+      >
+        <!-- Header Section -->
+        <div class="relative h-12 w-full">
+          <!-- Back button -->
+          <button
+            id="wizard-prev-btn"
+            onclick="prevWizardStep()"
+            class="absolute left-6 top-6 w-10 h-10 flex items-center justify-center rounded-full border border-slate-200 hover:bg-slate-50 text-slate-500 hover:text-slate-700 transition-all cursor-pointer z-10 hidden"
+            aria-label="Previous step"
+          >
+            <i class="fa-solid fa-arrow-left"></i>
+          </button>
+
+          <!-- Progress Bar -->
+          <div class="absolute top-0 left-0 right-0 h-2 bg-slate-100">
+            <div
+              id="wizard-progress-bar"
+              class="h-full bg-primary transition-all duration-300 w-0"
+            ></div>
+          </div>
+          <span
+            id="wizard-progress-text"
+            class="absolute top-4 left-1/2 -translate-x-1/2 text-xs font-bold text-slate-400"
+            >0%</span
+          >
+
+          <!-- Close button -->
+          <button
+            onclick="closeWizard()"
+            class="absolute right-6 top-6 w-10 h-10 flex items-center justify-center rounded-full border border-slate-200 hover:bg-slate-50 text-slate-500 hover:text-slate-700 transition-all cursor-pointer z-10"
+            aria-label="Close modal"
+          >
+            <i class="fa-solid fa-xmark"></i>
+          </button>
+        </div>
+
+        <!-- Steps Wrapper -->
+        <div
+          class="flex-1 px-4 md:px-12 pt-12 md:pt-16 pb-8 flex flex-col justify-start md:justify-center overflow-y-auto"
+        >
+          <!-- Step 0: Choose Intent -->
+          <div
+            id="wizard-step-0"
+            class="wizard-step w-full max-w-2xl mx-auto flex flex-col items-center"
+          >
+            <h2
+              class="text-2xl md:text-3xl font-extrabold text-title text-center mb-8"
+            >
+              Are you purchasing or refinancing?
+            </h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 w-full">
+              <div
+                onclick="selectIntent('purchase')"
+                class="group p-6 bg-white border border-slate-200 rounded-2xl flex flex-col items-center text-center cursor-pointer hover:border-primary hover:shadow-lg transition-all"
+              >
+                <div
+                  class="w-16 h-16 rounded-2xl bg-primary/10 text-primary flex items-center justify-center mb-4 text-3xl group-hover:scale-110 transition-transform"
+                >
+                  <i class="fa-solid fa-house-chimney"></i>
+                </div>
+                <span class="font-bold text-title">I'm purchasing</span>
+              </div>
+              <div
+                onclick="selectIntent('refinance')"
+                class="group p-6 bg-white border border-slate-200 rounded-2xl flex flex-col items-center text-center cursor-pointer hover:border-primary hover:shadow-lg transition-all"
+              >
+                <div
+                  class="w-16 h-16 rounded-2xl bg-primary/10 text-primary flex items-center justify-center mb-4 text-3xl group-hover:scale-110 transition-transform"
+                >
+                  <i class="fa-solid fa-arrows-rotate"></i>
+                </div>
+                <span class="font-bold text-title">I'm refinancing</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Step 1: Residency Type -->
+          <div
+            id="wizard-step-1"
+            class="wizard-step w-full max-w-2xl mx-auto flex flex-col items-center"
+          >
+            <h2
+              class="text-2xl md:text-3xl font-extrabold text-title text-center mb-8"
+            >
+              What is the residency type?
+            </h2>
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 w-full">
+              <div
+                onclick="selectResidency('Primary Home')"
+                class="group p-6 bg-white border border-slate-200 rounded-2xl flex flex-col items-center text-center cursor-pointer hover:border-primary hover:shadow-lg transition-all"
+              >
+                <div
+                  class="w-16 h-16 rounded-2xl bg-primary/10 text-primary flex items-center justify-center mb-4 text-3xl group-hover:scale-110 transition-transform"
+                >
+                  <i class="fa-solid fa-house"></i>
+                </div>
+                <span class="font-bold text-title">Primary Home</span>
+              </div>
+              <div
+                onclick="selectResidency('Second Home')"
+                class="group p-6 bg-white border border-slate-200 rounded-2xl flex flex-col items-center text-center cursor-pointer hover:border-primary hover:shadow-lg transition-all"
+              >
+                <div
+                  class="w-16 h-16 rounded-2xl bg-primary/10 text-primary flex items-center justify-center mb-4 text-3xl group-hover:scale-110 transition-transform"
+                >
+                  <i class="fa-solid fa-umbrella-beach"></i>
+                </div>
+                <span class="font-bold text-title">Second Home</span>
+              </div>
+              <div
+                onclick="selectResidency('Rental Home')"
+                class="group p-6 bg-white border border-slate-200 rounded-2xl flex flex-col items-center text-center cursor-pointer hover:border-primary hover:shadow-lg transition-all"
+              >
+                <div
+                  class="w-16 h-16 rounded-2xl bg-primary/10 text-primary flex items-center justify-center mb-4 text-3xl group-hover:scale-110 transition-transform"
+                >
+                  <i class="fa-solid fa-house-laptop"></i>
+                </div>
+                <span class="font-bold text-title">Rental Home</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Step 2: Decision Process -->
+          <div
+            id="wizard-step-2"
+            class="wizard-step w-full max-w-3xl mx-auto hidden"
+          >
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+              <div>
+                <div
+                  class="w-16 h-16 rounded-2xl bg-primary/10 text-primary flex items-center justify-center mb-4 text-3xl"
+                >
+                  <i class="fa-solid fa-hourglass-half"></i>
+                </div>
+                <h2
+                  class="text-2xl md:text-3xl font-extrabold text-title leading-snug text-left"
+                >
+                  Where are you in the decision process?
+                </h2>
+              </div>
+              <div class="space-y-4">
+                <button
+                  onclick="selectDecision('Considering loan offers now')"
+                  class="w-full p-4 border border-slate-200 rounded-xl flex items-center justify-between hover:bg-slate-50 transition-all font-bold text-title text-left group"
+                >
+                  <span>Considering loan offers now</span>
+                  <i
+                    class="fa-solid fa-chevron-right text-slate-400 group-hover:text-primary transition-colors"
+                  ></i>
+                </button>
+                <button
+                  onclick="selectDecision('30 days out')"
+                  class="w-full p-4 border border-slate-200 rounded-xl flex items-center justify-between hover:bg-slate-50 transition-all font-bold text-title text-left group"
+                >
+                  <span>30 days out</span>
+                  <i
+                    class="fa-solid fa-chevron-right text-slate-400 group-hover:text-primary transition-colors"
+                  ></i>
+                </button>
+                <button
+                  onclick="selectDecision('2-4 months out')"
+                  class="w-full p-4 border border-slate-200 rounded-xl flex items-center justify-between hover:bg-slate-50 transition-all font-bold text-title text-left group"
+                >
+                  <span>2-4 months out</span>
+                  <i
+                    class="fa-solid fa-chevron-right text-slate-400 group-hover:text-primary transition-colors"
+                  ></i>
+                </button>
+                <button
+                  onclick="selectDecision('Researching Options')"
+                  class="w-full p-4 border border-slate-200 rounded-xl flex items-center justify-between hover:bg-slate-50 transition-all font-bold text-title text-left group"
+                >
+                  <span>Researching Options</span>
+                  <i
+                    class="fa-solid fa-chevron-right text-slate-400 group-hover:text-primary transition-colors"
+                  ></i>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Step 3: Property Type -->
+          <div
+            id="wizard-step-3"
+            class="wizard-step w-full max-w-3xl mx-auto hidden flex flex-col items-center"
+          >
+            <h2
+              class="text-2xl md:text-3xl font-extrabold text-title text-center mb-8"
+            >
+              Great! What is the property type?
+            </h2>
+            <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 w-full">
+              <div
+                onclick="selectPropertyType('Single Family Home')"
+                class="group p-4 bg-white border border-slate-200 rounded-2xl flex flex-col items-center text-center cursor-pointer hover:border-primary hover:shadow-lg transition-all justify-center min-h-[140px]"
+              >
+                <div
+                  class="w-12 h-12 rounded-xl bg-primary/10 text-primary flex items-center justify-center mb-2 text-2xl group-hover:scale-110 transition-transform"
+                >
+                  <i class="fa-solid fa-house-chimney"></i>
+                </div>
+                <span class="font-bold text-sm text-title"
+                  >Single Family Home</span
+                >
+              </div>
+              <div
+                onclick="selectPropertyType('Townhome')"
+                class="group p-4 bg-white border border-slate-200 rounded-2xl flex flex-col items-center text-center cursor-pointer hover:border-primary hover:shadow-lg transition-all justify-center min-h-[140px]"
+              >
+                <div
+                  class="w-12 h-12 rounded-xl bg-primary/10 text-primary flex items-center justify-center mb-2 text-2xl group-hover:scale-110 transition-transform"
+                >
+                  <i class="fa-solid fa-house-flag"></i>
+                </div>
+                <span class="font-bold text-sm text-title">Townhome</span>
+              </div>
+              <div
+                onclick="selectPropertyType('Condo')"
+                class="group p-4 bg-white border border-slate-200 rounded-2xl flex flex-col items-center text-center cursor-pointer hover:border-primary hover:shadow-lg transition-all justify-center min-h-[140px]"
+              >
+                <div
+                  class="w-12 h-12 rounded-xl bg-primary/10 text-primary flex items-center justify-center mb-2 text-2xl group-hover:scale-110 transition-transform"
+                >
+                  <i class="fa-solid fa-building"></i>
+                </div>
+                <span class="font-bold text-sm text-title">Condo</span>
+              </div>
+              <div
+                onclick="selectPropertyType('Multi Unit Home')"
+                class="group p-4 bg-white border border-slate-200 rounded-2xl flex flex-col items-center text-center cursor-pointer hover:border-primary hover:shadow-lg transition-all justify-center min-h-[140px]"
+              >
+                <div
+                  class="w-12 h-12 rounded-xl bg-primary/10 text-primary flex items-center justify-center mb-2 text-2xl group-hover:scale-110 transition-transform"
+                >
+                  <i class="fa-solid fa-building-user"></i>
+                </div>
+                <span class="font-bold text-sm text-title"
+                  >Multi Unit Home</span
+                >
+              </div>
+            </div>
+          </div>
+
+          <!-- Step 4: ZIP Code -->
+          <div
+            id="wizard-step-4"
+            class="wizard-step w-full max-w-3xl mx-auto hidden"
+          >
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+              <div>
+                <div
+                  class="w-16 h-16 rounded-2xl bg-primary/10 text-primary flex items-center justify-center mb-4 text-3xl"
+                >
+                  <i class="fa-solid fa-map-location-dot"></i>
+                </div>
+                <h2
+                  class="text-2xl md:text-3xl font-extrabold text-title leading-snug text-left"
+                >
+                  What is the state & zip code of property?
+                </h2>
+              </div>
+              <div>
+                <div class="relative w-full">
+                  <label
+                    class="block text-xs font-bold text-slate-400 uppercase mb-1"
+                    >Enter state & ZIP code</label
+                  >
+                  <input
+                    type="text"
+                    id="wizard-zip-input"
+                    autocomplete="off"
+                    placeholder="e.g. 10001"
+                    class="w-full px-5 py-4 border-2 border-slate-200 rounded-2xl focus:outline-none focus:border-primary transition-all font-semibold text-title"
+                  />
+                  <div
+                    id="wizard-zip-suggestions"
+                    class="absolute left-0 right-0 mt-1 bg-white border border-slate-200 rounded-2xl shadow-xl z-50 hidden max-h-48 overflow-y-auto"
+                  ></div>
+                </div>
+                <button
+                  id="wizard-zip-next-btn"
+                  disabled
+                  onclick="nextWizardStep()"
+                  class="w-full mt-6 bg-primary text-white py-4 rounded-xl font-bold hover:bg-primary-hover transition-all disabled:opacity-50 disabled:cursor-not-allowed"
+                >
+                  Next
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Step 5: Property Value -->
+          <div
+            id="wizard-step-5"
+            class="wizard-step w-full max-w-xl mx-auto hidden flex flex-col items-center"
+          >
+            <h2
+              class="text-2xl md:text-3xl font-extrabold text-title text-center mb-6"
+            >
+              The estimated property value
+            </h2>
+
+            <div
+              class="w-full max-w-md bg-slate-50 border border-slate-200 rounded-2xl px-5 py-4 mb-6 flex items-center justify-center text-center"
+            >
+              <span
+                class="text-xl font-black text-title"
+                id="wizard-val-display-5"
+                >$450,000</span
+              >
+            </div>
+
+            <div class="w-full max-w-md px-2">
+              <input
+                type="range"
+                id="wizard-range-5"
+                min="100000"
+                max="2000000"
+                step="10000"
+                value="450000"
+                class="wizard-slider mb-4"
+              />
+              <div
+                class="flex justify-between text-xs font-bold text-slate-400"
+              >
+                <span>$100K</span>
+                <span>$2M+</span>
+              </div>
+            </div>
+
+            <button
+              onclick="nextWizardStep()"
+              class="mt-8 bg-primary text-white px-12 py-4 rounded-full font-bold hover:bg-primary-hover transition-all"
+            >
+              Next
+            </button>
+          </div>
+
+          <!-- Step 6: Down Payment / Loan Balance -->
+          <div
+            id="wizard-step-6"
+            class="wizard-step w-full max-w-xl mx-auto hidden flex flex-col items-center"
+          >
+            <h2
+              id="wizard-step-6-title"
+              class="text-2xl md:text-3xl font-extrabold text-title text-center mb-2"
+            >
+              Estimated down payment
+            </h2>
+
+            <div
+              class="w-full max-w-md bg-slate-50 border border-slate-200 rounded-2xl px-5 py-4 mb-2 flex items-center justify-center text-center"
+            >
+              <span
+                class="text-xl font-black text-title"
+                id="wizard-val-display-6"
+                >$50,000</span
+              >
+            </div>
+
+            <!-- Percentage overlay for purchase mode -->
+            <div
+              id="wizard-dp-pct-container"
+              class="text-xs font-bold text-slate-500 mb-6"
+            >
+              Down Payment: 11%
+            </div>
+
+            <div class="w-full max-w-md px-2">
+              <input
+                type="range"
+                id="wizard-range-6"
+                min="10000"
+                max="400000"
+                step="5000"
+                value="50000"
+                class="wizard-slider mb-4"
+              />
+              <div
+                class="flex justify-between text-xs font-bold text-slate-400"
+              >
+                <span id="wizard-range-6-min-label">$10K</span>
+                <span id="wizard-range-6-max-label">$400K+</span>
+              </div>
+            </div>
+
+            <button
+              onclick="nextWizardStep()"
+              class="mt-8 bg-primary text-white px-12 py-4 rounded-full font-bold hover:bg-primary-hover transition-all"
+            >
+              Next
+            </button>
+          </div>
+
+          <!-- Step 7: Annual Income -->
+          <div
+            id="wizard-step-7"
+            class="wizard-step w-full max-w-xl mx-auto hidden flex flex-col items-center"
+          >
+            <h2
+              class="text-2xl md:text-3xl font-extrabold text-title text-center mb-6"
+            >
+              Annual Household Income
+            </h2>
+
+            <div
+              class="w-full max-w-md bg-slate-50 border border-slate-200 rounded-2xl px-5 py-4 mb-6 flex items-center justify-center text-center"
+            >
+              <span
+                class="text-xl font-black text-title"
+                id="wizard-val-display-7"
+                >$215,000</span
+              >
+            </div>
+
+            <div class="w-full max-w-md px-2">
+              <input
+                type="range"
+                id="wizard-range-7"
+                min="30000"
+                max="400000"
+                step="5000"
+                value="215000"
+                class="wizard-slider mb-4"
+              />
+              <div
+                class="flex justify-between text-xs font-bold text-slate-400"
+              >
+                <span>$30K</span>
+                <span>$400K+</span>
+              </div>
+            </div>
+
+            <button
+              onclick="nextWizardStep()"
+              class="mt-8 bg-primary text-white px-12 py-4 rounded-full font-bold hover:bg-primary-hover transition-all"
+            >
+              Next
+            </button>
+          </div>
+
+          <!-- Step 8: Credit Score -->
+          <div
+            id="wizard-step-8"
+            class="wizard-step w-full max-w-xl mx-auto hidden flex flex-col items-center"
+          >
+            <h2
+              class="text-2xl md:text-3xl font-extrabold text-title text-center mb-6"
+            >
+              Estimated Credit Score
+            </h2>
+
+            <div
+              class="w-full max-w-md bg-slate-50 border border-slate-200 rounded-2xl px-5 py-4 mb-6 flex items-center justify-center text-center"
+            >
+              <span
+                class="text-xl font-black text-title"
+                id="wizard-val-display-8"
+                >700</span
+              >
+            </div>
+
+            <div class="w-full max-w-md px-2">
+              <input
+                type="range"
+                id="wizard-range-8"
+                min="500"
+                max="800"
+                step="5"
+                value="700"
+                class="wizard-slider mb-4"
+              />
+              <div
+                class="flex justify-between text-xs font-bold text-slate-400"
+              >
+                <span>500</span>
+                <span>800+</span>
+              </div>
+            </div>
+
+            <button
+              onclick="nextWizardStep()"
+              class="mt-8 bg-primary text-white px-12 py-4 rounded-full font-bold hover:bg-primary-hover transition-all"
+            >
+              Next
+            </button>
+          </div>
+
+          <!-- Step 9: Personal Information Form -->
+          <div
+            id="wizard-step-9"
+            class="wizard-step w-full max-w-2xl mx-auto hidden"
+          >
+            <div class="flex items-center gap-4 mb-6">
+              <div
+                class="w-12 h-12 rounded-2xl bg-primary flex items-center justify-center text-white shadow-lg shadow-primary/20"
+              >
+                <i class="fa-solid fa-lock text-xl"></i>
+              </div>
+              <div class="text-left">
+                <h2 class="text-2xl font-bold text-title">
+                  Personal Information
+                </h2>
+                <p class="text-xs text-slate-400">
+                  Enter your details to finalize and get quotes.
+                </p>
+              </div>
+            </div>
+
+            <form
+              id="wizard-info-form"
+              onsubmit="submitWizardForm(event)"
+              class="space-y-4 text-left"
+            >
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div class="space-y-1">
+                  <label
+                    class="text-xs font-bold text-title uppercase tracking-wider"
+                    >First Name</label
+                  >
+                  <input
+                    type="text"
+                    id="wizard-firstName"
+                    placeholder="John"
+                    onkeypress="return /[a-zA-Z\s]/.test(event.key);"
+                    class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary focus:bg-white transition-all font-semibold text-sm"
+                    required
+                  />
+                </div>
+                <div class="space-y-1">
+                  <label
+                    class="text-xs font-bold text-title uppercase tracking-wider"
+                    >Last Name</label
+                  >
+                  <input
+                    type="text"
+                    id="wizard-lastName"
+                    placeholder="Doe"
+                    onkeypress="return /[a-zA-Z\s]/.test(event.key);"
+                    class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary focus:bg-white transition-all font-semibold text-sm"
+                    required
+                  />
+                </div>
+              </div>
+
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div class="space-y-1">
+                  <label
+                    class="text-xs font-bold text-title uppercase tracking-wider"
+                    >Email</label
+                  >
+                  <input
+                    type="email"
+                    id="wizard-email"
+                    placeholder="example@email.com"
+                    class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary focus:bg-white transition-all font-semibold text-sm"
+                    required
+                  />
+                </div>
+                <div class="space-y-1">
+                  <label
+                    class="text-xs font-bold text-title uppercase tracking-wider"
+                    >Phone Number</label
+                  >
+                  <input
+                    type="tel"
+                    id="wizard-phoneNumber"
+                    placeholder="(555) 555-5555"
+                    class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary focus:bg-white transition-all font-semibold text-sm"
+                    required
+                  />
+                </div>
+              </div>
+
+              <div class="flex items-start gap-3 pt-2">
+                <div class="relative flex items-center mt-0.5">
+                  <input
+                    type="checkbox"
+                    id="wizard-smsConsent"
+                    required
+                    class="peer h-5 w-5 cursor-pointer appearance-none rounded-md border border-slate-200 bg-white transition-all checked:border-primary checked:bg-primary"
+                  />
+                  <svg
+                    class="pointer-events-none absolute left-1/2 top-1/2 h-3.5 w-3.5 -translate-x-1/2 -translate-y-1/2 text-white opacity-0 transition-opacity peer-checked:opacity-100"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="3"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M5 13l4 4L19 7"
+                    />
+                  </svg>
+                </div>
+                <label
+                  for="wizard-smsConsent"
+                  class="text-xs text-slate-500 leading-relaxed cursor-pointer select-none"
+                >
+                  I agree to receive text messages about HomeLoanNYC promotions.
+                  Data rates may apply. Reply STOP to unsubscribe.
+                </label>
+              </div>
+
+              <button
+                type="submit"
+                class="w-full mt-4 bg-primary text-white py-4 rounded-xl font-bold hover:bg-primary-hover transition-all shadow-lg shadow-primary/20 flex items-center justify-center gap-2 group"
+              >
+                <i
+                  class="fa-solid fa-lock-open group-hover:scale-110 transition-transform"
+                ></i>
+                Get Rates
+              </button>
+            </form>
+          </div>
+
+          <!-- Step 10: Results Screen -->
+          <div
+            id="wizard-step-10"
+            class="wizard-step w-full max-w-4xl mx-auto hidden flex flex-col"
+          >
+            <div class="text-center mb-4 md:mb-6">
+              <h2 class="text-xl md:text-3xl font-extrabold text-title">
+                Your Custom Mortgage Calculation
+              </h2>
+              <p class="text-slate-500 text-xs md:text-sm mt-1">
+                Based on the details you provided, here is your estimated
+                monthly payment.
+              </p>
+            </div>
+
+            <div
+              class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8 items-start"
+            >
+              <!-- Column 1: Selected Details -->
+              <div
+                class="bg-slate-50 p-4 md:p-6 rounded-2xl border border-slate-200 shadow-sm flex flex-col gap-3 md:gap-4"
+              >
+                <h3
+                  class="font-extrabold text-title pb-2 md:pb-3 border-b border-slate-200 flex items-center gap-2 text-sm md:text-base"
+                >
+                  <i class="fa-solid fa-circle-info text-primary"></i>
+                  Selected Details
+                </h3>
+
+                <div class="space-y-2 md:space-y-3">
+                  <!-- Loan Purpose -->
+                  <div
+                    class="flex items-center justify-between p-2.5 md:p-3.5 bg-white border border-slate-150 rounded-xl hover:bg-slate-50 transition-all"
+                  >
+                    <div class="flex items-center gap-2 md:gap-3">
+                      <div
+                        class="w-8 h-8 md:w-9 md:h-9 rounded-lg bg-slate-50 flex items-center justify-center border border-slate-100"
+                      >
+                        <i
+                          class="fa-solid fa-arrows-spin text-slate-500 text-xs md:text-sm"
+                        ></i>
+                      </div>
+                      <span
+                        class="text-[10px] md:text-xs font-bold text-slate-500"
+                        >Loan Purpose</span
+                      >
+                    </div>
+                    <span
+                      class="font-black text-primary text-xs md:text-base capitalize"
+                      id="wizard-summary-purpose"
+                      >Purchase</span
+                    >
+                  </div>
+
+                  <!-- Home Price -->
+                  <div
+                    class="flex items-center justify-between p-2.5 md:p-3.5 bg-white border border-slate-150 rounded-xl hover:bg-slate-50 transition-all"
+                  >
+                    <div class="flex items-center gap-2 md:gap-3">
+                      <div
+                        class="w-8 h-8 md:w-9 md:h-9 rounded-lg bg-slate-50 flex items-center justify-center border border-slate-100"
+                      >
+                        <i
+                          class="fa-solid fa-house text-slate-500 text-xs md:text-sm"
+                        ></i>
+                      </div>
+                      <span
+                        class="text-[10px] md:text-xs font-bold text-slate-500"
+                        >Property Value</span
+                      >
+                    </div>
+                    <span
+                      class="font-black text-title text-xs md:text-base"
+                      id="wizard-summary-homePrice"
+                      >$0</span
+                    >
+                  </div>
+
+                  <!-- Down Payment -->
+                  <div
+                    class="flex items-center justify-between p-2.5 md:p-3.5 bg-white border border-slate-150 rounded-xl hover:bg-slate-50 transition-all"
+                  >
+                    <div class="flex items-center gap-2 md:gap-3">
+                      <div
+                        class="w-8 h-8 md:w-9 md:h-9 rounded-lg bg-slate-50 flex items-center justify-center border border-slate-100"
+                      >
+                        <i
+                          class="fa-solid fa-hand-holding-dollar text-slate-500 text-xs md:text-sm"
+                        ></i>
+                      </div>
+                      <span
+                        class="text-[10px] md:text-xs font-bold text-slate-500"
+                        id="wizard-summary-downPayment-label"
+                        >Down Payment</span
+                      >
+                    </div>
+                    <span
+                      class="font-black text-title text-xs md:text-base text-right"
+                      id="wizard-summary-downPayment"
+                      >$0</span
+                    >
+                  </div>
+
+                  <!-- Loan Term -->
+                  <div
+                    class="flex items-center justify-between p-2.5 md:p-3.5 bg-white border border-slate-150 rounded-xl hover:bg-slate-50 transition-all"
+                  >
+                    <div class="flex items-center gap-2 md:gap-3">
+                      <div
+                        class="w-8 h-8 md:w-9 md:h-9 rounded-lg bg-slate-50 flex items-center justify-center border border-slate-100"
+                      >
+                        <i
+                          class="fa-solid fa-calendar-days text-slate-500 text-xs md:text-sm"
+                        ></i>
+                      </div>
+                      <span
+                        class="text-[10px] md:text-xs font-bold text-slate-500"
+                        >Loan Term</span
+                      >
+                    </div>
+                    <span
+                      class="font-black text-title text-xs md:text-base text-right"
+                      >30 years fixed</span
+                    >
+                  </div>
+
+                  <!-- Interest Rate -->
+                  <div
+                    class="flex items-center justify-between p-2.5 md:p-3.5 bg-white border border-slate-150 rounded-xl hover:bg-slate-50 transition-all"
+                  >
+                    <div class="flex items-center gap-2 md:gap-3">
+                      <div
+                        class="w-8 h-8 md:w-9 md:h-9 rounded-lg bg-slate-50 flex items-center justify-center border border-slate-100"
+                      >
+                        <i
+                          class="fa-solid fa-percent text-slate-500 text-xs md:text-sm"
+                        ></i>
+                      </div>
+                      <span
+                        class="text-[10px] md:text-xs font-bold text-slate-500"
+                        >Interest Rate</span
+                      >
+                    </div>
+                    <span
+                      class="font-black text-title text-xs md:text-base text-right"
+                      id="wizard-summary-interestRate"
+                      >0%</span
+                    >
+                  </div>
+
+                  <!-- Credit Score -->
+                  <div
+                    class="flex items-center justify-between p-2.5 md:p-3.5 bg-white border border-slate-150 rounded-xl hover:bg-slate-50 transition-all"
+                  >
+                    <div class="flex items-center gap-2 md:gap-3">
+                      <div
+                        class="w-8 h-8 md:w-9 md:h-9 rounded-lg bg-slate-50 flex items-center justify-center border border-slate-100"
+                      >
+                        <i
+                          class="fa-solid fa-gauge-high text-slate-500 text-xs md:text-sm"
+                        ></i>
+                      </div>
+                      <span
+                        class="text-[10px] md:text-xs font-bold text-slate-500"
+                        >Credit Score</span
+                      >
+                    </div>
+                    <span
+                      class="font-black text-title text-xs md:text-base text-right"
+                      id="wizard-summary-creditScore"
+                      >0</span
+                    >
+                  </div>
+
+                  <!-- ZIP Code -->
+                  <div
+                    class="flex items-center justify-between p-2.5 md:p-3.5 bg-white border border-slate-150 rounded-xl hover:bg-slate-50 transition-all"
+                  >
+                    <div class="flex items-center gap-2 md:gap-3">
+                      <div
+                        class="w-8 h-8 md:w-9 md:h-9 rounded-lg bg-slate-50 flex items-center justify-center border border-slate-100"
+                      >
+                        <i
+                          class="fa-solid fa-location-dot text-slate-500 text-xs md:text-sm"
+                        ></i>
+                      </div>
+                      <span
+                        class="text-[10px] md:text-xs font-bold text-slate-500"
+                        >ZIP Code</span
+                      >
+                    </div>
+                    <span
+                      class="font-black text-title text-xs md:text-base text-right"
+                      id="wizard-summary-zipCode"
+                      >0</span
+                    >
+                  </div>
+                </div>
+              </div>
+
+              <!-- Column 2: Payment Breakdown and Pie Chart -->
+              <div class="flex flex-col gap-4 md:gap-6">
+                <!-- Doughnut Chart Canvas -->
+                <div
+                  class="flex flex-col items-center justify-center bg-slate-50 p-4 md:p-6 rounded-2xl border border-slate-200 shadow-sm relative"
+                >
+                  <div
+                    class="relative w-40 h-40 md:w-48 md:h-48 flex items-center justify-center"
+                  >
+                    <canvas id="wizard-payment-chart"></canvas>
+                    <div
+                      class="absolute inset-0 flex flex-col items-center justify-center pointer-events-none"
+                    >
+                      <span
+                        class="text-[8px] md:text-[9px] uppercase font-extrabold tracking-wider text-slate-400"
+                        >Total Payment</span
+                      >
+                      <span
+                        class="text-lg md:text-2xl font-black text-title mt-0.5"
+                        id="wizard-summary-totalPayment"
+                        >$0</span
+                      >
+                      <span
+                        class="text-[8px] md:text-[9px] font-semibold text-slate-500 mt-0.5"
+                        >/ mo</span
+                      >
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Breakdown Values -->
+                <div
+                  class="bg-slate-50 p-4 md:p-6 rounded-2xl border border-slate-200 shadow-sm space-y-2 md:space-y-3"
+                >
+                  <!-- P&I -->
+                  <div
+                    class="flex justify-between items-center p-2.5 md:p-3 bg-white border-l-4 border-primary rounded-r-xl border border-y-slate-100 border-r-slate-100 shadow-sm"
+                  >
+                    <div class="flex items-center gap-2">
+                      <div
+                        class="w-2 h-2 md:w-2.5 md:h-2.5 rounded-full bg-primary"
+                      ></div>
+                      <span class="font-bold text-title text-[10px] md:text-xs"
+                        >Principal & Interest</span
+                      >
+                    </div>
+                    <span
+                      class="font-extrabold text-title text-xs md:text-sm"
+                      id="wizard-breakdown-pi"
+                      >$0</span
+                    >
+                  </div>
+
+                  <!-- Property Tax -->
+                  <div
+                    class="flex justify-between items-center p-2.5 md:p-3 bg-white border-l-4 border-blue-500 rounded-r-xl border border-y-slate-100 border-r-slate-100 shadow-sm"
+                  >
+                    <div class="flex items-center gap-2">
+                      <div
+                        class="w-2 h-2 md:w-2.5 md:h-2.5 rounded-full bg-blue-500"
+                      ></div>
+                      <span class="font-bold text-title text-[10px] md:text-xs"
+                        >Property Tax</span
+                      >
+                    </div>
+                    <span
+                      class="font-extrabold text-title text-xs md:text-sm"
+                      id="wizard-breakdown-tax"
+                      >$0</span
+                    >
+                  </div>
+
+                  <!-- Insurance -->
+                  <div
+                    class="flex justify-between items-center p-2.5 md:p-3 bg-white border-l-4 border-purple-500 rounded-r-xl border border-y-slate-100 border-r-slate-100 shadow-sm"
+                  >
+                    <div class="flex items-center gap-2">
+                      <div
+                        class="w-2 h-2 md:w-2.5 md:h-2.5 rounded-full bg-purple-500"
+                      ></div>
+                      <span class="font-bold text-title text-[10px] md:text-xs"
+                        >Homeowner's Insurance</span
+                      >
+                    </div>
+                    <span
+                      class="font-extrabold text-title text-xs md:text-sm"
+                      id="wizard-breakdown-ins"
+                      >$0</span
+                    >
+                  </div>
+
+                  <!-- PMI -->
+                  <div
+                    id="wizard-breakdown-pmi-row"
+                    class="flex justify-between items-center p-2.5 md:p-3 bg-white border-l-4 border-orange-500 rounded-r-xl border border-y-slate-100 border-r-slate-100 shadow-sm"
+                  >
+                    <div class="flex items-center gap-2">
+                      <div
+                        class="w-2 h-2 md:w-2.5 md:h-2.5 rounded-full bg-orange-500"
+                      ></div>
+                      <span class="font-bold text-title text-[10px] md:text-xs"
+                        >PMI</span
+                      >
+                    </div>
+                    <span
+                      class="font-extrabold text-title text-xs md:text-sm"
+                      id="wizard-breakdown-pmi"
+                      >$0</span
+                    >
+                  </div>
+
+                  <!-- HOA -->
+                  <div
+                    id="wizard-breakdown-hoa-row"
+                    class="flex justify-between items-center p-2.5 md:p-3 bg-white border-l-4 border-pink-500 rounded-r-xl border border-y-slate-100 border-r-slate-100 shadow-sm"
+                  >
+                    <div class="flex items-center gap-2">
+                      <div
+                        class="w-2 h-2 md:w-2.5 md:h-2.5 rounded-full bg-pink-500"
+                      ></div>
+                      <span class="font-bold text-title text-[10px] md:text-xs"
+                        >HOA Fees</span
+                      >
+                    </div>
+                    <span
+                      class="font-extrabold text-title text-xs md:text-sm"
+                      id="wizard-breakdown-hoa"
+                      >$0</span
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Action Button -->
+            <div class="text-center mt-6">
+              <button
+                onclick="closeWizard()"
+                class="bg-primary text-white px-12 py-3.5 rounded-full font-bold hover:bg-primary-hover transition-all"
+              >
+                Close Results
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Range slider custom style -->
+    <style>
+      .wizard-slider {
+        -webkit-appearance: none;
+        width: 100%;
+        height: 6px;
+        border-radius: 9999px;
+        background: #cbd5e1;
+        outline: none;
+        transition: background 0.3s;
+      }
+      .wizard-slider::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        appearance: none;
+        width: 24px;
+        height: 24px;
+        border-radius: 50%;
+        background: var(--color-primary, #d96b27);
+        cursor: pointer;
+        border: 4px solid #ffffff;
+        box-shadow:
+          0 4px 6px -1px rgba(0, 0, 0, 0.1),
+          0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        transition:
+          transform 0.1s,
+          background-color 0.2s;
+      }
+      .wizard-slider::-webkit-slider-thumb:hover {
+        transform: scale(1.1);
+        background: var(--color-primary-hover, #b45a20);
+      }
+      .wizard-slider::-moz-range-thumb {
+        width: 24px;
+        height: 24px;
+        border-radius: 50%;
+        background: var(--color-primary, #d96b27);
+        cursor: pointer;
+        border: 4px solid #ffffff;
+        box-shadow:
+          0 4px 6px -1px rgba(0, 0, 0, 0.1),
+          0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        transition:
+          transform 0.1s,
+          background-color 0.2s;
+      }
+      .wizard-slider::-moz-range-thumb:hover {
+        transform: scale(1.1);
+        background: var(--color-primary-hover, #b45a20);
+      }
+    </style>
+
+    <!-- jQuery and Slick Carousel -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"></script>
+
     <script src="../dist/js/nav.js"></script>
+    <script src="../dist/js/slider.js"></script>
     <script src="../dist/js/theme.js"></script>
+    <script src="../dist/js/popup.js"></script>
+    <script src="../dist/js/customDinput.js"></script>
+  
   </body>
 </html>
