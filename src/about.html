@@ -58,7 +58,7 @@
 
         <!-- Nav Links -->
         <div
-          class="hidden lg:flex items-center gap-7 text-[15px] font-semibold text-title"
+          class="hidden lg:flex items-center gap-5 text-[15px] font-semibold text-title"
         >
           <!-- Shop Rates Dropdown -->
           <div class="relative group">
@@ -88,7 +88,7 @@
               id="shop-rates-dropdown"
               class="hidden absolute top-full left-1/2 -translate-x-1/2 mt-4 w-[600px] bg-w-color rounded-3xl shadow-2xl border border-slate-200 overflow-hidden z-50 p-6"
             >
-              <div class="grid grid-cols-2 gap-6 text-center">
+              <div class="grid grid-cols-2 text-center">
                 <!-- Section 1 -->
                 <div
                   class="p-6 rounded-2xl bg-w-color flex flex-col items-center"
@@ -212,44 +212,7 @@
             >Blogs</a
           >
 
-          <!-- Join Us Dropdown -->
-          <div class="relative group">
-            <button
-              id="join-us-button"
-              class="flex items-center gap-1 hover:text-primary transition-colors py-2"
-            >
-              Join us
-              <svg
-                class="w-4 h-4 opacity-50 transition-transform duration-300"
-                id="join-us-arrow"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M19 9l-7 7-7-7"
-                ></path>
-              </svg>
-            </button>
-            <div
-              id="join-us-dropdown"
-              class="hidden absolute top-full left-0 mt-4 min-w-[200px] bg-w-color rounded-2xl shadow-xl border border-slate-200 overflow-hidden z-50 py-2"
-            >
-              <a
-                href="../src/officers.html"
-                class="block px-6 py-3 hover:bg-w-color hover:text-primary transition-colors"
-                >Loan Officers</a
-              >
-              <a
-                href="../src/apply.html"
-                class="block px-6 py-3 hover:bg-w-color hover:text-primary transition-colors"
-                >Apply Now</a
-              >
-            </div>
-          </div>
+
         </div>
 
         <!-- CTA Buttons & Mobile Toggle -->
@@ -262,7 +225,12 @@
           <a
             href="../src/quote.html"
             class="hidden lg:block text-[15px] font-bold bg-primary text-w-color px-6 py-2.5 rounded-full hover:bg-primary-hover transition-all shadow-lg shadow-primary/10"
-            >Get a quote</a
+            >Get Quote</a
+          >
+          <a
+            href="../src/apply.html"
+            class="hidden lg:block text-[15px] font-bold bg-primary text-w-color px-6 py-2.5 rounded-full hover:bg-primary-hover transition-all shadow-lg shadow-primary/10"
+            >Pre Approval</a
           >
 
           <!-- Hamburger Button -->
@@ -417,51 +385,22 @@
           </div>
           <a href="#" class="py-3 border-b border-w-color">Blogs</a>
 
-          <!-- Mobile Join Us Accordion -->
-          <div class="border-b border-w-color">
-            <button
-              id="mobile-join-btn"
-              class="w-full py-3 flex justify-between items-center text-left"
-            >
-              Join us
-              <svg
-                id="mobile-join-arrow"
-                class="w-4 h-4 opacity-50 transition-transform"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M19 9l-7 7-7-7"
-                ></path>
-              </svg>
-            </button>
-            <div id="mobile-join-content" class="hidden pb-4 pl-4 space-y-3">
-              <a
-                href="../src/officers.html"
-                class="block py-2 text-sm opacity-80 hover:text-primary"
-                >Loan Officers</a
-              >
-              <a
-                href="../src/apply.html"
-                class="block py-2 text-sm opacity-80 hover:text-primary"
-                >Apply Now</a
-              >
-            </div>
-          </div>
+
 
           <!-- Mobile CTAs -->
           <div class="grid grid-cols-1 gap-3 mt-4">
             <a
               href="../src/quote.html"
               class="w-full text-center font-bold bg-primary text-w-color py-4 rounded-xl shadow-lg shadow-primary/20"
-              >Get a quote</a
+              >Get Quote</a
             >
             <a
               href="../src/apply.html"
+              class="w-full text-center font-bold bg-primary text-w-color py-4 rounded-xl shadow-lg shadow-primary/20"
+              >Pre Approval</a
+            >
+            <a
+              href="tel:123456789"
               class="w-full text-center font-bold text-primary py-4 rounded-xl border border-primary/20"
               ><i class="fa-solid fa-phone pr-2"></i> (123) 456-789</a
             >

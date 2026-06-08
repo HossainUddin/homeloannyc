@@ -16,7 +16,6 @@ let wizardData = {
   lastName: "",
   email: "",
   phoneNumber: "",
-  suffix: "",
   smsConsent: false
 };
 
@@ -52,9 +51,6 @@ function openWizard(intent) {
   
   // Reset fields to defaults
   document.getElementById("wizard-info-form").reset();
-  document.getElementById("wizard-suffix").value = "";
-  document.querySelector('[data-placeholder="Select Suffix"] .dropdown-trigger span').innerText = "Select Suffix";
-  document.querySelector('[data-placeholder="Select Suffix"] .dropdown-trigger span').classList.add("text-slate-400");
   
   // Set up step 6 values based on intent
   const range6 = document.getElementById("wizard-range-6");
@@ -254,7 +250,6 @@ function submitWizardForm(event) {
   const lastName = document.getElementById("wizard-lastName").value.trim();
   const email = document.getElementById("wizard-email").value.trim();
   const phone = document.getElementById("wizard-phoneNumber").value.trim();
-  const suffix = document.getElementById("wizard-suffix").value;
   const smsConsent = document.getElementById("wizard-smsConsent").checked;
 
   if (!firstName || !lastName || !email || !phone || !smsConsent) {
@@ -267,7 +262,6 @@ function submitWizardForm(event) {
   wizardData.lastName = lastName;
   wizardData.email = email;
   wizardData.phoneNumber = phone;
-  wizardData.suffix = suffix;
   wizardData.smsConsent = smsConsent;
 
   // Print results to console

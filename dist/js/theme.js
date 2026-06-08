@@ -1,21 +1,21 @@
 const themeSwitcher = document.getElementById("themeSwitcher");
 
-// Load saved theme
-const savedTheme = localStorage.getItem("theme");
+// Load saved theme, default to green
+const savedTheme = localStorage.getItem("theme") || "green";
 
-if (savedTheme) {
-  document.documentElement.setAttribute("data-theme", savedTheme);
+document.documentElement.setAttribute("data-theme", savedTheme);
+
+if (themeSwitcher) {
   themeSwitcher.value = savedTheme;
+  themeSwitcher.addEventListener("change", function () {
+    const theme = this.value;
+
+    if (theme) {
+      document.documentElement.setAttribute("data-theme", theme);
+    } else {
+      document.documentElement.removeAttribute("data-theme");
+    }
+
+    localStorage.setItem("theme", theme);
+  });
 }
-
-themeSwitcher.addEventListener("change", function () {
-  const theme = this.value;
-
-  if (theme) {
-    document.documentElement.setAttribute("data-theme", theme);
-  } else {
-    document.documentElement.removeAttribute("data-theme");
-  }
-
-  localStorage.setItem("theme", theme);
-});

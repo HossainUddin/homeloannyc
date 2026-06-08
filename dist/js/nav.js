@@ -19,6 +19,7 @@ function setupDropdown(btnId, dropdownId, arrowId) {
   const btn = document.getElementById(btnId);
   const dropdown = document.getElementById(dropdownId);
   const arrow = document.getElementById(arrowId);
+  if (!btn || !dropdown) return;
 
   btn.addEventListener("click", (e) => {
     e.stopPropagation();
@@ -73,6 +74,7 @@ function setupMobileAccordion(btnId, contentId, arrowId) {
   const btn = document.getElementById(btnId);
   const content = document.getElementById(contentId);
   const arrow = document.getElementById(arrowId);
+  if (!btn || !content) return;
 
   btn.addEventListener("click", () => {
     const isHidden = content.classList.contains("hidden");
