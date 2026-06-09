@@ -1,0 +1,1420 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Loan Request Info</title>
+    <link href="dist/output.css" rel="stylesheet" />
+    <link rel="stylesheet" href="dist/custom.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <!-- FontAwosome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+      integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <!-- Slick CSS -->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css"
+    />
+    <!-- Slick Theme CSS -->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css"
+    />
+    <style>
+      body {
+        font-family: "Plus Jakarta Sans", sans-serif;
+      }
+    </style>
+    <script>
+      (function () {
+        const saved = localStorage.getItem("theme") || "green";
+        document.documentElement.setAttribute("data-theme", saved);
+      })();
+    </script>
+  </head>
+
+  <body class="bg-w-color text-title min-h-screen overflow-x-hidden">
+    <!-- Navbar -->
+    <nav
+      class="sticky top-0 w-full z-50 bg-w-color backdrop-blur-md border-b border-black"
+    >
+      <div class="max-w-7xl mx-auto px-6 flex justify-between items-center">
+        <!-- Logo -->
+        <div class="w-30 h-25">
+          <a href="index.html">
+            <img
+              src="dist/images/logo.png"
+              alt="Logo"
+              class="w-full h-full object-cover"
+            />
+          </a>
+        </div>
+
+        <!-- Nav Links -->
+        <div
+          class="hidden lg:flex items-center gap-5 text-[15px] font-semibold text-title"
+        >
+          <!-- Shop Rates Dropdown -->
+          <div class="relative group">
+            <button
+              id="shop-rates-button"
+              class="flex items-center gap-1 hover:text-primary transition-colors py-2"
+            >
+              Shop rates
+              <svg
+                class="w-4 h-4 opacity-50 transition-transform duration-300"
+                id="shop-rates-arrow"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M19 9l-7 7-7-7"
+                ></path>
+              </svg>
+            </button>
+
+            <!-- Mega Menu Content -->
+            <div
+              id="shop-rates-dropdown"
+              class="hidden absolute top-full left-1/2 -translate-x-1/2 mt-4 w-[600px] bg-w-color rounded-3xl shadow-2xl border border-slate-200 overflow-hidden z-50 p-6"
+            >
+              <div class="grid grid-cols-2 text-center">
+                <!-- Section 1 -->
+                <div
+                  class="p-6 rounded-2xl bg-w-color flex flex-col items-center"
+                >
+                  <h3 class="text-base font-bold text-title mb-4">
+                    Today's rates
+                  </h3>
+                  <a
+                    href="rates.html"
+                    class="w-full bg-primary text-center text-w-color py-3 rounded-xl font-bold hover:bg-primary-hover transition-all shadow-lg shadow-primary/10"
+                  >
+                    Today's rates
+                  </a>
+                </div>
+
+                <!-- Section 2 -->
+                <div
+                  class="p-6 rounded-2xl bg-w-color flex flex-col items-center"
+                >
+                  <h3 class="text-base font-bold text-title mb-4">
+                    Get a free rate quote
+                  </h3>
+                  <a
+                    href="#"
+                    class="w-full text-center border-2 border-primary text-primary py-3 rounded-xl font-bold hover:bg-primary/5 transition-all"
+                  >
+                    Free rate quote
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Loan Programs Dropdown -->
+          <div class="relative group">
+            <button
+              id="loan-programs-button"
+              class="flex items-center gap-1 hover:text-primary transition-colors py-2"
+            >
+              Loan programs
+              <svg
+                class="w-4 h-4 opacity-50 transition-transform duration-300"
+                id="loan-programs-arrow"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M19 9l-7 7-7-7"
+                ></path>
+              </svg>
+            </button>
+            <div
+              id="loan-programs-dropdown"
+              class="hidden absolute top-full left-0 mt-4 min-w-[240px] bg-w-color rounded-2xl shadow-xl border border-slate-200 overflow-hidden z-50 py-2"
+            >
+              <a
+                href="fixed_rate.html"
+                class="block px-6 py-3 hover:bg-w-color hover:text-primary transition-colors"
+                >Fixed-Rate Mortgage</a
+              >
+              <a
+                href="#"
+                class="block px-6 py-3 hover:bg-w-color hover:text-primary transition-colors"
+                >Demo</a
+              >
+            </div>
+          </div>
+
+          <a
+            href="about.html"
+            class="flex items-center gap-1 hover:text-primary transition-colors"
+          >
+            About us</a
+          >
+
+          <div class="relative">
+            <button
+              id="calculators-button"
+              class="flex items-center gap-1 hover:text-primary transition-colors py-2"
+            >
+              Calculators
+              <svg
+                class="w-4 h-4 opacity-50 transition-transform duration-300"
+                id="calculators-arrow"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M19 9l-7 7-7-7"
+                ></path>
+              </svg>
+            </button>
+            <div
+              id="calculators-dropdown"
+              class="hidden absolute top-full left-0 mt-4 min-w-[240px] bg-w-color rounded-2xl shadow-xl border border-slate-200 overflow-hidden z-50 py-2"
+            >
+              <a
+                href="quote.html"
+                class="block px-6 py-3 hover:bg-w-color hover:text-primary transition-colors"
+                >Mortgage calculator</a
+              >
+              <a
+                href="#"
+                class="block px-6 py-3 hover:bg-w-color hover:text-primary transition-colors"
+                >Affordability calculator</a
+              >
+            </div>
+          </div>
+
+          <a href="#" class="hover:text-primary transition-colors">Blogs</a>
+        </div>
+
+        <!-- CTA Buttons & Mobile Toggle -->
+        <div class="flex items-center gap-4">
+          <a
+            href="tel:123456789"
+            class="hidden lg:block text-[15px] font-bold text-primary px-6 py-2.5 rounded-full border border-primary/20 hover:bg-primary/5 transition-all"
+            ><i class="fa-solid fa-phone pr-2"></i> (123) 456-789</a
+          >
+          <a
+            href="quote.html"
+            class="hidden lg:block text-[15px] font-bold bg-primary text-w-color px-6 py-2.5 rounded-full hover:bg-primary-hover transition-all shadow-lg shadow-primary/10"
+            >Get Quote</a
+          >
+          <a
+            href="apply.html"
+            class="hidden lg:block text-[15px] font-bold bg-primary text-w-color px-6 py-2.5 rounded-full hover:bg-primary-hover transition-all shadow-lg shadow-primary/10"
+            >Pre Approval</a
+          >
+
+          <!-- Hamburger Button -->
+          <button
+            id="mobile-menu-button"
+            class="lg:hidden p-2 text-title hover:bg-w-color rounded-lg transition-colors"
+            aria-label="Toggle Menu"
+          >
+            <svg
+              class="w-6 h-6"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                id="menu-icon"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M4 6h16M4 12h16M4 18h16"
+              ></path>
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- Mobile Menu Overlay -->
+      <div
+        id="mobile-menu"
+        class="hidden lg:hidden absolute top-full left-0 w-full bg-w-color border-b border-slate-200 shadow-xl max-h-[90vh] overflow-y-auto animate-in slide-in-from-top-4 duration-200"
+      >
+        <div class="flex flex-col p-6 gap-4 font-semibold text-title">
+          <!-- Mobile Shop Rates Accordion -->
+          <div class="border-b border-w-color">
+            <button
+              id="mobile-shop-rates-btn"
+              class="w-full py-3 flex justify-between items-center text-left"
+            >
+              Shop rates
+              <svg
+                id="mobile-arrow"
+                class="w-4 h-4 opacity-50 transition-transform"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M19 9l-7 7-7-7"
+                ></path>
+              </svg>
+            </button>
+            <div id="mobile-shop-rates-content" class="hidden pb-4 space-y-3">
+              <div
+                class="p-6 bg-w-color rounded-2xl flex flex-col items-center text-center"
+              >
+                <a
+                  href="rates.html"
+                  class="w-full bg-primary text-w-color py-4 rounded-xl font-bold hover:bg-primary-hover transition-all"
+                >
+                  Today's rates
+                </a>
+              </div>
+              <div
+                class="p-6 bg-w-color rounded-2xl flex flex-col items-center text-center"
+              >
+                <a
+                  href="#"
+                  class="w-full text-center border-2 border-primary text-primary py-4 rounded-xl font-bold hover:bg-primary/5 transition-all"
+                >
+                  Free rate quote
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Mobile Loan Programs Accordion -->
+          <div class="border-b border-w-color">
+            <button
+              id="mobile-loan-btn"
+              class="w-full py-3 flex justify-between items-center text-left"
+            >
+              Loan programs
+              <svg
+                id="mobile-loan-arrow"
+                class="w-4 h-4 opacity-50 transition-transform"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M19 9l-7 7-7-7"
+                ></path>
+              </svg>
+            </button>
+            <div id="mobile-loan-content" class="hidden pb-4 pl-4 space-y-3">
+              <a
+                href="fixed_rate.html"
+                class="block py-2 text-sm opacity-80 hover:text-primary"
+                >Fixed-Rate Mortgage</a
+              >
+              <a
+                href="#"
+                class="block py-2 text-sm opacity-80 hover:text-primary"
+                >Demo</a
+              >
+            </div>
+          </div>
+
+          <a href="about.html" class="py-3 border-b border-w-color">About us</a>
+          <!-- Mobile Calculators Accordion -->
+          <div class="border-b border-w-color">
+            <button
+              id="mobile-calculators-btn"
+              class="w-full py-3 flex justify-between items-center text-left"
+            >
+              Calculators
+              <svg
+                id="mobile-calculators-arrow"
+                class="w-4 h-4 opacity-50 transition-transform"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M19 9l-7 7-7-7"
+                ></path>
+              </svg>
+            </button>
+            <div
+              id="mobile-calculators-content"
+              class="hidden pb-4 pl-4 space-y-3"
+            >
+              <a
+                href="quote.html"
+                class="block py-2 text-sm opacity-80 hover:text-primary"
+                >Mortgage calculator</a
+              >
+              <a
+                href="#"
+                class="block py-2 text-sm opacity-80 hover:text-primary"
+                >Affordability calculator</a
+              >
+            </div>
+          </div>
+          <a href="#" class="py-3 border-b border-w-color">Blogs</a>
+
+          <!-- Mobile CTAs -->
+          <div class="grid grid-cols-1 gap-3 mt-4">
+            <a
+              href="quote.html"
+              class="w-full text-center font-bold bg-primary text-w-color py-4 rounded-xl shadow-lg shadow-primary/20"
+              >Get Quote</a
+            >
+            <a
+              href="apply.html"
+              class="w-full text-center font-bold bg-primary text-w-color py-4 rounded-xl shadow-lg shadow-primary/20"
+              >Pre Approval</a
+            >
+            <a
+              href="tel:123456789"
+              class="w-full text-center font-bold text-primary py-4 rounded-xl border border-primary/20"
+              ><i class="fa-solid fa-phone pr-2"></i> (123) 456-789</a
+            >
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="min-h-[calc(100vh-100px)] flex flex-col justify-between">
+      <!-- Inquiry Form Section -->
+      <section class="bg-w-color py-20 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-3xl mx-auto">
+          <!-- Heading Section -->
+          <div class="w-full md:w-2/3 space-y-4 text-center mx-auto pb-12">
+            <span
+              class="text-[13px] font-black uppercase tracking-[0.2em] text-primary mb-4 block"
+            >
+              Inquire Now
+            </span>
+            <h1 class="text-4xl md:text-5xl font-extrabold text-title">
+              Loan Request Information
+            </h1>
+            <p
+              class="text-title/70 text-center mx-auto leading-relaxed max-w-lg"
+            >
+              Fill out this quick form to explore your home loan and mortgage
+              options. Our team of experts is ready to help.
+            </p>
+          </div>
+
+          <!-- Form Card Container -->
+          <div
+            class="bg-slate-200 rounded-[2.5rem] shadow-2xl shadow-slate-200/60 border border-slate-100 overflow-hidden transition-all duration-500"
+            id="form-card"
+          >
+            <!-- Inquiry Form -->
+            <form
+              id="loan-inquiry-form"
+              class="p-8 md:p-12 space-y-6"
+              novalidate
+            >
+              <div class="grid sm:grid-cols-2 gap-6">
+                <!-- First Name -->
+                <div class="space-y-2">
+                  <label
+                    for="first-name-input"
+                    class="block text-sm font-semibold text-title ml-1"
+                    >First Name <span class="text-primary">*</span></label
+                  >
+                  <input
+                    type="text"
+                    id="first-name-input"
+                    name="first_name"
+                    placeholder="John"
+                    class="w-full bg-slate-50 border-none rounded-2xl px-5 py-4 focus:ring-2 focus:ring-primary transition-all placeholder:text-slate-400 text-title"
+                    required
+                  />
+                  <span
+                    class="text-xs text-red-500 hidden mt-1 ml-1"
+                    id="error-first-name"
+                    >First name is required.</span
+                  >
+                </div>
+
+                <!-- Last Name -->
+                <div class="space-y-2">
+                  <label
+                    for="last-name-input"
+                    class="block text-sm font-semibold text-title ml-1"
+                    >Last Name <span class="text-primary">*</span></label
+                  >
+                  <input
+                    type="text"
+                    id="last-name-input"
+                    name="last_name"
+                    placeholder="Doe"
+                    class="w-full bg-slate-50 border-none rounded-2xl px-5 py-4 focus:ring-2 focus:ring-primary transition-all placeholder:text-slate-400 text-title"
+                    required
+                  />
+                  <span
+                    class="text-xs text-red-500 hidden mt-1 ml-1"
+                    id="error-last-name"
+                    >Last name is required.</span
+                  >
+                </div>
+              </div>
+
+              <div class="grid sm:grid-cols-2 gap-6">
+                <!-- Email -->
+                <div class="space-y-2">
+                  <label
+                    for="email-input"
+                    class="block text-sm font-semibold text-title ml-1"
+                    >Email <span class="text-primary">*</span></label
+                  >
+                  <input
+                    type="email"
+                    id="email-input"
+                    name="email"
+                    placeholder="john.doe@example.com"
+                    class="w-full bg-slate-50 border-none rounded-2xl px-5 py-4 focus:ring-2 focus:ring-primary transition-all placeholder:text-slate-400 text-title"
+                    required
+                  />
+                  <span
+                    class="text-xs text-red-500 hidden mt-1 ml-1"
+                    id="error-email"
+                    >A valid email address is required.</span
+                  >
+                </div>
+
+                <!-- Phone Number -->
+                <div class="space-y-2">
+                  <label
+                    for="phone-input"
+                    class="block text-sm font-semibold text-title ml-1"
+                    >Phone Number <span class="text-primary">*</span></label
+                  >
+                  <input
+                    type="tel"
+                    id="phone-input"
+                    name="phone"
+                    placeholder="(123) 456-7890"
+                    class="w-full bg-slate-50 border-none rounded-2xl px-5 py-4 focus:ring-2 focus:ring-primary transition-all placeholder:text-slate-400 text-title"
+                    required
+                  />
+                  <span
+                    class="text-xs text-red-500 hidden mt-1 ml-1"
+                    id="error-phone"
+                    >A valid 10-digit phone number is required.</span
+                  >
+                </div>
+              </div>
+
+              <!-- Current Address -->
+              <div class="space-y-2">
+                <label
+                  for="address-input"
+                  class="block text-sm font-semibold text-title ml-1"
+                  >Current Address <span class="text-primary">*</span></label
+                >
+                <input
+                  type="text"
+                  id="address-input"
+                  name="address"
+                  placeholder="123 Main St, Brooklyn, NY 11249"
+                  class="w-full bg-slate-50 border-none rounded-2xl px-5 py-4 focus:ring-2 focus:ring-primary transition-all placeholder:text-slate-400 text-title"
+                  required
+                />
+                <span
+                  class="text-xs text-red-500 hidden mt-1 ml-1"
+                  id="error-address"
+                  >Street address is required.</span
+                >
+              </div>
+
+              <div class="grid sm:grid-cols-2 gap-6">
+                <!-- Reason for Loan -->
+                <div class="space-y-2">
+                  <label class="block text-sm font-semibold text-title ml-1"
+                    >Reason for Loan <span class="text-primary">*</span></label
+                  >
+                  <div
+                    class="relative custom-dropdown"
+                    data-placeholder="Select a reason"
+                  >
+                    <button
+                      type="button"
+                      class="dropdown-trigger w-full bg-slate-50 border-none rounded-2xl px-5 py-4 flex items-center justify-between focus:ring-2 focus:ring-primary transition-all text-slate-400 cursor-pointer"
+                    >
+                      <span>Select a reason</span>
+                      <svg
+                        class="w-5 h-5 transition-transform duration-300"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="2"
+                          d="M19 9l-7 7-7-7"
+                        />
+                      </svg>
+                    </button>
+                    <div
+                      class="dropdown-menu hidden absolute top-full left-0 w-full mt-2 bg-w-color rounded-2xl shadow-xl border border-slate-100 z-50 overflow-hidden"
+                    >
+                      <div
+                        class="dropdown-option px-5 py-3 hover:bg-primary/10 hover:text-primary cursor-pointer transition-colors"
+                        data-value="Buying First-Time Home"
+                      >
+                        Buying First-Time Home
+                      </div>
+                      <div
+                        class="dropdown-option px-5 py-3 hover:bg-primary/10 hover:text-primary cursor-pointer transition-colors"
+                        data-value="Buying Investment Property"
+                      >
+                        Buying Investment Property
+                      </div>
+                      <div
+                        class="dropdown-option px-5 py-3 hover:bg-primary/10 hover:text-primary cursor-pointer transition-colors"
+                        data-value="Refinance for a Lower Rate"
+                      >
+                        Refinance for a Lower Rate
+                      </div>
+                      <div
+                        class="dropdown-option px-5 py-3 hover:bg-primary/10 hover:text-primary cursor-pointer transition-colors"
+                        data-value="Cash-Out Refinance"
+                      >
+                        Cash-Out Refinance
+                      </div>
+                      <div
+                        class="dropdown-option px-5 py-3 hover:bg-primary/10 hover:text-primary cursor-pointer transition-colors"
+                        data-value="Other"
+                      >
+                        Other
+                      </div>
+                    </div>
+                    <input
+                      type="hidden"
+                      id="loan-reason-input"
+                      name="loan_reason"
+                      value=""
+                    />
+                  </div>
+                  <span
+                    class="text-xs text-red-500 hidden mt-1 ml-1"
+                    id="error-loan-reason"
+                    >Please select a reason for the loan.</span
+                  >
+                </div>
+
+                <!-- State (NY Only) -->
+                <div class="space-y-2">
+                  <label class="block text-sm font-semibold text-title ml-1"
+                    >State <span class="text-primary">*</span></label
+                  >
+                  <div
+                    class="relative custom-dropdown"
+                    data-placeholder="New York (NY)"
+                  >
+                    <button
+                      type="button"
+                      class="dropdown-trigger w-full bg-slate-50 border-none rounded-2xl px-5 py-4 flex items-center justify-between focus:ring-2 focus:ring-primary transition-all text-slate-900 cursor-pointer"
+                    >
+                      <span>New York (NY)</span>
+                      <svg
+                        class="w-5 h-5 transition-transform duration-300"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="2"
+                          d="M19 9l-7 7-7-7"
+                        />
+                      </svg>
+                    </button>
+                    <div
+                      class="dropdown-menu hidden absolute top-full left-0 w-full mt-2 bg-w-color rounded-2xl shadow-xl border border-slate-100 z-50 overflow-hidden"
+                    >
+                      <div
+                        class="dropdown-option px-5 py-3 hover:bg-primary/10 hover:text-primary cursor-pointer transition-colors"
+                        data-value="NY"
+                      >
+                        New York (NY)
+                      </div>
+                    </div>
+                    <input
+                      type="hidden"
+                      id="state-input"
+                      name="state"
+                      value="NY"
+                    />
+                  </div>
+                  <span
+                    class="text-xs text-red-500 hidden mt-1 ml-1"
+                    id="error-state"
+                    >State is required.</span
+                  >
+                </div>
+              </div>
+
+              <div class="grid sm:grid-cols-2 gap-6">
+                <!-- Income -->
+                <div class="space-y-2">
+                  <label
+                    for="income-input"
+                    class="block text-sm font-semibold text-title ml-1"
+                    >Annual Income ($)
+                    <span class="text-primary">*</span></label
+                  >
+                  <input
+                    type="text"
+                    id="income-input"
+                    name="income"
+                    placeholder="e.g. 85,000"
+                    class="w-full bg-slate-50 border-none rounded-2xl px-5 py-4 focus:ring-2 focus:ring-primary transition-all placeholder:text-slate-400 text-title"
+                    required
+                  />
+                  <span
+                    class="text-xs text-red-500 hidden mt-1 ml-1"
+                    id="error-income"
+                    >Please enter a valid annual income.</span
+                  >
+                </div>
+
+                <!-- Credit Score -->
+                <div class="space-y-2">
+                  <label
+                    for="credit-score-input"
+                    class="block text-sm font-semibold text-title ml-1"
+                    >Credit Score <span class="text-primary">*</span></label
+                  >
+                  <input
+                    type="number"
+                    id="credit-score-input"
+                    name="credit_score"
+                    placeholder="e.g. 720"
+                    min="300"
+                    max="850"
+                    class="w-full bg-slate-50 border-none rounded-2xl px-5 py-4 focus:ring-2 focus:ring-primary transition-all placeholder:text-slate-400 text-title"
+                    required
+                  />
+                  <span
+                    class="text-xs text-red-500 hidden mt-1 ml-1"
+                    id="error-credit-score"
+                    >Credit score must be between 300 and 850.</span
+                  >
+                </div>
+              </div>
+
+              <!-- Disclaimer Text -->
+              <div
+                class="text-xs text-slate-500 leading-relaxed bg-slate-50 p-4 rounded-xl border border-slate-300/40"
+              >
+                <p>
+                  By submitting this form, you are requesting information about
+                  mortgage loan options. This is not a loan application or loan
+                  approval. Information submitted may be used to contact you
+                  regarding mortgage products and services.
+                </p>
+              </div>
+
+              <!-- Submit Button -->
+              <div class="pt-4">
+                <button
+                  type="submit"
+                  id="submit-btn"
+                  class="w-full text-center font-bold bg-primary text-w-color py-4 rounded-xl shadow-lg shadow-primary/20 hover:bg-primary-hover transition-all flex items-center justify-center gap-2 cursor-pointer"
+                >
+                  Submit Inquiry <i class="fa-solid fa-paper-plane text-sm"></i>
+                </button>
+              </div>
+            </form>
+
+            <!-- Success Screen (Hidden by default) -->
+            <div
+              id="success-screen"
+              class="p-8 md:p-12 text-center space-y-8 hidden animate-fade-in"
+            >
+              <div class="flex flex-col items-center justify-center">
+                <!-- Checkmark Animation Container -->
+                <div class="relative w-20 h-20 mb-4">
+                  <!-- Outer pulsing ring -->
+                  <div
+                    class="absolute inset-0 rounded-full bg-primary/20 animate-ping"
+                  ></div>
+                  <!-- Inner solid circle -->
+                  <div
+                    class="relative w-20 h-20 rounded-full bg-primary flex items-center justify-center text-w-color shadow-lg shadow-primary/30 z-10"
+                  >
+                    <i class="fa-solid fa-check text-4xl"></i>
+                  </div>
+                </div>
+
+                <h2 class="text-3xl font-extrabold text-title mt-4">
+                  Inquiry Submitted!
+                </h2>
+                <p
+                  class="text-title/70 max-w-md mt-2 text-base leading-relaxed"
+                >
+                  Thank you,
+                  <span id="success-name" class="font-bold text-primary"></span
+                  >! Your inquiry has been received. One of our mortgage experts
+                  will contact you shortly regarding your options.
+                </p>
+              </div>
+
+              <hr class="border-slate-300/60 max-w-md mx-auto" />
+
+              <!-- Contact Information -->
+              <div class="max-w-md mx-auto space-y-6 pt-2">
+                <h3 class="text-lg font-bold text-title">
+                  Our Contact Information
+                </h3>
+
+                <div
+                  class="flex flex-col sm:flex-row items-center justify-center gap-6 text-sm text-title"
+                >
+                  <!-- Phone Number -->
+                  <a
+                    href="tel:9297280155"
+                    class="flex items-center gap-3 bg-slate-50 border border-slate-300/40 rounded-2xl px-5 py-4 w-full hover:border-slate-300 hover:bg-slate-100 transition-all text-left group"
+                  >
+                    <div
+                      class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary group-hover:scale-110 transition-transform flex-shrink-0"
+                    >
+                      <i class="fa-solid fa-phone"></i>
+                    </div>
+                    <div>
+                      <p class="text-xs text-slate-400 font-semibold">
+                        Call Main
+                      </p>
+                      <p class="font-bold text-base whitespace-nowrap">
+                        (929) 728-0155
+                      </p>
+                    </div>
+                  </a>
+                </div>
+
+                <!-- Office Address -->
+                <div
+                  class="flex items-start gap-4 bg-slate-50 border border-slate-300/40 rounded-2xl p-5 text-left"
+                >
+                  <div
+                    class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary flex-shrink-0 mt-0.5"
+                  >
+                    <i class="fa-solid fa-location-dot"></i>
+                  </div>
+                  <div>
+                    <p class="text-xs text-slate-400 font-semibold">
+                      Office Address
+                    </p>
+                    <p class="font-bold text-title text-base mt-0.5">
+                      HomeLoanNYC
+                    </p>
+                    <p class="text-sm text-title/80 mt-1">
+                      185 Wythe Ave, Suite A2<br />Brooklyn, NY 11249
+                    </p>
+                  </div>
+                </div>
+
+                <!-- Go to Home Button -->
+                <div class="pt-6">
+                  <a
+                    href="index.html"
+                    class="inline-block px-10 py-4 bg-primary text-w-color font-bold rounded-xl hover:bg-primary-hover transition shadow-lg shadow-primary/20 flex items-center justify-center gap-2 max-w-xs mx-auto cursor-pointer"
+                  >
+                    Go to Home <i class="fa-solid fa-house text-sm"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="text-w-color bg-primary py-20">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="grid sm:grid-cols-2 md:grid-cols-4 gap-5 mb-16">
+          <!-- Brand Column -->
+          <div
+            class="flex flex-col items-center space-y-2 text-title rounded-3xl"
+          >
+            <!-- Logo -->
+            <div class="w-50 h-50 rounded-3xl">
+              <a href="index.html">
+                <img
+                  src="dist/images/logo-2.png"
+                  alt="Logo"
+                  class="w-full h-full object-cover rounded-3xl"
+                />
+              </a>
+            </div>
+
+            <div class="flex items-center gap-3 pt-2 pb-6">
+              <a
+                href="#"
+                class="w-10 h-10 rounded-full bg-w-color/15 flex items-center justify-center text-w-color hover:bg-primary-hover transition-colors"
+              >
+                <i class="fa-brands fa-facebook text-2xl"></i>
+              </a>
+              <a
+                href="#"
+                class="w-10 h-10 rounded-full bg-w-color/15 flex items-center justify-center text-w-color hover:bg-primary-hover transition-colors"
+              >
+                <i class="fa-brands fa-instagram text-2xl"></i>
+              </a>
+              <a
+                href="#"
+                class="w-10 h-10 rounded-full bg-w-color/15 flex items-center justify-center text-w-color hover:bg-primary-hover transition-colors"
+              >
+                <i class="fa-brands fa-linkedin text-2xl"></i>
+              </a>
+              <a
+                href="#"
+                class="w-10 h-10 rounded-full bg-w-color/15 flex items-center justify-center text-w-color hover:bg-primary-hover transition-colors"
+              >
+                <i class="fa-brands fa-square-x-twitter text-2xl"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- Resources Column -->
+          <div class="text-center">
+            <h3
+              class="text-w-color font-bold text-lg mb-8 underline decoration-w-color decoration-3 underline-offset-[16px]"
+            >
+              Resources
+            </h3>
+            <ul class="space-y-4">
+              <li>
+                <a href="#" class="hover:text-title transition-colors">Rates</a>
+              </li>
+              <li>
+                <a href="#" class="hover:text-title transition-colors"
+                  >Get a quote</a
+                >
+              </li>
+              <li>
+                <a href="#" class="hover:text-title transition-colors"
+                  >Reviews</a
+                >
+              </li>
+              <li>
+                <a href="#" class="hover:text-title transition-colors"
+                  >Calculators</a
+                >
+              </li>
+              <li>
+                <a href="#" class="hover:text-title transition-colors">Blogs</a>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Legal Info Column -->
+          <div class="text-center">
+            <h3
+              class="text-w-color font-bold text-lg mb-8 underline decoration-w-color decoration-3 underline-offset-[16px]"
+            >
+              Legal info
+            </h3>
+            <ul class="space-y-4">
+              <li>
+                <a href="#" class="hover:text-title transition-colors"
+                  >Terms of use</a
+                >
+              </li>
+              <li>
+                <a href="#" class="hover:text-title transition-colors"
+                  >Disclosures and licenses</a
+                >
+              </li>
+              <li>
+                <a href="#" class="hover:text-title transition-colors"
+                  >Mortgage assistance</a
+                >
+              </li>
+              <li>
+                <a href="policy.html" class="hover:text-title transition-colors"
+                  >Privacy policy</a
+                >
+              </li>
+              <li>
+                <a href="#" class="hover:text-title transition-colors"
+                  >Notice at collection</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <!-- Contact Column -->
+          <div class="flex flex-col items-center">
+            <h3
+              class="text-w-color font-bold text-lg mb-8 underline decoration-w-color decoration-3 underline-offset-[16px]"
+            >
+              Contact us
+            </h3>
+            <ul class="text-center space-y-6">
+              <li class="flex items-center gap-3">
+                <i
+                  class="fa-solid fa-location-dot w-6 h-6 text-w-color text-xl"
+                ></i>
+                <span>185 Wythe Ave, Suite A2<br />Brooklyn, NY 11249</span>
+              </li>
+
+              <li class="flex items-center gap-3">
+                <i
+                  class="fa-solid fa-envelope w-6 h-6 text-w-color text-xl"
+                ></i>
+
+                <a href="mailto:HomeLoanNYC.com" class="hover:text-title"
+                  >HomeLoanNYC.com</a
+                >
+              </li>
+
+              <li class="flex items-center gap-3">
+                <i class="fa-solid fa-phone w-6 h-6 text-w-color text-xl"></i>
+                <a href="tel:123456789" class="hover:text-title"
+                  >(123) 456-789</a
+                >
+              </li>
+              <li class="flex items-center gap-3">
+                <i
+                  class="fa-solid fa-mobile-screen-button w-6 h-6 text-w-color text-xl"
+                ></i>
+                <a href="tel:8442217647" class="hover:text-title"
+                  >Toll Free: (844) 221-7647</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div
+          class="pt-10 border-t border-w-color flex flex-wrap justify-between items-center gap-6 text-sm"
+        >
+          <div class="flex items-center gap-2">
+            Made by
+            <a
+              href="https://hossainuddin.netlify.app/"
+              class="underline hover:text-title transition-colors"
+              >Hossain.Dev</a
+            >
+          </div>
+          <div class="flex gap-6 flex-wrap">
+            <a href="#" class="hover:text-title transition-colors"
+              >ADA Accessibility Statement</a
+            >
+            <a href="#" class="hover:text-title transition-colors"
+              >Privacy Policy</a
+            >
+            <a href="#" class="hover:text-title transition-colors"
+              >Government & Licensing Disclosures</a
+            >
+            <span>Copyright © HomeLoanNCY</span>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- ── Floating Phone FAB ── -->
+    <div id="phone-fab">
+      <div id="phone-popup" role="dialog" aria-label="Contact phone numbers">
+        <div
+          style="
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 14px;
+          "
+        >
+          <div style="display: flex; align-items: center; gap: 10px">
+            <div
+              style="
+                width: 36px;
+                height: 36px;
+                border-radius: 10px;
+                background: rgba(217, 107, 39, 0.12);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                color: var(--color-primary, #d96b27);
+                font-size: 16px;
+              "
+            >
+              <i class="fa-solid fa-phone"></i>
+            </div>
+            <div>
+              <p
+                style="
+                  font-size: 13px;
+                  font-weight: 700;
+                  color: #1a1a2e;
+                  margin: 0;
+                "
+              >
+                Call Us Now
+              </p>
+              <p style="font-size: 11px; color: #888; margin: 0">
+                We're ready to help
+              </p>
+            </div>
+          </div>
+          <button
+            onclick="closePhonePopup()"
+            style="
+              width: 28px;
+              height: 28px;
+              border-radius: 50%;
+              border: 1px solid #e5e7eb;
+              background: #fff;
+              cursor: pointer;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              color: #888;
+              font-size: 13px;
+            "
+            aria-label="Close"
+          >
+            <i class="fa-solid fa-xmark"></i>
+          </button>
+        </div>
+        <hr
+          style="
+            border: none;
+            border-top: 1px solid #f0f0f0;
+            margin-bottom: 10px;
+          "
+        />
+        <a href="tel:9297280155" class="phone-line">
+          <div class="phone-line-icon"><i class="fa-solid fa-phone"></i></div>
+          <div>
+            <p
+              style="font-size: 12px; color: #888; margin: 0; font-weight: 600"
+            >
+              Main
+            </p>
+            <p
+              style="
+                font-size: 15px;
+                font-weight: 700;
+                color: #1a1a2e;
+                margin: 0;
+              "
+            >
+              (929) 728-0155
+            </p>
+          </div>
+        </a>
+        <a
+          href="tel:9297280155"
+          style="
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            margin-top: 14px;
+            background: var(--color-primary, #d96b27);
+            color: #fff;
+            border-radius: 12px;
+            padding: 13px 0;
+            font-weight: 700;
+            font-size: 15px;
+            text-decoration: none;
+            transition: background 0.18s ease;
+          "
+          onmouseover="
+            this.style.background = 'var(--color-primary-hover,#b45a20)'
+          "
+          onmouseout="this.style.background = 'var(--color-primary,#d96b27)'"
+        >
+          <i class="fa-solid fa-phone-volume"></i> Tap to Call
+        </a>
+      </div>
+      <a
+        id="phone-fab-btn"
+        href="tel:9297280155"
+        aria-label="Call us"
+        onclick="return handleFabClick(event);"
+      >
+        <i id="phone-fab-icon" class="fa-solid fa-phone"></i>
+      </a>
+    </div>
+    <script>
+      var phonePopupOpen = false;
+      function handleFabClick(e) {
+        if (window.innerWidth <= 1024) {
+          return true;
+        }
+        e.preventDefault();
+        phonePopupOpen ? closePhonePopup() : openPhonePopup();
+        return false;
+      }
+      function openPhonePopup() {
+        phonePopupOpen = true;
+        document.getElementById("phone-popup").classList.add("open");
+        document
+          .getElementById("phone-fab-btn")
+          .setAttribute("aria-expanded", "true");
+        document.getElementById("phone-fab-icon").className =
+          "fa-solid fa-xmark";
+      }
+      function closePhonePopup() {
+        phonePopupOpen = false;
+        document.getElementById("phone-popup").classList.remove("open");
+        document
+          .getElementById("phone-fab-btn")
+          .setAttribute("aria-expanded", "false");
+        document.getElementById("phone-fab-icon").className =
+          "fa-solid fa-phone";
+      }
+      document.addEventListener("click", function (e) {
+        var fab = document.getElementById("phone-fab");
+        if (phonePopupOpen && fab && !fab.contains(e.target)) {
+          closePhonePopup();
+        }
+      });
+    </script>
+    <script src="dist/js/customDinput.js"></script>
+    <script src="dist/js/nav.js"></script>
+
+    <!-- Page Custom Logic -->
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const form = document.getElementById("loan-inquiry-form");
+        const successScreen = document.getElementById("success-screen");
+        const formCard = document.getElementById("form-card");
+        const submitBtn = document.getElementById("submit-btn");
+
+        // Format number helper
+        function formatNumber(val) {
+          const cleanNum = val.replace(/\D/g, "");
+          if (!cleanNum) return "";
+          return Number(cleanNum).toLocaleString("en-US");
+        }
+
+        // Clean number helper
+        function cleanNumber(val) {
+          return parseFloat(val.replace(/,/g, "")) || 0;
+        }
+
+        // --- Income Formatting ---
+        const incomeInput = document.getElementById("income-input");
+        incomeInput.addEventListener("input", (e) => {
+          const selectionStart = e.target.selectionStart;
+          const oldLength = e.target.value.length;
+          e.target.value = formatNumber(e.target.value);
+          const diff = e.target.value.length - oldLength;
+          e.target.setSelectionRange(
+            selectionStart + diff,
+            selectionStart + diff,
+          );
+        });
+
+        // --- Phone Formatting ---
+        const phoneInput = document.getElementById("phone-input");
+        phoneInput.addEventListener("input", (e) => {
+          const cleanNum = e.target.value.replace(/\D/g, "");
+          let formatted = "";
+          if (cleanNum.length > 0) {
+            formatted += "(" + cleanNum.substring(0, 3);
+          }
+          if (cleanNum.length >= 4) {
+            formatted += ") " + cleanNum.substring(3, 6);
+          }
+          if (cleanNum.length >= 7) {
+            formatted += "-" + cleanNum.substring(6, 10);
+          }
+          e.target.value = formatted;
+        });
+
+        // --- Clear Select Validation Error on Option Click ---
+        const dropdownOptions = document.querySelectorAll(".dropdown-option");
+        dropdownOptions.forEach((opt) => {
+          opt.addEventListener("click", () => {
+            const dropdown = opt.closest(".custom-dropdown");
+            const hiddenInput = dropdown.querySelector('input[type="hidden"]');
+            const errorId = "error-" + hiddenInput.name.replace("_", "-");
+            const errorEl = document.getElementById(errorId);
+            if (errorEl) {
+              errorEl.classList.add("hidden");
+            }
+          });
+        });
+
+        // Validation helper
+        function validateField(inputEl, errorEl, checkFn) {
+          const isValid = checkFn(inputEl.value);
+          if (isValid) {
+            errorEl.classList.add("hidden");
+          } else {
+            errorEl.classList.remove("hidden");
+          }
+          return isValid;
+        }
+
+        // Form Submit Handler
+        form.addEventListener("submit", (e) => {
+          e.preventDefault();
+
+          const firstName = document.getElementById("first-name-input");
+          const lastName = document.getElementById("last-name-input");
+          const email = document.getElementById("email-input");
+          const phone = document.getElementById("phone-input");
+          const address = document.getElementById("address-input");
+          const reason = document.getElementById("loan-reason-input");
+          const state = document.getElementById("state-input");
+          const income = document.getElementById("income-input");
+          const creditScore = document.getElementById("credit-score-input");
+
+          const errFirstName = document.getElementById("error-first-name");
+          const errLastName = document.getElementById("error-last-name");
+          const errEmail = document.getElementById("error-email");
+          const errPhone = document.getElementById("error-phone");
+          const errAddress = document.getElementById("error-address");
+          const errReason = document.getElementById("error-loan-reason");
+          const errState = document.getElementById("error-state");
+          const errIncome = document.getElementById("error-income");
+          const errCreditScore = document.getElementById("error-credit-score");
+
+          let isValid = true;
+
+          // Check Address
+          if (
+            !validateField(address, errAddress, (val) => val.trim().length > 0)
+          ) {
+            isValid = false;
+          }
+
+          // Check First Name
+          if (
+            !validateField(
+              firstName,
+              errFirstName,
+              (val) => val.trim().length > 0,
+            )
+          ) {
+            isValid = false;
+          }
+          // Check Last Name
+          if (
+            !validateField(
+              lastName,
+              errLastName,
+              (val) => val.trim().length > 0,
+            )
+          ) {
+            isValid = false;
+          }
+          // Check Email
+          const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+          if (
+            !validateField(email, errEmail, (val) =>
+              emailRegex.test(val.trim()),
+            )
+          ) {
+            isValid = false;
+          }
+          // Check Phone
+          const cleanPhone = phone.value.replace(/\D/g, "");
+          if (
+            !validateField(phone, errPhone, (val) => cleanPhone.length === 10)
+          ) {
+            isValid = false;
+          }
+          // Check Reason for Loan
+          if (!validateField(reason, errReason, (val) => val !== "")) {
+            isValid = false;
+          }
+          // Check State
+          if (!validateField(state, errState, (val) => val === "NY")) {
+            isValid = false;
+          }
+          // Check Income
+          const incomeVal = cleanNumber(income.value);
+          if (!validateField(income, errIncome, (val) => incomeVal > 0)) {
+            isValid = false;
+          }
+          // Check Credit Score
+          const scoreVal = parseInt(creditScore.value) || 0;
+          if (
+            !validateField(
+              creditScore,
+              errCreditScore,
+              (val) => scoreVal >= 300 && scoreVal <= 850,
+            )
+          ) {
+            isValid = false;
+          }
+
+          if (!isValid) {
+            // Scroll to the first error
+            const firstError = form.querySelector(".text-red-500:not(.hidden)");
+            if (firstError) {
+              firstError.previousElementSibling.scrollIntoView({
+                behavior: "smooth",
+                block: "center",
+              });
+            }
+            return;
+          }
+
+          // Submission animation
+          submitBtn.disabled = true;
+          submitBtn.innerHTML =
+            '<i class="fa-solid fa-circle-notch fa-spin text-sm"></i> Submitting...';
+
+          setTimeout(() => {
+            document.getElementById("success-name").innerText =
+              firstName.value.trim();
+
+            // Hide the form
+            form.classList.add("hidden");
+
+            // Adjust card style to make it look premium
+            formCard.classList.remove("bg-slate-200");
+            formCard.classList.add("bg-w-color", "border-none", "shadow-none");
+
+            // Show success screen
+            successScreen.classList.remove("hidden");
+
+            // Scroll smoothly to success screen
+            formCard.scrollIntoView({ behavior: "smooth", block: "center" });
+          }, 1200);
+        });
+      });
+    </script>
+  </body>
+</html>
