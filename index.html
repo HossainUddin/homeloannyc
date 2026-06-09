@@ -62,7 +62,7 @@
 
         <!-- Nav Links -->
         <div
-          class="hidden lg:flex items-center gap-4 text-[15px] font-semibold text-title"
+          class="hidden lg:flex items-center gap-6 text-[15px] font-semibold text-title"
         >
           <!-- Shop Rates Dropdown -->
           <div class="relative group">
@@ -90,9 +90,10 @@
             <!-- Mega Menu Content -->
             <div
               id="shop-rates-dropdown"
-              class="hidden absolute top-full left-1/2 -translate-x-1/2 mt-4 w-[600px] bg-w-color rounded-3xl shadow-2xl border border-slate-200 overflow-hidden z-50 p-6"
+              class="hidden absolute top-full left-1/2 -translate-x-1/2 mt-4 w-[300px] bg-w-color rounded-3xl shadow-2xl border border-slate-200 overflow-hidden z-50 p-6"
             >
-              <div class="grid grid-cols-2 text-center">
+              <!-- class="grid grid-cols-2 text-center" -->
+              <div class="text-center">
                 <!-- Section 1 -->
                 <div
                   class="p-6 rounded-2xl bg-w-color flex flex-col items-center"
@@ -109,7 +110,7 @@
                 </div>
 
                 <!-- Section 2 -->
-                <div
+                <!-- <div
                   class="p-6 rounded-2xl bg-w-color flex flex-col items-center"
                 >
                   <h3 class="text-base font-bold text-title mb-4">
@@ -121,7 +122,7 @@
                   >
                     Free rate quote
                   </a>
-                </div>
+                </div> -->
               </div>
             </div>
           </div>
@@ -132,7 +133,7 @@
               id="loan-programs-button"
               class="flex items-center gap-1 hover:text-primary transition-colors py-2"
             >
-              Loan programs
+              Loan Programs
               <svg
                 class="w-4 h-4 opacity-50 transition-transform duration-300"
                 id="loan-programs-arrow"
@@ -153,14 +154,29 @@
               class="hidden absolute top-full left-0 mt-4 min-w-[240px] bg-w-color rounded-2xl shadow-xl border border-slate-200 overflow-hidden z-50 py-2"
             >
               <a
-                href="fixed_rate.html"
+                href="loan.html"
                 class="block px-6 py-3 hover:bg-w-color hover:text-primary transition-colors"
-                >Fixed-Rate Mortgage</a
+                >Conventional Loan</a
               >
               <a
                 href="#"
                 class="block px-6 py-3 hover:bg-w-color hover:text-primary transition-colors"
-                >Demo</a
+                >FHA Loan</a
+              >
+              <a
+                href="#"
+                class="block px-6 py-3 hover:bg-w-color hover:text-primary transition-colors"
+                >VA Loan</a
+              >
+              <a
+                href="#"
+                class="block px-6 py-3 hover:bg-w-color hover:text-primary transition-colors"
+                >USDA Loan</a
+              >
+              <a
+                href="#"
+                class="block px-6 py-3 hover:bg-w-color hover:text-primary transition-colors"
+                >Jumbo Loan</a
               >
             </div>
           </div>
@@ -202,11 +218,6 @@
                 class="block px-6 py-3 hover:bg-w-color hover:text-primary transition-colors"
                 >Mortgage calculator</a
               >
-              <a
-                href="affordability.html"
-                class="block px-6 py-3 hover:bg-w-color hover:text-primary transition-colors"
-                >Affordability calculator</a
-              >
             </div>
           </div>
 
@@ -221,12 +232,12 @@
             ><i class="fa-solid fa-phone pr-2"></i> (929) 728-0155</a
           >
           <a
-            href="quote.html"
+            href="form.html"
             class="hidden lg:block text-[15px] font-bold bg-primary text-w-color px-6 py-2.5 rounded-full hover:bg-primary-hover transition-all shadow-lg shadow-primary/10"
-            >Get Quote</a
+            >Get A Quote</a
           >
           <a
-            href="apply.html"
+            href="form.html"
             class="hidden lg:block text-[15px] font-bold bg-primary text-w-color px-6 py-2.5 rounded-full hover:bg-primary-hover transition-all shadow-lg shadow-primary/10"
             >Pre Approval</a
           >
@@ -262,7 +273,7 @@
       >
         <div class="flex flex-col p-6 gap-4 font-semibold text-title">
           <!-- Mobile Shop Rates Accordion -->
-          <div class="border-b border-w-color">
+          <!-- <div class="border-b border-w-color">
             <button
               id="mobile-shop-rates-btn"
               class="w-full py-3 flex justify-between items-center text-left"
@@ -305,7 +316,7 @@
                 </a>
               </div>
             </div>
-          </div>
+          </div> -->
 
           <!-- Mobile Loan Programs Accordion -->
           <div class="border-b border-w-color">
@@ -333,12 +344,27 @@
               <a
                 href="fixed_rate.html"
                 class="block py-2 text-sm opacity-80 hover:text-primary"
-                >Fixed-Rate Mortgage</a
+                >Conventional Loan</a
               >
               <a
                 href="#"
                 class="block py-2 text-sm opacity-80 hover:text-primary"
-                >Demo</a
+                >FHA Loan</a
+              >
+              <a
+                href="#"
+                class="block py-2 text-sm opacity-80 hover:text-primary"
+                >VA Loan</a
+              >
+              <a
+                href="#"
+                class="block py-2 text-sm opacity-80 hover:text-primary"
+                >USDA Loan</a
+              >
+              <a
+                href="#"
+                class="block py-2 text-sm opacity-80 hover:text-primary"
+                >Jumbo Loan</a
               >
             </div>
           </div>
@@ -388,12 +414,12 @@
           <!-- Mobile CTAs -->
           <div class="grid grid-cols-1 gap-3 mt-4">
             <a
-              href="quote.html"
+              href="form.html"
               class="w-full text-center font-bold bg-primary text-w-color py-4 rounded-xl shadow-lg shadow-primary/20"
-              >Get Quote</a
+              >Get A Quote</a
             >
             <a
-              href="apply.html"
+              href="form.html"
               class="w-full text-center font-bold bg-primary text-w-color py-4 rounded-xl shadow-lg shadow-primary/20"
               >Pre Approval</a
             >

@@ -20,7 +20,6 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
-    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <style>
       body {
@@ -67,10 +66,10 @@
 
         <!-- Nav Links -->
         <div
-          class="hidden lg:flex items-center gap-5 text-[15px] font-semibold text-title"
+          class="hidden lg:flex items-center gap-8 text-[15px] font-semibold text-title"
         >
           <!-- Shop Rates Dropdown -->
-          <div class="relative group">
+          <!-- <div class="relative group">
             <button
               id="shop-rates-button"
               class="flex items-center gap-1 hover:text-primary transition-colors py-2"
@@ -92,13 +91,13 @@
               </svg>
             </button>
 
-            <!-- Mega Menu Content -->
+            Mega Menu Content
             <div
               id="shop-rates-dropdown"
               class="hidden absolute top-full left-1/2 -translate-x-1/2 mt-4 w-[600px] bg-w-color rounded-3xl shadow-2xl border border-slate-200 overflow-hidden z-50 p-6"
             >
               <div class="grid grid-cols-2 text-center">
-                <!-- Section 1 -->
+                Section 1
                 <div
                   class="p-6 rounded-2xl bg-w-color flex flex-col items-center"
                 >
@@ -113,7 +112,7 @@
                   </a>
                 </div>
 
-                <!-- Section 2 -->
+                Section 2
                 <div
                   class="p-6 rounded-2xl bg-w-color flex flex-col items-center"
                 >
@@ -129,7 +128,7 @@
                 </div>
               </div>
             </div>
-          </div>
+          </div> -->
 
           <!-- Loan Programs Dropdown -->
           <div class="relative group">
@@ -137,7 +136,7 @@
               id="loan-programs-button"
               class="flex items-center gap-1 hover:text-primary transition-colors py-2"
             >
-              Loan programs
+              Loan Programs
               <svg
                 class="w-4 h-4 opacity-50 transition-transform duration-300"
                 id="loan-programs-arrow"
@@ -158,14 +157,29 @@
               class="hidden absolute top-full left-0 mt-4 min-w-[240px] bg-w-color rounded-2xl shadow-xl border border-slate-200 overflow-hidden z-50 py-2"
             >
               <a
-                href="fixed_rate.html"
+                href="loan.html"
                 class="block px-6 py-3 hover:bg-w-color hover:text-primary transition-colors"
-                >Fixed-Rate Mortgage</a
+                >Conventional Loan</a
               >
               <a
                 href="#"
                 class="block px-6 py-3 hover:bg-w-color hover:text-primary transition-colors"
-                >Demo</a
+                >FHA Loan</a
+              >
+              <a
+                href="#"
+                class="block px-6 py-3 hover:bg-w-color hover:text-primary transition-colors"
+                >VA Loan</a
+              >
+              <a
+                href="#"
+                class="block px-6 py-3 hover:bg-w-color hover:text-primary transition-colors"
+                >USDA Loan</a
+              >
+              <a
+                href="#"
+                class="block px-6 py-3 hover:bg-w-color hover:text-primary transition-colors"
+                >Jumbo Loan</a
               >
             </div>
           </div>
@@ -207,11 +221,6 @@
                 class="block px-6 py-3 hover:bg-w-color hover:text-primary transition-colors"
                 >Mortgage calculator</a
               >
-              <a
-                href="affordability.html"
-                class="block px-6 py-3 hover:bg-w-color hover:text-primary transition-colors"
-                >Affordability calculator</a
-              >
             </div>
           </div>
 
@@ -223,15 +232,15 @@
           <a
             href="tel:123456789"
             class="hidden lg:block text-[15px] font-bold text-primary px-6 py-2.5 rounded-full border border-primary/20 hover:bg-primary/5 transition-all"
-            ><i class="fa-solid fa-phone pr-2"></i> (123) 456-789</a
+            ><i class="fa-solid fa-phone pr-2"></i> (929) 728-0155</a
           >
           <a
-            href="quote.html"
+            href="form.html"
             class="hidden lg:block text-[15px] font-bold bg-primary text-w-color px-6 py-2.5 rounded-full hover:bg-primary-hover transition-all shadow-lg shadow-primary/10"
-            >Get Quote</a
+            >Get A Quote</a
           >
           <a
-            href="apply.html"
+            href="form.html"
             class="hidden lg:block text-[15px] font-bold bg-primary text-w-color px-6 py-2.5 rounded-full hover:bg-primary-hover transition-all shadow-lg shadow-primary/10"
             >Pre Approval</a
           >
@@ -267,7 +276,7 @@
       >
         <div class="flex flex-col p-6 gap-4 font-semibold text-title">
           <!-- Mobile Shop Rates Accordion -->
-          <div class="border-b border-w-color">
+          <!-- <div class="border-b border-w-color">
             <button
               id="mobile-shop-rates-btn"
               class="w-full py-3 flex justify-between items-center text-left"
@@ -310,7 +319,7 @@
                 </a>
               </div>
             </div>
-          </div>
+          </div> -->
 
           <!-- Mobile Loan Programs Accordion -->
           <div class="border-b border-w-color">
@@ -338,17 +347,33 @@
               <a
                 href="fixed_rate.html"
                 class="block py-2 text-sm opacity-80 hover:text-primary"
-                >Fixed-Rate Mortgage</a
+                >Conventional Loan</a
               >
               <a
                 href="#"
                 class="block py-2 text-sm opacity-80 hover:text-primary"
-                >Demo</a
+                >FHA Loan</a
+              >
+              <a
+                href="#"
+                class="block py-2 text-sm opacity-80 hover:text-primary"
+                >VA Loan</a
+              >
+              <a
+                href="#"
+                class="block py-2 text-sm opacity-80 hover:text-primary"
+                >USDA Loan</a
+              >
+              <a
+                href="#"
+                class="block py-2 text-sm opacity-80 hover:text-primary"
+                >Jumbo Loan</a
               >
             </div>
           </div>
 
           <a href="about.html" class="py-3 border-b border-w-color">About us</a>
+
           <!-- Mobile Calculators Accordion -->
           <div class="border-b border-w-color">
             <button
@@ -376,12 +401,12 @@
               class="hidden pb-4 pl-4 space-y-3"
             >
               <a
-                href="quote.html"
+                href="mortgage.html"
                 class="block py-2 text-sm opacity-80 hover:text-primary"
                 >Mortgage calculator</a
               >
               <a
-                href="#"
+                href="affordability.html"
                 class="block py-2 text-sm opacity-80 hover:text-primary"
                 >Affordability calculator</a
               >
@@ -392,19 +417,19 @@
           <!-- Mobile CTAs -->
           <div class="grid grid-cols-1 gap-3 mt-4">
             <a
-              href="quote.html"
+              href="form.html"
               class="w-full text-center font-bold bg-primary text-w-color py-4 rounded-xl shadow-lg shadow-primary/20"
-              >Get Quote</a
+              >Get A Quote</a
             >
             <a
-              href="apply.html"
+              href="form.html"
               class="w-full text-center font-bold bg-primary text-w-color py-4 rounded-xl shadow-lg shadow-primary/20"
               >Pre Approval</a
             >
             <a
               href="tel:123456789"
               class="w-full text-center font-bold text-primary py-4 rounded-xl border border-primary/20"
-              ><i class="fa-solid fa-phone pr-2"></i> (123) 456-789</a
+              ><i class="fa-solid fa-phone pr-2"></i> (929) 728-0155</a
             >
           </div>
         </div>
@@ -421,78 +446,17 @@
           class="bg-white rounded-3xl shadow-2xl border border-slate-200 overflow-hidden min-h-[400px] md:min-h-[600px] flex flex-col"
         >
           <!-- Progress Bar -->
-          <div id="progress-container" class="hidden h-1.5 bg-slate-100 w-full">
+          <div id="progress-container" class="h-1.5 bg-slate-100 w-full">
             <div
               id="progress-bar"
-              class="h-full bg-primary transition-all duration-500 w-0"
+              class="h-full bg-primary transition-all duration-500 w-[33.33%]"
             ></div>
-          </div>
-
-          <!-- Splash Page: Human Confirmation -->
-          <div
-            id="step-pre-captcha"
-            class="step active flex flex-col items-center justify-center p-6 md:p-12 text-center flex-1"
-          >
-            <h2
-              class="text-[40px] md:text-[50px] font-medium text-primary mb-8 max-w-md leading-tight"
-            >
-              Let's confirm you are human
-            </h2>
-            <p class="text-slate-600 mb-12 max-w-lg text-lg leading-relaxed">
-              Complete the security check before continuing. This step verifies
-              that you are not a bot, which helps to protect your account and
-              prevent spam.
-            </p>
-            <button
-              onclick="showCaptcha()"
-              class="bg-primary text-white px-12 py-3 rounded-md font-bold hover:bg-primary-hover transition-all flex items-center gap-2 text-xl shadow-sm"
-            >
-              Begin <span class="ml-1 text-2xl leading-none">></span>
-            </button>
-          </div>
-
-          <!-- Step 0: CAPTCHA -->
-          <div
-            id="step-0"
-            class="step hidden flex flex-col items-center justify-center p-6 md:p-12 text-center flex-1"
-          >
-            <div
-              class="w-16 h-16 bg-primary/10 rounded-2xl flex items-center justify-center mb-6"
-            >
-              <svg
-                class="w-8 h-8 text-primary"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"
-                />
-              </svg>
-            </div>
-            <h2 class="text-3xl font-extrabold text-title mb-4">
-              Secure Calculator
-            </h2>
-            <p class="text-slate-600 mb-8 max-w-md">
-              Please verify you are human to unlock our premium mortgage
-              calculation tools.
-            </p>
-            <div class="inline-block">
-              <div
-                class="g-recaptcha"
-                data-sitekey="6LcsEBAtAAAAADgHZ1hUjLanhXxNMlUjAN8gGffY"
-                data-callback="onCaptchaSuccess"
-              ></div>
-            </div>
           </div>
 
           <!-- Step 1: Main Loan Inputs -->
           <div
             id="step-1"
-            class="step hidden p-4 md:p-12 flex-1 min-h-[450px] md:min-h-[670px]"
+            class="step p-4 md:p-12 flex-1 min-h-[450px] md:min-h-[670px]"
           >
             <div
               class="flex flex-col md:flex-row justify-between items-start md:items-center mb-8 gap-4"
@@ -932,12 +896,12 @@
 
             <div
               id="results-wrapper"
-              class="relative max-h-[720px] md:max-h-none overflow-hidden"
+              class="relative"
             >
-              <!-- Blurred Results Container -->
+              <!-- Results Container -->
               <div
                 id="results-data-container"
-                class="filter blur-md pointer-events-none select-none transition-all duration-500"
+                class="transition-all duration-500"
               >
                 <div
                   class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8 items-stretch"
@@ -1270,25 +1234,26 @@
               <div
                 class="mt-6 md:mt-12 p-4 md:p-6 bg-primary/10 rounded-2xl border border-primary/20 flex flex-col md:flex-row justify-between items-center gap-6"
               >
-                <div class="flex items-center gap-4">
+                <div class="flex items-center gap-4 text-left">
                   <div
-                    class="w-12 h-12 bg-primary text-white rounded-xl flex items-center justify-center font-bold text-xl shadow-lg shadow-primary/20"
+                    class="w-12 h-12 bg-primary text-white rounded-xl flex items-center justify-center text-xl shadow-lg shadow-primary/20 shrink-0"
                   >
-                    B
+                    <i class="fa-solid fa-user-tie"></i>
                   </div>
                   <div>
-                    <h4 class="font-extrabold text-title">
-                      Don't leave $73,000 on the table.
+                    <h4 class="font-extrabold text-title text-base md:text-lg">
+                      Not sure how much home you can afford?
                     </h4>
-                    <p class="text-slate-500 text-sm">
-                      Our top mortgage rates beat 99.7% of banks.
+                    <p class="text-slate-600 text-sm mt-1">
+                      Speak with a licensed mortgage professional for a personalized review.
                     </p>
                   </div>
                 </div>
-                <button
-                  class="bg-primary text-white px-8 py-3.5 rounded-xl font-bold hover:bg-primary-hover transition-all flex items-center gap-2 whitespace-nowrap"
+                <a
+                  href="form.html"
+                  class="bg-primary text-white px-8 py-3.5 rounded-xl font-bold hover:bg-primary-hover transition-all flex items-center gap-2 whitespace-nowrap shadow-md hover:shadow-lg"
                 >
-                  Personalize your rates
+                  Get Pre-Approved
                   <svg
                     class="w-5 h-5"
                     fill="none"
@@ -1302,161 +1267,11 @@
                       d="M14 5l7 7m0 0l-7 7m7-7H3"
                     />
                   </svg>
-                </button>
+                </a>
               </div>
             </div>
 
-            <!-- Unlock Form Overlay -->
-            <div
-              id="results-unlock-overlay"
-              class="absolute inset-0 z-20 flex flex-col items-center justify-center bg-white/80 backdrop-blur-md transition-all duration-500 rounded-3xl overflow-y-auto pb-8 md:py-4 px-4"
-            >
-              <div
-                class="w-full max-w-lg bg-white rounded-3xl border border-slate-200 shadow-2xl p-5 md:p-8 relative flex flex-col gap-3 md:gap-4"
-              >
-                <!-- Accent top bar -->
-                <div
-                  class="absolute top-0 left-0 right-0 h-2 bg-gradient-to-r from-primary to-primary-hover rounded-t-3xl"
-                  style="background-color: #5d5fe1"
-                ></div>
 
-                <!-- Icon and text -->
-                <div class="text-center">
-                  <div
-                    class="inline-flex items-center justify-center w-12 h-12 md:w-16 md:h-16 bg-primary/10 text-primary rounded-xl md:rounded-2xl mb-2 md:mb-4 animate-bounce"
-                  >
-                    <i class="fa-solid fa-lock text-2xl md:text-3xl"></i>
-                  </div>
-                  <h3 class="text-xl md:text-2xl font-extrabold text-title">
-                    Unlock Your Calculation
-                  </h3>
-                  <p
-                    class="text-slate-500 text-xs md:text-sm mt-1 max-w-md mx-auto"
-                  >
-                    Enter your details below to instantly unlock your detailed
-                    breakdown and amortization chart.
-                  </p>
-                </div>
-
-                <!-- Form inputs -->
-                <form
-                  id="unlockForm"
-                  onsubmit="
-                    event.preventDefault();
-                    unlockResults();
-                  "
-                  class="space-y-3 md:space-y-4 text-left"
-                >
-                  <div class="grid grid-cols-2 gap-3 md:gap-4">
-                    <div class="space-y-1">
-                      <label
-                        class="text-[10px] md:text-xs font-bold text-title uppercase tracking-wider"
-                        >First Name</label
-                      >
-                      <input
-                        type="text"
-                        id="firstName"
-                        placeholder="First name"
-                        onkeypress="return /[a-zA-Z\s]/.test(event.key);"
-                        oninput="
-                          this.value = this.value.replace(/[^a-zA-Z\s]/g, '')
-                        "
-                        class="w-full px-4 py-2.5 bg-slate-50 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary focus:bg-white transition-all font-semibold text-sm"
-                        required
-                      />
-                    </div>
-                    <div class="space-y-1">
-                      <label
-                        class="text-[10px] md:text-xs font-bold text-title uppercase tracking-wider"
-                        >Last Name</label
-                      >
-                      <input
-                        type="text"
-                        id="lastName"
-                        placeholder="Last name"
-                        onkeypress="return /[a-zA-Z\s]/.test(event.key);"
-                        oninput="
-                          this.value = this.value.replace(/[^a-zA-Z\s]/g, '')
-                        "
-                        class="w-full px-4 py-2.5 bg-slate-50 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary focus:bg-white transition-all font-semibold text-sm"
-                        required
-                      />
-                    </div>
-                  </div>
-
-                  <div class="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-4">
-                    <div class="space-y-1">
-                      <label
-                        class="text-[10px] md:text-xs font-bold text-title uppercase tracking-wider"
-                        >Email</label
-                      >
-                      <input
-                        type="email"
-                        id="email"
-                        placeholder="example@email.com"
-                        class="w-full px-4 py-2.5 bg-slate-50 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary focus:bg-white transition-all font-semibold text-sm"
-                        required
-                      />
-                    </div>
-                    <div class="space-y-1">
-                      <label
-                        class="text-[10px] md:text-xs font-bold text-title uppercase tracking-wider"
-                        >Phone Number</label
-                      >
-                      <input
-                        type="number"
-                        id="phoneNumber"
-                        placeholder="(000) 000-0000"
-                        class="w-full px-4 py-2.5 bg-slate-50 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary focus:bg-white transition-all font-semibold text-sm"
-                        required
-                      />
-                    </div>
-                  </div>
-
-                  <div class="flex items-start gap-3 mt-2">
-                    <div class="relative flex items-center mt-0.5">
-                      <input
-                        type="checkbox"
-                        id="smsConsent"
-                        required
-                        class="peer h-5 w-5 cursor-pointer appearance-none rounded-md border border-slate-200 bg-w-color transition-all checked:border-primary checked:bg-primary"
-                      />
-                      <svg
-                        class="pointer-events-none absolute left-1/2 top-1/2 h-3.5 w-3.5 -translate-x-1/2 -translate-y-1/2 text-w-color opacity-0 transition-opacity peer-checked:opacity-100"
-                        fill="none"
-                        stroke="currentColor"
-                        stroke-width="3"
-                        viewBox="0 0 24 24"
-                      >
-                        <path
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                          d="M5 13l4 4L19 7"
-                        />
-                      </svg>
-                    </div>
-                    <label
-                      for="smsConsent"
-                      class="text-[10px] md:text-xs text-slate-500 leading-relaxed cursor-pointer select-none"
-                    >
-                      I agree to receive text messages about HomeLoanNYC
-                      promotions. Data rates may apply. Reply STOP to
-                      unsubscribe.
-                    </label>
-                  </div>
-
-                  <button
-                    type="submit"
-                    class="w-full bg-primary text-white py-3 md:py-3.5 rounded-xl font-bold hover:bg-primary-hover transition-all shadow-lg shadow-primary/20 flex items-center justify-center gap-2 group mt-2 text-sm"
-                  >
-                    <i
-                      class="fa-solid fa-lock-open group-hover:scale-110 transition-transform"
-                    ></i>
-                    Unlock Calculation
-                  </button>
-                </form>
-              </div>
-            </div>
           </div>
         </div>
       </div>
