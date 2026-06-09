@@ -337,38 +337,79 @@
          ============================================= */
 
       /* border-transparent — fixes dark borders on unselected cards */
-      .border-transparent { border-color: transparent; }
+      .border-transparent {
+        border-color: transparent;
+      }
 
       /* hover:border-slate-300 — card hover border */
-      .select-card-label:hover { border-color: #cbd5e1; background-color: #f1f5f9; }
+      .select-card-label:hover {
+        border-color: #cbd5e1;
+        background-color: #f1f5f9;
+      }
 
       /* hover:bg-slate-100 */
-      .hover\:bg-slate-100:hover { background-color: #f1f5f9; }
-      .hover\:bg-slate-100:hover { background-color: #f1f5f9; }
+      .hover\:bg-slate-100:hover {
+        background-color: #f1f5f9;
+      }
+      .hover\:bg-slate-100:hover {
+        background-color: #f1f5f9;
+      }
 
       /* bg-primary/10 — icon circle on selected card */
-      .bg-primary\/10 { background-color: color-mix(in srgb, var(--color-primary, #009966) 10%, transparent); }
-      .bg-primary\/20 { background-color: color-mix(in srgb, var(--color-primary, #009966) 20%, transparent); }
-      .bg-slate-200\/50 { background-color: rgba(226, 232, 240, 0.5); }
+      .bg-primary\/10 {
+        background-color: color-mix(
+          in srgb,
+          var(--color-primary, #009966) 10%,
+          transparent
+        );
+      }
+      .bg-primary\/20 {
+        background-color: color-mix(
+          in srgb,
+          var(--color-primary, #009966) 20%,
+          transparent
+        );
+      }
+      .bg-slate-200\/50 {
+        background-color: rgba(226, 232, 240, 0.5);
+      }
 
       /* text-primary color for card icons */
-      .text-primary { color: var(--color-primary, #009966); }
+      .text-primary {
+        color: var(--color-primary, #009966);
+      }
 
       /* shadow-primary/20, shadow-primary/30 — button shadow */
-      .shadow-primary\/20 { box-shadow: 0 10px 15px -3px color-mix(in srgb, var(--color-primary, #009966) 20%, transparent); }
-      .shadow-primary\/30 { box-shadow: 0 10px 15px -3px color-mix(in srgb, var(--color-primary, #009966) 30%, transparent); }
+      .shadow-primary\/20 {
+        box-shadow: 0 10px 15px -3px
+          color-mix(in srgb, var(--color-primary, #009966) 20%, transparent);
+      }
+      .shadow-primary\/30 {
+        box-shadow: 0 10px 15px -3px
+          color-mix(in srgb, var(--color-primary, #009966) 30%, transparent);
+      }
 
       /* text-title/70 - opacity on text */
-      .text-title\/70 { color: color-mix(in srgb, var(--color-title, #1e293b) 70%, transparent); }
+      .text-title\/70 {
+        color: color-mix(in srgb, var(--color-title, #1e293b) 70%, transparent);
+      }
 
       /* group-hover:scale-110 — icon scale on card hover */
-      .group:hover .group-hover\:scale-110 { transform: scale(1.1); }
+      .group:hover .group-hover\:scale-110 {
+        transform: scale(1.1);
+      }
 
       /* transition-transform */
-      .transition-transform { transition-property: transform; transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1); transition-duration: 150ms; }
+      .transition-transform {
+        transition-property: transform;
+        transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+        transition-duration: 150ms;
+      }
 
       /* select-none */
-      .select-none { user-select: none; }
+      .select-none {
+        user-select: none;
+      }
 
       /* Checkbox custom styles */
       input[type="checkbox"] {
@@ -389,20 +430,32 @@
       }
 
       /* min-h-[500px] for form card content */
-      .min-h-\[500px\] { min-height: 500px; }
+      .min-h-\[500px\] {
+        min-height: 500px;
+      }
 
       /* overflow-hidden for slider thumb clipping fix */
-      .rounded-2xl { border-radius: 1rem; }
-      .rounded-3xl { border-radius: 1.5rem; }
+      .rounded-2xl {
+        border-radius: 1rem;
+      }
+      .rounded-3xl {
+        border-radius: 1.5rem;
+      }
 
       /* hover:bg-primary-hover fix */
-      .hover\:bg-primary-hover:hover { background-color: var(--color-primary-hover, #007a52); }
+      .hover\:bg-primary-hover:hover {
+        background-color: var(--color-primary-hover, #007a52);
+      }
 
       /* focus:ring-primary */
-      .focus\:ring-primary:focus { box-shadow: 0 0 0 2px var(--color-primary, #009966); }
+      .focus\:ring-primary:focus {
+        box-shadow: 0 0 0 2px var(--color-primary, #009966);
+      }
 
       /* accent-primary for range slider */
-      .accent-primary { accent-color: var(--color-primary, #009966); }
+      .accent-primary {
+        accent-color: var(--color-primary, #009966);
+      }
     </style>
   </head>
 
@@ -416,7 +469,7 @@
         <div class="w-30 h-25">
           <a href="index.html">
             <img
-              src="../dist/images/logo.png"
+              src="dist/images/logo.png"
               alt="Logo"
               class="w-full h-full object-cover"
             />
@@ -1763,7 +1816,7 @@
             <div class="w-50 h-50 rounded-3xl">
               <a href="index.html">
                 <img
-                  src="../dist/images/logo-2.png"
+                  src="dist/images/logo-2.png"
                   alt="Logo"
                   class="w-full h-full object-cover rounded-3xl"
                 />
@@ -1935,9 +1988,9 @@
         </div>
       </div>
     </footer>
-    <script src="../dist/js/customDinput.js"></script>
-    <script src="../dist/js/nav.js"></script>
-    <script src="../dist/js/theme.js"></script>
+    <script src="dist/js/customDinput.js"></script>
+    <script src="dist/js/nav.js"></script>
+    <script src="dist/js/theme.js"></script>
     <script>
       document.addEventListener("DOMContentLoaded", () => {
         const form = document.getElementById("pre-approval-form");
