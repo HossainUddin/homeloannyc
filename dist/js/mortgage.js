@@ -1,27 +1,9 @@
 // Global Chart Instance
 let paymentChart = null;
 
-function showCaptcha() {
-  document.getElementById("step-pre-captcha").classList.add("hidden");
-  document.getElementById("step-0").classList.remove("hidden");
-}
-
-// Gatekeeper Success
-function onCaptchaSuccess() {
-  sessionStorage.setItem("humanVerified", "true");
-  setTimeout(() => {
-    nextStep(1);
-    document.getElementById("progress-container").classList.remove("hidden");
-  }, 300);
-}
-
-// Check for persisted verification on load
+// On DOM load, initialize to step 1
 document.addEventListener("DOMContentLoaded", () => {
-  if (sessionStorage.getItem("humanVerified") === "true") {
-    // Skip splash and captcha
-    nextStep(1);
-    document.getElementById("progress-container").classList.remove("hidden");
-  }
+  nextStep(1);
 });
 
 // Step Management
@@ -173,21 +155,7 @@ function calculateAndShowResults() {
   document.getElementById("summaryCreditScore").innerText = document.getElementById("creditScore").value + "+";
   document.getElementById("summaryZipCode").innerText = document.getElementById("zipCode").value || "N/A";
 
-  // Check lock state
-  const isUnlocked = sessionStorage.getItem("resultsUnlocked") === "true";
-  const dataContainer = document.getElementById("results-data-container");
-  const overlay = document.getElementById("results-unlock-overlay");
-  const wrapper = document.getElementById("results-wrapper");
 
-  if (isUnlocked) {
-    dataContainer.classList.remove("blur-md", "pointer-events-none", "select-none");
-    overlay.classList.add("hidden");
-    if (wrapper) wrapper.classList.remove("max-h-[720px]", "overflow-hidden");
-  } else {
-    dataContainer.classList.add("blur-md", "pointer-events-none", "select-none");
-    overlay.classList.remove("hidden");
-    if (wrapper) wrapper.classList.add("max-h-[720px]", "overflow-hidden");
-  }
 
   // Update Progress Bar
   document.getElementById("piBar").style.width =
@@ -262,39 +230,4 @@ document.addEventListener("DOMContentLoaded", () => {
 
 // Static breakdown, dynamic recalculation triggered via step wizard recalculate button
 
-function unlockResults() {
-  const form = document.getElementById("unlockForm");
-  const inputs = form.querySelectorAll("input[required]");
-  let isValid = true;
-  inputs.forEach((input) => {
-    if (!input.value.trim() || (input.type === "email" && !input.checkValidity())) {
-      input.classList.add("border-red-500");
-      isValid = false;
-    } else {
-      input.classList.remove("border-red-500");
-    }
-  });
 
-  if (!isValid) {
-    alert("Please fill in all required fields correctly.");
-    return;
-  }
-
-  // Save state
-  sessionStorage.setItem("resultsUnlocked", "true");
-
-  // Unlock UI
-  const dataContainer = document.getElementById("results-data-container");
-  const overlay = document.getElementById("results-unlock-overlay");
-  const wrapper = document.getElementById("results-wrapper");
-  
-  dataContainer.classList.remove("blur-md", "pointer-events-none", "select-none");
-  overlay.classList.add("hidden");
-  if (wrapper) wrapper.classList.remove("max-h-[720px]", "overflow-hidden");
-
-  // Scroll to results top
-  const wizard = document.getElementById("mortgage-wizard");
-  if (wizard) {
-    wizard.scrollIntoView({ behavior: "smooth" });
-  }
-}
