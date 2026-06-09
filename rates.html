@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Privacy Policy</title>
+    <title>Today's Rates</title>
     <link href="../dist/output.css" rel="stylesheet" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -47,7 +47,7 @@
       <div class="max-w-7xl mx-auto px-6 flex justify-between items-center">
         <!-- Logo -->
         <div class="w-30 h-25">
-          <a href="../src/index.html">
+          <a href="index.html">
             <img
               src="../dist/images/logo.png"
               alt="Logo"
@@ -97,7 +97,7 @@
                     Today's rates
                   </h3>
                   <a
-                    href="../src/rates.html"
+                    href="rates.html"
                     class="w-full bg-primary text-center text-w-color py-3 rounded-xl font-bold hover:bg-primary-hover transition-all shadow-lg shadow-primary/10"
                   >
                     Today's rates
@@ -149,7 +149,7 @@
               class="hidden absolute top-full left-0 mt-4 min-w-[240px] bg-w-color rounded-2xl shadow-xl border border-slate-200 overflow-hidden z-50 py-2"
             >
               <a
-                href="../src/fixed_rate.html"
+                href="fixed_rate.html"
                 class="block px-6 py-3 hover:bg-w-color hover:text-primary transition-colors"
                 >Fixed-Rate Mortgage</a
               >
@@ -162,7 +162,7 @@
           </div>
 
           <a
-            href="../src/about.html"
+            href="about.html"
             class="flex items-center gap-1 hover:text-primary transition-colors"
           >
             About us</a
@@ -194,7 +194,7 @@
               class="hidden absolute top-full left-0 mt-4 min-w-[240px] bg-w-color rounded-2xl shadow-xl border border-slate-200 overflow-hidden z-50 py-2"
             >
               <a
-                href="../src/quote.html"
+                href="quote.html"
                 class="block px-6 py-3 hover:bg-w-color hover:text-primary transition-colors"
                 >Mortgage calculator</a
               >
@@ -217,12 +217,12 @@
             ><i class="fa-solid fa-phone pr-2"></i> (123) 456-789</a
           >
           <a
-            href="../src/quote.html"
+            href="quote.html"
             class="hidden lg:block text-[15px] font-bold bg-primary text-w-color px-6 py-2.5 rounded-full hover:bg-primary-hover transition-all shadow-lg shadow-primary/10"
             >Get Quote</a
           >
           <a
-            href="../src/apply.html"
+            href="apply.html"
             class="hidden lg:block text-[15px] font-bold bg-primary text-w-color px-6 py-2.5 rounded-full hover:bg-primary-hover transition-all shadow-lg shadow-primary/10"
             >Pre Approval</a
           >
@@ -284,7 +284,7 @@
                 class="p-6 bg-w-color rounded-2xl flex flex-col items-center text-center"
               >
                 <a
-                  href="../src/rates.html"
+                  href="rates.html"
                   class="w-full bg-primary text-w-color py-4 rounded-xl font-bold hover:bg-primary-hover transition-all"
                 >
                   Today's rates
@@ -327,7 +327,7 @@
             </button>
             <div id="mobile-loan-content" class="hidden pb-4 pl-4 space-y-3">
               <a
-                href="../src/fixed_rate.html"
+                href="fixed_rate.html"
                 class="block py-2 text-sm opacity-80 hover:text-primary"
                 >Fixed-Rate Mortgage</a
               >
@@ -339,9 +339,7 @@
             </div>
           </div>
 
-          <a href="../src/about.html" class="py-3 border-b border-w-color"
-            >About us</a
-          >
+          <a href="about.html" class="py-3 border-b border-w-color">About us</a>
           <!-- Mobile Calculators Accordion -->
           <div class="border-b border-w-color">
             <button
@@ -369,7 +367,7 @@
               class="hidden pb-4 pl-4 space-y-3"
             >
               <a
-                href="../src/quote.html"
+                href="quote.html"
                 class="block py-2 text-sm opacity-80 hover:text-primary"
                 >Mortgage calculator</a
               >
@@ -385,12 +383,12 @@
           <!-- Mobile CTAs -->
           <div class="grid grid-cols-1 gap-3 mt-4">
             <a
-              href="../src/quote.html"
+              href="quote.html"
               class="w-full text-center font-bold bg-primary text-w-color py-4 rounded-xl shadow-lg shadow-primary/20"
               >Get Quote</a
             >
             <a
-              href="../src/apply.html"
+              href="apply.html"
               class="w-full text-center font-bold bg-primary text-w-color py-4 rounded-xl shadow-lg shadow-primary/20"
               >Pre Approval</a
             >
@@ -404,98 +402,305 @@
       </div>
     </nav>
 
-    <!-- Fixed-Rate Mortgage -->
-    <section>
-      <div class="bg-slate-200">
-        <div class="max-w-7xl mx-auto px-6 py-24">
-          <!-- Heading -->
-          <div class="w-full md:w-2/3 space-y-6 text-center mx-auto">
-            <span
-              class="text-primary uppercase tracking-[4px] text-sm font-bold mb-4"
+    <div class="py-18 bg-slate-200">
+      <!-- Heading -->
+      <div class="w-full md:w-1/3 space-y-6 text-center mx-auto">
+        <span
+          class="text-[13px] font-black uppercase tracking-[0.2em] text-primary mb-4"
+          >Stay in the know</span
+        >
+        <h2 class="text-4xl md:text-5xl font-extrabold text-title">
+          Today's rates
+        </h2>
+        <p class="text-title/70 text-center mx-auto leading-relaxed max-w-md">
+          These are example rates. All rates are subject to change and dependent
+          on borrower approval, creditworthiness, and lender terms.
+        </p>
+      </div>
+    </div>
+
+    <!-- Today's Rates Section -->
+    <section class="max-w-7xl mx-auto px-6 pb-16">
+      <div class="gap-16">
+        <!-- Right Content: Interactive Rates -->
+        <div class="flex flex-col items-center py-16">
+          <!-- Purchase/Refinance Toggle -->
+          <div
+            class="bg-w-color border border-slate-200-hover p-1 rounded-full flex items-center mb-8 shadow-sm"
+          >
+            <button
+              id="toggle-purchase"
+              class="px-10 py-3 rounded-full font-bold text-sm transition-all bg-primary text-w-color"
             >
-              Last updated: January 1, 2026
-            </span>
+              Purchase
+            </button>
+            <button
+              id="toggle-refinance"
+              class="px-10 py-3 rounded-full font-bold text-sm transition-all text-title hover:bg-w-color"
+            >
+              Refinance
+            </button>
+          </div>
 
-            <h2 class="text-4xl md:text-5xl font-bold text-title">
-              Privacy Policy
-            </h2>
+          <!-- Program Tabs -->
+          <div class="flex flex-wrap items-center justify-center gap-2 mb-8">
+            <button
+              id="tab-30yr"
+              class="tab-btn px-6 py-2.5 rounded-lg font-bold text-[13px] transition-all bg-title text-w-color"
+            >
+              30 Year Fixed
+            </button>
+            <button
+              id="tab-15yr"
+              class="tab-btn px-6 py-2.5 rounded-lg font-bold text-[13px] transition-all bg-w-color text-title hover:bg-border"
+            >
+              15 Year Fixed
+            </button>
+            <button
+              id="tab-va"
+              class="tab-btn px-6 py-2.5 rounded-lg font-bold text-[13px] transition-all bg-w-color text-title hover:bg-border"
+            >
+              VA
+            </button>
+            <button
+              id="tab-fha"
+              class="tab-btn px-6 py-2.5 rounded-lg font-bold text-[13px] transition-all bg-w-color text-title hover:bg-border"
+            >
+              FHA
+            </button>
+          </div>
 
-            <p class="text-title/90 text-lg leading-relaxed">
-              At HomeLoanNYC, we are committed to protecting your privacy. This
-              Privacy Policy outlines how we collect, use, and safeguard your
-              personal information when you visit our website or use our
-              services.
-            </p>
+          <!-- National Average -->
+          <div
+            class="flex items-center gap-2 text-xs font-bold text-title/60 mb-10"
+          >
+            <span class="text-lg">🇺🇸</span>
+            <span
+              >National average (<span id="avg-label">30 Year Fixed</span>):
+              <span id="avg-value" class="text-title font-black uppercase"
+                >6.38%</span
+              ></span
+            >
+          </div>
+
+          <!-- Rates List -->
+          <div id="rates-container" class="w-full space-y-4">
+            <!-- Rate Cards will be injected/updated here -->
+            <div
+              id="rate-card-1"
+              class="w-full bg-w-color border border-slate-200 rounded-[40px] px-8 py-7 flex flex-wrap items-center justify-between gap-6 hover:shadow-xl hover:shadow-w-color/50 transition-all duration-500"
+            >
+              <div class="flex flex-col gap-1">
+                <span
+                  class="type-label text-[10px] font-black uppercase tracking-widest text-title/40"
+                  >Purchase</span
+                >
+                <span class="program-label text-lg font-extrabold text-title"
+                  >30 Year Fixed</span
+                >
+              </div>
+              <div class="flex items-center gap-12">
+                <div class="flex flex-col items-center">
+                  <span
+                    class="text-[10px] font-black uppercase tracking-widest text-title/40 mb-1"
+                    >Interest</span
+                  >
+                  <span class="interest-value text-lg font-extrabold text-title"
+                    >5.999%</span
+                  >
+                </div>
+                <div class="flex flex-col items-center">
+                  <span
+                    class="text-[10px] font-black uppercase tracking-widest text-title/40 mb-1"
+                    >APR</span
+                  >
+                  <span class="apr-value text-lg font-extrabold text-title"
+                    >6.173%</span
+                  >
+                </div>
+                <div class="hidden md:flex flex-col items-center">
+                  <span
+                    class="text-[10px] font-black uppercase tracking-widest text-title/40 mb-1"
+                    >Points</span
+                  >
+                  <span
+                    class="points-value px-3 py-1 bg-w-color text-amber-500 rounded-full font-bold text-xs"
+                    >+1.617</span
+                  >
+                </div>
+              </div>
+              <a
+                href="#"
+                class="px-10 py-4 rounded-full border-2 text-center border-title/10 font-bold text-title flex items-center justify-center hover:border-title transition-all"
+              >
+                Customize rate
+              </a>
+            </div>
+
+            <div
+              id="rate-card-2"
+              class="w-full bg-w-color border border-slate-200 rounded-[40px] px-8 py-7 flex flex-wrap items-center justify-between gap-6 hover:shadow-xl hover:shadow-w-color/50 transition-all duration-500"
+            >
+              <div class="flex flex-col gap-1">
+                <span
+                  class="type-label text-[10px] font-black uppercase tracking-widest text-title/40"
+                  >Purchase</span
+                >
+                <span class="program-label text-lg font-extrabold text-title"
+                  >30 Year Fixed</span
+                >
+              </div>
+              <div class="flex items-center gap-12">
+                <div class="flex flex-col items-center">
+                  <span
+                    class="text-[10px] font-black uppercase tracking-widest text-title/40 mb-1"
+                    >Interest</span
+                  >
+                  <span class="interest-value text-lg font-extrabold text-title"
+                    >6.124%</span
+                  >
+                </div>
+                <div class="flex flex-col items-center">
+                  <span
+                    class="text-[10px] font-black uppercase tracking-widest text-title/40 mb-1"
+                    >APR</span
+                  >
+                  <span class="apr-value text-lg font-extrabold text-title"
+                    >6.237%</span
+                  >
+                </div>
+                <div class="hidden md:flex flex-col items-center">
+                  <span
+                    class="text-[10px] font-black uppercase tracking-widest text-title/40 mb-1"
+                    >Points</span
+                  >
+                  <span
+                    class="points-value px-3 py-1 bg-w-color text-amber-500 rounded-full font-bold text-xs"
+                    >+0.977</span
+                  >
+                </div>
+              </div>
+              <a
+                href="#"
+                class="px-10 py-4 rounded-full border-2 text-center border-title/10 font-bold text-title flex items-center justify-center hover:border-title transition-all"
+              >
+                Customize rate
+              </a>
+            </div>
+
+            <div
+              id="rate-card-3"
+              class="w-full bg-w-color border border-slate-200 rounded-[40px] px-8 py-7 flex flex-wrap items-center justify-between gap-6 hover:shadow-xl hover:shadow-w-color/50 transition-all duration-500"
+            >
+              <div class="flex flex-col gap-1">
+                <span
+                  class="type-label text-[10px] font-black uppercase tracking-widest text-title/40"
+                  >Purchase</span
+                >
+                <span class="program-label text-lg font-extrabold text-title"
+                  >30 Year Fixed</span
+                >
+              </div>
+              <div class="flex items-center gap-12">
+                <div class="flex flex-col items-center">
+                  <span
+                    class="text-[10px] font-black uppercase tracking-widest text-title/40 mb-1"
+                    >Interest</span
+                  >
+                  <span class="interest-value text-lg font-extrabold text-title"
+                    >6.125%</span
+                  >
+                </div>
+                <div class="flex flex-col items-center">
+                  <span
+                    class="text-[10px] font-black uppercase tracking-widest text-title/40 mb-1"
+                    >APR</span
+                  >
+                  <span class="apr-value text-lg font-extrabold text-title"
+                    >6.235%</span
+                  >
+                </div>
+                <div class="hidden md:flex flex-col items-center">
+                  <span
+                    class="text-[10px] font-black uppercase tracking-widest text-title/40 mb-1"
+                    >Points</span
+                  >
+                  <span
+                    class="points-value px-3 py-1 bg-w-color text-amber-500 rounded-full font-bold text-xs"
+                    >+0.945</span
+                  >
+                </div>
+              </div>
+              <a
+                href="#"
+                class="px-10 py-4 rounded-full border-2 text-center border-title/10 font-bold text-title flex items-center justify-center hover:border-title transition-all"
+              >
+                Customize rate
+              </a>
+            </div>
+          </div>
+
+          <!-- Footer Info -->
+          <div
+            class="mt-12 w-full flex flex-col items-center justify-between gap-6"
+          >
+            <a
+              href="#"
+              class="text-primary font-black uppercase tracking-widest text-xs hover:underline decoration-2 underline-offset-4"
+            >
+              Show more
+            </a>
+            <div
+              class="flex flex-col items-center gap-2 text-[10px] font-bold text-title/40 uppercase tracking-widest"
+            >
+              <div class="flex items-center gap-3">
+                <a
+                  href="#"
+                  class="underline hover:text-primary transition-colors"
+                  >See Assumptions</a
+                >
+                <span>|</span>
+                <span>Rates as of 6/1/2026, 5:28 PM</span>
+              </div>
+              <span>APR (Annual Percentage Rate)</span>
+            </div>
           </div>
         </div>
       </div>
+    </section>
 
-      <div class="max-w-7xl mx-auto">
-        <div class="px-6 py-12 space-y-8">
-          <h3 class="text-2xl font-bold text-title">Information We Collect</h3>
-          <p class="text-title/90 text-lg leading-relaxed">
-            We may collect personal information such as your name, email
-            address, phone number, and financial information when you fill out
-            our contact forms or apply for a mortgage quote. We also collect
-            non-personal information such as your IP address and browsing
-            behavior through cookies and analytics tools.
-          </p>
-
-          <h3 class="text-2xl font-bold text-title">
-            How We Use Your Information
+    <!-- Take your first step towards your home loan journey -->
+    <section class="p-6 lg:p-0">
+      <div
+        class="md:flex max-w-7xl mx-auto px-6 my-16 py-8 border-4 bg-slate-100 border-primary rounded-xl"
+      >
+        <div
+          class="flex flex-col justify-center items-center md:items-start py-10"
+        >
+          <h3 class="text-4xl font-bold text-title">
+            Take your first step towards your home loan journey
           </h3>
-          <p class="text-title/90 text-lg leading-relaxed">
-            We use the information we collect to provide you with personalized
-            mortgage quotes, improve our services, and communicate with you
-            about our offerings. We do not sell or share your personal
-            information with third parties for marketing purposes. We may share
-            your information with trusted service providers who assist us in
-            operating our website and providing our services, but they are
-            obligated to keep your information confidential.
-          </p>
+          <a
+            href="#"
+            class="w-full sm:w-fit inline-block text-center px-10 py-4 mt-10 rounded-full bg-primary text-w-color font-bold text-xl hover:bg-primary-hover transition-all shadow-lg shadow-primary/20"
+          >
+            Get a quote
+          </a>
 
-          <h3 class="text-2xl font-bold text-title">Your Rights</h3>
-          <p class="text-title/90 text-lg leading-relaxed">
-            You have the right to access, correct, or delete your personal
-            information. You can also opt-out of receiving marketing
-            communications from us at any time. If you have any questions or
-            concerns about our Privacy Policy or how we handle your information,
-            please contact us at
-          </p>
-
-          <h3 class="text-2xl font-bold text-title">Contact Us</h3>
-          <p class="text-title/90 text-lg leading-relaxed">
-            If you have any questions about this Privacy Policy, please contact
-            us at:
-          </p>
-
-          <p class="text-title/90 text-lg leading-relaxed">
-            HomeLoanNYC<br />
-            123 Main Street, New York, NY 10001<br />
-            Email:
-            <a
-              href="mailto:info@homeloannyc.com"
-              class="text-primary hover:underline"
-              >info@homeloannyc.com</a
-            ><br />
-            Phone: (555) 123-4567
-          </p>
-
-          <p class="text-title/90 text-sm leading-relaxed mt-8">
-            This Privacy Policy is effective as of January 1, 2026. We may
-            update this policy from time to time, so please review it
-            periodically.
-          </p>
-          <p class="text-title/90 text-sm leading-relaxed">
-            By using our website and services, you consent to the terms of this
-            Privacy Policy.
-          </p>
-          <div class="text-title/90 text-sm leading-relaxed mt-8">
-            © 2026 HomeLoanNYC. All rights reserved.
-            <br />
-            <a href="#" class="hover:underline">Terms of Service</a> |
-            <a href="#" class="hover:underline">Privacy Policy</a>
-          </div>
+          <ul class="flex text-lg space-x-3 mt-10">
+            <li>No impact on credit score</li>
+            <li>●</li>
+            <li>No hidden costs</li>
+            <li>●</li>
+            <li>No documents required</li>
+          </ul>
+        </div>
+        <div class="w-full max-w-[500px] m-auto rounded-xl">
+          <img
+            class="mx-auto"
+            src="https://www.shutterstock.com/image-photo/dream-home-suburban-landscape-600nw-2681202879.jpg"
+            alt=""
+          />
         </div>
       </div>
     </section>
@@ -510,7 +715,7 @@
           >
             <!-- Logo -->
             <div class="w-50 h-50 rounded-3xl">
-              <a href="../src/index.html">
+              <a href="index.html">
                 <img
                   src="../dist/images/logo-2.png"
                   alt="Logo"
@@ -603,9 +808,7 @@
                 >
               </li>
               <li>
-                <a
-                  href="../src/policy.html"
-                  class="hover:text-title transition-colors"
+                <a href="policy.html" class="hover:text-title transition-colors"
                   >Privacy policy</a
                 >
               </li>
@@ -688,6 +891,7 @@
     </footer>
 
     <script src="../dist/js/nav.js"></script>
+    <script src="../dist/js/rates.js"></script>
     <script src="../dist/js/theme.js"></script>
   </body>
 </html>

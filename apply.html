@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Apply Now</title>
-    <link href="../dist/output.css" rel="stylesheet" />
+    <link href="dist/output.css" rel="stylesheet" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -53,12 +53,18 @@
       /* Card Selection Styles */
       .card-selected {
         border-color: var(--color-primary, #009966) !important;
-        background-color: color-mix(in srgb, var(--color-primary, #009966) 8%, transparent) !important;
+        background-color: color-mix(
+          in srgb,
+          var(--color-primary, #009966) 8%,
+          transparent
+        ) !important;
       }
 
       /* Step Pane Transitions */
       .step-pane {
-        transition: opacity 0.3s ease, transform 0.3s ease;
+        transition:
+          opacity 0.3s ease,
+          transform 0.3s ease;
       }
       .step-pane.hidden {
         display: none;
@@ -73,8 +79,14 @@
 
       /* Animations */
       @keyframes fadeIn {
-        from { opacity: 0; transform: scale(0.97); }
-        to { opacity: 1; transform: scale(1); }
+        from {
+          opacity: 0;
+          transform: scale(0.97);
+        }
+        to {
+          opacity: 1;
+          transform: scale(1);
+        }
       }
       .animate-fade-in {
         animation: fadeIn 0.4s ease forwards;
@@ -86,41 +98,105 @@
          ============================================= */
 
       /* Padding / spacing missing from output.css */
-      .left-5 { left: 1.25rem; }
-      .left-12 { left: 3rem; }
-      .pl-10 { padding-left: 2.5rem; }
-      .pl-12 { padding-left: 3rem; }
-      .py-5 { padding-top: 1.25rem; padding-bottom: 1.25rem; }
-      .pb-12 { padding-bottom: 3rem; }
-      .pt-2 { padding-top: 0.5rem; }
-      .pt-4 { padding-top: 1rem; }
-      .pt-6 { padding-top: 1.5rem; }
-      .h-0\.5 { height: 0.125rem; }
-      .h-20 { height: 5rem; }
-      .w-20 { width: 5rem; }
-      .h-2 { height: 0.5rem; }
-      .w-24 { width: 6rem; }
-      .mb-12 { margin-bottom: 3rem; }
-      .mb-8 { margin-bottom: 2rem; }
-      .px-2 { padding-left: 0.5rem; padding-right: 0.5rem; }
-      .px-1 { padding-left: 0.25rem; padding-right: 0.25rem; }
-      .gap-y-6 { row-gap: 1.5rem; }
-      .flex-grow { flex-grow: 1; }
-      .flex-shrink-0 { flex-shrink: 0; }
-      .-z-0 { z-index: 0; }
+      .left-5 {
+        left: 1.25rem;
+      }
+      .left-12 {
+        left: 3rem;
+      }
+      .pl-10 {
+        padding-left: 2.5rem;
+      }
+      .pl-12 {
+        padding-left: 3rem;
+      }
+      .py-5 {
+        padding-top: 1.25rem;
+        padding-bottom: 1.25rem;
+      }
+      .pb-12 {
+        padding-bottom: 3rem;
+      }
+      .pt-2 {
+        padding-top: 0.5rem;
+      }
+      .pt-4 {
+        padding-top: 1rem;
+      }
+      .pt-6 {
+        padding-top: 1.5rem;
+      }
+      .h-0\.5 {
+        height: 0.125rem;
+      }
+      .h-20 {
+        height: 5rem;
+      }
+      .w-20 {
+        width: 5rem;
+      }
+      .h-2 {
+        height: 0.5rem;
+      }
+      .w-24 {
+        width: 6rem;
+      }
+      .mb-12 {
+        margin-bottom: 3rem;
+      }
+      .mb-8 {
+        margin-bottom: 2rem;
+      }
+      .px-2 {
+        padding-left: 0.5rem;
+        padding-right: 0.5rem;
+      }
+      .px-1 {
+        padding-left: 0.25rem;
+        padding-right: 0.25rem;
+      }
+      .gap-y-6 {
+        row-gap: 1.5rem;
+      }
+      .flex-grow {
+        flex-grow: 1;
+      }
+      .flex-shrink-0 {
+        flex-shrink: 0;
+      }
+      .-z-0 {
+        z-index: 0;
+      }
       /* Negative z-index for step connector lines */
-      .step-line { z-index: 0 !important; }
-      .step-circle { z-index: 10 !important; position: relative; }
+      .step-line {
+        z-index: 0 !important;
+      }
+      .step-circle {
+        z-index: 10 !important;
+        position: relative;
+      }
 
       /* Grid columns missing from output.css */
-      .col-span-1 { grid-column: span 1 / span 1; }
-      .col-span-2 { grid-column: span 2 / span 2; }
-      .col-span-3 { grid-column: span 3 / span 3; }
-      .grid-cols-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
-      .grid-cols-4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+      .col-span-1 {
+        grid-column: span 1 / span 1;
+      }
+      .col-span-2 {
+        grid-column: span 2 / span 2;
+      }
+      .col-span-3 {
+        grid-column: span 3 / span 3;
+      }
+      .grid-cols-3 {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+      .grid-cols-4 {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+      }
 
       /* Tracking widest (for SSN) */
-      .tracking-widest { letter-spacing: 0.1em; }
+      .tracking-widest {
+        letter-spacing: 0.1em;
+      }
 
       /* Range input styling */
       input[type="range"] {
@@ -144,7 +220,7 @@
         border-radius: 50%;
         margin-top: -0.375rem;
         cursor: pointer;
-        box-shadow: 0 1px 4px rgba(0,0,0,0.2);
+        box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
       }
       input[type="range"]::-moz-range-track {
         background: #cbd5e1;
@@ -174,11 +250,17 @@
       }
 
       /* Border-t color variant missing */
-      .border-slate-300\/60 { border-color: rgba(203, 213, 225, 0.6); }
+      .border-slate-300\/60 {
+        border-color: rgba(203, 213, 225, 0.6);
+      }
 
       /* Animate ping for success badge */
       @keyframes ping {
-        75%, 100% { transform: scale(2); opacity: 0; }
+        75%,
+        100% {
+          transform: scale(2);
+          opacity: 0;
+        }
       }
       .animate-ping {
         animation: ping 1s cubic-bezier(0, 0, 0.2, 1) infinite;
@@ -186,25 +268,49 @@
 
       /* Responsive overrides for new grid classes */
       @media (min-width: 640px) {
-        .sm\:grid-cols-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
-        .sm\:col-span-1 { grid-column: span 1 / span 1; }
-        .sm\:col-span-2 { grid-column: span 2 / span 2; }
-        .sm\:flex-row { flex-direction: row; }
+        .sm\:grid-cols-3 {
+          grid-template-columns: repeat(3, minmax(0, 1fr));
+        }
+        .sm\:col-span-1 {
+          grid-column: span 1 / span 1;
+        }
+        .sm\:col-span-2 {
+          grid-column: span 2 / span 2;
+        }
+        .sm\:flex-row {
+          flex-direction: row;
+        }
       }
       @media (min-width: 768px) {
-        .md\:grid-cols-4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
-        .md\:hidden { display: none; }
-        .md\:flex { display: flex; }
-        .md\:p-12 { padding: 3rem; }
-        .md\:text-5xl { font-size: 3rem; line-height: 1; }
-        .md\:w-2\/3 { width: 66.666667%; }
+        .md\:grid-cols-4 {
+          grid-template-columns: repeat(4, minmax(0, 1fr));
+        }
+        .md\:hidden {
+          display: none;
+        }
+        .md\:flex {
+          display: flex;
+        }
+        .md\:p-12 {
+          padding: 3rem;
+        }
+        .md\:text-5xl {
+          font-size: 3rem;
+          line-height: 1;
+        }
+        .md\:w-2\/3 {
+          width: 66.666667%;
+        }
       }
 
       /* max-w-md fix for officer card */
-      .max-w-md { max-width: 28rem; }
+      .max-w-md {
+        max-width: 28rem;
+      }
 
       /* Focus ring styling for form inputs */
-      input:focus, input:focus-visible {
+      input:focus,
+      input:focus-visible {
         outline: none;
       }
       .focus\:ring-2:focus {
@@ -217,10 +323,86 @@
       }
 
       /* Button pointer cursor always */
-      button { cursor: pointer; }
+      button {
+        cursor: pointer;
+      }
 
       /* uppercase auto for state input */
-      .uppercase { text-transform: uppercase; }
+      .uppercase {
+        text-transform: uppercase;
+      }
+
+      /* =============================================
+         CRITICAL MISSING CLASSES (causing visual bugs)
+         ============================================= */
+
+      /* border-transparent — fixes dark borders on unselected cards */
+      .border-transparent { border-color: transparent; }
+
+      /* hover:border-slate-300 — card hover border */
+      .select-card-label:hover { border-color: #cbd5e1; background-color: #f1f5f9; }
+
+      /* hover:bg-slate-100 */
+      .hover\:bg-slate-100:hover { background-color: #f1f5f9; }
+      .hover\:bg-slate-100:hover { background-color: #f1f5f9; }
+
+      /* bg-primary/10 — icon circle on selected card */
+      .bg-primary\/10 { background-color: color-mix(in srgb, var(--color-primary, #009966) 10%, transparent); }
+      .bg-primary\/20 { background-color: color-mix(in srgb, var(--color-primary, #009966) 20%, transparent); }
+      .bg-slate-200\/50 { background-color: rgba(226, 232, 240, 0.5); }
+
+      /* text-primary color for card icons */
+      .text-primary { color: var(--color-primary, #009966); }
+
+      /* shadow-primary/20, shadow-primary/30 — button shadow */
+      .shadow-primary\/20 { box-shadow: 0 10px 15px -3px color-mix(in srgb, var(--color-primary, #009966) 20%, transparent); }
+      .shadow-primary\/30 { box-shadow: 0 10px 15px -3px color-mix(in srgb, var(--color-primary, #009966) 30%, transparent); }
+
+      /* text-title/70 - opacity on text */
+      .text-title\/70 { color: color-mix(in srgb, var(--color-title, #1e293b) 70%, transparent); }
+
+      /* group-hover:scale-110 — icon scale on card hover */
+      .group:hover .group-hover\:scale-110 { transform: scale(1.1); }
+
+      /* transition-transform */
+      .transition-transform { transition-property: transform; transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1); transition-duration: 150ms; }
+
+      /* select-none */
+      .select-none { user-select: none; }
+
+      /* Checkbox custom styles */
+      input[type="checkbox"] {
+        -webkit-appearance: none;
+        appearance: none;
+        width: 1.5rem;
+        height: 1.5rem;
+        border: 2px solid #cbd5e1;
+        border-radius: 0.5rem;
+        background: white;
+        cursor: pointer;
+        flex-shrink: 0;
+        transition: all 0.2s ease;
+      }
+      input[type="checkbox"]:checked {
+        background: var(--color-primary, #009966);
+        border-color: var(--color-primary, #009966);
+      }
+
+      /* min-h-[500px] for form card content */
+      .min-h-\[500px\] { min-height: 500px; }
+
+      /* overflow-hidden for slider thumb clipping fix */
+      .rounded-2xl { border-radius: 1rem; }
+      .rounded-3xl { border-radius: 1.5rem; }
+
+      /* hover:bg-primary-hover fix */
+      .hover\:bg-primary-hover:hover { background-color: var(--color-primary-hover, #007a52); }
+
+      /* focus:ring-primary */
+      .focus\:ring-primary:focus { box-shadow: 0 0 0 2px var(--color-primary, #009966); }
+
+      /* accent-primary for range slider */
+      .accent-primary { accent-color: var(--color-primary, #009966); }
     </style>
   </head>
 
@@ -232,7 +414,7 @@
       <div class="max-w-7xl mx-auto px-6 flex justify-between items-center">
         <!-- Logo -->
         <div class="w-30 h-25">
-          <a href="../src/index.html">
+          <a href="index.html">
             <img
               src="../dist/images/logo.png"
               alt="Logo"
@@ -282,7 +464,7 @@
                     Today's rates
                   </h3>
                   <a
-                    href="../src/rates.html"
+                    href="rates.html"
                     class="w-full bg-primary text-center text-w-color py-3 rounded-xl font-bold hover:bg-primary-hover transition-all shadow-lg shadow-primary/10"
                   >
                     Today's rates
@@ -334,7 +516,7 @@
               class="hidden absolute top-full left-0 mt-4 min-w-[240px] bg-w-color rounded-2xl shadow-xl border border-slate-200 overflow-hidden z-50 py-2"
             >
               <a
-                href="../src/fixed_rate.html"
+                href="fixed_rate.html"
                 class="block px-6 py-3 hover:bg-w-color hover:text-primary transition-colors"
                 >Fixed-Rate Mortgage</a
               >
@@ -347,7 +529,7 @@
           </div>
 
           <a
-            href="../src/about.html"
+            href="about.html"
             class="flex items-center gap-1 hover:text-primary transition-colors"
           >
             About us</a
@@ -379,7 +561,7 @@
               class="hidden absolute top-full left-0 mt-4 min-w-[240px] bg-w-color rounded-2xl shadow-xl border border-slate-200 overflow-hidden z-50 py-2"
             >
               <a
-                href="../src/quote.html"
+                href="quote.html"
                 class="block px-6 py-3 hover:bg-w-color hover:text-primary transition-colors"
                 >Mortgage calculator</a
               >
@@ -402,12 +584,12 @@
             ><i class="fa-solid fa-phone pr-2"></i> (123) 456-789</a
           >
           <a
-            href="../src/quote.html"
+            href="quote.html"
             class="hidden lg:block text-[15px] font-bold bg-primary text-w-color px-6 py-2.5 rounded-full hover:bg-primary-hover transition-all shadow-lg shadow-primary/10"
             >Get Quote</a
           >
           <a
-            href="../src/apply.html"
+            href="apply.html"
             class="hidden lg:block text-[15px] font-bold bg-primary text-w-color px-6 py-2.5 rounded-full hover:bg-primary-hover transition-all shadow-lg shadow-primary/10"
             >Pre Approval</a
           >
@@ -469,7 +651,7 @@
                 class="p-6 bg-w-color rounded-2xl flex flex-col items-center text-center"
               >
                 <a
-                  href="../src/rates.html"
+                  href="rates.html"
                   class="w-full bg-primary text-w-color py-4 rounded-xl font-bold hover:bg-primary-hover transition-all"
                 >
                   Today's rates
@@ -512,7 +694,7 @@
             </button>
             <div id="mobile-loan-content" class="hidden pb-4 pl-4 space-y-3">
               <a
-                href="../src/fixed_rate.html"
+                href="fixed_rate.html"
                 class="block py-2 text-sm opacity-80 hover:text-primary"
                 >Fixed-Rate Mortgage</a
               >
@@ -524,9 +706,7 @@
             </div>
           </div>
 
-          <a href="../src/about.html" class="py-3 border-b border-w-color"
-            >About us</a
-          >
+          <a href="about.html" class="py-3 border-b border-w-color">About us</a>
           <!-- Mobile Calculators Accordion -->
           <div class="border-b border-w-color">
             <button
@@ -554,7 +734,7 @@
               class="hidden pb-4 pl-4 space-y-3"
             >
               <a
-                href="../src/quote.html"
+                href="quote.html"
                 class="block py-2 text-sm opacity-80 hover:text-primary"
                 >Mortgage calculator</a
               >
@@ -570,12 +750,12 @@
           <!-- Mobile CTAs -->
           <div class="grid grid-cols-1 gap-3 mt-4">
             <a
-              href="../src/quote.html"
+              href="quote.html"
               class="w-full text-center font-bold bg-primary text-w-color py-4 rounded-xl shadow-lg shadow-primary/20"
               >Get Quote</a
             >
             <a
-              href="../src/apply.html"
+              href="apply.html"
               class="w-full text-center font-bold bg-primary text-w-color py-4 rounded-xl shadow-lg shadow-primary/20"
               >Pre Approval</a
             >
@@ -603,75 +783,158 @@
             Get Pre-Approved for Your Dream Home
           </h2>
           <p class="text-title/70 text-center mx-auto leading-relaxed max-w-lg">
-            Complete our secure, step-by-step digital application to receive your pre-approval letter and start shopping for your home.
+            Complete our secure, step-by-step digital application to receive
+            your pre-approval letter and start shopping for your home.
           </p>
         </div>
 
         <!-- Step Indicators (Desktop) -->
-        <div id="desktop-progress-bar" class="hidden md:flex items-center justify-between mb-12 px-4">
+        <div
+          id="desktop-progress-bar"
+          class="hidden md:flex items-center justify-between mb-12 px-4"
+        >
           <!-- Step 1 -->
-          <div class="flex flex-col items-center flex-1 relative step-indicator" data-step="1">
-            <div class="w-10 h-10 rounded-full flex items-center justify-center bg-primary text-w-color font-bold border-2 border-primary transition-all duration-300 z-10 step-circle">
+          <div
+            class="flex flex-col items-center flex-1 relative step-indicator"
+            data-step="1"
+          >
+            <div
+              class="w-10 h-10 rounded-full flex items-center justify-center bg-primary text-w-color font-bold border-2 border-primary transition-all duration-300 z-10 step-circle"
+            >
               <i class="fa-solid fa-dollar-sign text-sm"></i>
             </div>
-            <span class="text-xs font-semibold mt-2 text-title transition-all duration-300 step-label">Amount</span>
-            <div class="absolute left-1/2 top-5 w-full h-0.5 bg-slate-300 -z-0 step-line"></div>
+            <span
+              class="text-xs font-semibold mt-2 text-title transition-all duration-300 step-label"
+              >Amount</span
+            >
+            <div
+              class="absolute left-1/2 top-5 w-full h-0.5 bg-slate-300 -z-0 step-line"
+            ></div>
           </div>
           <!-- Step 2 -->
-          <div class="flex flex-col items-center flex-1 relative step-indicator" data-step="2">
-            <div class="w-10 h-10 rounded-full flex items-center justify-center bg-slate-100 text-slate-400 font-bold border-2 border-slate-300 transition-all duration-300 z-10 step-circle">
+          <div
+            class="flex flex-col items-center flex-1 relative step-indicator"
+            data-step="2"
+          >
+            <div
+              class="w-10 h-10 rounded-full flex items-center justify-center bg-slate-100 text-slate-400 font-bold border-2 border-slate-300 transition-all duration-300 z-10 step-circle"
+            >
               <i class="fa-solid fa-house-chimney text-sm"></i>
             </div>
-            <span class="text-xs font-semibold mt-2 text-slate-400 transition-all duration-300 step-label">Purpose</span>
-            <div class="absolute left-1/2 top-5 w-full h-0.5 bg-slate-300 -z-0 step-line"></div>
+            <span
+              class="text-xs font-semibold mt-2 text-slate-400 transition-all duration-300 step-label"
+              >Purpose</span
+            >
+            <div
+              class="absolute left-1/2 top-5 w-full h-0.5 bg-slate-300 -z-0 step-line"
+            ></div>
           </div>
           <!-- Step 3 -->
-          <div class="flex flex-col items-center flex-1 relative step-indicator" data-step="3">
-            <div class="w-10 h-10 rounded-full flex items-center justify-center bg-slate-100 text-slate-400 font-bold border-2 border-slate-300 transition-all duration-300 z-10 step-circle">
+          <div
+            class="flex flex-col items-center flex-1 relative step-indicator"
+            data-step="3"
+          >
+            <div
+              class="w-10 h-10 rounded-full flex items-center justify-center bg-slate-100 text-slate-400 font-bold border-2 border-slate-300 transition-all duration-300 z-10 step-circle"
+            >
               <i class="fa-solid fa-user text-sm"></i>
             </div>
-            <span class="text-xs font-semibold mt-2 text-slate-400 transition-all duration-300 step-label">Personal</span>
-            <div class="absolute left-1/2 top-5 w-full h-0.5 bg-slate-300 -z-0 step-line"></div>
+            <span
+              class="text-xs font-semibold mt-2 text-slate-400 transition-all duration-300 step-label"
+              >Personal</span
+            >
+            <div
+              class="absolute left-1/2 top-5 w-full h-0.5 bg-slate-300 -z-0 step-line"
+            ></div>
           </div>
           <!-- Step 4 -->
-          <div class="flex flex-col items-center flex-1 relative step-indicator" data-step="4">
-            <div class="w-10 h-10 rounded-full flex items-center justify-center bg-slate-100 text-slate-400 font-bold border-2 border-slate-300 transition-all duration-300 z-10 step-circle">
+          <div
+            class="flex flex-col items-center flex-1 relative step-indicator"
+            data-step="4"
+          >
+            <div
+              class="w-10 h-10 rounded-full flex items-center justify-center bg-slate-100 text-slate-400 font-bold border-2 border-slate-300 transition-all duration-300 z-10 step-circle"
+            >
               <i class="fa-solid fa-address-book text-sm"></i>
             </div>
-            <span class="text-xs font-semibold mt-2 text-slate-400 transition-all duration-300 step-label">Contact</span>
-            <div class="absolute left-1/2 top-5 w-full h-0.5 bg-slate-300 -z-0 step-line"></div>
+            <span
+              class="text-xs font-semibold mt-2 text-slate-400 transition-all duration-300 step-label"
+              >Contact</span
+            >
+            <div
+              class="absolute left-1/2 top-5 w-full h-0.5 bg-slate-300 -z-0 step-line"
+            ></div>
           </div>
           <!-- Step 5 -->
-          <div class="flex flex-col items-center flex-1 relative step-indicator" data-step="5">
-            <div class="w-10 h-10 rounded-full flex items-center justify-center bg-slate-100 text-slate-400 font-bold border-2 border-slate-300 transition-all duration-300 z-10 step-circle">
+          <div
+            class="flex flex-col items-center flex-1 relative step-indicator"
+            data-step="5"
+          >
+            <div
+              class="w-10 h-10 rounded-full flex items-center justify-center bg-slate-100 text-slate-400 font-bold border-2 border-slate-300 transition-all duration-300 z-10 step-circle"
+            >
               <i class="fa-solid fa-wallet text-sm"></i>
             </div>
-            <span class="text-xs font-semibold mt-2 text-slate-400 transition-all duration-300 step-label">Finance</span>
-            <div class="absolute left-1/2 top-5 w-full h-0.5 bg-slate-300 -z-0 step-line"></div>
+            <span
+              class="text-xs font-semibold mt-2 text-slate-400 transition-all duration-300 step-label"
+              >Finance</span
+            >
+            <div
+              class="absolute left-1/2 top-5 w-full h-0.5 bg-slate-300 -z-0 step-line"
+            ></div>
           </div>
           <!-- Step 6 -->
-          <div class="flex flex-col items-center flex-1 relative step-indicator" data-step="6">
-            <div class="w-10 h-10 rounded-full flex items-center justify-center bg-slate-100 text-slate-400 font-bold border-2 border-slate-300 transition-all duration-300 z-10 step-circle">
+          <div
+            class="flex flex-col items-center flex-1 relative step-indicator"
+            data-step="6"
+          >
+            <div
+              class="w-10 h-10 rounded-full flex items-center justify-center bg-slate-100 text-slate-400 font-bold border-2 border-slate-300 transition-all duration-300 z-10 step-circle"
+            >
               <i class="fa-solid fa-shield-halved text-sm"></i>
             </div>
-            <span class="text-xs font-semibold mt-2 text-slate-400 transition-all duration-300 step-label">Identity</span>
-            <div class="absolute left-1/2 top-5 w-full h-0.5 bg-slate-300 -z-0 step-line"></div>
+            <span
+              class="text-xs font-semibold mt-2 text-slate-400 transition-all duration-300 step-label"
+              >Identity</span
+            >
+            <div
+              class="absolute left-1/2 top-5 w-full h-0.5 bg-slate-300 -z-0 step-line"
+            ></div>
           </div>
           <!-- Step 7 -->
-          <div class="flex flex-col items-center flex-1 relative step-indicator" data-step="7">
-            <div class="w-10 h-10 rounded-full flex items-center justify-center bg-slate-100 text-slate-400 font-bold border-2 border-slate-300 transition-all duration-300 z-10 step-circle">
+          <div
+            class="flex flex-col items-center flex-1 relative step-indicator"
+            data-step="7"
+          >
+            <div
+              class="w-10 h-10 rounded-full flex items-center justify-center bg-slate-100 text-slate-400 font-bold border-2 border-slate-300 transition-all duration-300 z-10 step-circle"
+            >
               <i class="fa-solid fa-comments text-sm"></i>
             </div>
-            <span class="text-xs font-semibold mt-2 text-slate-400 transition-all duration-300 step-label">Officer</span>
+            <span
+              class="text-xs font-semibold mt-2 text-slate-400 transition-all duration-300 step-label"
+              >Officer</span
+            >
             <!-- No step line for the last step -->
           </div>
         </div>
 
         <!-- Step Indicator (Mobile) -->
-        <div id="mobile-progress-bar" class="md:hidden flex items-center justify-between mb-8 px-2">
-          <span class="text-sm font-bold text-primary tracking-wide uppercase" id="mobile-step-name">Step 1 of 7: Loan Amount</span>
+        <div
+          id="mobile-progress-bar"
+          class="md:hidden flex items-center justify-between mb-8 px-2"
+        >
+          <span
+            class="text-sm font-bold text-primary tracking-wide uppercase"
+            id="mobile-step-name"
+            >Step 1 of 7: Loan Amount</span
+          >
           <div class="w-24 bg-slate-300 h-2 rounded-full overflow-hidden">
-            <div class="bg-primary h-full transition-all duration-300" id="mobile-step-progress" style="width: 14.28%;"></div>
+            <div
+              class="bg-primary h-full transition-all duration-300"
+              id="mobile-step-progress"
+              style="width: 14.28%"
+            ></div>
           </div>
         </div>
 
@@ -684,18 +947,30 @@
             <!-- Step 1: Loan Amount -->
             <div class="step-pane space-y-6 active" data-step="1">
               <div class="flex items-center gap-4 mb-4">
-                <div class="w-12 h-12 rounded-2xl bg-primary flex items-center justify-center text-w-color shadow-lg shadow-primary/20">
+                <div
+                  class="w-12 h-12 rounded-2xl bg-primary flex items-center justify-center text-w-color shadow-lg shadow-primary/20"
+                >
                   <i class="fa-solid fa-dollar-sign text-xl"></i>
                 </div>
-                <h2 class="text-2xl font-bold text-title text-left">Desired Loan Amount</h2>
+                <h2 class="text-2xl font-bold text-title text-left">
+                  Desired Loan Amount
+                </h2>
               </div>
-              <p class="text-sm text-slate-500">Please enter the total amount you wish to borrow for your home purchase or refinance.</p>
+              <p class="text-sm text-slate-500">
+                Please enter the total amount you wish to borrow for your home
+                purchase or refinance.
+              </p>
 
               <div class="space-y-6 pt-4">
                 <div class="space-y-2">
-                  <label class="block text-sm font-semibold text-title ml-1">Loan Amount ($)</label>
+                  <label class="block text-sm font-semibold text-title ml-1"
+                    >Loan Amount ($)</label
+                  >
                   <div class="relative">
-                    <span class="absolute left-5 top-1/2 -translate-y-1/2 text-2xl font-bold text-slate-400">$</span>
+                    <span
+                      class="absolute left-5 top-1/2 -translate-y-1/2 text-2xl font-bold text-slate-400"
+                      >$</span
+                    >
                     <input
                       type="text"
                       id="loan-amount-input"
@@ -704,7 +979,11 @@
                       required
                     />
                   </div>
-                  <span class="text-xs text-red-500 hidden mt-1 ml-1" id="error-loan-amount">Please enter a valid loan amount (minimum $10,000).</span>
+                  <span
+                    class="text-xs text-red-500 hidden mt-1 ml-1"
+                    id="error-loan-amount"
+                    >Please enter a valid loan amount (minimum $10,000).</span
+                  >
                 </div>
 
                 <div class="space-y-2 pt-4">
@@ -717,7 +996,9 @@
                     value="350000"
                     class="w-full h-2 bg-slate-300 rounded-lg appearance-none cursor-pointer accent-primary"
                   />
-                  <div class="flex justify-between text-xs text-slate-400 font-semibold px-1">
+                  <div
+                    class="flex justify-between text-xs text-slate-400 font-semibold px-1"
+                  >
                     <span>$10,000</span>
                     <span>$1,000,000</span>
                     <span>$2,000,000+</span>
@@ -729,42 +1010,88 @@
             <!-- Step 2: Loan Purpose -->
             <div class="step-pane space-y-6 hidden" data-step="2">
               <div class="flex items-center gap-4 mb-4">
-                <div class="w-12 h-12 rounded-2xl bg-primary flex items-center justify-center text-w-color shadow-lg shadow-primary/20">
+                <div
+                  class="w-12 h-12 rounded-2xl bg-primary flex items-center justify-center text-w-color shadow-lg shadow-primary/20"
+                >
                   <i class="fa-solid fa-house-chimney text-xl"></i>
                 </div>
-                <h2 class="text-2xl font-bold text-title text-left">Loan Purpose</h2>
+                <h2 class="text-2xl font-bold text-title text-left">
+                  Loan Purpose
+                </h2>
               </div>
-              <p class="text-sm text-slate-500">Select the reason you are applying for this mortgage loan.</p>
+              <p class="text-sm text-slate-500">
+                Select the reason you are applying for this mortgage loan.
+              </p>
 
               <div class="grid sm:grid-cols-3 gap-6 pt-4">
                 <!-- Option 1: Purchase -->
-                <label class="relative flex flex-col items-center justify-center p-6 bg-slate-50 rounded-2xl border-2 border-transparent cursor-pointer transition-all hover:bg-slate-100 hover:border-slate-300 group select-card-label">
-                  <input type="radio" name="loan_purpose" value="Purchase" class="sr-only select-card-input" checked />
-                  <div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary mb-4 group-hover:scale-110 transition-transform">
+                <label
+                  class="relative flex flex-col items-center justify-center p-6 bg-slate-50 rounded-2xl border-2 border-transparent cursor-pointer transition-all hover:bg-slate-100 hover:border-slate-300 group select-card-label"
+                >
+                  <input
+                    type="radio"
+                    name="loan_purpose"
+                    value="Purchase"
+                    class="sr-only select-card-input"
+                    checked
+                  />
+                  <div
+                    class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary mb-4 group-hover:scale-110 transition-transform"
+                  >
                     <i class="fa-solid fa-key text-lg"></i>
                   </div>
-                  <span class="font-bold text-title text-center text-base">Purchase Home</span>
-                  <span class="text-xs text-slate-400 text-center mt-1">Buying a new home</span>
+                  <span class="font-bold text-title text-center text-base"
+                    >Purchase Home</span
+                  >
+                  <span class="text-xs text-slate-400 text-center mt-1"
+                    >Buying a new home</span
+                  >
                 </label>
 
                 <!-- Option 2: Refinance -->
-                <label class="relative flex flex-col items-center justify-center p-6 bg-slate-50 rounded-2xl border-2 border-transparent cursor-pointer transition-all hover:bg-slate-100 hover:border-slate-300 group select-card-label">
-                  <input type="radio" name="loan_purpose" value="Refinance" class="sr-only select-card-input" />
-                  <div class="w-12 h-12 rounded-full bg-slate-200/50 flex items-center justify-center text-slate-500 mb-4 group-hover:scale-110 transition-transform">
+                <label
+                  class="relative flex flex-col items-center justify-center p-6 bg-slate-50 rounded-2xl border-2 border-transparent cursor-pointer transition-all hover:bg-slate-100 hover:border-slate-300 group select-card-label"
+                >
+                  <input
+                    type="radio"
+                    name="loan_purpose"
+                    value="Refinance"
+                    class="sr-only select-card-input"
+                  />
+                  <div
+                    class="w-12 h-12 rounded-full bg-slate-200/50 flex items-center justify-center text-slate-500 mb-4 group-hover:scale-110 transition-transform"
+                  >
                     <i class="fa-solid fa-arrows-rotate text-lg"></i>
                   </div>
-                  <span class="font-bold text-title text-center text-base">Refinance</span>
-                  <span class="text-xs text-slate-400 text-center mt-1">Lowering your rate</span>
+                  <span class="font-bold text-title text-center text-base"
+                    >Refinance</span
+                  >
+                  <span class="text-xs text-slate-400 text-center mt-1"
+                    >Lowering your rate</span
+                  >
                 </label>
 
                 <!-- Option 3: Home Equity -->
-                <label class="relative flex flex-col items-center justify-center p-6 bg-slate-50 rounded-2xl border-2 border-transparent cursor-pointer transition-all hover:bg-slate-100 hover:border-slate-300 group select-card-label">
-                  <input type="radio" name="loan_purpose" value="Home Equity" class="sr-only select-card-input" />
-                  <div class="w-12 h-12 rounded-full bg-slate-200/50 flex items-center justify-center text-slate-500 mb-4 group-hover:scale-110 transition-transform">
+                <label
+                  class="relative flex flex-col items-center justify-center p-6 bg-slate-50 rounded-2xl border-2 border-transparent cursor-pointer transition-all hover:bg-slate-100 hover:border-slate-300 group select-card-label"
+                >
+                  <input
+                    type="radio"
+                    name="loan_purpose"
+                    value="Home Equity"
+                    class="sr-only select-card-input"
+                  />
+                  <div
+                    class="w-12 h-12 rounded-full bg-slate-200/50 flex items-center justify-center text-slate-500 mb-4 group-hover:scale-110 transition-transform"
+                  >
                     <i class="fa-solid fa-piggy-bank text-lg"></i>
                   </div>
-                  <span class="font-bold text-title text-center text-base">Home Equity</span>
-                  <span class="text-xs text-slate-400 text-center mt-1">Cash out of your home</span>
+                  <span class="font-bold text-title text-center text-base"
+                    >Home Equity</span
+                  >
+                  <span class="text-xs text-slate-400 text-center mt-1"
+                    >Cash out of your home</span
+                  >
                 </label>
               </div>
             </div>
@@ -772,16 +1099,25 @@
             <!-- Step 3: Personal Details -->
             <div class="step-pane space-y-6 hidden" data-step="3">
               <div class="flex items-center gap-4 mb-4">
-                <div class="w-12 h-12 rounded-2xl bg-primary flex items-center justify-center text-w-color shadow-lg shadow-primary/20">
+                <div
+                  class="w-12 h-12 rounded-2xl bg-primary flex items-center justify-center text-w-color shadow-lg shadow-primary/20"
+                >
                   <i class="fa-solid fa-user text-xl"></i>
                 </div>
-                <h2 class="text-2xl font-bold text-title text-left">Personal Details</h2>
+                <h2 class="text-2xl font-bold text-title text-left">
+                  Personal Details
+                </h2>
               </div>
-              <p class="text-sm text-slate-500">Provide your full legal name, current address, and date of birth.</p>
+              <p class="text-sm text-slate-500">
+                Provide your full legal name, current address, and date of
+                birth.
+              </p>
 
               <div class="grid sm:grid-cols-2 gap-x-8 gap-y-6 pt-4">
                 <div class="space-y-2">
-                  <label class="block text-sm font-semibold text-title ml-1">First Name</label>
+                  <label class="block text-sm font-semibold text-title ml-1"
+                    >First Name</label
+                  >
                   <input
                     type="text"
                     id="first-name-input"
@@ -789,10 +1125,16 @@
                     class="w-full bg-slate-50 border-none rounded-2xl px-5 py-4 focus:ring-2 focus:ring-primary transition-all placeholder:text-slate-400 text-title"
                     required
                   />
-                  <span class="text-xs text-red-500 hidden mt-1 ml-1" id="error-first-name">First name is required.</span>
+                  <span
+                    class="text-xs text-red-500 hidden mt-1 ml-1"
+                    id="error-first-name"
+                    >First name is required.</span
+                  >
                 </div>
                 <div class="space-y-2">
-                  <label class="block text-sm font-semibold text-title ml-1">Last Name</label>
+                  <label class="block text-sm font-semibold text-title ml-1"
+                    >Last Name</label
+                  >
                   <input
                     type="text"
                     id="last-name-input"
@@ -800,10 +1142,16 @@
                     class="w-full bg-slate-50 border-none rounded-2xl px-5 py-4 focus:ring-2 focus:ring-primary transition-all placeholder:text-slate-400 text-title"
                     required
                   />
-                  <span class="text-xs text-red-500 hidden mt-1 ml-1" id="error-last-name">Last name is required.</span>
+                  <span
+                    class="text-xs text-red-500 hidden mt-1 ml-1"
+                    id="error-last-name"
+                    >Last name is required.</span
+                  >
                 </div>
                 <div class="sm:col-span-2 space-y-2">
-                  <label class="block text-sm font-semibold text-title ml-1">Current Home Address</label>
+                  <label class="block text-sm font-semibold text-title ml-1"
+                    >Current Home Address</label
+                  >
                   <input
                     type="text"
                     id="address-input"
@@ -811,11 +1159,17 @@
                     class="w-full bg-slate-50 border-none rounded-2xl px-5 py-4 focus:ring-2 focus:ring-primary transition-all placeholder:text-slate-400 text-title"
                     required
                   />
-                  <span class="text-xs text-red-500 hidden mt-1 ml-1" id="error-address">Street address is required.</span>
+                  <span
+                    class="text-xs text-red-500 hidden mt-1 ml-1"
+                    id="error-address"
+                    >Street address is required.</span
+                  >
                 </div>
                 <div class="grid grid-cols-3 sm:col-span-2 gap-4">
                   <div class="space-y-2 col-span-3 sm:col-span-1">
-                    <label class="block text-sm font-semibold text-title ml-1">City</label>
+                    <label class="block text-sm font-semibold text-title ml-1"
+                      >City</label
+                    >
                     <input
                       type="text"
                       id="city-input"
@@ -823,10 +1177,16 @@
                       class="w-full bg-slate-50 border-none rounded-2xl px-5 py-4 focus:ring-2 focus:ring-primary transition-all placeholder:text-slate-400 text-title"
                       required
                     />
-                    <span class="text-xs text-red-500 hidden mt-1 ml-1" id="error-city">City is required.</span>
+                    <span
+                      class="text-xs text-red-500 hidden mt-1 ml-1"
+                      id="error-city"
+                      >City is required.</span
+                    >
                   </div>
                   <div class="space-y-2 col-span-1">
-                    <label class="block text-sm font-semibold text-title ml-1">State</label>
+                    <label class="block text-sm font-semibold text-title ml-1"
+                      >State</label
+                    >
                     <input
                       type="text"
                       id="state-input"
@@ -835,10 +1195,16 @@
                       class="w-full bg-slate-50 border-none rounded-2xl px-5 py-4 focus:ring-2 focus:ring-primary transition-all placeholder:text-slate-400 uppercase text-title"
                       required
                     />
-                    <span class="text-xs text-red-500 hidden mt-1 ml-1" id="error-state">Required.</span>
+                    <span
+                      class="text-xs text-red-500 hidden mt-1 ml-1"
+                      id="error-state"
+                      >Required.</span
+                    >
                   </div>
                   <div class="space-y-2 col-span-2 sm:col-span-1">
-                    <label class="block text-sm font-semibold text-title ml-1">ZIP Code</label>
+                    <label class="block text-sm font-semibold text-title ml-1"
+                      >ZIP Code</label
+                    >
                     <input
                       type="text"
                       id="zip-input"
@@ -847,18 +1213,28 @@
                       class="w-full bg-slate-50 border-none rounded-2xl px-5 py-4 focus:ring-2 focus:ring-primary transition-all placeholder:text-slate-400 text-title"
                       required
                     />
-                    <span class="text-xs text-red-500 hidden mt-1 ml-1" id="error-zip">Invalid ZIP.</span>
+                    <span
+                      class="text-xs text-red-500 hidden mt-1 ml-1"
+                      id="error-zip"
+                      >Invalid ZIP.</span
+                    >
                   </div>
                 </div>
                 <div class="space-y-2">
-                  <label class="block text-sm font-semibold text-title ml-1">Date of Birth</label>
+                  <label class="block text-sm font-semibold text-title ml-1"
+                    >Date of Birth</label
+                  >
                   <input
                     type="date"
                     id="dob-input"
                     class="w-full bg-slate-50 border-none rounded-2xl px-5 py-4 focus:ring-2 focus:ring-primary transition-all text-title"
                     required
                   />
-                  <span class="text-xs text-red-500 hidden mt-1 ml-1" id="error-dob">Must be at least 18 years old.</span>
+                  <span
+                    class="text-xs text-red-500 hidden mt-1 ml-1"
+                    id="error-dob"
+                    >Must be at least 18 years old.</span
+                  >
                 </div>
               </div>
             </div>
@@ -866,16 +1242,25 @@
             <!-- Step 4: Contact Information -->
             <div class="step-pane space-y-6 hidden" data-step="4">
               <div class="flex items-center gap-4 mb-4">
-                <div class="w-12 h-12 rounded-2xl bg-primary flex items-center justify-center text-w-color shadow-lg shadow-primary/20">
+                <div
+                  class="w-12 h-12 rounded-2xl bg-primary flex items-center justify-center text-w-color shadow-lg shadow-primary/20"
+                >
                   <i class="fa-solid fa-address-book text-xl"></i>
                 </div>
-                <h2 class="text-2xl font-bold text-title text-left">Contact Information</h2>
+                <h2 class="text-2xl font-bold text-title text-left">
+                  Contact Information
+                </h2>
               </div>
-              <p class="text-sm text-slate-500">Provide your contact details so we can send updates about your application.</p>
+              <p class="text-sm text-slate-500">
+                Provide your contact details so we can send updates about your
+                application.
+              </p>
 
               <div class="grid sm:grid-cols-2 gap-x-8 gap-y-6 pt-4">
                 <div class="space-y-2">
-                  <label class="block text-sm font-semibold text-title ml-1">Email Address</label>
+                  <label class="block text-sm font-semibold text-title ml-1"
+                    >Email Address</label
+                  >
                   <input
                     type="email"
                     id="email-input"
@@ -883,10 +1268,16 @@
                     class="w-full bg-slate-50 border-none rounded-2xl px-5 py-4 focus:ring-2 focus:ring-primary transition-all placeholder:text-slate-400 text-title"
                     required
                   />
-                  <span class="text-xs text-red-500 hidden mt-1 ml-1" id="error-email">Please enter a valid email address.</span>
+                  <span
+                    class="text-xs text-red-500 hidden mt-1 ml-1"
+                    id="error-email"
+                    >Please enter a valid email address.</span
+                  >
                 </div>
                 <div class="space-y-2">
-                  <label class="block text-sm font-semibold text-title ml-1">Phone Number</label>
+                  <label class="block text-sm font-semibold text-title ml-1"
+                    >Phone Number</label
+                  >
                   <input
                     type="tel"
                     id="phone-input"
@@ -894,7 +1285,11 @@
                     class="w-full bg-slate-50 border-none rounded-2xl px-5 py-4 focus:ring-2 focus:ring-primary transition-all placeholder:text-slate-400 text-title"
                     required
                   />
-                  <span class="text-xs text-red-500 hidden mt-1 ml-1" id="error-phone">Please enter a valid phone number.</span>
+                  <span
+                    class="text-xs text-red-500 hidden mt-1 ml-1"
+                    id="error-phone"
+                    >Please enter a valid phone number.</span
+                  >
                 </div>
               </div>
             </div>
@@ -902,44 +1297,95 @@
             <!-- Step 5: Financial Overview -->
             <div class="step-pane space-y-6 hidden" data-step="5">
               <div class="flex items-center gap-4 mb-4">
-                <div class="w-12 h-12 rounded-2xl bg-primary flex items-center justify-center text-w-color shadow-lg shadow-primary/20">
+                <div
+                  class="w-12 h-12 rounded-2xl bg-primary flex items-center justify-center text-w-color shadow-lg shadow-primary/20"
+                >
                   <i class="fa-solid fa-wallet text-xl"></i>
                 </div>
-                <h2 class="text-2xl font-bold text-title text-left">Financial Overview</h2>
+                <h2 class="text-2xl font-bold text-title text-left">
+                  Financial Overview
+                </h2>
               </div>
-              <p class="text-sm text-slate-500">Provide your employment status and annual household income.</p>
+              <p class="text-sm text-slate-500">
+                Provide your employment status and annual household income.
+              </p>
 
               <div class="space-y-6 pt-4">
                 <div class="space-y-2">
-                  <label class="block text-sm font-semibold text-title ml-1 mb-2">Employment Status</label>
+                  <label
+                    class="block text-sm font-semibold text-title ml-1 mb-2"
+                    >Employment Status</label
+                  >
                   <div class="grid sm:grid-cols-2 md:grid-cols-4 gap-4">
                     <!-- Option 1: Employed -->
-                    <label class="relative flex flex-col items-center justify-center p-4 bg-slate-50 rounded-2xl border-2 border-transparent cursor-pointer transition-all hover:bg-slate-100 hover:border-slate-300 group select-card-label">
-                      <input type="radio" name="employment_status" value="Employed" class="sr-only select-card-input" checked />
-                      <span class="font-bold text-sm text-title text-center">Employed</span>
+                    <label
+                      class="relative flex flex-col items-center justify-center p-4 bg-slate-50 rounded-2xl border-2 border-transparent cursor-pointer transition-all hover:bg-slate-100 hover:border-slate-300 group select-card-label"
+                    >
+                      <input
+                        type="radio"
+                        name="employment_status"
+                        value="Employed"
+                        class="sr-only select-card-input"
+                        checked
+                      />
+                      <span class="font-bold text-sm text-title text-center"
+                        >Employed</span
+                      >
                     </label>
                     <!-- Option 2: Self-Employed -->
-                    <label class="relative flex flex-col items-center justify-center p-4 bg-slate-50 rounded-2xl border-2 border-transparent cursor-pointer transition-all hover:bg-slate-100 hover:border-slate-300 group select-card-label">
-                      <input type="radio" name="employment_status" value="Self-Employed" class="sr-only select-card-input" />
-                      <span class="font-bold text-sm text-title text-center">Self-Employed</span>
+                    <label
+                      class="relative flex flex-col items-center justify-center p-4 bg-slate-50 rounded-2xl border-2 border-transparent cursor-pointer transition-all hover:bg-slate-100 hover:border-slate-300 group select-card-label"
+                    >
+                      <input
+                        type="radio"
+                        name="employment_status"
+                        value="Self-Employed"
+                        class="sr-only select-card-input"
+                      />
+                      <span class="font-bold text-sm text-title text-center"
+                        >Self-Employed</span
+                      >
                     </label>
                     <!-- Option 3: Retired -->
-                    <label class="relative flex flex-col items-center justify-center p-4 bg-slate-50 rounded-2xl border-2 border-transparent cursor-pointer transition-all hover:bg-slate-100 hover:border-slate-300 group select-card-label">
-                      <input type="radio" name="employment_status" value="Retired" class="sr-only select-card-input" />
-                      <span class="font-bold text-sm text-title text-center">Retired</span>
+                    <label
+                      class="relative flex flex-col items-center justify-center p-4 bg-slate-50 rounded-2xl border-2 border-transparent cursor-pointer transition-all hover:bg-slate-100 hover:border-slate-300 group select-card-label"
+                    >
+                      <input
+                        type="radio"
+                        name="employment_status"
+                        value="Retired"
+                        class="sr-only select-card-input"
+                      />
+                      <span class="font-bold text-sm text-title text-center"
+                        >Retired</span
+                      >
                     </label>
                     <!-- Option 4: Other -->
-                    <label class="relative flex flex-col items-center justify-center p-4 bg-slate-50 rounded-2xl border-2 border-transparent cursor-pointer transition-all hover:bg-slate-100 hover:border-slate-300 group select-card-label">
-                      <input type="radio" name="employment_status" value="Other" class="sr-only select-card-input" />
-                      <span class="font-bold text-sm text-title text-center">Other</span>
+                    <label
+                      class="relative flex flex-col items-center justify-center p-4 bg-slate-50 rounded-2xl border-2 border-transparent cursor-pointer transition-all hover:bg-slate-100 hover:border-slate-300 group select-card-label"
+                    >
+                      <input
+                        type="radio"
+                        name="employment_status"
+                        value="Other"
+                        class="sr-only select-card-input"
+                      />
+                      <span class="font-bold text-sm text-title text-center"
+                        >Other</span
+                      >
                     </label>
                   </div>
                 </div>
 
                 <div class="space-y-2">
-                  <label class="block text-sm font-semibold text-title ml-1">Annual Income ($)</label>
+                  <label class="block text-sm font-semibold text-title ml-1"
+                    >Annual Income ($)</label
+                  >
                   <div class="relative">
-                    <span class="absolute left-5 top-1/2 -translate-y-1/2 text-xl font-bold text-slate-400">$</span>
+                    <span
+                      class="absolute left-5 top-1/2 -translate-y-1/2 text-xl font-bold text-slate-400"
+                      >$</span
+                    >
                     <input
                       type="text"
                       id="annual-income-input"
@@ -948,7 +1394,11 @@
                       required
                     />
                   </div>
-                  <span class="text-xs text-red-500 hidden mt-1 ml-1" id="error-annual-income">Please enter a valid annual income.</span>
+                  <span
+                    class="text-xs text-red-500 hidden mt-1 ml-1"
+                    id="error-annual-income"
+                    >Please enter a valid annual income.</span
+                  >
                 </div>
               </div>
             </div>
@@ -956,18 +1406,31 @@
             <!-- Step 6: Identity Verification -->
             <div class="step-pane space-y-6 hidden" data-step="6">
               <div class="flex items-center gap-4 mb-4">
-                <div class="w-12 h-12 rounded-2xl bg-primary flex items-center justify-center text-w-color shadow-lg shadow-primary/20">
+                <div
+                  class="w-12 h-12 rounded-2xl bg-primary flex items-center justify-center text-w-color shadow-lg shadow-primary/20"
+                >
                   <i class="fa-solid fa-shield-halved text-xl"></i>
                 </div>
-                <h2 class="text-2xl font-bold text-title text-left">Identity Verification</h2>
+                <h2 class="text-2xl font-bold text-title text-left">
+                  Identity Verification
+                </h2>
               </div>
-              <p class="text-sm text-slate-500">Provide your Social Security number (SSN). We use this to pull your credit score to estimate loan eligibility. Your data is encrypted and secure.</p>
+              <p class="text-sm text-slate-500">
+                Provide your Social Security number (SSN). We use this to pull
+                your credit score to estimate loan eligibility. Your data is
+                encrypted and secure.
+              </p>
 
               <div class="space-y-6 pt-4">
                 <div class="space-y-2">
-                  <label class="block text-sm font-semibold text-title ml-1">Social Security Number (SSN)</label>
+                  <label class="block text-sm font-semibold text-title ml-1"
+                    >Social Security Number (SSN)</label
+                  >
                   <div class="relative">
-                    <span class="absolute left-5 top-1/2 -translate-y-1/2 text-slate-400"><i class="fa-solid fa-lock"></i></span>
+                    <span
+                      class="absolute left-5 top-1/2 -translate-y-1/2 text-slate-400"
+                      ><i class="fa-solid fa-lock"></i
+                    ></span>
                     <input
                       type="text"
                       id="ssn-input"
@@ -977,11 +1440,17 @@
                       required
                     />
                   </div>
-                  <span class="text-xs text-red-500 hidden mt-1 ml-1" id="error-ssn">A valid 9-digit SSN is required.</span>
+                  <span
+                    class="text-xs text-red-500 hidden mt-1 ml-1"
+                    id="error-ssn"
+                    >A valid 9-digit SSN is required.</span
+                  >
                 </div>
 
                 <div class="pt-2">
-                  <label class="flex items-start gap-4 cursor-pointer group max-w-lg">
+                  <label
+                    class="flex items-start gap-4 cursor-pointer group max-w-lg"
+                  >
                     <div class="relative flex items-center">
                       <input
                         type="checkbox"
@@ -1003,11 +1472,20 @@
                         />
                       </svg>
                     </div>
-                    <span class="text-xs text-slate-500 leading-relaxed group-hover:text-title transition-colors">
-                      I authorize HomeLoanNYC to request my credit report from consumer reporting agencies. This check may affect my credit score as a hard inquiry, but it is necessary for pre-approval.
+                    <span
+                      class="text-xs text-slate-500 leading-relaxed group-hover:text-title transition-colors"
+                    >
+                      I authorize HomeLoanNYC to request my credit report from
+                      consumer reporting agencies. This check may affect my
+                      credit score as a hard inquiry, but it is necessary for
+                      pre-approval.
                     </span>
                   </label>
-                  <span class="text-xs text-red-500 hidden mt-1" id="error-consent">You must consent to proceed.</span>
+                  <span
+                    class="text-xs text-red-500 hidden mt-1"
+                    id="error-consent"
+                    >You must consent to proceed.</span
+                  >
                 </div>
               </div>
             </div>
@@ -1015,48 +1493,97 @@
             <!-- Step 7: Contact with Loan Officer -->
             <div class="step-pane space-y-6 hidden" data-step="7">
               <div class="flex items-center gap-4 mb-4">
-                <div class="w-12 h-12 rounded-2xl bg-primary flex items-center justify-center text-w-color shadow-lg shadow-primary/20">
+                <div
+                  class="w-12 h-12 rounded-2xl bg-primary flex items-center justify-center text-w-color shadow-lg shadow-primary/20"
+                >
                   <i class="fa-solid fa-comments text-xl"></i>
                 </div>
-                <h2 class="text-2xl font-bold text-title text-left">Contact with Loan Officer</h2>
+                <h2 class="text-2xl font-bold text-title text-left">
+                  Contact with Loan Officer
+                </h2>
               </div>
-              <p class="text-sm text-slate-500">Choose how you'd prefer to connect with your dedicated loan officer to finalize your pre-approval.</p>
+              <p class="text-sm text-slate-500">
+                Choose how you'd prefer to connect with your dedicated loan
+                officer to finalize your pre-approval.
+              </p>
 
               <div class="grid sm:grid-cols-3 gap-4 pt-4">
                 <!-- Option 1: Phone -->
-                <label class="relative flex flex-col items-center justify-center p-6 bg-slate-50 rounded-2xl border-2 border-transparent cursor-pointer transition-all hover:bg-slate-100 hover:border-slate-300 group select-card-label">
-                  <input type="radio" name="contact_method" value="Phone Call" class="sr-only select-card-input" checked />
-                  <div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary mb-4 group-hover:scale-110 transition-transform">
+                <label
+                  class="relative flex flex-col items-center justify-center p-6 bg-slate-50 rounded-2xl border-2 border-transparent cursor-pointer transition-all hover:bg-slate-100 hover:border-slate-300 group select-card-label"
+                >
+                  <input
+                    type="radio"
+                    name="contact_method"
+                    value="Phone Call"
+                    class="sr-only select-card-input"
+                    checked
+                  />
+                  <div
+                    class="w-12 h-12 rounded-full bg-slate-200/50 flex items-center justify-center text-slate-500 mb-4 group-hover:scale-110 transition-transform"
+                  >
                     <i class="fa-solid fa-phone text-lg"></i>
                   </div>
-                  <span class="font-bold text-title text-center text-sm">Phone Call</span>
-                  <span class="text-xs text-slate-400 text-center mt-1">Talk to an officer</span>
+                  <span class="font-bold text-title text-center text-sm"
+                    >Phone Call</span
+                  >
+                  <span class="text-xs text-slate-400 text-center mt-1"
+                    >Talk to an officer</span
+                  >
                 </label>
 
                 <!-- Option 2: Email -->
-                <label class="relative flex flex-col items-center justify-center p-6 bg-slate-50 rounded-2xl border-2 border-transparent cursor-pointer transition-all hover:bg-slate-100 hover:border-slate-300 group select-card-label">
-                  <input type="radio" name="contact_method" value="Email" class="sr-only select-card-input" />
-                  <div class="w-12 h-12 rounded-full bg-slate-200/50 flex items-center justify-center text-slate-500 mb-4 group-hover:scale-110 transition-transform">
+                <label
+                  class="relative flex flex-col items-center justify-center p-6 bg-slate-50 rounded-2xl border-2 border-transparent cursor-pointer transition-all hover:bg-slate-100 hover:border-slate-300 group select-card-label"
+                >
+                  <input
+                    type="radio"
+                    name="contact_method"
+                    value="Email"
+                    class="sr-only select-card-input"
+                  />
+                  <div
+                    class="w-12 h-12 rounded-full bg-slate-200/50 flex items-center justify-center text-slate-500 mb-4 group-hover:scale-110 transition-transform"
+                  >
                     <i class="fa-solid fa-envelope text-lg"></i>
                   </div>
-                  <span class="font-bold text-title text-center text-sm">Email Me</span>
-                  <span class="text-xs text-slate-400 text-center mt-1">Send details electronically</span>
+                  <span class="font-bold text-title text-center text-sm"
+                    >Email Me</span
+                  >
+                  <span class="text-xs text-slate-400 text-center mt-1"
+                    >Send details electronically</span
+                  >
                 </label>
 
                 <!-- Option 3: SMS/Text -->
-                <label class="relative flex flex-col items-center justify-center p-6 bg-slate-50 rounded-2xl border-2 border-transparent cursor-pointer transition-all hover:bg-slate-100 hover:border-slate-300 group select-card-label">
-                  <input type="radio" name="contact_method" value="SMS/Text" class="sr-only select-card-input" />
-                  <div class="w-12 h-12 rounded-full bg-slate-200/50 flex items-center justify-center text-slate-500 mb-4 group-hover:scale-110 transition-transform">
+                <label
+                  class="relative flex flex-col items-center justify-center p-6 bg-slate-50 rounded-2xl border-2 border-transparent cursor-pointer transition-all hover:bg-slate-100 hover:border-slate-300 group select-card-label"
+                >
+                  <input
+                    type="radio"
+                    name="contact_method"
+                    value="SMS/Text"
+                    class="sr-only select-card-input"
+                  />
+                  <div
+                    class="w-12 h-12 rounded-full bg-slate-200/50 flex items-center justify-center text-slate-500 mb-4 group-hover:scale-110 transition-transform"
+                  >
                     <i class="fa-solid fa-comment-sms text-lg"></i>
                   </div>
-                  <span class="font-bold text-title text-center text-sm">Text Message</span>
-                  <span class="text-xs text-slate-400 text-center mt-1">Fast messaging</span>
+                  <span class="font-bold text-title text-center text-sm"
+                    >Text Message</span
+                  >
+                  <span class="text-xs text-slate-400 text-center mt-1"
+                    >Fast messaging</span
+                  >
                 </label>
               </div>
 
               <!-- Final authorization check -->
               <div class="pt-4 border-t border-slate-300">
-                <label class="flex items-start gap-4 cursor-pointer group max-w-lg">
+                <label
+                  class="flex items-start gap-4 cursor-pointer group max-w-lg"
+                >
                   <div class="relative flex items-center">
                     <input
                       type="checkbox"
@@ -1078,16 +1605,26 @@
                       />
                     </svg>
                   </div>
-                  <span class="text-xs text-slate-500 leading-relaxed group-hover:text-title transition-colors">
-                    I certify that all the information provided is accurate and complete to the best of my knowledge.
+                  <span
+                    class="text-xs text-slate-500 leading-relaxed group-hover:text-title transition-colors"
+                  >
+                    I certify that all the information provided is accurate and
+                    complete to the best of my knowledge.
                   </span>
                 </label>
-                <span class="text-xs text-red-500 hidden mt-1" id="error-certify">Please certify the information is accurate.</span>
+                <span
+                  class="text-xs text-red-500 hidden mt-1"
+                  id="error-certify"
+                  >Please certify the information is accurate.</span
+                >
               </div>
             </div>
 
             <!-- Action Buttons -->
-            <div class="pt-6 border-t border-slate-300/60 flex justify-between items-center" id="action-buttons-container">
+            <div
+              class="pt-6 border-t border-slate-300/60 flex justify-between items-center"
+              id="action-buttons-container"
+            >
               <button
                 type="button"
                 id="btn-back"
@@ -1106,52 +1643,105 @@
             </div>
 
             <!-- Success Screen (Initially Hidden) -->
-            <div id="success-screen" class="hidden py-8 flex flex-col items-center text-center space-y-8 animate-fade-in">
-              <div class="w-20 h-20 rounded-full bg-primary flex items-center justify-center text-w-color shadow-2xl shadow-primary/30 relative">
+            <div
+              id="success-screen"
+              class="hidden py-8 flex flex-col items-center text-center space-y-8 animate-fade-in"
+            >
+              <div
+                class="w-20 h-20 rounded-full bg-primary flex items-center justify-center text-w-color shadow-2xl shadow-primary/30 relative"
+              >
                 <i class="fa-solid fa-check text-4xl animate-bounce"></i>
-                <div class="absolute inset-0 rounded-full bg-primary/20 animate-ping -z-10"></div>
+                <div
+                  class="absolute inset-0 rounded-full bg-primary/20 animate-ping -z-10"
+                ></div>
               </div>
-              
+
               <div class="space-y-3">
-                <h2 class="text-3xl font-extrabold text-title">Application Submitted!</h2>
+                <h2 class="text-3xl font-extrabold text-title">
+                  Application Submitted!
+                </h2>
                 <p class="text-slate-500 max-w-md mx-auto">
-                  Thank you, <span id="success-name" class="font-bold text-title">applicant</span>! Your pre-approval application has been successfully received and is being processed.
+                  Thank you,
+                  <span id="success-name" class="font-bold text-title"
+                    >applicant</span
+                  >! Your pre-approval application has been successfully
+                  received and is being processed.
                 </p>
               </div>
 
               <!-- Assigned Loan Officer Card -->
-              <div class="bg-slate-50 p-6 rounded-3xl border border-slate-300/60 max-w-md w-full shadow-lg text-left space-y-4 mx-auto">
-                <span class="text-[11px] font-black uppercase tracking-[0.2em] text-primary block">Your Assigned Loan Officer</span>
+              <div
+                class="bg-slate-50 p-6 rounded-3xl border border-slate-300/60 max-w-md w-full shadow-lg text-left space-y-4 mx-auto"
+              >
+                <span
+                  class="text-[11px] font-black uppercase tracking-[0.2em] text-primary block"
+                  >Your Assigned Loan Officer</span
+                >
                 <div class="flex items-center gap-4 pt-2">
-                  <div class="w-16 h-16 rounded-2xl overflow-hidden bg-slate-300 border border-primary flex-shrink-0">
-                    <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=150&h=150" id="officer-img" alt="Loan Officer" class="w-full h-full object-cover" />
+                  <div
+                    class="w-16 h-16 rounded-2xl overflow-hidden bg-slate-300 border border-primary flex-shrink-0"
+                  >
+                    <img
+                      src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=150&h=150"
+                      id="officer-img"
+                      alt="Loan Officer"
+                      class="w-full h-full object-cover"
+                    />
                   </div>
                   <div>
-                    <h3 class="font-bold text-title text-lg" id="officer-name">Sarah Jenkins</h3>
-                    <p class="text-xs text-slate-400 font-semibold">Senior Mortgage Advisor (NMLS #192837)</p>
+                    <h3 class="font-bold text-title text-lg" id="officer-name">
+                      Sarah Jenkins
+                    </h3>
+                    <p class="text-xs text-slate-400 font-semibold">
+                      Senior Mortgage Advisor (NMLS #192837)
+                    </p>
                   </div>
                 </div>
-                <div class="pt-4 space-y-2 text-sm text-slate-600 border-t border-slate-200">
+                <div
+                  class="pt-4 space-y-2 text-sm text-slate-600 border-t border-slate-200"
+                >
                   <div class="flex items-center gap-3">
-                    <i class="fa-solid fa-phone text-primary text-sm w-4 text-center"></i>
-                    <a href="tel:18005550199" class="hover:text-primary hover:underline font-medium">(800) 555-0199</a>
+                    <i
+                      class="fa-solid fa-phone text-primary text-sm w-4 text-center"
+                    ></i>
+                    <a
+                      href="tel:18005550199"
+                      class="hover:text-primary hover:underline font-medium"
+                      >(800) 555-0199</a
+                    >
                   </div>
                   <div class="flex items-center gap-3">
-                    <i class="fa-solid fa-envelope text-primary text-sm w-4 text-center"></i>
-                    <a href="mailto:sjenkins@homeloannyc.com" class="hover:text-primary hover:underline font-medium">sjenkins@homeloannyc.com</a>
+                    <i
+                      class="fa-solid fa-envelope text-primary text-sm w-4 text-center"
+                    ></i>
+                    <a
+                      href="mailto:sjenkins@homeloannyc.com"
+                      class="hover:text-primary hover:underline font-medium"
+                      >sjenkins@homeloannyc.com</a
+                    >
                   </div>
                   <div class="flex items-center gap-3">
-                    <i class="fa-solid fa-clock text-primary text-sm w-4 text-center"></i>
+                    <i
+                      class="fa-solid fa-clock text-primary text-sm w-4 text-center"
+                    ></i>
                     <span>Available Mon-Fri, 9:00 AM - 6:00 PM EST</span>
                   </div>
                 </div>
               </div>
 
-              <div class="pt-4 flex flex-col sm:flex-row gap-4 w-full justify-center">
-                <a href="../src/index.html" class="bg-primary text-w-color px-8 py-3 rounded-full font-bold text-sm hover:bg-primary-hover transition-all text-center">
+              <div
+                class="pt-4 flex flex-col sm:flex-row gap-4 w-full justify-center"
+              >
+                <a
+                  href="index.html"
+                  class="bg-primary text-w-color px-8 py-3 rounded-full font-bold text-sm hover:bg-primary-hover transition-all text-center"
+                >
                   Go to Homepage
                 </a>
-                <a href="../src/rates.html" class="border border-slate-300 text-title px-8 py-3 rounded-full font-bold text-sm hover:bg-slate-100 transition-all text-center">
+                <a
+                  href="rates.html"
+                  class="border border-slate-300 text-title px-8 py-3 rounded-full font-bold text-sm hover:bg-slate-100 transition-all text-center"
+                >
                   Check Today's Rates
                 </a>
               </div>
@@ -1171,7 +1761,7 @@
           >
             <!-- Logo -->
             <div class="w-50 h-50 rounded-3xl">
-              <a href="../src/index.html">
+              <a href="index.html">
                 <img
                   src="../dist/images/logo-2.png"
                   alt="Logo"
@@ -1264,9 +1854,7 @@
                 >
               </li>
               <li>
-                <a
-                  href="../src/policy.html"
-                  class="hover:text-title transition-colors"
+                <a href="policy.html" class="hover:text-title transition-colors"
                   >Privacy policy</a
                 >
               </li>
@@ -1357,12 +1945,16 @@
         const stepIndicators = document.querySelectorAll(".step-indicator");
         const btnBack = document.getElementById("btn-back");
         const btnNext = document.getElementById("btn-next");
-        const actionButtonsContainer = document.getElementById("action-buttons-container");
+        const actionButtonsContainer = document.getElementById(
+          "action-buttons-container",
+        );
         const successScreen = document.getElementById("success-screen");
-        
+
         // Mobile progress elements
         const mobileStepName = document.getElementById("mobile-step-name");
-        const mobileStepProgress = document.getElementById("mobile-step-progress");
+        const mobileStepProgress = document.getElementById(
+          "mobile-step-progress",
+        );
 
         // Top level progress bars
         const desktopProgress = document.getElementById("desktop-progress-bar");
@@ -1379,7 +1971,7 @@
           "Contact Information",
           "Financial Overview",
           "Identity Verification",
-          "Contact Preference"
+          "Contact Preference",
         ];
 
         // Helper: Format number with commas
@@ -1411,13 +2003,16 @@
         loanInput.addEventListener("input", (e) => {
           const selectionStart = e.target.selectionStart;
           const oldLength = e.target.value.length;
-          
+
           e.target.value = formatNumber(e.target.value);
-          
+
           const newLength = e.target.value.length;
           const diff = newLength - oldLength;
-          e.target.setSelectionRange(selectionStart + diff, selectionStart + diff);
-          
+          e.target.setSelectionRange(
+            selectionStart + diff,
+            selectionStart + diff,
+          );
+
           syncAmountInputToSlider();
         });
 
@@ -1437,30 +2032,37 @@
         });
 
         // --- CARD SELECTIONS (STEPS 2, 5 & 7) ---
-        const selectCardLabels = document.querySelectorAll(".select-card-label");
-        
+        const selectCardLabels =
+          document.querySelectorAll(".select-card-label");
+
         function updateCardStyles() {
-          selectCardLabels.forEach(label => {
+          selectCardLabels.forEach((label) => {
             const input = label.querySelector(".select-card-input");
             if (input && input.checked) {
               label.classList.add("card-selected");
               const iconContainer = label.querySelector(".w-12");
               if (iconContainer) {
-                iconContainer.classList.remove("bg-slate-200/50", "text-slate-500");
+                iconContainer.classList.remove(
+                  "bg-slate-200/50",
+                  "text-slate-500",
+                );
                 iconContainer.classList.add("bg-primary", "text-w-color");
               }
             } else {
               label.classList.remove("card-selected");
               const iconContainer = label.querySelector(".w-12");
               if (iconContainer) {
-                iconContainer.classList.add("bg-slate-200/50", "text-slate-500");
+                iconContainer.classList.add(
+                  "bg-slate-200/50",
+                  "text-slate-500",
+                );
                 iconContainer.classList.remove("bg-primary", "text-w-color");
               }
             }
           });
         }
 
-        selectCardLabels.forEach(label => {
+        selectCardLabels.forEach((label) => {
           label.addEventListener("click", () => {
             const input = label.querySelector("input");
             if (input) {
@@ -1497,7 +2099,10 @@
           const oldLength = e.target.value.length;
           e.target.value = formatNumber(e.target.value);
           const diff = e.target.value.length - oldLength;
-          e.target.setSelectionRange(selectionStart + diff, selectionStart + diff);
+          e.target.setSelectionRange(
+            selectionStart + diff,
+            selectionStart + diff,
+          );
         });
 
         // --- STEP 6: SSN Formatting ---
@@ -1522,36 +2127,51 @@
           let isValid = true;
 
           // Reset error messages on active pane
-          const activePane = document.querySelector(`.step-pane[data-step="${currentStep}"]`);
+          const activePane = document.querySelector(
+            `.step-pane[data-step="${currentStep}"]`,
+          );
           const errors = activePane.querySelectorAll("[id^='error-']");
-          errors.forEach(err => err.classList.add("hidden"));
+          errors.forEach((err) => err.classList.add("hidden"));
 
           if (currentStep === 1) {
             const amount = cleanNumber(loanInput.value);
             if (!amount || amount < 10000) {
-              document.getElementById("error-loan-amount").classList.remove("hidden");
+              document
+                .getElementById("error-loan-amount")
+                .classList.remove("hidden");
               isValid = false;
             }
-          }
-          else if (currentStep === 3) {
-            const firstName = document.getElementById("first-name-input").value.trim();
-            const lastName = document.getElementById("last-name-input").value.trim();
-            const address = document.getElementById("address-input").value.trim();
+          } else if (currentStep === 3) {
+            const firstName = document
+              .getElementById("first-name-input")
+              .value.trim();
+            const lastName = document
+              .getElementById("last-name-input")
+              .value.trim();
+            const address = document
+              .getElementById("address-input")
+              .value.trim();
             const city = document.getElementById("city-input").value.trim();
             const state = document.getElementById("state-input").value.trim();
             const zip = document.getElementById("zip-input").value.trim();
             const dob = document.getElementById("dob-input").value;
 
             if (!firstName) {
-              document.getElementById("error-first-name").classList.remove("hidden");
+              document
+                .getElementById("error-first-name")
+                .classList.remove("hidden");
               isValid = false;
             }
             if (!lastName) {
-              document.getElementById("error-last-name").classList.remove("hidden");
+              document
+                .getElementById("error-last-name")
+                .classList.remove("hidden");
               isValid = false;
             }
             if (!address) {
-              document.getElementById("error-address").classList.remove("hidden");
+              document
+                .getElementById("error-address")
+                .classList.remove("hidden");
               isValid = false;
             }
             if (!city) {
@@ -1566,9 +2186,10 @@
               document.getElementById("error-zip").classList.remove("hidden");
               isValid = false;
             }
-            
+
             if (!dob) {
-              document.getElementById("error-dob").innerText = "Date of birth is required.";
+              document.getElementById("error-dob").innerText =
+                "Date of birth is required.";
               document.getElementById("error-dob").classList.remove("hidden");
               isValid = false;
             } else {
@@ -1580,15 +2201,17 @@
                 age--;
               }
               if (age < 18) {
-                document.getElementById("error-dob").innerText = "Must be at least 18 years old.";
+                document.getElementById("error-dob").innerText =
+                  "Must be at least 18 years old.";
                 document.getElementById("error-dob").classList.remove("hidden");
                 isValid = false;
               }
             }
-          }
-          else if (currentStep === 4) {
+          } else if (currentStep === 4) {
             const email = document.getElementById("email-input").value.trim();
-            const phone = document.getElementById("phone-input").value.replace(/\D/g, "");
+            const phone = document
+              .getElementById("phone-input")
+              .value.replace(/\D/g, "");
             const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
             if (!emailRegex.test(email)) {
@@ -1599,31 +2222,36 @@
               document.getElementById("error-phone").classList.remove("hidden");
               isValid = false;
             }
-          }
-          else if (currentStep === 5) {
+          } else if (currentStep === 5) {
             const income = cleanNumber(incomeInput.value);
             if (!income || income <= 0) {
-              document.getElementById("error-annual-income").classList.remove("hidden");
+              document
+                .getElementById("error-annual-income")
+                .classList.remove("hidden");
               isValid = false;
             }
-          }
-          else if (currentStep === 6) {
+          } else if (currentStep === 6) {
             const ssn = ssnInput.value.replace(/\D/g, "");
-            const consent = document.getElementById("credit-check-consent").checked;
+            const consent = document.getElementById(
+              "credit-check-consent",
+            ).checked;
 
             if (ssn.length !== 9) {
               document.getElementById("error-ssn").classList.remove("hidden");
               isValid = false;
             }
             if (!consent) {
-              document.getElementById("error-consent").classList.remove("hidden");
+              document
+                .getElementById("error-consent")
+                .classList.remove("hidden");
               isValid = false;
             }
-          }
-          else if (currentStep === 7) {
+          } else if (currentStep === 7) {
             const certify = document.getElementById("certify-checkbox").checked;
             if (!certify) {
-              document.getElementById("error-certify").classList.remove("hidden");
+              document
+                .getElementById("error-certify")
+                .classList.remove("hidden");
               isValid = false;
             }
           }
@@ -1632,7 +2260,7 @@
         }
 
         function updateStepUI() {
-          stepPanes.forEach(pane => {
+          stepPanes.forEach((pane) => {
             const step = parseInt(pane.getAttribute("data-step"));
             if (step === currentStep) {
               pane.classList.remove("hidden");
@@ -1644,30 +2272,39 @@
           });
 
           // Update Desktop Progress
-          stepIndicators.forEach(indicator => {
+          stepIndicators.forEach((indicator) => {
             const step = parseInt(indicator.getAttribute("data-step"));
             const circle = indicator.querySelector(".step-circle");
             const label = indicator.querySelector(".step-label");
             const line = indicator.querySelector(".step-line");
 
             if (step < currentStep) {
-              circle.className = "w-10 h-10 rounded-full flex items-center justify-center bg-primary text-w-color font-bold border-2 border-primary transition-all duration-300 z-10 step-circle";
+              circle.className =
+                "w-10 h-10 rounded-full flex items-center justify-center bg-primary text-w-color font-bold border-2 border-primary transition-all duration-300 z-10 step-circle";
               circle.innerHTML = '<i class="fa-solid fa-check text-sm"></i>';
               label.classList.add("text-primary");
               label.classList.remove("text-slate-400");
-              if (line) line.className = "absolute left-1/2 top-5 w-full h-0.5 bg-primary -z-0 step-line";
+              if (line)
+                line.className =
+                  "absolute left-1/2 top-5 w-full h-0.5 bg-primary -z-0 step-line";
             } else if (step === currentStep) {
-              circle.className = "w-10 h-10 rounded-full flex items-center justify-center bg-primary text-w-color font-bold border-2 border-primary transition-all duration-300 z-10 step-circle";
+              circle.className =
+                "w-10 h-10 rounded-full flex items-center justify-center bg-primary text-w-color font-bold border-2 border-primary transition-all duration-300 z-10 step-circle";
               circle.innerHTML = `<i class="fa-solid ${getStepIcon(step)} text-sm"></i>`;
               label.classList.add("text-primary");
               label.classList.remove("text-slate-400");
-              if (line) line.className = "absolute left-1/2 top-5 w-full h-0.5 bg-slate-300 -z-0 step-line";
+              if (line)
+                line.className =
+                  "absolute left-1/2 top-5 w-full h-0.5 bg-slate-300 -z-0 step-line";
             } else {
-              circle.className = "w-10 h-10 rounded-full flex items-center justify-center bg-slate-100 text-slate-400 font-bold border-2 border-slate-300 transition-all duration-300 z-10 step-circle";
+              circle.className =
+                "w-10 h-10 rounded-full flex items-center justify-center bg-slate-100 text-slate-400 font-bold border-2 border-slate-300 transition-all duration-300 z-10 step-circle";
               circle.innerHTML = `<i class="fa-solid ${getStepIcon(step)} text-sm"></i>`;
               label.classList.remove("text-primary");
               label.classList.add("text-slate-400");
-              if (line) line.className = "absolute left-1/2 top-5 w-full h-0.5 bg-slate-300 -z-0 step-line";
+              if (line)
+                line.className =
+                  "absolute left-1/2 top-5 w-full h-0.5 bg-slate-300 -z-0 step-line";
             }
           });
 
@@ -1683,9 +2320,11 @@
           }
 
           if (currentStep === totalSteps) {
-            btnNext.innerHTML = 'Submit Application <i class="fa-solid fa-paper-plane text-sm"></i>';
+            btnNext.innerHTML =
+              'Submit Application <i class="fa-solid fa-paper-plane text-sm"></i>';
           } else {
-            btnNext.innerHTML = 'Next <i class="fa-solid fa-arrow-right text-sm"></i>';
+            btnNext.innerHTML =
+              'Next <i class="fa-solid fa-arrow-right text-sm"></i>';
           }
         }
 
@@ -1697,7 +2336,7 @@
             4: "fa-address-book",
             5: "fa-wallet",
             6: "fa-shield-halved",
-            7: "fa-comments"
+            7: "fa-comments",
           };
           return icons[step] || "fa-check";
         }
@@ -1708,7 +2347,9 @@
           if (currentStep < totalSteps) {
             currentStep++;
             updateStepUI();
-            document.getElementById("form-card").scrollIntoView({ behavior: "smooth", block: "center" });
+            document
+              .getElementById("form-card")
+              .scrollIntoView({ behavior: "smooth", block: "center" });
           } else {
             submitForm();
           }
@@ -1718,26 +2359,30 @@
           if (currentStep > 1) {
             currentStep--;
             updateStepUI();
-            document.getElementById("form-card").scrollIntoView({ behavior: "smooth", block: "center" });
+            document
+              .getElementById("form-card")
+              .scrollIntoView({ behavior: "smooth", block: "center" });
           }
         });
 
         function submitForm() {
           btnNext.disabled = true;
-          btnNext.innerHTML = '<i class="fa-solid fa-circle-notch fa-spin text-sm"></i> Submitting...';
+          btnNext.innerHTML =
+            '<i class="fa-solid fa-circle-notch fa-spin text-sm"></i> Submitting...';
           btnBack.disabled = true;
 
           setTimeout(() => {
             const firstName = document.getElementById("first-name-input").value;
             const lastName = document.getElementById("last-name-input").value;
-            document.getElementById("success-name").innerText = `${firstName} ${lastName}`;
+            document.getElementById("success-name").innerText =
+              `${firstName} ${lastName}`;
 
             // Hide step contents & timelines
-            stepPanes.forEach(pane => pane.classList.add("hidden"));
+            stepPanes.forEach((pane) => pane.classList.add("hidden"));
             desktopProgress.classList.add("hidden");
             mobileProgress.classList.add("hidden");
             actionButtonsContainer.classList.add("hidden");
-            
+
             // Adjust card style
             const formCard = document.getElementById("form-card");
             formCard.classList.remove("bg-slate-200");
@@ -1745,7 +2390,9 @@
 
             // Display success screen
             successScreen.classList.remove("hidden");
-            document.getElementById("form-card").scrollIntoView({ behavior: "smooth", block: "center" });
+            document
+              .getElementById("form-card")
+              .scrollIntoView({ behavior: "smooth", block: "center" });
           }, 1500);
         }
       });
