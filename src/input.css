@@ -3,49 +3,49 @@
 /* Default Theme (Green) */
 :root {
   --color-primary: #009966;
-  --color-title: #0F172A;
+  --color-title: #0f172a;
   --color-w-color: #f8f8f8;
   --color-primary-hover: #006045;
 }
 
-[data-theme="orange"] {
+/* [data-theme="orange"] {
   --color-primary: #d96b27;
   --color-title: #0f172a;
   --color-w-color: #f1f5f9;
   --color-primary-hover: #b45a20;
-}
+} */
 
 /* Red Theme */
-[data-theme="red"] {
+/* [data-theme="red"] {
   --color-primary: #991B1B;
   --color-title: #1E293B;
   --color-w-color: #FAF9F6;
   --color-primary-hover: #7f1616;
-}
+} */
 
 /* Purple Theme */
-[data-theme="purple"] {
-  --color-primary: #581C87;
-  --color-title: #1E293B;
-  --color-w-color: #FAF9F6;
+/* [data-theme="purple"] {
+  --color-primary: #581c87;
+  --color-title: #1e293b;
+  --color-w-color: #faf9f6;
   --color-primary-hover: #4a166e;
-}
+} */
 
 /* Sky Blue Theme */
-[data-theme="sky-blue"] {
-  --color-primary: #0284C7;
-  --color-title: #0B2240;
-  --color-w-color: #FAFAFA;
+/* [data-theme="sky-blue"] {
+  --color-primary: #0284c7;
+  --color-title: #0b2240;
+  --color-w-color: #fafafa;
   --color-primary-hover: #0369a1;
-}
+} */
 
 /* Olive Green Theme */
-[data-theme="olive-green"] {
-  --color-primary: #606C38;
+/* [data-theme="olive-green"] {
+  --color-primary: #606c38;
   --color-title: #283618;
   --color-w-color: #fafaf7;
   --color-primary-hover: #4a532c;
-}
+} */
 
 @theme {
   --color-primary: var(--color-primary);
@@ -53,6 +53,3 @@
   --color-w-color: var(--color-w-color);
   --color-primary-hover: var(--color-primary-hover);
 }
-
-
-
