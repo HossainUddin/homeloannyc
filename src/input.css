@@ -1,18 +1,18 @@
 @import "tailwindcss";
 
-/* Default Theme (Orange) */
+/* Default Theme (Green) */
 :root {
-  --color-primary: #d96b27;
-  --color-title: #0f172a;
-  --color-w-color: #f1f5f9;
-  --color-primary-hover: #b45a20;
-}
-
-[data-theme="green"] {
   --color-primary: #009966;
   --color-title: #0F172A;
   --color-w-color: #f8f8f8;
   --color-primary-hover: #006045;
+}
+
+[data-theme="orange"] {
+  --color-primary: #d96b27;
+  --color-title: #0f172a;
+  --color-w-color: #f1f5f9;
+  --color-primary-hover: #b45a20;
 }
 
 /* Red Theme */
@@ -55,22 +55,4 @@
 }
 
 
-/* Theme 1 Main Green*/
-
-/* @theme {
-  --color-primary: #009966;
-  --color-title: #0F172A;
-  --color-w-color: #f8f8f8;
-  --color-primary-hover: #006045;
-} */
-
-/* 
-/* Deep Blue Theme 
-[data-theme="blue"] {
-  --color-primary: #1E3A8A;
-  --color-title: #1E293B;
-  --color-w-color: #F8FAFC;
-  --color-primary-hover: #0b3d8f;
-}
-*/
 
