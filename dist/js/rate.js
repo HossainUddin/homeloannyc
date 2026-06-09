@@ -31,16 +31,6 @@ const rateData = {
       { interest: "5.375%", apr: "5.657%", points: "+1.625" },
       { interest: "5.625%", apr: "5.812%", points: "+1.011" },
     ],
-    VA: [
-      { interest: "5.750%", apr: "5.921%", points: "+1.200" },
-      { interest: "5.875%", apr: "6.034%", points: "+0.850" },
-      { interest: "6.000%", apr: "6.155%", points: "+0.500" },
-    ],
-    FHA: [
-      { interest: "5.875%", apr: "6.782%", points: "+1.500" },
-      { interest: "6.000%", apr: "6.901%", points: "+1.100" },
-      { interest: "6.250%", apr: "7.125%", points: "+0.750" },
-    ],
   },
   Refinance: {
     "30 Year Fixed": [
@@ -53,24 +43,12 @@ const rateData = {
       { interest: "5.375%", apr: "5.616%", points: "+1.328" },
       { interest: "5.50%", apr: "5.685%", points: "+0.961" },
     ],
-    VA: [
-      { interest: "5.625%", apr: "5.842%", points: "+1.450" },
-      { interest: "5.750%", apr: "5.961%", points: "+1.100" },
-      { interest: "5.875%", apr: "6.088%", points: "+0.720" },
-    ],
-    FHA: [
-      { interest: "6.125%", apr: "7.012%", points: "+1.800" },
-      { interest: "6.250%", apr: "7.155%", points: "+1.400" },
-      { interest: "6.375%", apr: "7.288%", points: "+1.050" },
-    ],
   },
 };
 
 const avgData = {
   "30 Year Fixed": "6.38%",
   "15 Year Fixed": "5.88%",
-  VA: "6.12%",
-  FHA: "6.50%",
 };
 
 let currentProgram = "30 Year Fixed";
