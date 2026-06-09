@@ -124,3 +124,37 @@ input[type="number"] {
   color: var(--color-primary, #d96b27);
   flex-shrink: 0;
 }
+
+/* ── Mobile: green button + hidden popup ── */
+@media (max-width: 1024px) {
+  /* Hide popup entirely on mobile */
+  #phone-popup {
+    display: none !important;
+  }
+
+  /* Green button on mobile */
+  #phone-fab-btn {
+    background: #16a34a;
+    box-shadow: 0 8px 24px rgba(22, 163, 74, 0.45);
+  }
+  #phone-fab-btn:hover {
+    background: #15803d;
+    box-shadow: 0 12px 32px rgba(22, 163, 74, 0.55);
+  }
+
+  /* Light green halo ring on mobile */
+  #phone-fab-btn::before {
+    border-color: rgba(134, 239, 172, 0.9);
+    animation: phone-pulse-green 2.2s ease-out infinite;
+  }
+}
+@keyframes phone-pulse-green {
+  0%   { opacity: 0.8; transform: scale(1); }
+  80%  { opacity: 0; transform: scale(1.55); }
+  100% { opacity: 0; transform: scale(1.55); }
+}
+
+/* ── Multi-step Wizard Modal Z-Index Fix ── */
+#wizard-modal {
+  z-index: 100000 !important;
+}

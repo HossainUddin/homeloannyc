@@ -1644,7 +1644,7 @@
     <!-- Multi-step Wizard Modal -->
     <div
       id="wizard-modal"
-      class="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm hidden p-4"
+      class="fixed inset-0 z-[10000] flex items-center justify-center bg-black/60 backdrop-blur-sm hidden p-4"
     >
       <div
         class="relative w-full max-w-4xl bg-white rounded-3xl shadow-2xl flex flex-col justify-between overflow-hidden min-h-[450px] md:min-h-[600px] max-h-[90vh] md:max-h-none border border-slate-200 animate-in fade-in zoom-in-95 duration-200"
@@ -2629,9 +2629,9 @@
       }
     </style>
 
-    <!-- ── Floating Phone FAB (mobile only) ── -->
+    <!-- ── Floating Phone FAB ── -->
     <div id="phone-fab">
-      <!-- Popup card -->
+      <!-- Popup card (desktop only) -->
       <div id="phone-popup" role="dialog" aria-label="Contact phone numbers">
         <!-- Header -->
         <div
@@ -2755,22 +2755,30 @@
         </a>
       </div>
 
-      <!-- FAB trigger button -->
-      <button
+      <!-- FAB trigger — mobile: direct dial | desktop: popup -->
+      <a
         id="phone-fab-btn"
-        onclick="togglePhonePopup()"
+        href="tel:9297280155"
         aria-label="Call us"
-        aria-expanded="false"
+        onclick="return handleFabClick(event)"
       >
         <i id="phone-fab-icon" class="fa-solid fa-phone"></i>
-      </button>
+      </a>
     </div>
 
     <script>
       var phonePopupOpen = false;
-      function togglePhonePopup() {
+
+      /* Mobile (≤1024 px) → go straight to dialer; Desktop → popup */
+      function handleFabClick(e) {
+        if (window.innerWidth <= 1024) {
+          return true; /* allow tel: href to fire */
+        }
+        e.preventDefault();
         phonePopupOpen ? closePhonePopup() : openPhonePopup();
+        return false;
       }
+
       function openPhonePopup() {
         phonePopupOpen = true;
         document.getElementById("phone-popup").classList.add("open");
@@ -2780,6 +2788,7 @@
         document.getElementById("phone-fab-icon").className =
           "fa-solid fa-xmark";
       }
+
       function closePhonePopup() {
         phonePopupOpen = false;
         document.getElementById("phone-popup").classList.remove("open");
@@ -2789,7 +2798,8 @@
         document.getElementById("phone-fab-icon").className =
           "fa-solid fa-phone";
       }
-      // Close on outside click
+
+      /* Close popup on outside click (desktop) */
       document.addEventListener("click", function (e) {
         var fab = document.getElementById("phone-fab");
         if (phonePopupOpen && fab && !fab.contains(e.target)) {
