@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Home Loan NYC</title>
     <link href="dist/output.css" rel="stylesheet" />
+    <link rel="stylesheet" href="dist/custom.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -33,23 +34,6 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css"
     />
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <style>
-      body {
-        font-family: "Plus Jakarta Sans", sans-serif;
-      }
-      /* Chrome, Safari, Edge, Opera */
-      input[type="number"]::-webkit-outer-spin-button,
-      input[type="number"]::-webkit-inner-spin-button {
-        -webkit-appearance: none;
-        margin: 0;
-      }
-
-      /* Firefox */
-      input[type="number"] {
-        -moz-appearance: textfield;
-        appearance: textfield;
-      }
-    </style>
 
     <!-- Must be first thing in <head>, before CSS loads -->
     <script>
@@ -234,7 +218,7 @@
           <a
             href="tel:123456789"
             class="hidden lg:block text-[15px] font-bold text-primary px-6 py-2.5 rounded-full border border-primary/20 hover:bg-primary/5 transition-all"
-            ><i class="fa-solid fa-phone pr-2"></i> (123) 456-789</a
+            ><i class="fa-solid fa-phone pr-2"></i> (929) 728-0155</a
           >
           <a
             href="quote.html"
@@ -416,7 +400,7 @@
             <a
               href="tel:123456789"
               class="w-full text-center font-bold text-primary py-4 rounded-xl border border-primary/20"
-              ><i class="fa-solid fa-phone pr-2"></i> (123) 456-789</a
+              ><i class="fa-solid fa-phone pr-2"></i> (929) 728-0155</a
             >
           </div>
         </div>
@@ -429,15 +413,15 @@
         <h1
           class="text-4xl md:text-7xl font-extrabold text-title tracking-tight mb-8 leading-[1.1]"
         >
-          A different breed of <br />
-          <span class="text-primary">mortgage</span>
+          Get Home - Get Funded - Get Moving <br />
+          <span class="text-primary">HomeLoanNYC</span>
         </h1>
 
         <p
           class="max-w-2xl mx-auto text-title text-lg md:text-xl mb-12 leading-relaxed font-medium"
         >
-          We're dedicated to making the hunt for your mortgage as easy and
-          personal as it should be.
+          Local Expertise. Smarter Mortgage Solutions. <br />
+          Strategic Mortgage Solutions for New Yorkers.
         </p>
 
         <!-- Dual Action Buttons -->
@@ -1615,7 +1599,7 @@
               <li class="flex items-center gap-3">
                 <i class="fa-solid fa-phone w-6 h-6 text-w-color text-xl"></i>
                 <a href="tel:123456789" class="hover:text-title"
-                  >(123) 456-789</a
+                  >(929) 728-0155</a
                 >
               </li>
               <li class="flex items-center gap-3">
@@ -1623,7 +1607,7 @@
                   class="fa-solid fa-mobile-screen-button w-6 h-6 text-w-color text-xl"
                 ></i>
                 <a href="tel:8442217647" class="hover:text-title"
-                  >Toll Free: (844) 221-7647</a
+                  >Toll Free: (929) 728-0155</a
                 >
               </li>
             </ul>
@@ -2644,6 +2628,175 @@
         background: var(--color-primary-hover, #b45a20);
       }
     </style>
+
+    <!-- ── Floating Phone FAB (mobile only) ── -->
+    <div id="phone-fab">
+      <!-- Popup card -->
+      <div id="phone-popup" role="dialog" aria-label="Contact phone numbers">
+        <!-- Header -->
+        <div
+          style="
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 14px;
+          "
+        >
+          <div style="display: flex; align-items: center; gap: 10px">
+            <div
+              style="
+                width: 36px;
+                height: 36px;
+                border-radius: 10px;
+                background: rgba(217, 107, 39, 0.12);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                color: var(--color-primary, #d96b27);
+                font-size: 16px;
+              "
+            >
+              <i class="fa-solid fa-phone"></i>
+            </div>
+            <div>
+              <p
+                style="
+                  font-size: 13px;
+                  font-weight: 700;
+                  color: #1a1a2e;
+                  margin: 0;
+                "
+              >
+                Call Us Now
+              </p>
+              <p style="font-size: 11px; color: #888; margin: 0">
+                We're ready to help
+              </p>
+            </div>
+          </div>
+          <button
+            id="phone-popup-close"
+            onclick="closePhonePopup()"
+            style="
+              width: 28px;
+              height: 28px;
+              border-radius: 50%;
+              border: 1px solid #e5e7eb;
+              background: #fff;
+              cursor: pointer;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              color: #888;
+              font-size: 13px;
+            "
+            aria-label="Close"
+          >
+            <i class="fa-solid fa-xmark"></i>
+          </button>
+        </div>
+
+        <!-- Divider -->
+        <hr
+          style="
+            border: none;
+            border-top: 1px solid #f0f0f0;
+            margin-bottom: 10px;
+          "
+        />
+
+        <!-- Phone numbers -->
+        <a href="tel:9297280155" class="phone-line">
+          <div class="phone-line-icon"><i class="fa-solid fa-phone"></i></div>
+          <div>
+            <p
+              style="font-size: 12px; color: #888; margin: 0; font-weight: 600"
+            >
+              Main
+            </p>
+            <p
+              style="
+                font-size: 15px;
+                font-weight: 700;
+                color: #1a1a2e;
+                margin: 0;
+              "
+            >
+              (929) 728-0155
+            </p>
+          </div>
+        </a>
+
+        <!-- Tap-to-call big button -->
+        <a
+          href="tel:9297280155"
+          style="
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            margin-top: 14px;
+            background: var(--color-primary, #d96b27);
+            color: #fff;
+            border-radius: 12px;
+            padding: 13px 0;
+            font-weight: 700;
+            font-size: 15px;
+            text-decoration: none;
+            transition: background 0.18s ease;
+          "
+          onmouseover="
+            this.style.background = 'var(--color-primary-hover,#b45a20)'
+          "
+          onmouseout="this.style.background = 'var(--color-primary,#d96b27)'"
+        >
+          <i class="fa-solid fa-phone-volume"></i>
+          Tap to Call
+        </a>
+      </div>
+
+      <!-- FAB trigger button -->
+      <button
+        id="phone-fab-btn"
+        onclick="togglePhonePopup()"
+        aria-label="Call us"
+        aria-expanded="false"
+      >
+        <i id="phone-fab-icon" class="fa-solid fa-phone"></i>
+      </button>
+    </div>
+
+    <script>
+      var phonePopupOpen = false;
+      function togglePhonePopup() {
+        phonePopupOpen ? closePhonePopup() : openPhonePopup();
+      }
+      function openPhonePopup() {
+        phonePopupOpen = true;
+        document.getElementById("phone-popup").classList.add("open");
+        document
+          .getElementById("phone-fab-btn")
+          .setAttribute("aria-expanded", "true");
+        document.getElementById("phone-fab-icon").className =
+          "fa-solid fa-xmark";
+      }
+      function closePhonePopup() {
+        phonePopupOpen = false;
+        document.getElementById("phone-popup").classList.remove("open");
+        document
+          .getElementById("phone-fab-btn")
+          .setAttribute("aria-expanded", "false");
+        document.getElementById("phone-fab-icon").className =
+          "fa-solid fa-phone";
+      }
+      // Close on outside click
+      document.addEventListener("click", function (e) {
+        var fab = document.getElementById("phone-fab");
+        if (phonePopupOpen && fab && !fab.contains(e.target)) {
+          closePhonePopup();
+        }
+      });
+    </script>
 
     <!-- jQuery and Slick Carousel -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>

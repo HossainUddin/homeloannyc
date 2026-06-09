@@ -1,0 +1,126 @@
+body {
+  font-family: "Plus Jakarta Sans", sans-serif;
+}
+/* Chrome, Safari, Edge, Opera */
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
+  appearance: textfield;
+}
+
+/* ── Floating Phone FAB ── */
+#phone-fab {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 12px;
+}
+/* Popup card */
+#phone-popup {
+  background: #ffffff;
+  border-radius: 20px;
+  padding: 20px 20px 16px;
+  box-shadow:
+    0 20px 60px rgba(0, 0, 0, 0.18),
+    0 4px 16px rgba(0, 0, 0, 0.08);
+  width: 280px;
+  transform: translateY(20px) scale(0.95);
+  opacity: 0;
+  pointer-events: none;
+  transition:
+    transform 0.28s cubic-bezier(0.34, 1.56, 0.64, 1),
+    opacity 0.22s ease;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+}
+#phone-popup.open {
+  transform: translateY(0) scale(1);
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* FAB button */
+#phone-fab-btn {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: var(--color-primary, #d96b27);
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  box-shadow: 0 8px 24px rgba(217, 107, 39, 0.45);
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    background 0.2s ease;
+  position: relative;
+}
+#phone-fab-btn:hover {
+  transform: scale(1.08);
+  background: var(--color-primary-hover, #b45a20);
+  box-shadow: 0 12px 32px rgba(217, 107, 39, 0.55);
+}
+/* Pulse ring animation */
+#phone-fab-btn::before {
+  content: "";
+  position: absolute;
+  inset: -6px;
+  border-radius: 50%;
+  border: 3px solid var(--color-primary, #d96b27);
+  opacity: 0;
+  animation: phone-pulse 2.2s ease-out infinite;
+}
+@keyframes phone-pulse {
+  0% {
+    opacity: 0.7;
+    transform: scale(1);
+  }
+  80% {
+    opacity: 0;
+    transform: scale(1.5);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1.5);
+  }
+}
+
+/* Phone line item */
+.phone-line {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 14px;
+  border-radius: 12px;
+  text-decoration: none;
+  transition: background 0.18s ease;
+  color: inherit;
+}
+.phone-line:hover {
+  background: rgba(217, 107, 39, 0.07);
+}
+.phone-line-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: rgba(217, 107, 39, 0.12);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  color: var(--color-primary, #d96b27);
+  flex-shrink: 0;
+}
