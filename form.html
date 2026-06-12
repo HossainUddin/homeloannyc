@@ -606,7 +606,7 @@
                 <label
                   for="address-input"
                   class="block text-sm font-semibold text-title ml-1"
-                  >Current Address <span class="text-primary">*</span></label
+                  >Current Address <span class="text-slate-400 font-normal">(Optional)</span></label
                 >
                 <input
                   type="text"
@@ -614,7 +614,6 @@
                   name="address"
                   placeholder="123 Main St, Brooklyn, NY 11249"
                   class="w-full bg-slate-50 border-none rounded-2xl px-5 py-4 focus:ring-2 focus:ring-primary transition-all placeholder:text-slate-400 text-title"
-                  required
                 />
                 <span
                   class="text-xs text-red-500 hidden mt-1 ml-1"
@@ -780,25 +779,89 @@
 
                 <!-- Credit Score -->
                 <div class="space-y-2">
-                  <label
-                    for="credit-score-input"
-                    class="block text-sm font-semibold text-title ml-1"
+                  <label class="block text-sm font-semibold text-title ml-1"
                     >Credit Score <span class="text-primary">*</span></label
                   >
-                  <input
-                    type="number"
-                    id="credit-score-input"
-                    name="credit_score"
-                    placeholder="e.g. 720"
-                    min="300"
-                    max="850"
-                    class="w-full bg-slate-50 border-none rounded-2xl px-5 py-4 focus:ring-2 focus:ring-primary transition-all placeholder:text-slate-400 text-title"
-                    required
-                  />
+                  <div
+                    class="relative custom-dropdown"
+                    data-placeholder="Select Credit Score"
+                  >
+                    <button
+                      type="button"
+                      class="dropdown-trigger w-full bg-slate-50 border-none rounded-2xl px-5 py-4 flex items-center justify-between focus:ring-2 focus:ring-primary transition-all text-slate-400 cursor-pointer"
+                    >
+                      <span>Select Credit Score</span>
+                      <svg
+                        class="w-5 h-5 transition-transform duration-300"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="2"
+                          d="M19 9l-7 7-7-7"
+                        />
+                      </svg>
+                    </button>
+                    <div
+                      class="dropdown-menu hidden absolute top-full left-0 w-full mt-2 bg-w-color rounded-2xl shadow-xl border border-slate-100 z-50 max-h-60 overflow-y-auto"
+                    >
+                      <div
+                        class="dropdown-option px-5 py-3 hover:bg-primary/10 hover:text-primary cursor-pointer transition-colors"
+                        data-value="740-850"
+                      >
+                        740 - 850
+                      </div>
+                      <div
+                        class="dropdown-option px-5 py-3 hover:bg-primary/10 hover:text-primary cursor-pointer transition-colors"
+                        data-value="700-739"
+                      >
+                        700 - 739
+                      </div>
+                      <div
+                        class="dropdown-option px-5 py-3 hover:bg-primary/10 hover:text-primary cursor-pointer transition-colors"
+                        data-value="680-699"
+                      >
+                        680 - 699
+                      </div>
+                      <div
+                        class="dropdown-option px-5 py-3 hover:bg-primary/10 hover:text-primary cursor-pointer transition-colors"
+                        data-value="660-679"
+                      >
+                        660 - 679
+                      </div>
+                      <div
+                        class="dropdown-option px-5 py-3 hover:bg-primary/10 hover:text-primary cursor-pointer transition-colors"
+                        data-value="620-659"
+                      >
+                        620 - 659
+                      </div>
+                      <div
+                        class="dropdown-option px-5 py-3 hover:bg-primary/10 hover:text-primary cursor-pointer transition-colors"
+                        data-value="580-619"
+                      >
+                        580 - 619
+                      </div>
+                      <div
+                        class="dropdown-option px-5 py-3 hover:bg-primary/10 hover:text-primary cursor-pointer transition-colors"
+                        data-value="520-579"
+                      >
+                        520 - 579
+                      </div>
+                    </div>
+                    <input
+                      type="hidden"
+                      id="credit-score-input"
+                      name="credit_score"
+                      value=""
+                    />
+                  </div>
                   <span
                     class="text-xs text-red-500 hidden mt-1 ml-1"
                     id="error-credit-score"
-                    >Credit score must be between 300 and 850.</span
+                    >Please select your credit score range.</span
                   >
                 </div>
               </div>
@@ -991,11 +1054,6 @@
                 >
               </li>
               <li>
-                <a href="#" class="hover:text-title transition-colors"
-                  >Reviews</a
-                >
-              </li>
-              <li>
                 <a
                   href="mortgage.html"
                   class="hover:text-title transition-colors"
@@ -1004,6 +1062,13 @@
               </li>
               <li>
                 <a href="#" class="hover:text-title transition-colors">Blogs</a>
+              </li>
+              <li>
+                <a
+                  href="officers.html"
+                  class="hover:text-title transition-colors"
+                  >Officers</a
+                >
               </li>
             </ul>
           </div>

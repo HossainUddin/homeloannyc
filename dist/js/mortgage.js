@@ -152,7 +152,11 @@ function calculateAndShowResults() {
   document.getElementById("summaryDownPayment").innerText = `${formatCurrency(downPayment)} (${dpPercent}%)`;
   document.getElementById("summaryLoanTerm").innerText = `${loanTerm} years fixed`;
   document.getElementById("summaryInterestRate").innerText = `${(parseFloat(document.getElementById("interestRate").value) || 0).toFixed(2)}%`;
-  document.getElementById("summaryCreditScore").innerText = document.getElementById("creditScore").value + "+";
+  const creditScoreInput = document.getElementById("creditScore");
+  const creditScoreDropdown = creditScoreInput ? creditScoreInput.closest(".custom-dropdown") : null;
+  const creditScoreSpan = creditScoreDropdown ? creditScoreDropdown.querySelector(".dropdown-trigger span") : null;
+  const creditScoreText = creditScoreSpan ? creditScoreSpan.innerText.trim() : (creditScoreInput ? creditScoreInput.value + "+" : "N/A");
+  document.getElementById("summaryCreditScore").innerText = creditScoreText;
   document.getElementById("summaryZipCode").innerText = document.getElementById("zipCode").value || "N/A";
 
 
@@ -229,5 +233,55 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 // Static breakdown, dynamic recalculation triggered via step wizard recalculate button
+
+// Restrict numeric and decimal inputs to numbers only
+document.addEventListener("DOMContentLoaded", () => {
+  const integerIds = ["homePrice", "downPaymentAmount", "zipCode", "propTax", "homeIns", "pmi", "hoa"];
+  const decimalIds = ["downPaymentPercent", "interestRate"];
+
+  integerIds.forEach(id => {
+    const input = document.getElementById(id);
+    if (!input) return;
+    
+    input.addEventListener("keypress", (e) => {
+      if (e.key.length > 1) return; // Allow navigation/control keys
+      if (e.ctrlKey || e.metaKey || e.altKey) return;
+      if (!/[0-9]/.test(e.key)) {
+        e.preventDefault();
+      }
+    });
+
+    input.addEventListener("input", () => {
+      input.value = input.value.replace(/\D/g, "");
+    });
+  });
+
+  decimalIds.forEach(id => {
+    const input = document.getElementById(id);
+    if (!input) return;
+
+    input.addEventListener("keypress", (e) => {
+      if (e.key.length > 1) return; // Allow navigation/control keys
+      if (e.ctrlKey || e.metaKey || e.altKey) return;
+      if (e.key === ".") {
+        if (input.value.includes(".")) {
+          e.preventDefault();
+        }
+      } else if (!/[0-9]/.test(e.key)) {
+        e.preventDefault();
+      }
+    });
+
+    input.addEventListener("input", () => {
+      let val = input.value;
+      val = val.replace(/[^0-9.]/g, "");
+      const parts = val.split(".");
+      if (parts.length > 2) {
+        val = parts[0] + "." + parts.slice(1).join("");
+      }
+      input.value = val;
+    });
+  });
+});
 
 

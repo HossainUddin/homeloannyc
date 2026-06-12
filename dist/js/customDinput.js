@@ -33,7 +33,7 @@ dropdowns.forEach((dropdown) => {
   options.forEach((option) => {
     option.addEventListener("click", () => {
       const value = option.getAttribute("data-value");
-      triggerText.innerText = value;
+      triggerText.innerText = option.innerText.trim();
       triggerText.classList.remove("text-slate-400");
       triggerText.classList.add("text-slate-900");
       hiddenInput.value = value;
