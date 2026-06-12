@@ -238,6 +238,8 @@ document.addEventListener("DOMContentLoaded", () => {
 document.addEventListener("DOMContentLoaded", () => {
   const integerIds = ["homePrice", "downPaymentAmount", "zipCode", "propTax", "homeIns", "pmi", "hoa"];
   const decimalIds = ["downPaymentPercent", "interestRate"];
+  const max9DigitIds = ["homePrice", "downPaymentAmount", "downPaymentPercent", "propTax", "homeIns", "pmi", "hoa"];
+  const max2DigitIds = ["interestRate"];
 
   integerIds.forEach(id => {
     const input = document.getElementById(id);
@@ -248,11 +250,31 @@ document.addEventListener("DOMContentLoaded", () => {
       if (e.ctrlKey || e.metaKey || e.altKey) return;
       if (!/[0-9]/.test(e.key)) {
         e.preventDefault();
+        return;
+      }
+
+      if (max9DigitIds.includes(id)) {
+        const currentDigits = input.value.replace(/\D/g, "");
+        let isSelectionSupported = true;
+        try {
+          if (input.selectionStart !== input.selectionEnd) {
+            return; // Allow typed key to replace selection
+          }
+        } catch (err) {
+          isSelectionSupported = false;
+        }
+        if (currentDigits.length >= 9 && isSelectionSupported) {
+          e.preventDefault();
+        }
       }
     });
 
     input.addEventListener("input", () => {
-      input.value = input.value.replace(/\D/g, "");
+      let val = input.value.replace(/\D/g, "");
+      if (max9DigitIds.includes(id) && val.length > 9) {
+        val = val.slice(0, 9);
+      }
+      input.value = val;
     });
   });
 
@@ -266,9 +288,33 @@ document.addEventListener("DOMContentLoaded", () => {
       if (e.key === ".") {
         if (input.value.includes(".")) {
           e.preventDefault();
+          return;
         }
       } else if (!/[0-9]/.test(e.key)) {
         e.preventDefault();
+        return;
+      }
+
+      let maxDigits = 0;
+      if (max9DigitIds.includes(id)) {
+        maxDigits = 9;
+      } else if (max2DigitIds.includes(id)) {
+        maxDigits = 2;
+      }
+
+      if (maxDigits > 0) {
+        const currentDigits = input.value.replace(/[^0-9]/g, "");
+        let isSelectionSupported = true;
+        try {
+          if (input.selectionStart !== input.selectionEnd) {
+            return; // Allow typed key to replace selection
+          }
+        } catch (err) {
+          isSelectionSupported = false;
+        }
+        if (currentDigits.length >= maxDigits && isSelectionSupported) {
+          e.preventDefault();
+        }
       }
     });
 
@@ -279,6 +325,30 @@ document.addEventListener("DOMContentLoaded", () => {
       if (parts.length > 2) {
         val = parts[0] + "." + parts.slice(1).join("");
       }
+
+      let maxDigits = 0;
+      if (max9DigitIds.includes(id)) {
+        maxDigits = 9;
+      } else if (max2DigitIds.includes(id)) {
+        maxDigits = 2;
+      }
+
+      if (maxDigits > 0) {
+        let digitCount = 0;
+        let cleaned = "";
+        for (let i = 0; i < val.length; i++) {
+          if (/[0-9]/.test(val[i])) {
+            if (digitCount < maxDigits) {
+              cleaned += val[i];
+              digitCount++;
+            }
+          } else if (val[i] === ".") {
+            cleaned += val[i];
+          }
+        }
+        val = cleaned;
+      }
+
       input.value = val;
     });
   });
