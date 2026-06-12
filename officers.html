@@ -473,37 +473,6 @@
               </div>
             </div>
           </div>
-
-          <div class="py-5 px-3 bg-primary/10 rounded-2xl">
-            <span
-              class="text-base font-bold flex items-center gap-4 text-primary"
-            >
-              <i class="fa-solid fa-circle-check text-2xl"></i>
-              <h5 class="text-base font-bold">What We Improved</h5>
-            </span>
-
-            <ul class="list-disc ms-6 mt-3 text-sm text-title space-y-1">
-              <li class="text-sm text-gray-600">
-                Added Today's Rates (high intent)
-              </li>
-              <li class="text-sm text-gray-600">Added Contact Us</li>
-              <li class="text-sm text-gray-600">
-                Renamed About Us Meet Your Loan Officer
-              </li>
-              <li class="text-sm text-gray-600">
-                One clear primary CTA + one secondary CТА
-              </li>
-              <li class="text-sm text-gray-600">
-                Added trust & compliance info
-              </li>
-              <li class="text-sm text-gray-600">
-                Labeled phone for call or text
-              </li>
-              <li class="text-sm text-gray-600">
-                Cleaner, tighter layout for better mobile UX
-              </li>
-            </ul>
-          </div>
         </div>
       </div>
     </nav>
@@ -1134,7 +1103,7 @@
                 Call Us Now
               </p>
               <p style="font-size: 11px; color: #888; margin: 0">
-                We're ready to help
+                Talk To A Specialist
               </p>
             </div>
           </div>
@@ -1171,7 +1140,7 @@
             <p
               style="font-size: 12px; color: #888; margin: 0; font-weight: 600"
             >
-              Main
+              Number
             </p>
             <p
               style="
@@ -1218,42 +1187,16 @@
       >
         <i id="phone-fab-icon" class="fa-solid fa-phone"></i>
       </a>
+      <h2
+        class="bg-white rounded-2xl px-4 py-1 cursor-pointer select-none"
+        onclick="document.getElementById('phone-fab-btn').click()"
+      >
+        Call Now
+      </h2>
     </div>
-    <script>
-      var phonePopupOpen = false;
-      function handleFabClick(e) {
-        if (window.innerWidth <= 1024) {
-          return true;
-        }
-        e.preventDefault();
-        phonePopupOpen ? closePhonePopup() : openPhonePopup();
-        return false;
-      }
-      function openPhonePopup() {
-        phonePopupOpen = true;
-        document.getElementById("phone-popup").classList.add("open");
-        document
-          .getElementById("phone-fab-btn")
-          .setAttribute("aria-expanded", "true");
-        document.getElementById("phone-fab-icon").className =
-          "fa-solid fa-xmark";
-      }
-      function closePhonePopup() {
-        phonePopupOpen = false;
-        document.getElementById("phone-popup").classList.remove("open");
-        document
-          .getElementById("phone-fab-btn")
-          .setAttribute("aria-expanded", "false");
-        document.getElementById("phone-fab-icon").className =
-          "fa-solid fa-phone";
-      }
-      document.addEventListener("click", function (e) {
-        var fab = document.getElementById("phone-fab");
-        if (phonePopupOpen && fab && !fab.contains(e.target)) {
-          closePhonePopup();
-        }
-      });
-    </script>
+
+    <script src="dist/js/nav.js"></script>
     <script src="dist/js/slider.js"></script>
+    <script src="dist/js/call-popup.js"></script>
   </body>
 </html>
