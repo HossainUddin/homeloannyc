@@ -2,10 +2,11 @@
 
 /* Default Theme (Green) */
 :root {
-  --color-primary: #009966;
-  --color-title: #0f172a;
-  --color-w-color: #f8f8f8;
-  --color-primary-hover: #006045;
+  --color-primary: #2e7d4f;
+  --color-title: #0d1b2a;
+  --color-w-color: #f3f4f6;
+  --color-primary-hover: #256841;
+  --color-pera: #64748b;
 }
 
 /* [data-theme="orange"] {

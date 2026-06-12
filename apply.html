@@ -3,19 +3,13 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script>
-      (function () {
-        const saved = localStorage.getItem("theme") || "green";
-        document.documentElement.setAttribute("data-theme", saved);
-      })();
-    </script>
     <title>Apply Now</title>
     <link href="dist/output.css" rel="stylesheet" />
     <link rel="stylesheet" href="dist/custom.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
       rel="stylesheet"
     />
     <!-- FontAwosome -->
@@ -40,10 +34,6 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css"
     />
     <style>
-      body {
-        font-family: "Plus Jakarta Sans", sans-serif;
-      }
-
       /* Chrome, Safari, Edge, Opera */
       input[type="number"]::-webkit-outer-spin-button,
       input[type="number"]::-webkit-inner-spin-button {
@@ -396,7 +386,7 @@
           color-mix(in srgb, var(--color-primary, #009966) 30%, transparent);
       }
 
-      /* text-title/70 - opacity on text */
+      /* text-pera - opacity on text */
       .text-title\/70 {
         color: color-mix(in srgb, var(--color-title, #1e293b) 70%, transparent);
       }
@@ -473,7 +463,7 @@
     >
       <div class="max-w-7xl mx-auto px-6 flex justify-between items-center">
         <!-- Logo -->
-        <div class="w-30 h-25">
+        <div class="w-[150px] h-[100px] md:w-30 md:h-25">
           <a href="index.html">
             <img
               src="dist/images/logo.png"
@@ -485,77 +475,15 @@
 
         <!-- Nav Links -->
         <div
-          class="hidden lg:flex items-center gap-5 text-[15px] font-semibold text-title"
+          class="hidden lg:flex items-center gap-6 text-[15px] font-semibold text-title"
         >
-          <!-- Shop Rates Dropdown -->
-          <div class="relative group">
-            <button
-              id="shop-rates-button"
-              class="flex items-center gap-1 hover:text-primary transition-colors py-2"
-            >
-              Shop rates
-              <svg
-                class="w-4 h-4 opacity-50 transition-transform duration-300"
-                id="shop-rates-arrow"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M19 9l-7 7-7-7"
-                ></path>
-              </svg>
-            </button>
-
-            <!-- Mega Menu Content -->
-            <div
-              id="shop-rates-dropdown"
-              class="hidden absolute top-full left-1/2 -translate-x-1/2 mt-4 w-[600px] bg-w-color rounded-3xl shadow-2xl border border-slate-200 overflow-hidden z-50 p-6"
-            >
-              <div class="grid grid-cols-2 text-center">
-                <!-- Section 1 -->
-                <div
-                  class="p-6 rounded-2xl bg-w-color flex flex-col items-center"
-                >
-                  <h3 class="text-base font-bold text-title mb-4">
-                    Today's rates
-                  </h3>
-                  <a
-                    href="rates.html"
-                    class="w-full bg-primary text-center text-w-color py-3 rounded-xl font-bold hover:bg-primary-hover transition-all shadow-lg shadow-primary/10"
-                  >
-                    Today's rates
-                  </a>
-                </div>
-
-                <!-- Section 2 -->
-                <div
-                  class="p-6 rounded-2xl bg-w-color flex flex-col items-center"
-                >
-                  <h3 class="text-base font-bold text-title mb-4">
-                    Get a free rate quote
-                  </h3>
-                  <a
-                    href="#"
-                    class="w-full text-center border-2 border-primary text-primary py-3 rounded-xl font-bold hover:bg-primary/5 transition-all"
-                  >
-                    Free rate quote
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-
           <!-- Loan Programs Dropdown -->
           <div class="relative group">
             <button
               id="loan-programs-button"
               class="flex items-center gap-1 hover:text-primary transition-colors py-2"
             >
-              Loan programs
+              Loan Programs
               <svg
                 class="w-4 h-4 opacity-50 transition-transform duration-300"
                 id="loan-programs-arrow"
@@ -578,22 +506,100 @@
               <a
                 href="loan.html"
                 class="block px-6 py-3 hover:bg-w-color hover:text-primary transition-colors"
-                >Fixed-Rate Mortgage</a
+                >Conventional Loan</a
               >
               <a
                 href="#"
                 class="block px-6 py-3 hover:bg-w-color hover:text-primary transition-colors"
-                >Demo</a
+                >FHA Loan</a
+              >
+              <a
+                href="#"
+                class="block px-6 py-3 hover:bg-w-color hover:text-primary transition-colors"
+                >VA Loan</a
+              >
+              <a
+                href="#"
+                class="block px-6 py-3 hover:bg-w-color hover:text-primary transition-colors"
+                >USDA Loan</a
+              >
+              <a
+                href="#"
+                class="block px-6 py-3 hover:bg-w-color hover:text-primary transition-colors"
+                >Jumbo Loan</a
               >
             </div>
           </div>
 
           <a
-            href="about.html"
+            href="rates.html"
             class="flex items-center gap-1 hover:text-primary transition-colors"
           >
-            About us</a
+            Today's Rates</a
           >
+
+          <!-- Shop Rates Dropdown -->
+          <!-- <div class="relative group">
+            <button
+              id="shop-rates-button"
+              class="flex items-center gap-1 hover:text-primary transition-colors py-2"
+            >
+              Shop Rates
+              <svg
+                class="w-4 h-4 opacity-50 transition-transform duration-300"
+                id="shop-rates-arrow"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M19 9l-7 7-7-7"
+                ></path>
+              </svg>
+            </button>
+
+            Mega Menu Content
+            <div
+              id="shop-rates-dropdown"
+              class="hidden absolute top-full left-1/2 -translate-x-1/2 mt-4 w-[300px] bg-w-color rounded-3xl shadow-2xl border border-slate-200 overflow-hidden z-50 p-6"
+            >
+              class="grid grid-cols-2 text-center"
+              <div class="text-center">
+                Section 1
+                <div
+                  class="p-6 rounded-2xl bg-w-color flex flex-col items-center"
+                >
+                  <h3 class="text-base font-bold text-title mb-4">
+                    Today's rates
+                  </h3>
+                  <a
+                    href="rates.html"
+                    class="w-full bg-primary text-center text-w-color py-3 rounded-xl font-bold hover:bg-primary-hover transition-all shadow-lg shadow-primary/10"
+                  >
+                    Today's rates
+                  </a>
+                </div>
+
+                Section 2
+                <div
+                  class="p-6 rounded-2xl bg-w-color flex flex-col items-center"
+                >
+                  <h3 class="text-base font-bold text-title mb-4">
+                    Get a free rate quote
+                  </h3>
+                  <a
+                    href="#"
+                    class="w-full text-center border-2 border-primary text-primary py-3 rounded-xl font-bold hover:bg-primary/5 transition-all"
+                  >
+                    Free rate quote
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div> -->
 
           <div class="relative">
             <button
@@ -628,25 +634,32 @@
             </div>
           </div>
 
-          <a href="#" class="hover:text-primary transition-colors">Blogs</a>
+          <a
+            href="about.html"
+            class="flex items-center gap-1 hover:text-primary transition-colors"
+          >
+            About us</a
+          >
+
+          <a
+            href="#"
+            class="flex items-center gap-1 hover:text-primary transition-colors"
+          >
+            Blogs</a
+          >
         </div>
 
         <!-- CTA Buttons & Mobile Toggle -->
         <div class="flex items-center gap-4">
           <a
             href="tel:9297280155"
-            class="hidden lg:block text-[15px] font-bold text-primary px-6 py-2.5 rounded-full border border-primary/20 hover:bg-primary/5 transition-all"
-            ><i class="fa-solid fa-phone pr-2"></i> (929) 728-0155</a
+            class="hidden lg:block text-[15px] font-bold text-primary px-6 py-3 rounded-2xl border border-primary/90 hover:bg-primary/5 transition-all"
+            ><i class="fa-solid fa-phone text-lg pr-2"></i> (929) 728-0155</a
           >
           <a
             href="form.html"
-            class="hidden lg:block text-[15px] font-bold bg-primary text-w-color px-6 py-2.5 rounded-full hover:bg-primary-hover transition-all shadow-lg shadow-primary/10"
-            >Get Quote</a
-          >
-          <a
-            href="apply.html"
-            class="hidden lg:block text-[15px] font-bold bg-primary text-w-color px-6 py-2.5 rounded-full hover:bg-primary-hover transition-all shadow-lg shadow-primary/10"
-            >Pre Approval</a
+            class="hidden lg:block text-[15px] font-bold bg-primary text-w-color px-6 py-3 rounded-2xl hover:bg-primary-hover transition-all shadow-lg shadow-primary/10"
+            >Get A Quote</a
           >
 
           <!-- Hamburger Button -->
@@ -679,59 +692,16 @@
         class="hidden lg:hidden absolute top-full left-0 w-full bg-w-color border-b border-slate-200 shadow-xl max-h-[90vh] overflow-y-auto animate-in slide-in-from-top-4 duration-200"
       >
         <div class="flex flex-col p-6 gap-4 font-semibold text-title">
-          <!-- Mobile Shop Rates Accordion -->
-          <div class="border-b border-w-color">
-            <button
-              id="mobile-shop-rates-btn"
-              class="w-full py-3 flex justify-between items-center text-left"
-            >
-              Shop rates
-              <svg
-                id="mobile-arrow"
-                class="w-4 h-4 opacity-50 transition-transform"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M19 9l-7 7-7-7"
-                ></path>
-              </svg>
-            </button>
-            <div id="mobile-shop-rates-content" class="hidden pb-4 space-y-3">
-              <div
-                class="p-6 bg-w-color rounded-2xl flex flex-col items-center text-center"
-              >
-                <a
-                  href="rates.html"
-                  class="w-full bg-primary text-w-color py-4 rounded-xl font-bold hover:bg-primary-hover transition-all"
-                >
-                  Today's rates
-                </a>
-              </div>
-              <div
-                class="p-6 bg-w-color rounded-2xl flex flex-col items-center text-center"
-              >
-                <a
-                  href="#"
-                  class="w-full text-center border-2 border-primary text-primary py-4 rounded-xl font-bold hover:bg-primary/5 transition-all"
-                >
-                  Free rate quote
-                </a>
-              </div>
-            </div>
-          </div>
-
           <!-- Mobile Loan Programs Accordion -->
-          <div class="border-b border-w-color">
+          <div class="border-b-1 border-gray-300">
             <button
               id="mobile-loan-btn"
               class="w-full py-3 flex justify-between items-center text-left"
             >
-              Loan programs
+              <div class="flex items-center gap-4">
+                <i class="fa-solid fa-house text-xl text-primary"></i>
+                Loan Programs
+              </div>
               <svg
                 id="mobile-loan-arrow"
                 class="w-4 h-4 opacity-50 transition-transform"
@@ -751,24 +721,98 @@
               <a
                 href="loan.html"
                 class="block py-2 text-sm opacity-80 hover:text-primary"
-                >Fixed-Rate Mortgage</a
+                >Conventional Loan</a
               >
               <a
                 href="#"
                 class="block py-2 text-sm opacity-80 hover:text-primary"
-                >Demo</a
+                >FHA Loan</a
+              >
+              <a
+                href="#"
+                class="block py-2 text-sm opacity-80 hover:text-primary"
+                >VA Loan</a
+              >
+              <a
+                href="#"
+                class="block py-2 text-sm opacity-80 hover:text-primary"
+                >USDA Loan</a
+              >
+              <a
+                href="#"
+                class="block py-2 text-sm opacity-80 hover:text-primary"
+                >Jumbo Loan</a
               >
             </div>
           </div>
 
-          <a href="about.html" class="py-3 border-b border-w-color">About us</a>
+          <!-- Mobile Shop Rates Accordion -->
+          <!-- <div class="border-b-1 border-gray-300">
+            <button
+              id="mobile-shop-rates-btn"
+              class="w-full py-3 flex justify-between items-center text-left"
+            >
+              <div class="flex items-center gap-4">
+                <i class="fa-solid fa-chart-line text-xl text-primary"></i>
+                Shop rates
+              </div>
+
+              <svg
+                id="mobile-arrow"
+                class="w-4 h-4 opacity-50 transition-transform"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M19 9l-7 7-7-7"
+                ></path>
+              </svg>
+            </button>
+            <div id="mobile-shop-rates-content" class="hidden pb-4 space-y-3">
+              <div
+                class="p-2 lg:p-6 bg-w-color rounded-2xl flex flex-col items-center text-center"
+              >
+                <a
+                  href="rates.html"
+                  class="w-full bg-primary text-w-color py-4 rounded-xl font-bold hover:bg-primary-hover transition-all"
+                >
+                  Today's rates
+                </a>
+              </div>
+              <div
+                class="p-2 lg:p-6 bg-w-color rounded-2xl flex flex-col items-center text-center"
+              >
+                <a
+                  href="#"
+                  class="w-full text-center border-2 border-primary text-primary py-4 rounded-xl font-bold hover:bg-primary/5 transition-all"
+                >
+                  Free rate quote
+                </a>
+              </div>
+            </div>
+          </div> -->
+
+          <a href="rates.html" class="py-3 border-b-1 border-gray-300">
+            <div class="flex items-center gap-4">
+              <i class="fa-solid fa-user text-xl text-primary"></i>
+              Today's Rates
+            </div>
+          </a>
+
           <!-- Mobile Calculators Accordion -->
-          <div class="border-b border-w-color">
+          <div class="border-b-1 border-gray-300">
             <button
               id="mobile-calculators-btn"
               class="w-full py-3 flex justify-between items-center text-left"
             >
-              Calculators
+              <div class="flex items-center gap-4">
+                <i class="fa-solid fa-calculator text-xl text-primary"></i>
+                Calculators
+              </div>
               <svg
                 id="mobile-calculators-arrow"
                 class="w-4 h-4 opacity-50 transition-transform"
@@ -789,31 +833,97 @@
               class="hidden pb-4 pl-4 space-y-3"
             >
               <a
-                href="form.html"
+                href="mortgage.html"
                 class="block py-2 text-sm opacity-80 hover:text-primary"
                 >Mortgage calculator</a
               >
             </div>
           </div>
-          <a href="#" class="py-3 border-b border-w-color">Blogs</a>
+
+          <a href="officers.html" class="py-3 border-b-1 border-gray-300">
+            <div class="flex items-center gap-4">
+              <i class="fa-solid fa-user text-xl text-primary"></i>
+              Meet Our Loan Officer
+            </div>
+          </a>
+
+          <h3 class="py-3 border-b border-w-color">
+            <div class="flex items-center gap-4">
+              <i class="fa-solid fa-square-phone text-primary text-2xl"></i>
+              Contact Us
+            </div>
+          </h3>
 
           <!-- Mobile CTAs -->
           <div class="grid grid-cols-1 gap-3 mt-4">
             <a
-              href="form.html"
+              href="#"
               class="w-full text-center font-bold bg-primary text-w-color py-4 rounded-xl shadow-lg shadow-primary/20"
-              >Get Quote</a
+              >See What I Qualify For</a
             >
-            <a
-              href="apply.html"
-              class="w-full text-center font-bold bg-primary text-w-color py-4 rounded-xl shadow-lg shadow-primary/20"
-              >Pre Approval</a
-            >
+            <h5 class="text-center text-xs text-gray-600">
+              No Impact on your credit score
+            </h5>
             <a
               href="tel:9297280155"
-              class="w-full text-center font-bold text-primary py-4 rounded-xl border border-primary/20"
-              ><i class="fa-solid fa-phone pr-2"></i> (929) 728-0155</a
+              class="w-full text-center font-bold text-primary py-4 rounded-xl border-2 border-primary/90"
+              ><i class="fa-solid fa-phone pr-2"></i> Call or Text (929)
+              728-0155</a
             >
+          </div>
+
+          <div
+            class="flex items-center justify-start gap-2 mt-4 mb-10 bg-primary/10 py-4 rounded-2xl"
+          >
+            <div class="text-xs">
+              <div class="flex items-center gap-2 text-sm px-4 py-2">
+                <i class="fa-solid fa-shield-halved text-primary text-xl"></i>
+                <p>NMLS #2693077</p>
+              </div>
+
+              <div class="flex items-center gap-2 text-sm px-4 py-2">
+                <i
+                  class="fa-solid fa-location-dot text-primary text-xl ps-[2px] pe-[2px]"
+                ></i>
+                <p>Licensed Mortgage Loan Originator - NY</p>
+              </div>
+
+              <div class="flex items-center gap-2 text-sm px-4 py-2">
+                <i class="fa-solid fa-house-user text-primary text-xl"></i>
+                <p>Equal Housing Opportunity</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="py-5 px-3 bg-primary/10 rounded-2xl">
+            <span
+              class="text-base font-bold flex items-center gap-4 text-primary"
+            >
+              <i class="fa-solid fa-circle-check text-2xl"></i>
+              <h5 class="text-base font-bold">What We Improved</h5>
+            </span>
+
+            <ul class="list-disc ms-6 mt-3 text-sm text-title space-y-1">
+              <li class="text-sm text-gray-600">
+                Added Today's Rates (high intent)
+              </li>
+              <li class="text-sm text-gray-600">Added Contact Us</li>
+              <li class="text-sm text-gray-600">
+                Renamed About Us Meet Your Loan Officer
+              </li>
+              <li class="text-sm text-gray-600">
+                One clear primary CTA + one secondary CТА
+              </li>
+              <li class="text-sm text-gray-600">
+                Added trust & compliance info
+              </li>
+              <li class="text-sm text-gray-600">
+                Labeled phone for call or text
+              </li>
+              <li class="text-sm text-gray-600">
+                Cleaner, tighter layout for better mobile UX
+              </li>
+            </ul>
           </div>
         </div>
       </div>
@@ -832,7 +942,7 @@
           <h2 class="text-4xl md:text-5xl font-extrabold text-title">
             Get Pre-Approved for Your Dream Home
           </h2>
-          <p class="text-title/70 text-center mx-auto leading-relaxed max-w-lg">
+          <p class="text-pera text-center mx-auto leading-relaxed max-w-lg">
             Complete our secure, step-by-step digital application to receive
             your pre-approval letter and start shopping for your home.
           </p>
@@ -849,7 +959,7 @@
             data-step="1"
           >
             <div
-              class="w-10 h-10 rounded-full flex items-center justify-center bg-primary text-w-color font-bold border-2 border-primary transition-all duration-300 z-10 step-circle"
+              class="w-10 h-10 rounded-2xl flex items-center justify-center bg-primary text-w-color font-bold border-2 border-primary transition-all duration-300 z-10 step-circle"
             >
               <i class="fa-solid fa-dollar-sign text-sm"></i>
             </div>
@@ -867,7 +977,7 @@
             data-step="2"
           >
             <div
-              class="w-10 h-10 rounded-full flex items-center justify-center bg-slate-100 text-slate-400 font-bold border-2 border-slate-300 transition-all duration-300 z-10 step-circle"
+              class="w-10 h-10 rounded-2xl flex items-center justify-center bg-slate-100 text-slate-400 font-bold border-2 border-slate-300 transition-all duration-300 z-10 step-circle"
             >
               <i class="fa-solid fa-house-chimney text-sm"></i>
             </div>
@@ -885,7 +995,7 @@
             data-step="3"
           >
             <div
-              class="w-10 h-10 rounded-full flex items-center justify-center bg-slate-100 text-slate-400 font-bold border-2 border-slate-300 transition-all duration-300 z-10 step-circle"
+              class="w-10 h-10 rounded-2xl flex items-center justify-center bg-slate-100 text-slate-400 font-bold border-2 border-slate-300 transition-all duration-300 z-10 step-circle"
             >
               <i class="fa-solid fa-user text-sm"></i>
             </div>
@@ -903,7 +1013,7 @@
             data-step="4"
           >
             <div
-              class="w-10 h-10 rounded-full flex items-center justify-center bg-slate-100 text-slate-400 font-bold border-2 border-slate-300 transition-all duration-300 z-10 step-circle"
+              class="w-10 h-10 rounded-2xl flex items-center justify-center bg-slate-100 text-slate-400 font-bold border-2 border-slate-300 transition-all duration-300 z-10 step-circle"
             >
               <i class="fa-solid fa-address-book text-sm"></i>
             </div>
@@ -921,7 +1031,7 @@
             data-step="5"
           >
             <div
-              class="w-10 h-10 rounded-full flex items-center justify-center bg-slate-100 text-slate-400 font-bold border-2 border-slate-300 transition-all duration-300 z-10 step-circle"
+              class="w-10 h-10 rounded-2xl flex items-center justify-center bg-slate-100 text-slate-400 font-bold border-2 border-slate-300 transition-all duration-300 z-10 step-circle"
             >
               <i class="fa-solid fa-wallet text-sm"></i>
             </div>
@@ -939,7 +1049,7 @@
             data-step="6"
           >
             <div
-              class="w-10 h-10 rounded-full flex items-center justify-center bg-slate-100 text-slate-400 font-bold border-2 border-slate-300 transition-all duration-300 z-10 step-circle"
+              class="w-10 h-10 rounded-2xl flex items-center justify-center bg-slate-100 text-slate-400 font-bold border-2 border-slate-300 transition-all duration-300 z-10 step-circle"
             >
               <i class="fa-solid fa-shield-halved text-sm"></i>
             </div>
@@ -957,7 +1067,7 @@
             data-step="7"
           >
             <div
-              class="w-10 h-10 rounded-full flex items-center justify-center bg-slate-100 text-slate-400 font-bold border-2 border-slate-300 transition-all duration-300 z-10 step-circle"
+              class="w-10 h-10 rounded-2xl flex items-center justify-center bg-slate-100 text-slate-400 font-bold border-2 border-slate-300 transition-all duration-300 z-10 step-circle"
             >
               <i class="fa-solid fa-comments text-sm"></i>
             </div>
@@ -979,7 +1089,7 @@
             id="mobile-step-name"
             >Step 1 of 7: Loan Amount</span
           >
-          <div class="w-24 bg-slate-300 h-2 rounded-full overflow-hidden">
+          <div class="w-24 bg-slate-300 h-2 rounded-2xl overflow-hidden">
             <div
               class="bg-primary h-full transition-all duration-300"
               id="mobile-step-progress"
@@ -1086,7 +1196,7 @@
                     checked
                   />
                   <div
-                    class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary mb-4 group-hover:scale-110 transition-transform"
+                    class="w-12 h-12 rounded-2xl bg-primary/10 flex items-center justify-center text-primary mb-4 group-hover:scale-110 transition-transform"
                   >
                     <i class="fa-solid fa-key text-lg"></i>
                   </div>
@@ -1109,7 +1219,7 @@
                     class="sr-only select-card-input"
                   />
                   <div
-                    class="w-12 h-12 rounded-full bg-slate-200/50 flex items-center justify-center text-slate-500 mb-4 group-hover:scale-110 transition-transform"
+                    class="w-12 h-12 rounded-2xl bg-slate-200/50 flex items-center justify-center text-slate-500 mb-4 group-hover:scale-110 transition-transform"
                   >
                     <i class="fa-solid fa-arrows-rotate text-lg"></i>
                   </div>
@@ -1132,7 +1242,7 @@
                     class="sr-only select-card-input"
                   />
                   <div
-                    class="w-12 h-12 rounded-full bg-slate-200/50 flex items-center justify-center text-slate-500 mb-4 group-hover:scale-110 transition-transform"
+                    class="w-12 h-12 rounded-2xl bg-slate-200/50 flex items-center justify-center text-slate-500 mb-4 group-hover:scale-110 transition-transform"
                   >
                     <i class="fa-solid fa-piggy-bank text-lg"></i>
                   </div>
@@ -1570,7 +1680,7 @@
                     checked
                   />
                   <div
-                    class="w-12 h-12 rounded-full bg-slate-200/50 flex items-center justify-center text-slate-500 mb-4 group-hover:scale-110 transition-transform"
+                    class="w-12 h-12 rounded-2xl bg-slate-200/50 flex items-center justify-center text-slate-500 mb-4 group-hover:scale-110 transition-transform"
                   >
                     <i class="fa-solid fa-phone text-lg"></i>
                   </div>
@@ -1593,7 +1703,7 @@
                     class="sr-only select-card-input"
                   />
                   <div
-                    class="w-12 h-12 rounded-full bg-slate-200/50 flex items-center justify-center text-slate-500 mb-4 group-hover:scale-110 transition-transform"
+                    class="w-12 h-12 rounded-2xl bg-slate-200/50 flex items-center justify-center text-slate-500 mb-4 group-hover:scale-110 transition-transform"
                   >
                     <i class="fa-solid fa-envelope text-lg"></i>
                   </div>
@@ -1616,7 +1726,7 @@
                     class="sr-only select-card-input"
                   />
                   <div
-                    class="w-12 h-12 rounded-full bg-slate-200/50 flex items-center justify-center text-slate-500 mb-4 group-hover:scale-110 transition-transform"
+                    class="w-12 h-12 rounded-2xl bg-slate-200/50 flex items-center justify-center text-slate-500 mb-4 group-hover:scale-110 transition-transform"
                   >
                     <i class="fa-solid fa-comment-sms text-lg"></i>
                   </div>
@@ -1678,7 +1788,7 @@
               <button
                 type="button"
                 id="btn-back"
-                class="hidden bg-slate-300 text-title px-8 py-3.5 rounded-full font-bold text-base hover:bg-slate-400/70 transition-all flex items-center gap-2 cursor-pointer animate-in fade-in"
+                class="hidden bg-slate-300 text-title px-8 py-3.5 rounded-2xl font-bold text-base hover:bg-slate-400/70 transition-all flex items-center gap-2 cursor-pointer animate-in fade-in"
               >
                 <i class="fa-solid fa-arrow-left text-sm"></i> Back
               </button>
@@ -1686,7 +1796,7 @@
               <button
                 type="button"
                 id="btn-next"
-                class="bg-primary text-w-color px-10 py-3.5 rounded-full font-bold text-base shadow-xl shadow-primary/20 hover:bg-primary-hover hover:scale-[1.02] active:scale-[0.98] transition-all flex items-center gap-2 cursor-pointer"
+                class="bg-primary text-w-color px-10 py-3.5 rounded-2xl font-bold text-base shadow-xl shadow-primary/20 hover:bg-primary-hover hover:scale-[1.02] active:scale-[0.98] transition-all flex items-center gap-2 cursor-pointer"
               >
                 Next <i class="fa-solid fa-arrow-right text-sm"></i>
               </button>
@@ -1698,11 +1808,11 @@
               class="hidden py-8 flex flex-col items-center text-center space-y-8 animate-fade-in"
             >
               <div
-                class="w-20 h-20 rounded-full bg-primary flex items-center justify-center text-w-color shadow-2xl shadow-primary/30 relative"
+                class="w-20 h-20 rounded-2xl bg-primary flex items-center justify-center text-w-color shadow-2xl shadow-primary/30 relative"
               >
                 <i class="fa-solid fa-check text-4xl animate-bounce"></i>
                 <div
-                  class="absolute inset-0 rounded-full bg-primary/20 animate-ping -z-10"
+                  class="absolute inset-0 rounded-2xl bg-primary/20 animate-ping -z-10"
                 ></div>
               </div>
 
@@ -1784,13 +1894,13 @@
               >
                 <a
                   href="index.html"
-                  class="bg-primary text-w-color px-8 py-3 rounded-full font-bold text-sm hover:bg-primary-hover transition-all text-center"
+                  class="bg-primary text-w-color px-8 py-3 rounded-2xl font-bold text-sm hover:bg-primary-hover transition-all text-center"
                 >
                   Go to Homepage
                 </a>
                 <a
                   href="rates.html"
-                  class="border border-slate-300 text-title px-8 py-3 rounded-full font-bold text-sm hover:bg-slate-100 transition-all text-center"
+                  class="border border-slate-300 text-title px-8 py-3 rounded-2xl font-bold text-sm hover:bg-slate-100 transition-all text-center"
                 >
                   Check Today's Rates
                 </a>
@@ -1804,7 +1914,7 @@
     <!-- Footer -->
     <footer class="text-w-color bg-primary py-20">
       <div class="max-w-7xl mx-auto px-6">
-        <div class="grid sm:grid-cols-2 md:grid-cols-4 gap-5 mb-16">
+        <div class="grid sm:grid-cols-2 md:grid-cols-4 gap-5 mb-10">
           <!-- Brand Column -->
           <div
             class="flex flex-col items-center space-y-2 text-title rounded-3xl"
@@ -1823,25 +1933,25 @@
             <div class="flex items-center gap-3 pt-2 pb-6">
               <a
                 href="#"
-                class="w-10 h-10 rounded-full bg-w-color/15 flex items-center justify-center text-w-color hover:bg-primary-hover transition-colors"
+                class="w-10 h-10 rounded-2xl bg-w-color/15 flex items-center justify-center text-w-color hover:bg-primary-hover transition-colors"
               >
                 <i class="fa-brands fa-facebook text-2xl"></i>
               </a>
               <a
                 href="#"
-                class="w-10 h-10 rounded-full bg-w-color/15 flex items-center justify-center text-w-color hover:bg-primary-hover transition-colors"
+                class="w-10 h-10 rounded-2xl bg-w-color/15 flex items-center justify-center text-w-color hover:bg-primary-hover transition-colors"
               >
                 <i class="fa-brands fa-instagram text-2xl"></i>
               </a>
               <a
                 href="#"
-                class="w-10 h-10 rounded-full bg-w-color/15 flex items-center justify-center text-w-color hover:bg-primary-hover transition-colors"
+                class="w-10 h-10 rounded-2xl bg-w-color/15 flex items-center justify-center text-w-color hover:bg-primary-hover transition-colors"
               >
                 <i class="fa-brands fa-linkedin text-2xl"></i>
               </a>
               <a
                 href="#"
-                class="w-10 h-10 rounded-full bg-w-color/15 flex items-center justify-center text-w-color hover:bg-primary-hover transition-colors"
+                class="w-10 h-10 rounded-2xl bg-w-color/15 flex items-center justify-center text-w-color hover:bg-primary-hover transition-colors"
               >
                 <i class="fa-brands fa-square-x-twitter text-2xl"></i>
               </a>
@@ -1857,11 +1967,8 @@
             </h3>
             <ul class="space-y-4">
               <li>
-                <a href="rates.html" class="hover:text-title transition-colors">Rates</a>
-              </li>
-              <li>
-                <a href="form.html" class="hover:text-title transition-colors"
-                  >Get a quote</a
+                <a href="rates.html" class="hover:text-title transition-colors"
+                  >Rates</a
                 >
               </li>
               <li>
@@ -1870,7 +1977,9 @@
                 >
               </li>
               <li>
-                <a href="mortgage.html" class="hover:text-title transition-colors"
+                <a
+                  href="mortgage.html"
+                  class="hover:text-title transition-colors"
                   >Calculators</a
                 >
               </li>
@@ -1900,13 +2009,8 @@
               </li>
               <li>
                 <a href="policy.html" class="hover:text-title transition-colors"
-                  >Loan Program and Rate Disclaimer
+                  >Loan Program & Rate Disclaimer
                 </a>
-              </li>
-              <li>
-                <a href="policy.html" class="hover:text-title transition-colors"
-                  >No Financial, Legal, or Tax Advice</a
-                >
               </li>
               <li>
                 <a href="policy.html" class="hover:text-title transition-colors"
@@ -1923,12 +2027,19 @@
             >
               Contact us
             </h3>
-            <ul class="text-center space-y-6">
-              <li class="flex items-center gap-3">
-                <i
-                  class="fa-solid fa-location-dot w-6 h-6 text-w-color text-xl"
-                ></i>
-                <span>4004 73rd Street, 2nd Floor<br />Woodside, NY 11377</span>
+            <ul class="text-start space-y-6 ps-7">
+              <li class="flex items-center gap-3 hover:text-title">
+                <a
+                  href="https://maps.app.goo.gl/ZJdy3goZCQvUqboe9"
+                  target="_blank"
+                >
+                  <i
+                    class="fa-solid fa-location-dot w-6 h-6 text-w-color text-xl"
+                  ></i>
+
+                  Woodside, NY 11377 4004
+                  <span class="ps-0.5 md:ps-6.5">73rd Street, 2nd Floor</span>
+                </a>
               </li>
 
               <li class="flex items-center gap-3">
@@ -1944,88 +2055,192 @@
               <li class="flex items-center gap-3">
                 <i class="fa-solid fa-phone w-6 h-6 text-w-color text-xl"></i>
                 <a href="tel:9297280155" class="hover:text-title"
-                  >(929) 728-0155</a
+                  >Call: (929) 728-0155</a
                 >
               </li>
+
               <li class="flex items-center gap-3">
                 <i
-                  class="fa-solid fa-mobile-screen-button w-6 h-6 text-w-color text-xl"
+                  class="fa-solid fa-building w-6 h-6 text-w-color text-xl"
                 ></i>
-                <a href="tel:9297280155" class="hover:text-title"
-                  >Main: (929) 728-0155</a
+                <a href="tel:3472828532" class="hover:text-title"
+                  >Office: (347) 282-8532</a
                 >
               </li>
             </ul>
           </div>
         </div>
 
-        <div class="pt-10 border-t border-w-color text-center md:text-left space-y-6">
-          <div class="flex flex-wrap justify-between items-center gap-6 text-sm">
-            <div class="flex items-center gap-2">
-              Made by
-              <a
-                href="https://hossainuddin.netlify.app/"
-                class="underline hover:text-title transition-colors"
-                >Hossain.Dev</a
-              >
-            </div>
-            <div class="flex gap-6 flex-wrap">
-              <a href="#" class="hover:text-title transition-colors"
-                >ADA Accessibility Statement</a
-              >
-              <a href="policy.html" class="hover:text-title transition-colors"
-                >Privacy Policy</a
-              >
-              <a href="policy.html" class="hover:text-title transition-colors"
-                >Government & Licensing Disclosures</a
-              >
-              <span>Copyright © 2026 HomeLoanNYC. All Rights Reserved.</span>
-            </div>
+        <div class="pt-10 border-t border-w-color text-center space-y-3">
+          <div class="flex gap-6 flex-wrap text-sm justify-center">
+            <a href="#" class="hover:text-title transition-colors"
+              >ADA Accessibility Statement</a
+            >
+            <a href="policy.html" class="hover:text-title transition-colors"
+              >Privacy Policy</a
+            >
+            <a href="policy.html" class="hover:text-title transition-colors"
+              >Government & Licensing Disclosures</a
+            >
+            <span>Copyright © 2026 HomeLoanNYC. All Rights Reserved.</span>
           </div>
-          <div class="text-[11px] text-w-color/60 leading-relaxed max-w-5xl mx-auto md:mx-0">
+          <div
+            class="text-[11px] text-w-color/60 leading-relaxed max-w-5xl mx-auto md:mx-0"
+          >
             <p class="mb-2">
-              HomeLoanNYC is a mortgage marketing and lead generation website operated by Shagor Chowdhury, Mortgage Loan Originator (NMLS ID: 2693077) sponsored by Mortgage Advance Team (NMLS ID: 318349). Equal Housing Opportunity.
+              HomeLoanNYC is a mortgage marketing and lead generation website
+              operated by Shagor Chowdhury, Mortgage Loan Originator (NMLS ID:
+              2693077) sponsored by Mortgage Advance Team (NMLS ID: 318349).
+              Equal Housing Opportunity.
             </p>
             <p>
-              Consumers may verify licensing information through the Nationwide Multistate Licensing System (NMLS) Consumer Access website at <a href="https://www.nmlsconsumeraccess.org" target="_blank" rel="noopener noreferrer" class="underline hover:text-w-color transition-colors">www.nmlsconsumeraccess.org</a>. Mortgage products are offered through Mortgage Advance Team and are subject to lender approval, underwriting guidelines, and applicable federal and state regulations.
+              Consumers may verify licensing information through the Nationwide
+              Multistate Licensing System (NMLS) Consumer Access website at
+              <a
+                href="https://www.nmlsconsumeraccess.org"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="underline hover:text-w-color transition-colors"
+                >www.nmlsconsumeraccess.org</a
+              >. Mortgage products are offered through Mortgage Advance Team and
+              are subject to lender approval, underwriting guidelines, and
+              applicable federal and state regulations.
             </p>
           </div>
         </div>
       </div>
     </footer>
+
     <!-- ── Floating Phone FAB ── -->
     <div id="phone-fab">
       <div id="phone-popup" role="dialog" aria-label="Contact phone numbers">
-        <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:14px;">
-          <div style="display:flex;align-items:center;gap:10px">
-            <div style="width:36px;height:36px;border-radius:10px;background:rgba(217,107,39,0.12);display:flex;align-items:center;justify-content:center;color:var(--color-primary,#d96b27);font-size:16px;"><i class="fa-solid fa-phone"></i></div>
+        <div
+          style="
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 14px;
+          "
+        >
+          <div style="display: flex; align-items: center; gap: 10px">
+            <div
+              style="
+                width: 36px;
+                height: 36px;
+                border-radius: 10px;
+                background: rgba(217, 107, 39, 0.12);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                color: var(--color-primary, #d96b27);
+                font-size: 16px;
+              "
+            >
+              <i class="fa-solid fa-phone"></i>
+            </div>
             <div>
-              <p style="font-size:13px;font-weight:700;color:#1a1a2e;margin:0;">Call Us Now</p>
-              <p style="font-size:11px;color:#888;margin:0;">We're ready to help</p>
+              <p
+                style="
+                  font-size: 13px;
+                  font-weight: 700;
+                  color: #1a1a2e;
+                  margin: 0;
+                "
+              >
+                Call Us Now
+              </p>
+              <p style="font-size: 11px; color: #888; margin: 0">
+                We're ready to help
+              </p>
             </div>
           </div>
-          <button onclick="closePhonePopup()" style="width:28px;height:28px;border-radius:50%;border:1px solid #e5e7eb;background:#fff;cursor:pointer;display:flex;align-items:center;justify-content:center;color:#888;font-size:13px;" aria-label="Close"><i class="fa-solid fa-xmark"></i></button>
+          <button
+            onclick="closePhonePopup()"
+            style="
+              width: 28px;
+              height: 28px;
+              border-radius: 50%;
+              border: 1px solid #e5e7eb;
+              background: #fff;
+              cursor: pointer;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              color: #888;
+              font-size: 13px;
+            "
+            aria-label="Close"
+          >
+            <i class="fa-solid fa-xmark"></i>
+          </button>
         </div>
-        <hr style="border:none;border-top:1px solid #f0f0f0;margin-bottom:10px;" />
+        <hr
+          style="
+            border: none;
+            border-top: 1px solid #f0f0f0;
+            margin-bottom: 10px;
+          "
+        />
         <a href="tel:9297280155" class="phone-line">
           <div class="phone-line-icon"><i class="fa-solid fa-phone"></i></div>
           <div>
-            <p style="font-size:12px;color:#888;margin:0;font-weight:600;">Main</p>
-            <p style="font-size:15px;font-weight:700;color:#1a1a2e;margin:0;">(929) 728-0155</p>
+            <p
+              style="font-size: 12px; color: #888; margin: 0; font-weight: 600"
+            >
+              Main
+            </p>
+            <p
+              style="
+                font-size: 15px;
+                font-weight: 700;
+                color: #1a1a2e;
+                margin: 0;
+              "
+            >
+              (929) 728-0155
+            </p>
           </div>
         </a>
-        <a href="tel:9297280155" style="display:flex;align-items:center;justify-content:center;gap:8px;margin-top:14px;background:var(--color-primary,#d96b27);color:#fff;border-radius:12px;padding:13px 0;font-weight:700;font-size:15px;text-decoration:none;transition:background 0.18s ease;" onmouseover="this.style.background='var(--color-primary-hover,#b45a20)'" onmouseout="this.style.background='var(--color-primary,#d96b27)'">
+        <a
+          href="tel:9297280155"
+          style="
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            margin-top: 14px;
+            background: var(--color-primary, #d96b27);
+            color: #fff;
+            border-radius: 12px;
+            padding: 13px 0;
+            font-weight: 700;
+            font-size: 15px;
+            text-decoration: none;
+            transition: background 0.18s ease;
+          "
+          onmouseover="
+            this.style.background = 'var(--color-primary-hover,#b45a20)'
+          "
+          onmouseout="this.style.background = 'var(--color-primary,#d96b27)'"
+        >
           <i class="fa-solid fa-phone-volume"></i> Tap to Call
         </a>
       </div>
-      <a id="phone-fab-btn" href="tel:9297280155" aria-label="Call us" onclick="return handleFabClick(event)">
+      <a
+        id="phone-fab-btn"
+        href="tel:9297280155"
+        aria-label="Call us"
+        onclick="return handleFabClick(event);"
+      >
         <i id="phone-fab-icon" class="fa-solid fa-phone"></i>
       </a>
     </div>
     <script>
       var phonePopupOpen = false;
       function handleFabClick(e) {
-        if (window.innerWidth <= 1024) { return true; }
+        if (window.innerWidth <= 1024) {
+          return true;
+        }
         e.preventDefault();
         phonePopupOpen ? closePhonePopup() : openPhonePopup();
         return false;
@@ -2033,18 +2248,26 @@
       function openPhonePopup() {
         phonePopupOpen = true;
         document.getElementById("phone-popup").classList.add("open");
-        document.getElementById("phone-fab-btn").setAttribute("aria-expanded","true");
-        document.getElementById("phone-fab-icon").className = "fa-solid fa-xmark";
+        document
+          .getElementById("phone-fab-btn")
+          .setAttribute("aria-expanded", "true");
+        document.getElementById("phone-fab-icon").className =
+          "fa-solid fa-xmark";
       }
       function closePhonePopup() {
         phonePopupOpen = false;
         document.getElementById("phone-popup").classList.remove("open");
-        document.getElementById("phone-fab-btn").setAttribute("aria-expanded","false");
-        document.getElementById("phone-fab-icon").className = "fa-solid fa-phone";
+        document
+          .getElementById("phone-fab-btn")
+          .setAttribute("aria-expanded", "false");
+        document.getElementById("phone-fab-icon").className =
+          "fa-solid fa-phone";
       }
-      document.addEventListener("click", function(e) {
+      document.addEventListener("click", function (e) {
         var fab = document.getElementById("phone-fab");
-        if (phonePopupOpen && fab && !fab.contains(e.target)) { closePhonePopup(); }
+        if (phonePopupOpen && fab && !fab.contains(e.target)) {
+          closePhonePopup();
+        }
       });
     </script>
     <script src="dist/js/customDinput.js"></script>
@@ -2392,7 +2615,7 @@
 
             if (step < currentStep) {
               circle.className =
-                "w-10 h-10 rounded-full flex items-center justify-center bg-primary text-w-color font-bold border-2 border-primary transition-all duration-300 z-10 step-circle";
+                "w-10 h-10 rounded-2xl flex items-center justify-center bg-primary text-w-color font-bold border-2 border-primary transition-all duration-300 z-10 step-circle";
               circle.innerHTML = '<i class="fa-solid fa-check text-sm"></i>';
               label.classList.add("text-primary");
               label.classList.remove("text-slate-400");
@@ -2401,7 +2624,7 @@
                   "absolute left-1/2 top-5 w-full h-0.5 bg-primary -z-0 step-line";
             } else if (step === currentStep) {
               circle.className =
-                "w-10 h-10 rounded-full flex items-center justify-center bg-primary text-w-color font-bold border-2 border-primary transition-all duration-300 z-10 step-circle";
+                "w-10 h-10 rounded-2xl flex items-center justify-center bg-primary text-w-color font-bold border-2 border-primary transition-all duration-300 z-10 step-circle";
               circle.innerHTML = `<i class="fa-solid ${getStepIcon(step)} text-sm"></i>`;
               label.classList.add("text-primary");
               label.classList.remove("text-slate-400");
@@ -2410,7 +2633,7 @@
                   "absolute left-1/2 top-5 w-full h-0.5 bg-slate-300 -z-0 step-line";
             } else {
               circle.className =
-                "w-10 h-10 rounded-full flex items-center justify-center bg-slate-100 text-slate-400 font-bold border-2 border-slate-300 transition-all duration-300 z-10 step-circle";
+                "w-10 h-10 rounded-2xl flex items-center justify-center bg-slate-100 text-slate-400 font-bold border-2 border-slate-300 transition-all duration-300 z-10 step-circle";
               circle.innerHTML = `<i class="fa-solid ${getStepIcon(step)} text-sm"></i>`;
               label.classList.remove("text-primary");
               label.classList.add("text-slate-400");
