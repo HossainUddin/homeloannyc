@@ -535,6 +535,7 @@
                   type="text"
                   id="zipCode"
                   placeholder="10001"
+                  maxlength="5"
                   class="w-full px-4 py-3.5 bg-slate-50 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary focus:bg-white transition-all font-semibold"
                 />
               </div>
@@ -586,9 +587,9 @@
                 >
                   <button
                     type="button"
-                    class="dropdown-trigger w-full bg-slate-50 border-2 border-slate-200 rounded-2xl px-5 py-4 flex items-center justify-between focus:ring-2 focus:ring-primary transition-all text-slate-400"
+                    class="dropdown-trigger w-full bg-slate-50 border-2 border-slate-200 rounded-2xl px-5 py-4 flex items-center justify-between focus:ring-2 focus:ring-primary transition-all text-slate-900"
                   >
-                    <span>30 years fixed</span>
+                    <span>15 years fixed</span>
 
                     <svg
                       class="w-5 h-5 transition-transform duration-300"
@@ -610,20 +611,6 @@
                   >
                     <div
                       class="dropdown-option px-5 py-3 hover:bg-primary/10 hover:text-primary cursor-pointer transition-colors"
-                      data-value="30"
-                    >
-                      30 years fixed
-                    </div>
-
-                    <div
-                      class="dropdown-option px-5 py-3 hover:bg-primary/10 hover:text-primary cursor-pointer transition-colors"
-                      data-value="20"
-                    >
-                      20 years fixed
-                    </div>
-
-                    <div
-                      class="dropdown-option px-5 py-3 hover:bg-primary/10 hover:text-primary cursor-pointer transition-colors"
                       data-value="15"
                     >
                       15 years fixed
@@ -631,9 +618,9 @@
 
                     <div
                       class="dropdown-option px-5 py-3 hover:bg-primary/10 hover:text-primary cursor-pointer transition-colors"
-                      data-value="10"
+                      data-value="30"
                     >
-                      10 years fixed
+                      30 years fixed
                     </div>
                   </div>
 
@@ -641,7 +628,7 @@
                     type="hidden"
                     id="loanTerm"
                     name="loanTerm"
-                    value="30"
+                    value="15"
                   />
                 </div>
               </div>
@@ -722,7 +709,7 @@
                     type="button"
                     class="dropdown-trigger w-full bg-slate-50 border-2 border-slate-200 rounded-2xl px-5 py-4 flex items-center justify-between focus:ring-2 focus:ring-primary transition-all text-slate-900"
                   >
-                    <span>740+</span>
+                    <span>740 - 850</span>
 
                     <svg
                       class="w-5 h-5 transition-transform duration-300"
@@ -740,55 +727,55 @@
                   </button>
 
                   <div
-                    class="dropdown-menu hidden absolute top-full left-0 w-full mt-2 bg-w-color rounded-2xl shadow-xl border border-slate-100 z-50 overflow-hidden"
+                    class="dropdown-menu hidden absolute top-full left-0 w-full mt-2 bg-w-color rounded-2xl shadow-xl border border-slate-100 z-50 max-h-60 overflow-y-auto"
                   >
                     <div
                       class="dropdown-option px-5 py-3 hover:bg-primary/10 hover:text-primary cursor-pointer transition-colors"
                       data-value="740"
                     >
-                      740+
-                    </div>
-
-                    <div
-                      class="dropdown-option px-5 py-3 hover:bg-primary/10 hover:text-primary cursor-pointer transition-colors"
-                      data-value="720"
-                    >
-                      720-739
+                      740 - 850
                     </div>
 
                     <div
                       class="dropdown-option px-5 py-3 hover:bg-primary/10 hover:text-primary cursor-pointer transition-colors"
                       data-value="700"
                     >
-                      700-719
+                      700 - 739
                     </div>
 
                     <div
                       class="dropdown-option px-5 py-3 hover:bg-primary/10 hover:text-primary cursor-pointer transition-colors"
                       data-value="680"
                     >
-                      680-699
+                      680 - 699
                     </div>
 
                     <div
                       class="dropdown-option px-5 py-3 hover:bg-primary/10 hover:text-primary cursor-pointer transition-colors"
                       data-value="660"
                     >
-                      660-679
-                    </div>
-
-                    <div
-                      class="dropdown-option px-5 py-3 hover:bg-primary/10 hover:text-primary cursor-pointer transition-colors"
-                      data-value="640"
-                    >
-                      640-659
+                      660 - 679
                     </div>
 
                     <div
                       class="dropdown-option px-5 py-3 hover:bg-primary/10 hover:text-primary cursor-pointer transition-colors"
                       data-value="620"
                     >
-                      620-639
+                      620 - 659
+                    </div>
+
+                    <div
+                      class="dropdown-option px-5 py-3 hover:bg-primary/10 hover:text-primary cursor-pointer transition-colors"
+                      data-value="580"
+                    >
+                      580 - 619
+                    </div>
+
+                    <div
+                      class="dropdown-option px-5 py-3 hover:bg-primary/10 hover:text-primary cursor-pointer transition-colors"
+                      data-value="520"
+                    >
+                      520 - 579
                     </div>
                   </div>
 
@@ -1376,11 +1363,6 @@
                 >
               </li>
               <li>
-                <a href="#" class="hover:text-title transition-colors"
-                  >Reviews</a
-                >
-              </li>
-              <li>
                 <a
                   href="mortgage.html"
                   class="hover:text-title transition-colors"
@@ -1389,6 +1371,13 @@
               </li>
               <li>
                 <a href="#" class="hover:text-title transition-colors">Blogs</a>
+              </li>
+              <li>
+                <a
+                  href="officers.html"
+                  class="hover:text-title transition-colors"
+                  >Officers</a
+                >
               </li>
             </ul>
           </div>

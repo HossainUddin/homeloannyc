@@ -44,6 +44,15 @@ document.addEventListener("DOMContentLoaded", () => {
     e.target.value = formatted;
   });
 
+  // --- First Name & Last Name Restrictions (No numbers) ---
+  const firstNameInput = document.getElementById("first-name-input");
+  const lastNameInput = document.getElementById("last-name-input");
+  [firstNameInput, lastNameInput].forEach((input) => {
+    input.addEventListener("input", (e) => {
+      e.target.value = e.target.value.replace(/\d/g, "");
+    });
+  });
+
   // --- Clear Select Validation Error on Option Click ---
   const dropdownOptions = document.querySelectorAll(".dropdown-option");
   dropdownOptions.forEach((opt) => {
@@ -96,18 +105,17 @@ document.addEventListener("DOMContentLoaded", () => {
     let isValid = true;
 
     // Check Address
-    if (!validateField(address, errAddress, (val) => val.trim().length > 0)) {
-      isValid = false;
-    }
+    // Address is optional, so we hide the error and don't validate length
+    errAddress.classList.add("hidden");
 
     // Check First Name
     if (
-      !validateField(firstName, errFirstName, (val) => val.trim().length > 0)
+      !validateField(firstName, errFirstName, (val) => val.trim().length > 0 && !/\d/.test(val))
     ) {
       isValid = false;
     }
     // Check Last Name
-    if (!validateField(lastName, errLastName, (val) => val.trim().length > 0)) {
+    if (!validateField(lastName, errLastName, (val) => val.trim().length > 0 && !/\d/.test(val))) {
       isValid = false;
     }
     // Check Email
@@ -134,14 +142,7 @@ document.addEventListener("DOMContentLoaded", () => {
       isValid = false;
     }
     // Check Credit Score
-    const scoreVal = parseInt(creditScore.value) || 0;
-    if (
-      !validateField(
-        creditScore,
-        errCreditScore,
-        (val) => scoreVal >= 300 && scoreVal <= 850,
-      )
-    ) {
+    if (!validateField(creditScore, errCreditScore, (val) => val !== "")) {
       isValid = false;
     }
 
