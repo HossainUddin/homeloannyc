@@ -1,3 +1,8 @@
+(function () {
+  const saved = localStorage.getItem("theme") || "green";
+  document.documentElement.setAttribute("data-theme", saved);
+})();
+
 const themeSwitcher = document.getElementById("themeSwitcher");
 
 // Load saved theme, default to green

@@ -3,19 +3,13 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script>
-      (function () {
-        const saved = localStorage.getItem("theme") || "green";
-        document.documentElement.setAttribute("data-theme", saved);
-      })();
-    </script>
     <title>Loan Officers</title>
     <link href="dist/output.css" rel="stylesheet" />
     <link rel="stylesheet" href="dist/custom.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
       rel="stylesheet"
     />
     <!-- FontAwosome -->
@@ -39,11 +33,6 @@
       type="text/css"
       href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css"
     />
-    <style>
-      body {
-        font-family: "Plus Jakarta Sans", sans-serif;
-      }
-    </style>
   </head>
 
   <body class="bg-w-color text-title min-h-screen overflow-x-hidden">
@@ -53,7 +42,7 @@
     >
       <div class="max-w-7xl mx-auto px-6 flex justify-between items-center">
         <!-- Logo -->
-        <div class="w-30 h-25">
+        <div class="w-[150px] h-[100px] md:w-30 md:h-25">
           <a href="index.html">
             <img
               src="dist/images/logo.png"
@@ -65,70 +54,8 @@
 
         <!-- Nav Links -->
         <div
-          class="hidden lg:flex items-center gap-8 text-[15px] font-semibold text-title"
+          class="hidden lg:flex items-center gap-6 text-[15px] font-semibold text-title"
         >
-          <!-- Shop Rates Dropdown -->
-          <!-- <div class="relative group">
-            <button
-              id="shop-rates-button"
-              class="flex items-center gap-1 hover:text-primary transition-colors py-2"
-            >
-              Shop rates
-              <svg
-                class="w-4 h-4 opacity-50 transition-transform duration-300"
-                id="shop-rates-arrow"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M19 9l-7 7-7-7"
-                ></path>
-              </svg>
-            </button>
-
-            Mega Menu Content
-            <div
-              id="shop-rates-dropdown"
-              class="hidden absolute top-full left-1/2 -translate-x-1/2 mt-4 w-[600px] bg-w-color rounded-3xl shadow-2xl border border-slate-200 overflow-hidden z-50 p-6"
-            >
-              <div class="grid grid-cols-2 text-center">
-                Section 1
-                <div
-                  class="p-6 rounded-2xl bg-w-color flex flex-col items-center"
-                >
-                  <h3 class="text-base font-bold text-title mb-4">
-                    Today's rates
-                  </h3>
-                  <a
-                    href="rates.html"
-                    class="w-full bg-primary text-center text-w-color py-3 rounded-xl font-bold hover:bg-primary-hover transition-all shadow-lg shadow-primary/10"
-                  >
-                    Today's rates
-                  </a>
-                </div>
-
-                Section 2
-                <div
-                  class="p-6 rounded-2xl bg-w-color flex flex-col items-center"
-                >
-                  <h3 class="text-base font-bold text-title mb-4">
-                    Get a free rate quote
-                  </h3>
-                  <a
-                    href="#"
-                    class="w-full text-center border-2 border-primary text-primary py-3 rounded-xl font-bold hover:bg-primary/5 transition-all"
-                  >
-                    Free rate quote
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div> -->
-
           <!-- Loan Programs Dropdown -->
           <div class="relative group">
             <button
@@ -184,11 +111,74 @@
           </div>
 
           <a
-            href="about.html"
+            href="rates.html"
             class="flex items-center gap-1 hover:text-primary transition-colors"
           >
-            About us</a
+            Today's Rates</a
           >
+
+          <!-- Shop Rates Dropdown -->
+          <!-- <div class="relative group">
+            <button
+              id="shop-rates-button"
+              class="flex items-center gap-1 hover:text-primary transition-colors py-2"
+            >
+              Shop Rates
+              <svg
+                class="w-4 h-4 opacity-50 transition-transform duration-300"
+                id="shop-rates-arrow"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M19 9l-7 7-7-7"
+                ></path>
+              </svg>
+            </button>
+
+            Mega Menu Content
+            <div
+              id="shop-rates-dropdown"
+              class="hidden absolute top-full left-1/2 -translate-x-1/2 mt-4 w-[300px] bg-w-color rounded-3xl shadow-2xl border border-slate-200 overflow-hidden z-50 p-6"
+            >
+              class="grid grid-cols-2 text-center"
+              <div class="text-center">
+                Section 1
+                <div
+                  class="p-6 rounded-2xl bg-w-color flex flex-col items-center"
+                >
+                  <h3 class="text-base font-bold text-title mb-4">
+                    Today's rates
+                  </h3>
+                  <a
+                    href="rates.html"
+                    class="w-full bg-primary text-center text-w-color py-3 rounded-xl font-bold hover:bg-primary-hover transition-all shadow-lg shadow-primary/10"
+                  >
+                    Today's rates
+                  </a>
+                </div>
+
+                Section 2
+                <div
+                  class="p-6 rounded-2xl bg-w-color flex flex-col items-center"
+                >
+                  <h3 class="text-base font-bold text-title mb-4">
+                    Get a free rate quote
+                  </h3>
+                  <a
+                    href="#"
+                    class="w-full text-center border-2 border-primary text-primary py-3 rounded-xl font-bold hover:bg-primary/5 transition-all"
+                  >
+                    Free rate quote
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div> -->
 
           <div class="relative">
             <button
@@ -223,25 +213,32 @@
             </div>
           </div>
 
-          <a href="#" class="hover:text-primary transition-colors">Blogs</a>
+          <a
+            href="about.html"
+            class="flex items-center gap-1 hover:text-primary transition-colors"
+          >
+            About us</a
+          >
+
+          <a
+            href="#"
+            class="flex items-center gap-1 hover:text-primary transition-colors"
+          >
+            Blogs</a
+          >
         </div>
 
         <!-- CTA Buttons & Mobile Toggle -->
         <div class="flex items-center gap-4">
           <a
             href="tel:9297280155"
-            class="hidden lg:block text-[15px] font-bold text-primary px-6 py-2.5 rounded-full border border-primary/20 hover:bg-primary/5 transition-all"
-            ><i class="fa-solid fa-phone pr-2"></i> (929) 728-0155</a
+            class="hidden lg:block text-[15px] font-bold text-primary px-6 py-3 rounded-2xl border border-primary/90 hover:bg-primary/5 transition-all"
+            ><i class="fa-solid fa-phone text-lg pr-2"></i> (929) 728-0155</a
           >
           <a
             href="form.html"
-            class="hidden lg:block text-[15px] font-bold bg-primary text-w-color px-6 py-2.5 rounded-full hover:bg-primary-hover transition-all shadow-lg shadow-primary/10"
+            class="hidden lg:block text-[15px] font-bold bg-primary text-w-color px-6 py-3 rounded-2xl hover:bg-primary-hover transition-all shadow-lg shadow-primary/10"
             >Get A Quote</a
-          >
-          <a
-            href="form.html"
-            class="hidden lg:block text-[15px] font-bold bg-primary text-w-color px-6 py-2.5 rounded-full hover:bg-primary-hover transition-all shadow-lg shadow-primary/10"
-            >Pre Approval</a
           >
 
           <!-- Hamburger Button -->
@@ -274,59 +271,16 @@
         class="hidden lg:hidden absolute top-full left-0 w-full bg-w-color border-b border-slate-200 shadow-xl max-h-[90vh] overflow-y-auto animate-in slide-in-from-top-4 duration-200"
       >
         <div class="flex flex-col p-6 gap-4 font-semibold text-title">
-          <!-- Mobile Shop Rates Accordion -->
-          <!-- <div class="border-b border-w-color">
-            <button
-              id="mobile-shop-rates-btn"
-              class="w-full py-3 flex justify-between items-center text-left"
-            >
-              Shop rates
-              <svg
-                id="mobile-arrow"
-                class="w-4 h-4 opacity-50 transition-transform"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M19 9l-7 7-7-7"
-                ></path>
-              </svg>
-            </button>
-            <div id="mobile-shop-rates-content" class="hidden pb-4 space-y-3">
-              <div
-                class="p-6 bg-w-color rounded-2xl flex flex-col items-center text-center"
-              >
-                <a
-                  href="rates.html"
-                  class="w-full bg-primary text-w-color py-4 rounded-xl font-bold hover:bg-primary-hover transition-all"
-                >
-                  Today's rates
-                </a>
-              </div>
-              <div
-                class="p-6 bg-w-color rounded-2xl flex flex-col items-center text-center"
-              >
-                <a
-                  href="#"
-                  class="w-full text-center border-2 border-primary text-primary py-4 rounded-xl font-bold hover:bg-primary/5 transition-all"
-                >
-                  Free rate quote
-                </a>
-              </div>
-            </div>
-          </div> -->
-
           <!-- Mobile Loan Programs Accordion -->
-          <div class="border-b border-w-color">
+          <div class="border-b-1 border-gray-300">
             <button
               id="mobile-loan-btn"
               class="w-full py-3 flex justify-between items-center text-left"
             >
-              Loan programs
+              <div class="flex items-center gap-4">
+                <i class="fa-solid fa-house text-xl text-primary"></i>
+                Loan Programs
+              </div>
               <svg
                 id="mobile-loan-arrow"
                 class="w-4 h-4 opacity-50 transition-transform"
@@ -371,15 +325,73 @@
             </div>
           </div>
 
-          <a href="about.html" class="py-3 border-b border-w-color">About us</a>
+          <!-- Mobile Shop Rates Accordion -->
+          <!-- <div class="border-b-1 border-gray-300">
+            <button
+              id="mobile-shop-rates-btn"
+              class="w-full py-3 flex justify-between items-center text-left"
+            >
+              <div class="flex items-center gap-4">
+                <i class="fa-solid fa-chart-line text-xl text-primary"></i>
+                Shop rates
+              </div>
+
+              <svg
+                id="mobile-arrow"
+                class="w-4 h-4 opacity-50 transition-transform"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M19 9l-7 7-7-7"
+                ></path>
+              </svg>
+            </button>
+            <div id="mobile-shop-rates-content" class="hidden pb-4 space-y-3">
+              <div
+                class="p-2 lg:p-6 bg-w-color rounded-2xl flex flex-col items-center text-center"
+              >
+                <a
+                  href="rates.html"
+                  class="w-full bg-primary text-w-color py-4 rounded-xl font-bold hover:bg-primary-hover transition-all"
+                >
+                  Today's rates
+                </a>
+              </div>
+              <div
+                class="p-2 lg:p-6 bg-w-color rounded-2xl flex flex-col items-center text-center"
+              >
+                <a
+                  href="#"
+                  class="w-full text-center border-2 border-primary text-primary py-4 rounded-xl font-bold hover:bg-primary/5 transition-all"
+                >
+                  Free rate quote
+                </a>
+              </div>
+            </div>
+          </div> -->
+
+          <a href="rates.html" class="py-3 border-b-1 border-gray-300">
+            <div class="flex items-center gap-4">
+              <i class="fa-solid fa-user text-xl text-primary"></i>
+              Today's Rates
+            </div>
+          </a>
 
           <!-- Mobile Calculators Accordion -->
-          <div class="border-b border-w-color">
+          <div class="border-b-1 border-gray-300">
             <button
               id="mobile-calculators-btn"
               class="w-full py-3 flex justify-between items-center text-left"
             >
-              Calculators
+              <div class="flex items-center gap-4">
+                <i class="fa-solid fa-calculator text-xl text-primary"></i>
+                Calculators
+              </div>
               <svg
                 id="mobile-calculators-arrow"
                 class="w-4 h-4 opacity-50 transition-transform"
@@ -406,25 +418,91 @@
               >
             </div>
           </div>
-          <a href="#" class="py-3 border-b border-w-color">Blogs</a>
+
+          <a href="officers.html" class="py-3 border-b-1 border-gray-300">
+            <div class="flex items-center gap-4">
+              <i class="fa-solid fa-user text-xl text-primary"></i>
+              Meet Our Loan Officer
+            </div>
+          </a>
+
+          <h3 class="py-3 border-b border-w-color">
+            <div class="flex items-center gap-4">
+              <i class="fa-solid fa-square-phone text-primary text-2xl"></i>
+              Contact Us
+            </div>
+          </h3>
 
           <!-- Mobile CTAs -->
           <div class="grid grid-cols-1 gap-3 mt-4">
             <a
-              href="form.html"
+              href="#"
               class="w-full text-center font-bold bg-primary text-w-color py-4 rounded-xl shadow-lg shadow-primary/20"
-              >Get A Quote</a
+              >See What I Qualify For</a
             >
-            <a
-              href="form.html"
-              class="w-full text-center font-bold bg-primary text-w-color py-4 rounded-xl shadow-lg shadow-primary/20"
-              >Pre Approval</a
-            >
+            <h5 class="text-center text-xs text-gray-600">
+              No Impact on your credit score
+            </h5>
             <a
               href="tel:9297280155"
-              class="w-full text-center font-bold text-primary py-4 rounded-xl border border-primary/20"
-              ><i class="fa-solid fa-phone pr-2"></i> (929) 728-0155</a
+              class="w-full text-center font-bold text-primary py-4 rounded-xl border-2 border-primary/90"
+              ><i class="fa-solid fa-phone pr-2"></i> Call or Text (929)
+              728-0155</a
             >
+          </div>
+
+          <div
+            class="flex items-center justify-start gap-2 mt-4 mb-10 bg-primary/10 py-4 rounded-2xl"
+          >
+            <div class="text-xs">
+              <div class="flex items-center gap-2 text-sm px-4 py-2">
+                <i class="fa-solid fa-shield-halved text-primary text-xl"></i>
+                <p>NMLS #2693077</p>
+              </div>
+
+              <div class="flex items-center gap-2 text-sm px-4 py-2">
+                <i
+                  class="fa-solid fa-location-dot text-primary text-xl ps-[2px] pe-[2px]"
+                ></i>
+                <p>Licensed Mortgage Loan Originator - NY</p>
+              </div>
+
+              <div class="flex items-center gap-2 text-sm px-4 py-2">
+                <i class="fa-solid fa-house-user text-primary text-xl"></i>
+                <p>Equal Housing Opportunity</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="py-5 px-3 bg-primary/10 rounded-2xl">
+            <span
+              class="text-base font-bold flex items-center gap-4 text-primary"
+            >
+              <i class="fa-solid fa-circle-check text-2xl"></i>
+              <h5 class="text-base font-bold">What We Improved</h5>
+            </span>
+
+            <ul class="list-disc ms-6 mt-3 text-sm text-title space-y-1">
+              <li class="text-sm text-gray-600">
+                Added Today's Rates (high intent)
+              </li>
+              <li class="text-sm text-gray-600">Added Contact Us</li>
+              <li class="text-sm text-gray-600">
+                Renamed About Us Meet Your Loan Officer
+              </li>
+              <li class="text-sm text-gray-600">
+                One clear primary CTA + one secondary CТА
+              </li>
+              <li class="text-sm text-gray-600">
+                Added trust & compliance info
+              </li>
+              <li class="text-sm text-gray-600">
+                Labeled phone for call or text
+              </li>
+              <li class="text-sm text-gray-600">
+                Cleaner, tighter layout for better mobile UX
+              </li>
+            </ul>
           </div>
         </div>
       </div>
@@ -460,7 +538,7 @@
 
           <a
             href="#"
-            class="w-full sm:w-fit inline-block px-10 py-4 rounded-full bg-primary text-w-color font-bold text-sm hover:bg-primary-hover transition-all shadow-lg shadow-primary/20"
+            class="w-full sm:w-fit inline-block px-10 py-4 rounded-2xl bg-primary text-w-color font-bold text-sm hover:bg-primary-hover transition-all shadow-lg shadow-primary/20"
           >
             Get a free quote
           </a>
@@ -490,7 +568,7 @@
               class="bg-w-color border-b-2 border-primary rounded-lg p-5 h-full shadow-lg"
             >
               <div class="flex items-center gap-3 mb-4">
-                <div class="w-10 h-10 bg-w-color rounded-full">
+                <div class="w-10 h-10 bg-w-color rounded-2xl">
                   <img
                     src="https://cdn.pixabay.com/photo/2017/06/13/12/54/profile-2398783_1280.png"
                     alt=""
@@ -501,7 +579,7 @@
                   <h4 class="font-semibold text-title">Bill Shafransky</h4>
                   <div class="flex items-center gap-2 text-sm">
                     <span class="text-amber-600">★★★★★</span>
-                    <span class="text-title/60">1 month ago</span>
+                    <span class="text-pera">1 month ago</span>
                   </div>
                 </div>
               </div>
@@ -513,9 +591,9 @@
 
               <a
                 href="#"
-                class="text-info text-sm font-medium mt-4 inline-block"
+                class="text-info text-sm font-medium mt-4 inline-block hover:text-primary"
               >
-                Read more
+                Read More
               </a>
             </div>
           </div>
@@ -526,7 +604,7 @@
               class="bg-w-color border-b-2 border-primary rounded-lg p-5 h-full shadow-lg"
             >
               <div class="flex items-center gap-3 mb-4">
-                <div class="w-10 h-10 bg-w-color rounded-full">
+                <div class="w-10 h-10 bg-w-color rounded-2xl">
                   <img
                     src="https://cdn.pixabay.com/photo/2017/06/13/12/54/profile-2398783_1280.png"
                     alt=""
@@ -537,21 +615,21 @@
                   <h4 class="font-semibold text-title">Bill Shafransky</h4>
                   <div class="flex items-center gap-2 text-sm">
                     <span class="text-amber-600">★★★★★</span>
-                    <span class="text-title/60">1 month ago</span>
+                    <span class="text-pera">1 month ago</span>
                   </div>
                 </div>
               </div>
 
-              <p class="text-title text-sm leading-6">
+              <p class="text-pera text-sm leading-6">
                 We met Kris through our real estate agent when we first decided
                 to make a move with our living arrangements...
               </p>
 
               <a
                 href="#"
-                class="text-info text-sm font-medium mt-4 inline-block"
+                class="text-info text-sm font-medium mt-4 inline-block hover:text-primary"
               >
-                Read more
+                Read More
               </a>
             </div>
           </div>
@@ -562,7 +640,7 @@
               class="bg-w-color border-b-2 border-primary rounded-lg p-5 h-full shadow-lg"
             >
               <div class="flex items-center gap-3 mb-4">
-                <div class="w-10 h-10 bg-w-color rounded-full">
+                <div class="w-10 h-10 bg-w-color rounded-2xl">
                   <img
                     src="https://cdn.pixabay.com/photo/2017/06/13/12/54/profile-2398783_1280.png"
                     alt=""
@@ -573,21 +651,21 @@
                   <h4 class="font-semibold text-title">Bill Shafransky</h4>
                   <div class="flex items-center gap-2 text-sm">
                     <span class="text-amber-600">★★★★★</span>
-                    <span class="text-title/60">1 month ago</span>
+                    <span class="text-pera">1 month ago</span>
                   </div>
                 </div>
               </div>
 
-              <p class="text-title text-sm leading-6">
+              <p class="text-pera text-sm leading-6">
                 We met Kris through our real estate agent when we first decided
                 to make a move with our living arrangements...
               </p>
 
               <a
                 href="#"
-                class="text-info text-sm font-medium mt-4 inline-block"
+                class="text-info text-sm font-medium mt-4 inline-block hover:text-primary"
               >
-                Read more
+                Read More
               </a>
             </div>
           </div>
@@ -598,7 +676,7 @@
               class="bg-w-color border-b-2 border-primary rounded-lg p-5 h-full shadow-lg"
             >
               <div class="flex items-center gap-3 mb-4">
-                <div class="w-10 h-10 bg-w-color rounded-full">
+                <div class="w-10 h-10 bg-w-color rounded-2xl">
                   <img
                     src="https://cdn.pixabay.com/photo/2017/06/13/12/54/profile-2398783_1280.png"
                     alt=""
@@ -609,21 +687,21 @@
                   <h4 class="font-semibold text-title">Bill Shafransky</h4>
                   <div class="flex items-center gap-2 text-sm">
                     <span class="text-amber-600">★★★★★</span>
-                    <span class="text-title/60">1 month ago</span>
+                    <span class="text-pera">1 month ago</span>
                   </div>
                 </div>
               </div>
 
-              <p class="text-title text-sm leading-6">
+              <p class="text-pera text-sm leading-6">
                 We met Kris through our real estate agent when we first decided
                 to make a move with our living arrangements...
               </p>
 
               <a
                 href="#"
-                class="text-info text-sm font-medium mt-4 inline-block"
+                class="text-info text-sm font-medium mt-4 inline-block hover:text-primary"
               >
-                Read more
+                Read More
               </a>
             </div>
           </div>
@@ -649,51 +727,53 @@
 
         <!-- Team Grid -->
         <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 py-16">
-            <!-- Shagor Chowdhury (Lead) -->
-            <div
-              class="rounded-3xl overflow-hidden bg-w-color border-primary border border-b-2 border-r-0 border-t-2 border-l-0"
-            >
-              <div class="h-44 bg-[#EEF4F4]"></div>
+          <!-- Shagor Chowdhury (Lead) -->
+          <div
+            class="rounded-3xl overflow-hidden bg-w-color border-primary border border-b-2 border-r-0 border-t-2 border-l-0"
+          >
+            <div class="h-44 bg-[#EEF4F4]"></div>
 
-              <div class="relative px-8 pb-8 text-center">
-                <img
-                  src="dist/images/shagor.png"
-                  class="w-24 h-24 rounded-full object-cover mx-auto -mt-12 border-4 border-w-color"
-                  alt="Shagor Chowdhury"
-                />
+            <div class="relative px-8 pb-8 text-center">
+              <img
+                src="dist/images/shagor.png"
+                class="w-24 h-24 rounded-2xl object-cover mx-auto -mt-12 border-4 border-w-color"
+                alt="Shagor Chowdhury"
+              />
 
-                <h3 class="mt-4 text-2xl font-semibold text-title">
-                  Shagor Chowdhury
-                </h3>
+              <h3 class="mt-4 text-2xl font-semibold text-title">
+                Shagor Chowdhury
+              </h3>
 
-                <p class="text-title mt-1">Mortgage Loan Originator | NMLS #2693077</p>
+              <p class="text-title mt-1">
+                Mortgage Loan Originator | NMLS #2693077
+              </p>
 
-                <p class="text-title mb-6">Phone: (929) 728-0155</p>
+              <p class="text-title mb-6">Phone: (929) 728-0155</p>
 
-                <a
-                  href="about.html"
-                  class="inline-block px-6 py-3 border border-primary font-bold text-primary rounded-full hover:bg-primary-hover hover:text-w-color transition"
-                >
-                  View Profile
-                </a>
-              </div>
+              <a
+                href="about.html"
+                class="inline-block px-6 py-3 border border-primary font-bold text-primary rounded-2xl hover:bg-primary-hover hover:text-w-color transition"
+              >
+                View Profile
+              </a>
             </div>
+          </div>
 
-            <!-- Card -->
-            <div
-              class="rounded-3xl overflow-hidden bg-w-color border-primary border border-b-2 border-r-0 border-t-2 border-l-0"
-            >
-              <div class="h-44 bg-[#EEF4F4]"></div>
+          <!-- Card -->
+          <div
+            class="rounded-3xl overflow-hidden bg-w-color border-primary border border-b-2 border-r-0 border-t-2 border-l-0"
+          >
+            <div class="h-44 bg-[#EEF4F4]"></div>
 
-              <div class="relative px-8 pb-8 text-center">
-                <img
-                  src="https://img.magnific.com/free-photo/portrait-w-color-man-isolated_53876-40306.jpg?semt=ais_hybrid&w=740&q=80"
-                  class="w-24 h-24 rounded-full object-cover mx-auto -mt-12 border-4 border-w-color"
-                />
+            <div class="relative px-8 pb-8 text-center">
+              <img
+                src="https://img.magnific.com/free-photo/portrait-w-color-man-isolated_53876-40306.jpg?semt=ais_hybrid&w=740&q=80"
+                class="w-24 h-24 rounded-2xl object-cover mx-auto -mt-12 border-4 border-w-color"
+              />
 
-                <h3 class="mt-4 text-2xl font-semibold text-title">
-                  Abraham Gluck
-                </h3>
+              <h3 class="mt-4 text-2xl font-semibold text-title">
+                Abraham Gluck
+              </h3>
 
               <p class="text-title mt-1">Loan Officer | NMLS #62257</p>
 
@@ -701,7 +781,7 @@
 
               <a
                 href="#"
-                class="inline-block px-6 py-3 border border-primary font-bold text-primary rounded-full hover:bg-primary-hover hover:text-w-color transition"
+                class="inline-block px-6 py-3 border border-primary font-bold text-primary rounded-2xl hover:bg-primary-hover hover:text-w-color transition"
               >
                 View Profile
               </a>
@@ -717,7 +797,7 @@
             <div class="relative px-8 pb-8 text-center">
               <img
                 src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRCIyTZVXyb90oYHRiiX6YkNUc0CnzGwWjI3Q&s"
-                class="w-24 h-24 rounded-full object-cover mx-auto -mt-12 border-4 border-w-color"
+                class="w-24 h-24 rounded-2xl object-cover mx-auto -mt-12 border-4 border-w-color"
               />
 
               <h3 class="mt-4 text-2xl font-semibold text-title]">
@@ -730,7 +810,7 @@
 
               <a
                 href="#"
-                class="inline-block px-6 py-3 border border-primary font-bold text-primary rounded-full hover:bg-primary-hover hover:text-w-color transition"
+                class="inline-block px-6 py-3 border border-primary font-bold text-primary rounded-2xl hover:bg-primary-hover hover:text-w-color transition"
               >
                 View Profile
               </a>
@@ -745,7 +825,7 @@
             <div class="relative px-8 pb-8 text-center">
               <img
                 src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTGyogBYaoFIZhcm9Ei2LB4Vb3gczmCpLod4Q&s"
-                class="w-24 h-24 rounded-full object-cover mx-auto -mt-12 border-4 border-w-color"
+                class="w-24 h-24 rounded-2xl object-cover mx-auto -mt-12 border-4 border-w-color"
               />
 
               <h3 class="mt-4 text-2xl font-semibold text-title">
@@ -758,7 +838,7 @@
 
               <a
                 href="#"
-                class="inline-block px-6 py-3 border border-primary font-bold text-primary rounded-full hover:bg-primary-hover hover:text-w-color transition"
+                class="inline-block px-6 py-3 border border-primary font-bold text-primary rounded-2xl hover:bg-primary-hover hover:text-w-color transition"
               >
                 View Profile
               </a>
@@ -769,7 +849,7 @@
         <div class="text-center">
           <a
             href="#"
-            class="inline-block px-10 py-4 border font-bold border-primary text-primary rounded-full hover:bg-primary-hover hover:text-w-color transition"
+            class="inline-block px-10 py-4 border font-bold border-primary text-primary rounded-2xl hover:bg-primary-hover hover:text-w-color transition"
           >
             View All Experts
           </a>
@@ -796,7 +876,7 @@
           </h3>
           <a
             href="#"
-            class="w-full sm:w-fit inline-block text-center px-10 py-4 mt-10 rounded-full bg-primary text-w-color font-bold text-xl hover:bg-primary-hover transition-all shadow-lg shadow-primary/20"
+            class="w-full sm:w-fit inline-block text-center px-10 py-4 mt-10 rounded-2xl bg-primary text-w-color font-bold text-xl hover:bg-primary-hover transition-all shadow-lg shadow-primary/20"
           >
             Schedule a call
           </a>
@@ -814,7 +894,7 @@
     <!-- Footer -->
     <footer class="text-w-color bg-primary py-20">
       <div class="max-w-7xl mx-auto px-6">
-        <div class="grid sm:grid-cols-2 md:grid-cols-4 gap-5 mb-16">
+        <div class="grid sm:grid-cols-2 md:grid-cols-4 gap-5 mb-10">
           <!-- Brand Column -->
           <div
             class="flex flex-col items-center space-y-2 text-title rounded-3xl"
@@ -833,25 +913,25 @@
             <div class="flex items-center gap-3 pt-2 pb-6">
               <a
                 href="#"
-                class="w-10 h-10 rounded-full bg-w-color/15 flex items-center justify-center text-w-color hover:bg-primary-hover transition-colors"
+                class="w-10 h-10 rounded-2xl bg-w-color/15 flex items-center justify-center text-w-color hover:bg-primary-hover transition-colors"
               >
                 <i class="fa-brands fa-facebook text-2xl"></i>
               </a>
               <a
                 href="#"
-                class="w-10 h-10 rounded-full bg-w-color/15 flex items-center justify-center text-w-color hover:bg-primary-hover transition-colors"
+                class="w-10 h-10 rounded-2xl bg-w-color/15 flex items-center justify-center text-w-color hover:bg-primary-hover transition-colors"
               >
                 <i class="fa-brands fa-instagram text-2xl"></i>
               </a>
               <a
                 href="#"
-                class="w-10 h-10 rounded-full bg-w-color/15 flex items-center justify-center text-w-color hover:bg-primary-hover transition-colors"
+                class="w-10 h-10 rounded-2xl bg-w-color/15 flex items-center justify-center text-w-color hover:bg-primary-hover transition-colors"
               >
                 <i class="fa-brands fa-linkedin text-2xl"></i>
               </a>
               <a
                 href="#"
-                class="w-10 h-10 rounded-full bg-w-color/15 flex items-center justify-center text-w-color hover:bg-primary-hover transition-colors"
+                class="w-10 h-10 rounded-2xl bg-w-color/15 flex items-center justify-center text-w-color hover:bg-primary-hover transition-colors"
               >
                 <i class="fa-brands fa-square-x-twitter text-2xl"></i>
               </a>
@@ -867,11 +947,8 @@
             </h3>
             <ul class="space-y-4">
               <li>
-                <a href="rates.html" class="hover:text-title transition-colors">Rates</a>
-              </li>
-              <li>
-                <a href="form.html" class="hover:text-title transition-colors"
-                  >Get a quote</a
+                <a href="rates.html" class="hover:text-title transition-colors"
+                  >Rates</a
                 >
               </li>
               <li>
@@ -880,7 +957,9 @@
                 >
               </li>
               <li>
-                <a href="mortgage.html" class="hover:text-title transition-colors"
+                <a
+                  href="mortgage.html"
+                  class="hover:text-title transition-colors"
                   >Calculators</a
                 >
               </li>
@@ -910,13 +989,8 @@
               </li>
               <li>
                 <a href="policy.html" class="hover:text-title transition-colors"
-                  >Loan Program and Rate Disclaimer
+                  >Loan Program & Rate Disclaimer
                 </a>
-              </li>
-              <li>
-                <a href="policy.html" class="hover:text-title transition-colors"
-                  >No Financial, Legal, or Tax Advice</a
-                >
               </li>
               <li>
                 <a href="policy.html" class="hover:text-title transition-colors"
@@ -933,12 +1007,19 @@
             >
               Contact us
             </h3>
-            <ul class="text-center space-y-6">
-              <li class="flex items-center gap-3">
-                <i
-                  class="fa-solid fa-location-dot w-6 h-6 text-w-color text-xl"
-                ></i>
-                <span>4004 73rd Street, 2nd Floor<br />Woodside, NY 11377</span>
+            <ul class="text-start space-y-6 ps-7">
+              <li class="flex items-center gap-3 hover:text-title">
+                <a
+                  href="https://maps.app.goo.gl/ZJdy3goZCQvUqboe9"
+                  target="_blank"
+                >
+                  <i
+                    class="fa-solid fa-location-dot w-6 h-6 text-w-color text-xl"
+                  ></i>
+
+                  Woodside, NY 11377 4004
+                  <span class="ps-0.5 md:ps-6.5">73rd Street, 2nd Floor</span>
+                </a>
               </li>
 
               <li class="flex items-center gap-3">
@@ -954,50 +1035,56 @@
               <li class="flex items-center gap-3">
                 <i class="fa-solid fa-phone w-6 h-6 text-w-color text-xl"></i>
                 <a href="tel:9297280155" class="hover:text-title"
-                  >(929) 728-0155</a
+                  >Call: (929) 728-0155</a
                 >
               </li>
+
               <li class="flex items-center gap-3">
                 <i
-                  class="fa-solid fa-mobile-screen-button w-6 h-6 text-w-color text-xl"
+                  class="fa-solid fa-building w-6 h-6 text-w-color text-xl"
                 ></i>
-                <a href="tel:9297280155" class="hover:text-title"
-                  >Main: (929) 728-0155</a
+                <a href="tel:3472828532" class="hover:text-title"
+                  >Office: (347) 282-8532</a
                 >
               </li>
             </ul>
           </div>
         </div>
 
-        <div class="pt-10 border-t border-w-color text-center md:text-left space-y-6">
-          <div class="flex flex-wrap justify-between items-center gap-6 text-sm">
-            <div class="flex items-center gap-2">
-              Made by
-              <a
-                href="https://hossainuddin.netlify.app/"
-                class="underline hover:text-title transition-colors"
-                >Hossain.Dev</a
-              >
-            </div>
-            <div class="flex gap-6 flex-wrap">
-              <a href="#" class="hover:text-title transition-colors"
-                >ADA Accessibility Statement</a
-              >
-              <a href="policy.html" class="hover:text-title transition-colors"
-                >Privacy Policy</a
-              >
-              <a href="policy.html" class="hover:text-title transition-colors"
-                >Government & Licensing Disclosures</a
-              >
-              <span>Copyright © 2026 HomeLoanNYC. All Rights Reserved.</span>
-            </div>
+        <div class="pt-10 border-t border-w-color text-center space-y-3">
+          <div class="flex gap-6 flex-wrap text-sm justify-center">
+            <a href="#" class="hover:text-title transition-colors"
+              >ADA Accessibility Statement</a
+            >
+            <a href="policy.html" class="hover:text-title transition-colors"
+              >Privacy Policy</a
+            >
+            <a href="policy.html" class="hover:text-title transition-colors"
+              >Government & Licensing Disclosures</a
+            >
+            <span>Copyright © 2026 HomeLoanNYC. All Rights Reserved.</span>
           </div>
-          <div class="text-[11px] text-w-color/60 leading-relaxed max-w-5xl mx-auto md:mx-0">
+          <div
+            class="text-[11px] text-w-color/60 leading-relaxed max-w-5xl mx-auto md:mx-0"
+          >
             <p class="mb-2">
-              HomeLoanNYC is a mortgage marketing and lead generation website operated by Shagor Chowdhury, Mortgage Loan Originator (NMLS ID: 2693077) sponsored by Mortgage Advance Team (NMLS ID: 318349). Equal Housing Opportunity.
+              HomeLoanNYC is a mortgage marketing and lead generation website
+              operated by Shagor Chowdhury, Mortgage Loan Originator (NMLS ID:
+              2693077) sponsored by Mortgage Advance Team (NMLS ID: 318349).
+              Equal Housing Opportunity.
             </p>
             <p>
-              Consumers may verify licensing information through the Nationwide Multistate Licensing System (NMLS) Consumer Access website at <a href="https://www.nmlsconsumeraccess.org" target="_blank" rel="noopener noreferrer" class="underline hover:text-w-color transition-colors">www.nmlsconsumeraccess.org</a>. Mortgage products are offered through Mortgage Advance Team and are subject to lender approval, underwriting guidelines, and applicable federal and state regulations.
+              Consumers may verify licensing information through the Nationwide
+              Multistate Licensing System (NMLS) Consumer Access website at
+              <a
+                href="https://www.nmlsconsumeraccess.org"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="underline hover:text-w-color transition-colors"
+                >www.nmlsconsumeraccess.org</a
+              >. Mortgage products are offered through Mortgage Advance Team and
+              are subject to lender approval, underwriting guidelines, and
+              applicable federal and state regulations.
             </p>
           </div>
         </div>
@@ -1167,5 +1254,6 @@
         }
       });
     </script>
+    <script src="dist/js/slider.js"></script>
   </body>
 </html>

@@ -3,19 +3,13 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script>
-      (function () {
-        const saved = localStorage.getItem("theme") || "green";
-        document.documentElement.setAttribute("data-theme", saved);
-      })();
-    </script>
     <title>Fixed-Rate Mortgage</title>
     <link href="dist/output.css" rel="stylesheet" />
     <link rel="stylesheet" href="dist/custom.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
       rel="stylesheet"
     />
     <!-- FontAwosome -->
@@ -40,11 +34,6 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css"
     />
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <style>
-      body {
-        font-family: "Plus Jakarta Sans", sans-serif;
-      }
-    </style>
   </head>
 
   <body class="bg-w-color text-title min-h-screen overflow-x-hidden">
@@ -54,7 +43,7 @@
     >
       <div class="max-w-7xl mx-auto px-6 flex justify-between items-center">
         <!-- Logo -->
-        <div class="w-30 h-25">
+        <div class="w-[150px] h-[100px] md:w-30 md:h-25">
           <a href="index.html">
             <img
               src="dist/images/logo.png"
@@ -66,70 +55,8 @@
 
         <!-- Nav Links -->
         <div
-          class="hidden lg:flex items-center gap-8 text-[15px] font-semibold text-title"
+          class="hidden lg:flex items-center gap-6 text-[15px] font-semibold text-title"
         >
-          <!-- Shop Rates Dropdown -->
-          <!-- <div class="relative group">
-            <button
-              id="shop-rates-button"
-              class="flex items-center gap-1 hover:text-primary transition-colors py-2"
-            >
-              Shop rates
-              <svg
-                class="w-4 h-4 opacity-50 transition-transform duration-300"
-                id="shop-rates-arrow"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M19 9l-7 7-7-7"
-                ></path>
-              </svg>
-            </button>
-
-            Mega Menu Content
-            <div
-              id="shop-rates-dropdown"
-              class="hidden absolute top-full left-1/2 -translate-x-1/2 mt-4 w-[600px] bg-w-color rounded-3xl shadow-2xl border border-slate-200 overflow-hidden z-50 p-6"
-            >
-              <div class="grid grid-cols-2 text-center">
-                Section 1
-                <div
-                  class="p-6 rounded-2xl bg-w-color flex flex-col items-center"
-                >
-                  <h3 class="text-base font-bold text-title mb-4">
-                    Today's rates
-                  </h3>
-                  <a
-                    href="rates.html"
-                    class="w-full bg-primary text-center text-w-color py-3 rounded-xl font-bold hover:bg-primary-hover transition-all shadow-lg shadow-primary/10"
-                  >
-                    Today's rates
-                  </a>
-                </div>
-
-                Section 2
-                <div
-                  class="p-6 rounded-2xl bg-w-color flex flex-col items-center"
-                >
-                  <h3 class="text-base font-bold text-title mb-4">
-                    Get a free rate quote
-                  </h3>
-                  <a
-                    href="#"
-                    class="w-full text-center border-2 border-primary text-primary py-3 rounded-xl font-bold hover:bg-primary/5 transition-all"
-                  >
-                    Free rate quote
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div> -->
-
           <!-- Loan Programs Dropdown -->
           <div class="relative group">
             <button
@@ -185,11 +112,74 @@
           </div>
 
           <a
-            href="about.html"
+            href="rates.html"
             class="flex items-center gap-1 hover:text-primary transition-colors"
           >
-            About us</a
+            Today's Rates</a
           >
+
+          <!-- Shop Rates Dropdown -->
+          <!-- <div class="relative group">
+            <button
+              id="shop-rates-button"
+              class="flex items-center gap-1 hover:text-primary transition-colors py-2"
+            >
+              Shop Rates
+              <svg
+                class="w-4 h-4 opacity-50 transition-transform duration-300"
+                id="shop-rates-arrow"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M19 9l-7 7-7-7"
+                ></path>
+              </svg>
+            </button>
+
+            Mega Menu Content
+            <div
+              id="shop-rates-dropdown"
+              class="hidden absolute top-full left-1/2 -translate-x-1/2 mt-4 w-[300px] bg-w-color rounded-3xl shadow-2xl border border-slate-200 overflow-hidden z-50 p-6"
+            >
+              class="grid grid-cols-2 text-center"
+              <div class="text-center">
+                Section 1
+                <div
+                  class="p-6 rounded-2xl bg-w-color flex flex-col items-center"
+                >
+                  <h3 class="text-base font-bold text-title mb-4">
+                    Today's rates
+                  </h3>
+                  <a
+                    href="rates.html"
+                    class="w-full bg-primary text-center text-w-color py-3 rounded-xl font-bold hover:bg-primary-hover transition-all shadow-lg shadow-primary/10"
+                  >
+                    Today's rates
+                  </a>
+                </div>
+
+                Section 2
+                <div
+                  class="p-6 rounded-2xl bg-w-color flex flex-col items-center"
+                >
+                  <h3 class="text-base font-bold text-title mb-4">
+                    Get a free rate quote
+                  </h3>
+                  <a
+                    href="#"
+                    class="w-full text-center border-2 border-primary text-primary py-3 rounded-xl font-bold hover:bg-primary/5 transition-all"
+                  >
+                    Free rate quote
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div> -->
 
           <div class="relative">
             <button
@@ -224,25 +214,32 @@
             </div>
           </div>
 
-          <a href="#" class="hover:text-primary transition-colors">Blogs</a>
+          <a
+            href="about.html"
+            class="flex items-center gap-1 hover:text-primary transition-colors"
+          >
+            About us</a
+          >
+
+          <a
+            href="#"
+            class="flex items-center gap-1 hover:text-primary transition-colors"
+          >
+            Blogs</a
+          >
         </div>
 
         <!-- CTA Buttons & Mobile Toggle -->
         <div class="flex items-center gap-4">
           <a
             href="tel:9297280155"
-            class="hidden lg:block text-[15px] font-bold text-primary px-6 py-2.5 rounded-full border border-primary/20 hover:bg-primary/5 transition-all"
-            ><i class="fa-solid fa-phone pr-2"></i> (929) 728-0155</a
+            class="hidden lg:block text-[15px] font-bold text-primary px-6 py-3 rounded-2xl border border-primary/90 hover:bg-primary/5 transition-all"
+            ><i class="fa-solid fa-phone text-lg pr-2"></i> (929) 728-0155</a
           >
           <a
             href="form.html"
-            class="hidden lg:block text-[15px] font-bold bg-primary text-w-color px-6 py-2.5 rounded-full hover:bg-primary-hover transition-all shadow-lg shadow-primary/10"
+            class="hidden lg:block text-[15px] font-bold bg-primary text-w-color px-6 py-3 rounded-2xl hover:bg-primary-hover transition-all shadow-lg shadow-primary/10"
             >Get A Quote</a
-          >
-          <a
-            href="form.html"
-            class="hidden lg:block text-[15px] font-bold bg-primary text-w-color px-6 py-2.5 rounded-full hover:bg-primary-hover transition-all shadow-lg shadow-primary/10"
-            >Pre Approval</a
           >
 
           <!-- Hamburger Button -->
@@ -275,59 +272,16 @@
         class="hidden lg:hidden absolute top-full left-0 w-full bg-w-color border-b border-slate-200 shadow-xl max-h-[90vh] overflow-y-auto animate-in slide-in-from-top-4 duration-200"
       >
         <div class="flex flex-col p-6 gap-4 font-semibold text-title">
-          <!-- Mobile Shop Rates Accordion -->
-          <!-- <div class="border-b border-w-color">
-            <button
-              id="mobile-shop-rates-btn"
-              class="w-full py-3 flex justify-between items-center text-left"
-            >
-              Shop rates
-              <svg
-                id="mobile-arrow"
-                class="w-4 h-4 opacity-50 transition-transform"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M19 9l-7 7-7-7"
-                ></path>
-              </svg>
-            </button>
-            <div id="mobile-shop-rates-content" class="hidden pb-4 space-y-3">
-              <div
-                class="p-6 bg-w-color rounded-2xl flex flex-col items-center text-center"
-              >
-                <a
-                  href="rates.html"
-                  class="w-full bg-primary text-w-color py-4 rounded-xl font-bold hover:bg-primary-hover transition-all"
-                >
-                  Today's rates
-                </a>
-              </div>
-              <div
-                class="p-6 bg-w-color rounded-2xl flex flex-col items-center text-center"
-              >
-                <a
-                  href="#"
-                  class="w-full text-center border-2 border-primary text-primary py-4 rounded-xl font-bold hover:bg-primary/5 transition-all"
-                >
-                  Free rate quote
-                </a>
-              </div>
-            </div>
-          </div> -->
-
           <!-- Mobile Loan Programs Accordion -->
-          <div class="border-b border-w-color">
+          <div class="border-b-1 border-gray-300">
             <button
               id="mobile-loan-btn"
               class="w-full py-3 flex justify-between items-center text-left"
             >
-              Loan programs
+              <div class="flex items-center gap-4">
+                <i class="fa-solid fa-house text-xl text-primary"></i>
+                Loan Programs
+              </div>
               <svg
                 id="mobile-loan-arrow"
                 class="w-4 h-4 opacity-50 transition-transform"
@@ -372,15 +326,73 @@
             </div>
           </div>
 
-          <a href="about.html" class="py-3 border-b border-w-color">About us</a>
+          <!-- Mobile Shop Rates Accordion -->
+          <!-- <div class="border-b-1 border-gray-300">
+            <button
+              id="mobile-shop-rates-btn"
+              class="w-full py-3 flex justify-between items-center text-left"
+            >
+              <div class="flex items-center gap-4">
+                <i class="fa-solid fa-chart-line text-xl text-primary"></i>
+                Shop rates
+              </div>
+
+              <svg
+                id="mobile-arrow"
+                class="w-4 h-4 opacity-50 transition-transform"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M19 9l-7 7-7-7"
+                ></path>
+              </svg>
+            </button>
+            <div id="mobile-shop-rates-content" class="hidden pb-4 space-y-3">
+              <div
+                class="p-2 lg:p-6 bg-w-color rounded-2xl flex flex-col items-center text-center"
+              >
+                <a
+                  href="rates.html"
+                  class="w-full bg-primary text-w-color py-4 rounded-xl font-bold hover:bg-primary-hover transition-all"
+                >
+                  Today's rates
+                </a>
+              </div>
+              <div
+                class="p-2 lg:p-6 bg-w-color rounded-2xl flex flex-col items-center text-center"
+              >
+                <a
+                  href="#"
+                  class="w-full text-center border-2 border-primary text-primary py-4 rounded-xl font-bold hover:bg-primary/5 transition-all"
+                >
+                  Free rate quote
+                </a>
+              </div>
+            </div>
+          </div> -->
+
+          <a href="rates.html" class="py-3 border-b-1 border-gray-300">
+            <div class="flex items-center gap-4">
+              <i class="fa-solid fa-user text-xl text-primary"></i>
+              Today's Rates
+            </div>
+          </a>
 
           <!-- Mobile Calculators Accordion -->
-          <div class="border-b border-w-color">
+          <div class="border-b-1 border-gray-300">
             <button
               id="mobile-calculators-btn"
               class="w-full py-3 flex justify-between items-center text-left"
             >
-              Calculators
+              <div class="flex items-center gap-4">
+                <i class="fa-solid fa-calculator text-xl text-primary"></i>
+                Calculators
+              </div>
               <svg
                 id="mobile-calculators-arrow"
                 class="w-4 h-4 opacity-50 transition-transform"
@@ -407,25 +419,91 @@
               >
             </div>
           </div>
-          <a href="#" class="py-3 border-b border-w-color">Blogs</a>
+
+          <a href="officers.html" class="py-3 border-b-1 border-gray-300">
+            <div class="flex items-center gap-4">
+              <i class="fa-solid fa-user text-xl text-primary"></i>
+              Meet Our Loan Officer
+            </div>
+          </a>
+
+          <h3 class="py-3 border-b border-w-color">
+            <div class="flex items-center gap-4">
+              <i class="fa-solid fa-square-phone text-primary text-2xl"></i>
+              Contact Us
+            </div>
+          </h3>
 
           <!-- Mobile CTAs -->
           <div class="grid grid-cols-1 gap-3 mt-4">
             <a
-              href="form.html"
+              href="#"
               class="w-full text-center font-bold bg-primary text-w-color py-4 rounded-xl shadow-lg shadow-primary/20"
-              >Get A Quote</a
+              >See What I Qualify For</a
             >
-            <a
-              href="form.html"
-              class="w-full text-center font-bold bg-primary text-w-color py-4 rounded-xl shadow-lg shadow-primary/20"
-              >Pre Approval</a
-            >
+            <h5 class="text-center text-xs text-gray-600">
+              No Impact on your credit score
+            </h5>
             <a
               href="tel:9297280155"
-              class="w-full text-center font-bold text-primary py-4 rounded-xl border border-primary/20"
-              ><i class="fa-solid fa-phone pr-2"></i> (929) 728-0155</a
+              class="w-full text-center font-bold text-primary py-4 rounded-xl border-2 border-primary/90"
+              ><i class="fa-solid fa-phone pr-2"></i> Call or Text (929)
+              728-0155</a
             >
+          </div>
+
+          <div
+            class="flex items-center justify-start gap-2 mt-4 mb-10 bg-primary/10 py-4 rounded-2xl"
+          >
+            <div class="text-xs">
+              <div class="flex items-center gap-2 text-sm px-4 py-2">
+                <i class="fa-solid fa-shield-halved text-primary text-xl"></i>
+                <p>NMLS #2693077</p>
+              </div>
+
+              <div class="flex items-center gap-2 text-sm px-4 py-2">
+                <i
+                  class="fa-solid fa-location-dot text-primary text-xl ps-[2px] pe-[2px]"
+                ></i>
+                <p>Licensed Mortgage Loan Originator - NY</p>
+              </div>
+
+              <div class="flex items-center gap-2 text-sm px-4 py-2">
+                <i class="fa-solid fa-house-user text-primary text-xl"></i>
+                <p>Equal Housing Opportunity</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="py-5 px-3 bg-primary/10 rounded-2xl">
+            <span
+              class="text-base font-bold flex items-center gap-4 text-primary"
+            >
+              <i class="fa-solid fa-circle-check text-2xl"></i>
+              <h5 class="text-base font-bold">What We Improved</h5>
+            </span>
+
+            <ul class="list-disc ms-6 mt-3 text-sm text-title space-y-1">
+              <li class="text-sm text-gray-600">
+                Added Today's Rates (high intent)
+              </li>
+              <li class="text-sm text-gray-600">Added Contact Us</li>
+              <li class="text-sm text-gray-600">
+                Renamed About Us Meet Your Loan Officer
+              </li>
+              <li class="text-sm text-gray-600">
+                One clear primary CTA + one secondary CТА
+              </li>
+              <li class="text-sm text-gray-600">
+                Added trust & compliance info
+              </li>
+              <li class="text-sm text-gray-600">
+                Labeled phone for call or text
+              </li>
+              <li class="text-sm text-gray-600">
+                Cleaner, tighter layout for better mobile UX
+              </li>
+            </ul>
           </div>
         </div>
       </div>
@@ -446,7 +524,7 @@
             Conventional Loan
           </h2>
 
-          <p class="text-title/90 text-lg leading-relaxed">
+          <p class="text-pera text-lg leading-relaxed">
             A reliable home loan where the interest rate remains constant
             throughout the entire loan term.
           </p>
@@ -454,7 +532,7 @@
           <!-- href="javascript:void(0)" -->
           <a
             href="form.html"
-            class="btn-open-wizard w-full sm:w-fit inline-block px-10 py-4 rounded-full bg-primary text-w-color font-bold text-sm hover:bg-primary-hover transition-all shadow-lg shadow-primary/20"
+            class="btn-open-wizard w-full sm:w-fit inline-block px-10 py-4 rounded-2xl bg-primary text-w-color font-bold text-sm hover:bg-primary-hover transition-all shadow-lg shadow-primary/20"
           >
             Get a free quote
           </a>
@@ -465,7 +543,7 @@
     <!-- Info of rate -->
     <section class="max-w-7xl md:flex gap-16 mx-auto px-6 py-24">
       <div class="w-full md:w-6xl">
-        <p class="text-title/90 text-lg leading-relaxed pb-4">
+        <p class="text-pera text-lg leading-relaxed pb-4">
           Embarking on the journey of homeownership often involves navigating
           through various mortgage options. One steadfast choice that has stood
           the test of time is the Fixed-Rate Mortgage (FRM). In this
@@ -475,7 +553,7 @@
           they offer to prospective homebuyers
         </p>
 
-        <p class="text-title/90 text-lg leading-relaxed py-4">
+        <p class="text-pera text-lg leading-relaxed py-4">
           <strong>Understanding Fixed-Rate Mortgages:</strong> A Fixed-Rate
           Mortgage is a reliable home loan where the interest rate remains
           constant throughout the entire loan term, providing predictability and
@@ -483,7 +561,7 @@
           Fixed-Rate Mortgages available in the market.
         </p>
 
-        <p class="text-title/90 text-lg leading-relaxed py-4">
+        <p class="text-pera text-lg leading-relaxed py-4">
           <strong>
             Types of Fixed-Rate Mortgages:
             <br />1. 30-Year Fixed-Rate Mortgage (30-Year FRM):
@@ -522,7 +600,7 @@
         <!-- href="javascript:void(0)" -->
         <a
           href="form.html"
-          class="btn-open-wizard w-full text-center inline-block px-10 py-4 my-6 rounded-full bg-primary text-w-color font-bold text-sm hover:bg-primary-hover transition-all shadow-lg shadow-primary/20"
+          class="btn-open-wizard w-full text-center inline-block px-10 py-4 my-6 rounded-2xl bg-primary text-w-color font-bold text-sm hover:bg-primary-hover transition-all shadow-lg shadow-primary/20"
         >
           Get a quote
         </a>
@@ -543,7 +621,7 @@
           <!-- href="javascript:void(0)" -->
           <a
             href="form.html"
-            class="btn-open-wizard w-full sm:w-fit inline-block text-center px-10 py-4 mt-10 rounded-full bg-primary text-w-color font-bold text-xl hover:bg-primary-hover transition-all shadow-lg shadow-primary/20"
+            class="btn-open-wizard w-full sm:w-fit inline-block text-center px-10 py-4 mt-10 rounded-2xl bg-primary text-w-color font-bold text-xl hover:bg-primary-hover transition-all shadow-lg shadow-primary/20"
           >
             Get a quote
           </a>
@@ -569,7 +647,7 @@
     <!-- Footer -->
     <footer class="text-w-color bg-primary py-20">
       <div class="max-w-7xl mx-auto px-6">
-        <div class="grid sm:grid-cols-2 md:grid-cols-4 gap-5 mb-16">
+        <div class="grid sm:grid-cols-2 md:grid-cols-4 gap-5 mb-10">
           <!-- Brand Column -->
           <div
             class="flex flex-col items-center space-y-2 text-title rounded-3xl"
@@ -588,25 +666,25 @@
             <div class="flex items-center gap-3 pt-2 pb-6">
               <a
                 href="#"
-                class="w-10 h-10 rounded-full bg-w-color/15 flex items-center justify-center text-w-color hover:bg-primary-hover transition-colors"
+                class="w-10 h-10 rounded-2xl bg-w-color/15 flex items-center justify-center text-w-color hover:bg-primary-hover transition-colors"
               >
                 <i class="fa-brands fa-facebook text-2xl"></i>
               </a>
               <a
                 href="#"
-                class="w-10 h-10 rounded-full bg-w-color/15 flex items-center justify-center text-w-color hover:bg-primary-hover transition-colors"
+                class="w-10 h-10 rounded-2xl bg-w-color/15 flex items-center justify-center text-w-color hover:bg-primary-hover transition-colors"
               >
                 <i class="fa-brands fa-instagram text-2xl"></i>
               </a>
               <a
                 href="#"
-                class="w-10 h-10 rounded-full bg-w-color/15 flex items-center justify-center text-w-color hover:bg-primary-hover transition-colors"
+                class="w-10 h-10 rounded-2xl bg-w-color/15 flex items-center justify-center text-w-color hover:bg-primary-hover transition-colors"
               >
                 <i class="fa-brands fa-linkedin text-2xl"></i>
               </a>
               <a
                 href="#"
-                class="w-10 h-10 rounded-full bg-w-color/15 flex items-center justify-center text-w-color hover:bg-primary-hover transition-colors"
+                class="w-10 h-10 rounded-2xl bg-w-color/15 flex items-center justify-center text-w-color hover:bg-primary-hover transition-colors"
               >
                 <i class="fa-brands fa-square-x-twitter text-2xl"></i>
               </a>
@@ -622,11 +700,8 @@
             </h3>
             <ul class="space-y-4">
               <li>
-                <a href="rates.html" class="hover:text-title transition-colors">Rates</a>
-              </li>
-              <li>
-                <a href="form.html" class="hover:text-title transition-colors"
-                  >Get a quote</a
+                <a href="rates.html" class="hover:text-title transition-colors"
+                  >Rates</a
                 >
               </li>
               <li>
@@ -635,7 +710,9 @@
                 >
               </li>
               <li>
-                <a href="mortgage.html" class="hover:text-title transition-colors"
+                <a
+                  href="mortgage.html"
+                  class="hover:text-title transition-colors"
                   >Calculators</a
                 >
               </li>
@@ -665,13 +742,8 @@
               </li>
               <li>
                 <a href="policy.html" class="hover:text-title transition-colors"
-                  >Loan Program and Rate Disclaimer
+                  >Loan Program & Rate Disclaimer
                 </a>
-              </li>
-              <li>
-                <a href="policy.html" class="hover:text-title transition-colors"
-                  >No Financial, Legal, or Tax Advice</a
-                >
               </li>
               <li>
                 <a href="policy.html" class="hover:text-title transition-colors"
@@ -688,12 +760,19 @@
             >
               Contact us
             </h3>
-            <ul class="text-center space-y-6">
-              <li class="flex items-center gap-3">
-                <i
-                  class="fa-solid fa-location-dot w-6 h-6 text-w-color text-xl"
-                ></i>
-                <span>4004 73rd Street, 2nd Floor<br />Woodside, NY 11377</span>
+            <ul class="text-start space-y-6 ps-7">
+              <li class="flex items-center gap-3 hover:text-title">
+                <a
+                  href="https://maps.app.goo.gl/ZJdy3goZCQvUqboe9"
+                  target="_blank"
+                >
+                  <i
+                    class="fa-solid fa-location-dot w-6 h-6 text-w-color text-xl"
+                  ></i>
+
+                  Woodside, NY 11377 4004
+                  <span class="ps-0.5 md:ps-6.5">73rd Street, 2nd Floor</span>
+                </a>
               </li>
 
               <li class="flex items-center gap-3">
@@ -709,1088 +788,197 @@
               <li class="flex items-center gap-3">
                 <i class="fa-solid fa-phone w-6 h-6 text-w-color text-xl"></i>
                 <a href="tel:9297280155" class="hover:text-title"
-                  >(929) 728-0155</a
+                  >Call: (929) 728-0155</a
                 >
               </li>
+
               <li class="flex items-center gap-3">
                 <i
-                  class="fa-solid fa-mobile-screen-button w-6 h-6 text-w-color text-xl"
+                  class="fa-solid fa-building w-6 h-6 text-w-color text-xl"
                 ></i>
-                <a href="tel:9297280155" class="hover:text-title"
-                  >Main: (929) 728-0155</a
+                <a href="tel:3472828532" class="hover:text-title"
+                  >Office: (347) 282-8532</a
                 >
               </li>
             </ul>
           </div>
         </div>
 
-        <div class="pt-10 border-t border-w-color text-center md:text-left space-y-6">
-          <div class="flex flex-wrap justify-between items-center gap-6 text-sm">
-            <div class="flex items-center gap-2">
-              Made by
-              <a
-                href="https://hossainuddin.netlify.app/"
-                class="underline hover:text-title transition-colors"
-                >Hossain.Dev</a
-              >
-            </div>
-            <div class="flex gap-6 flex-wrap">
-              <a href="#" class="hover:text-title transition-colors"
-                >ADA Accessibility Statement</a
-              >
-              <a href="policy.html" class="hover:text-title transition-colors"
-                >Privacy Policy</a
-              >
-              <a href="policy.html" class="hover:text-title transition-colors"
-                >Government & Licensing Disclosures</a
-              >
-              <span>Copyright © 2026 HomeLoanNYC. All Rights Reserved.</span>
-            </div>
+        <div class="pt-10 border-t border-w-color text-center space-y-3">
+          <div class="flex gap-6 flex-wrap text-sm justify-center">
+            <a href="#" class="hover:text-title transition-colors"
+              >ADA Accessibility Statement</a
+            >
+            <a href="policy.html" class="hover:text-title transition-colors"
+              >Privacy Policy</a
+            >
+            <a href="policy.html" class="hover:text-title transition-colors"
+              >Government & Licensing Disclosures</a
+            >
+            <span>Copyright © 2026 HomeLoanNYC. All Rights Reserved.</span>
           </div>
-          <div class="text-[11px] text-w-color/60 leading-relaxed max-w-5xl mx-auto md:mx-0">
+          <div
+            class="text-[11px] text-w-color/60 leading-relaxed max-w-5xl mx-auto md:mx-0"
+          >
             <p class="mb-2">
-              HomeLoanNYC is a mortgage marketing and lead generation website operated by Shagor Chowdhury, Mortgage Loan Originator (NMLS ID: 2693077) sponsored by Mortgage Advance Team (NMLS ID: 318349). Equal Housing Opportunity.
+              HomeLoanNYC is a mortgage marketing and lead generation website
+              operated by Shagor Chowdhury, Mortgage Loan Originator (NMLS ID:
+              2693077) sponsored by Mortgage Advance Team (NMLS ID: 318349).
+              Equal Housing Opportunity.
             </p>
             <p>
-              Consumers may verify licensing information through the Nationwide Multistate Licensing System (NMLS) Consumer Access website at <a href="https://www.nmlsconsumeraccess.org" target="_blank" rel="noopener noreferrer" class="underline hover:text-w-color transition-colors">www.nmlsconsumeraccess.org</a>. Mortgage products are offered through Mortgage Advance Team and are subject to lender approval, underwriting guidelines, and applicable federal and state regulations.
+              Consumers may verify licensing information through the Nationwide
+              Multistate Licensing System (NMLS) Consumer Access website at
+              <a
+                href="https://www.nmlsconsumeraccess.org"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="underline hover:text-w-color transition-colors"
+                >www.nmlsconsumeraccess.org</a
+              >. Mortgage products are offered through Mortgage Advance Team and
+              are subject to lender approval, underwriting guidelines, and
+              applicable federal and state regulations.
             </p>
           </div>
         </div>
       </div>
     </footer>
-
-    <!-- Multi-step Wizard Modal -->
-    <!-- <div
-      id="wizard-modal"
-      class="fixed inset-0 z-[10000] flex items-center justify-center bg-black/60 backdrop-blur-sm hidden p-4"
-    >
-      <div
-        class="relative w-full max-w-4xl bg-white rounded-3xl shadow-2xl flex flex-col justify-between overflow-hidden min-h-[450px] md:min-h-[600px] max-h-[90vh] md:max-h-none border border-slate-200 animate-in fade-in zoom-in-95 duration-200"
-      >
-        Header Section
-        <div class="relative h-12 w-full">
-          Back button
-          <button
-            id="wizard-prev-btn"
-            onclick="prevWizardStep()"
-            class="absolute left-6 top-6 w-10 h-10 flex items-center justify-center rounded-full border border-slate-200 hover:bg-slate-50 text-slate-500 hover:text-slate-700 transition-all cursor-pointer z-10 hidden"
-            aria-label="Previous step"
-          >
-            <i class="fa-solid fa-arrow-left"></i>
-          </button>
-
-          Progress Bar
-          <div class="absolute top-0 left-0 right-0 h-2 bg-slate-100">
+    <!-- ── Floating Phone FAB ── -->
+    <div id="phone-fab">
+      <div id="phone-popup" role="dialog" aria-label="Contact phone numbers">
+        <div
+          style="
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 14px;
+          "
+        >
+          <div style="display: flex; align-items: center; gap: 10px">
             <div
-              id="wizard-progress-bar"
-              class="h-full bg-primary transition-all duration-300 w-0"
-            ></div>
+              style="
+                width: 36px;
+                height: 36px;
+                border-radius: 10px;
+                background: rgba(217, 107, 39, 0.12);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                color: var(--color-primary, #d96b27);
+                font-size: 16px;
+              "
+            >
+              <i class="fa-solid fa-phone"></i>
+            </div>
+            <div>
+              <p
+                style="
+                  font-size: 13px;
+                  font-weight: 700;
+                  color: #1a1a2e;
+                  margin: 0;
+                "
+              >
+                Call Us Now
+              </p>
+              <p style="font-size: 11px; color: #888; margin: 0">
+                Talk To A Specialist
+              </p>
+            </div>
           </div>
-          <span
-            id="wizard-progress-text"
-            class="absolute top-4 left-1/2 -translate-x-1/2 text-xs font-bold text-slate-400"
-            >0%</span
-          >
-
-          Close button
           <button
-            onclick="closeWizard()"
-            class="absolute right-6 top-6 w-10 h-10 flex items-center justify-center rounded-full border border-slate-200 hover:bg-slate-50 text-slate-500 hover:text-slate-700 transition-all cursor-pointer z-10"
-            aria-label="Close modal"
+            onclick="closePhonePopup()"
+            style="
+              width: 28px;
+              height: 28px;
+              border-radius: 50%;
+              border: 1px solid #e5e7eb;
+              background: #fff;
+              cursor: pointer;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              color: #888;
+              font-size: 13px;
+            "
+            aria-label="Close"
           >
             <i class="fa-solid fa-xmark"></i>
           </button>
         </div>
-
-        Steps Wrapper
-        <div
-          class="flex-1 px-4 md:px-12 pt-12 md:pt-16 pb-8 flex flex-col justify-start md:justify-center overflow-y-auto"
+        <hr
+          style="
+            border: none;
+            border-top: 1px solid #f0f0f0;
+            margin-bottom: 10px;
+          "
+        />
+        <a href="tel:9297280155" class="phone-line">
+          <div class="phone-line-icon"><i class="fa-solid fa-phone"></i></div>
+          <div>
+            <p
+              style="font-size: 12px; color: #888; margin: 0; font-weight: 600"
+            >
+              Number
+            </p>
+            <p
+              style="
+                font-size: 15px;
+                font-weight: 700;
+                color: #1a1a2e;
+                margin: 0;
+              "
+            >
+              (929) 728-0155
+            </p>
+          </div>
+        </a>
+        <a
+          href="tel:9297280155"
+          style="
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            margin-top: 14px;
+            background: var(--color-primary, #d96b27);
+            color: #fff;
+            border-radius: 12px;
+            padding: 13px 0;
+            font-weight: 700;
+            font-size: 15px;
+            text-decoration: none;
+            transition: background 0.18s ease;
+          "
+          onmouseover="
+            this.style.background = 'var(--color-primary-hover,#b45a20)'
+          "
+          onmouseout="this.style.background = 'var(--color-primary,#d96b27)'"
         >
-          Step 0: Choose Intent
-          <div
-            id="wizard-step-0"
-            class="wizard-step w-full max-w-2xl mx-auto flex flex-col items-center"
-          >
-            <h2
-              class="text-2xl md:text-3xl font-extrabold text-title text-center mb-8"
-            >
-              Are you purchasing or refinancing?
-            </h2>
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 w-full">
-              <div
-                onclick="selectIntent('purchase')"
-                class="group p-6 bg-white border border-slate-200 rounded-2xl flex flex-col items-center text-center cursor-pointer hover:border-primary hover:shadow-lg transition-all"
-              >
-                <div
-                  class="w-16 h-16 rounded-2xl bg-primary/10 text-primary flex items-center justify-center mb-4 text-3xl group-hover:scale-110 transition-transform"
-                >
-                  <i class="fa-solid fa-house-chimney"></i>
-                </div>
-                <span class="font-bold text-title">I'm purchasing</span>
-              </div>
-              <div
-                onclick="selectIntent('refinance')"
-                class="group p-6 bg-white border border-slate-200 rounded-2xl flex flex-col items-center text-center cursor-pointer hover:border-primary hover:shadow-lg transition-all"
-              >
-                <div
-                  class="w-16 h-16 rounded-2xl bg-primary/10 text-primary flex items-center justify-center mb-4 text-3xl group-hover:scale-110 transition-transform"
-                >
-                  <i class="fa-solid fa-arrows-rotate"></i>
-                </div>
-                <span class="font-bold text-title">I'm refinancing</span>
-              </div>
-            </div>
-          </div>
-
-          Step 1: Residency Type
-          <div
-            id="wizard-step-1"
-            class="wizard-step w-full max-w-2xl mx-auto flex flex-col items-center"
-          >
-            <h2
-              class="text-2xl md:text-3xl font-extrabold text-title text-center mb-8"
-            >
-              What is the residency type?
-            </h2>
-            <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 w-full">
-              <div
-                onclick="selectResidency('Primary Home')"
-                class="group p-6 bg-white border border-slate-200 rounded-2xl flex flex-col items-center text-center cursor-pointer hover:border-primary hover:shadow-lg transition-all"
-              >
-                <div
-                  class="w-16 h-16 rounded-2xl bg-primary/10 text-primary flex items-center justify-center mb-4 text-3xl group-hover:scale-110 transition-transform"
-                >
-                  <i class="fa-solid fa-house"></i>
-                </div>
-                <span class="font-bold text-title">Primary Home</span>
-              </div>
-              <div
-                onclick="selectResidency('Second Home')"
-                class="group p-6 bg-white border border-slate-200 rounded-2xl flex flex-col items-center text-center cursor-pointer hover:border-primary hover:shadow-lg transition-all"
-              >
-                <div
-                  class="w-16 h-16 rounded-2xl bg-primary/10 text-primary flex items-center justify-center mb-4 text-3xl group-hover:scale-110 transition-transform"
-                >
-                  <i class="fa-solid fa-umbrella-beach"></i>
-                </div>
-                <span class="font-bold text-title">Second Home</span>
-              </div>
-              <div
-                onclick="selectResidency('Rental Home')"
-                class="group p-6 bg-white border border-slate-200 rounded-2xl flex flex-col items-center text-center cursor-pointer hover:border-primary hover:shadow-lg transition-all"
-              >
-                <div
-                  class="w-16 h-16 rounded-2xl bg-primary/10 text-primary flex items-center justify-center mb-4 text-3xl group-hover:scale-110 transition-transform"
-                >
-                  <i class="fa-solid fa-house-laptop"></i>
-                </div>
-                <span class="font-bold text-title">Rental Home</span>
-              </div>
-            </div>
-          </div>
-
-          Step 2: Decision Process
-          <div
-            id="wizard-step-2"
-            class="wizard-step w-full max-w-3xl mx-auto hidden"
-          >
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-              <div>
-                <div
-                  class="w-16 h-16 rounded-2xl bg-primary/10 text-primary flex items-center justify-center mb-4 text-3xl"
-                >
-                  <i class="fa-solid fa-hourglass-half"></i>
-                </div>
-                <h2
-                  class="text-2xl md:text-3xl font-extrabold text-title leading-snug text-left"
-                >
-                  Where are you in the decision process?
-                </h2>
-              </div>
-              <div class="space-y-4">
-                <button
-                  onclick="selectDecision('Considering loan offers now')"
-                  class="w-full p-4 border border-slate-200 rounded-xl flex items-center justify-between hover:bg-slate-50 transition-all font-bold text-title text-left group"
-                >
-                  <span>Considering loan offers now</span>
-                  <i
-                    class="fa-solid fa-chevron-right text-slate-400 group-hover:text-primary transition-colors"
-                  ></i>
-                </button>
-                <button
-                  onclick="selectDecision('30 days out')"
-                  class="w-full p-4 border border-slate-200 rounded-xl flex items-center justify-between hover:bg-slate-50 transition-all font-bold text-title text-left group"
-                >
-                  <span>30 days out</span>
-                  <i
-                    class="fa-solid fa-chevron-right text-slate-400 group-hover:text-primary transition-colors"
-                  ></i>
-                </button>
-                <button
-                  onclick="selectDecision('2-4 months out')"
-                  class="w-full p-4 border border-slate-200 rounded-xl flex items-center justify-between hover:bg-slate-50 transition-all font-bold text-title text-left group"
-                >
-                  <span>2-4 months out</span>
-                  <i
-                    class="fa-solid fa-chevron-right text-slate-400 group-hover:text-primary transition-colors"
-                  ></i>
-                </button>
-                <button
-                  onclick="selectDecision('Researching Options')"
-                  class="w-full p-4 border border-slate-200 rounded-xl flex items-center justify-between hover:bg-slate-50 transition-all font-bold text-title text-left group"
-                >
-                  <span>Researching Options</span>
-                  <i
-                    class="fa-solid fa-chevron-right text-slate-400 group-hover:text-primary transition-colors"
-                  ></i>
-                </button>
-              </div>
-            </div>
-          </div>
-
-          Step 3: Property Type
-          <div
-            id="wizard-step-3"
-            class="wizard-step w-full max-w-3xl mx-auto hidden flex flex-col items-center"
-          >
-            <h2
-              class="text-2xl md:text-3xl font-extrabold text-title text-center mb-8"
-            >
-              Great! What is the property type?
-            </h2>
-            <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 w-full">
-              <div
-                onclick="selectPropertyType('Single Family Home')"
-                class="group p-4 bg-white border border-slate-200 rounded-2xl flex flex-col items-center text-center cursor-pointer hover:border-primary hover:shadow-lg transition-all justify-center min-h-[140px]"
-              >
-                <div
-                  class="w-12 h-12 rounded-xl bg-primary/10 text-primary flex items-center justify-center mb-2 text-2xl group-hover:scale-110 transition-transform"
-                >
-                  <i class="fa-solid fa-house-chimney"></i>
-                </div>
-                <span class="font-bold text-sm text-title"
-                  >Single Family Home</span
-                >
-              </div>
-              <div
-                onclick="selectPropertyType('Townhome')"
-                class="group p-4 bg-white border border-slate-200 rounded-2xl flex flex-col items-center text-center cursor-pointer hover:border-primary hover:shadow-lg transition-all justify-center min-h-[140px]"
-              >
-                <div
-                  class="w-12 h-12 rounded-xl bg-primary/10 text-primary flex items-center justify-center mb-2 text-2xl group-hover:scale-110 transition-transform"
-                >
-                  <i class="fa-solid fa-house-flag"></i>
-                </div>
-                <span class="font-bold text-sm text-title">Townhome</span>
-              </div>
-              <div
-                onclick="selectPropertyType('Condo')"
-                class="group p-4 bg-white border border-slate-200 rounded-2xl flex flex-col items-center text-center cursor-pointer hover:border-primary hover:shadow-lg transition-all justify-center min-h-[140px]"
-              >
-                <div
-                  class="w-12 h-12 rounded-xl bg-primary/10 text-primary flex items-center justify-center mb-2 text-2xl group-hover:scale-110 transition-transform"
-                >
-                  <i class="fa-solid fa-building"></i>
-                </div>
-                <span class="font-bold text-sm text-title">Condo</span>
-              </div>
-              <div
-                onclick="selectPropertyType('Multi Unit Home')"
-                class="group p-4 bg-white border border-slate-200 rounded-2xl flex flex-col items-center text-center cursor-pointer hover:border-primary hover:shadow-lg transition-all justify-center min-h-[140px]"
-              >
-                <div
-                  class="w-12 h-12 rounded-xl bg-primary/10 text-primary flex items-center justify-center mb-2 text-2xl group-hover:scale-110 transition-transform"
-                >
-                  <i class="fa-solid fa-building-user"></i>
-                </div>
-                <span class="font-bold text-sm text-title"
-                  >Multi Unit Home</span
-                >
-              </div>
-            </div>
-          </div>
-
-          Step 4: ZIP Code
-          <div
-            id="wizard-step-4"
-            class="wizard-step w-full max-w-3xl mx-auto hidden"
-          >
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-              <div>
-                <div
-                  class="w-16 h-16 rounded-2xl bg-primary/10 text-primary flex items-center justify-center mb-4 text-3xl"
-                >
-                  <i class="fa-solid fa-map-location-dot"></i>
-                </div>
-                <h2
-                  class="text-2xl md:text-3xl font-extrabold text-title leading-snug text-left"
-                >
-                  What is the state & zip code of property?
-                </h2>
-              </div>
-              <div>
-                <div class="relative w-full">
-                  <label
-                    class="block text-xs font-bold text-slate-400 uppercase mb-1"
-                    >Enter state & ZIP code</label
-                  >
-                  <input
-                    type="text"
-                    id="wizard-zip-input"
-                    autocomplete="off"
-                    placeholder="e.g. 10001"
-                    class="w-full px-5 py-4 border-2 border-slate-200 rounded-2xl focus:outline-none focus:border-primary transition-all font-semibold text-title"
-                  />
-                  <div
-                    id="wizard-zip-suggestions"
-                    class="absolute left-0 right-0 mt-1 bg-white border border-slate-200 rounded-2xl shadow-xl z-50 hidden max-h-48 overflow-y-auto"
-                  ></div>
-                </div>
-                <button
-                  id="wizard-zip-next-btn"
-                  disabled
-                  onclick="nextWizardStep()"
-                  class="w-full mt-6 bg-primary text-white py-4 rounded-xl font-bold hover:bg-primary-hover transition-all disabled:opacity-50 disabled:cursor-not-allowed"
-                >
-                  Next
-                </button>
-              </div>
-            </div>
-          </div>
-
-          Step 5: Property Value
-          <div
-            id="wizard-step-5"
-            class="wizard-step w-full max-w-xl mx-auto hidden flex flex-col items-center"
-          >
-            <h2
-              class="text-2xl md:text-3xl font-extrabold text-title text-center mb-6"
-            >
-              The estimated property value
-            </h2>
-
-            <div
-              class="w-full max-w-md bg-slate-50 border border-slate-200 rounded-2xl px-5 py-4 mb-6 flex items-center justify-center text-center"
-            >
-              <span
-                class="text-xl font-black text-title"
-                id="wizard-val-display-5"
-                >$450,000</span
-              >
-            </div>
-
-            <div class="w-full max-w-md px-2">
-              <input
-                type="range"
-                id="wizard-range-5"
-                min="100000"
-                max="2000000"
-                step="10000"
-                value="450000"
-                class="wizard-slider mb-4"
-              />
-              <div
-                class="flex justify-between text-xs font-bold text-slate-400"
-              >
-                <span>$100K</span>
-                <span>$2M+</span>
-              </div>
-            </div>
-
-            <button
-              onclick="nextWizardStep()"
-              class="mt-8 bg-primary text-white px-12 py-4 rounded-full font-bold hover:bg-primary-hover transition-all"
-            >
-              Next
-            </button>
-          </div>
-
-          Step 6: Down Payment / Loan Balance
-          <div
-            id="wizard-step-6"
-            class="wizard-step w-full max-w-xl mx-auto hidden flex flex-col items-center"
-          >
-            <h2
-              id="wizard-step-6-title"
-              class="text-2xl md:text-3xl font-extrabold text-title text-center mb-2"
-            >
-              Estimated down payment
-            </h2>
-
-            <div
-              class="w-full max-w-md bg-slate-50 border border-slate-200 rounded-2xl px-5 py-4 mb-2 flex items-center justify-center text-center"
-            >
-              <span
-                class="text-xl font-black text-title"
-                id="wizard-val-display-6"
-                >$50,000</span
-              >
-            </div>
-
-            Percentage overlay for purchase mode
-            <div
-              id="wizard-dp-pct-container"
-              class="text-xs font-bold text-slate-500 mb-6"
-            >
-              Down Payment: 11%
-            </div>
-
-            <div class="w-full max-w-md px-2">
-              <input
-                type="range"
-                id="wizard-range-6"
-                min="10000"
-                max="400000"
-                step="5000"
-                value="50000"
-                class="wizard-slider mb-4"
-              />
-              <div
-                class="flex justify-between text-xs font-bold text-slate-400"
-              >
-                <span id="wizard-range-6-min-label">$10K</span>
-                <span id="wizard-range-6-max-label">$400K+</span>
-              </div>
-            </div>
-
-            <button
-              onclick="nextWizardStep()"
-              class="mt-8 bg-primary text-white px-12 py-4 rounded-full font-bold hover:bg-primary-hover transition-all"
-            >
-              Next
-            </button>
-          </div>
-
-          Step 7: Annual Income
-          <div
-            id="wizard-step-7"
-            class="wizard-step w-full max-w-xl mx-auto hidden flex flex-col items-center"
-          >
-            <h2
-              class="text-2xl md:text-3xl font-extrabold text-title text-center mb-6"
-            >
-              Annual Household Income
-            </h2>
-
-            <div
-              class="w-full max-w-md bg-slate-50 border border-slate-200 rounded-2xl px-5 py-4 mb-6 flex items-center justify-center text-center"
-            >
-              <span
-                class="text-xl font-black text-title"
-                id="wizard-val-display-7"
-                >$215,000</span
-              >
-            </div>
-
-            <div class="w-full max-w-md px-2">
-              <input
-                type="range"
-                id="wizard-range-7"
-                min="30000"
-                max="400000"
-                step="5000"
-                value="215000"
-                class="wizard-slider mb-4"
-              />
-              <div
-                class="flex justify-between text-xs font-bold text-slate-400"
-              >
-                <span>$30K</span>
-                <span>$400K+</span>
-              </div>
-            </div>
-
-            <button
-              onclick="nextWizardStep()"
-              class="mt-8 bg-primary text-white px-12 py-4 rounded-full font-bold hover:bg-primary-hover transition-all"
-            >
-              Next
-            </button>
-          </div>
-
-          Step 8: Credit Score
-          <div
-            id="wizard-step-8"
-            class="wizard-step w-full max-w-xl mx-auto hidden flex flex-col items-center"
-          >
-            <h2
-              class="text-2xl md:text-3xl font-extrabold text-title text-center mb-6"
-            >
-              Estimated Credit Score
-            </h2>
-
-            <div
-              class="w-full max-w-md bg-slate-50 border border-slate-200 rounded-2xl px-5 py-4 mb-6 flex items-center justify-center text-center"
-            >
-              <span
-                class="text-xl font-black text-title"
-                id="wizard-val-display-8"
-                >700</span
-              >
-            </div>
-
-            <div class="w-full max-w-md px-2">
-              <input
-                type="range"
-                id="wizard-range-8"
-                min="500"
-                max="800"
-                step="5"
-                value="700"
-                class="wizard-slider mb-4"
-              />
-              <div
-                class="flex justify-between text-xs font-bold text-slate-400"
-              >
-                <span>500</span>
-                <span>800+</span>
-              </div>
-            </div>
-
-            <button
-              onclick="nextWizardStep()"
-              class="mt-8 bg-primary text-white px-12 py-4 rounded-full font-bold hover:bg-primary-hover transition-all"
-            >
-              Next
-            </button>
-          </div>
-
-          Step 9: Personal Information Form
-          <div
-            id="wizard-step-9"
-            class="wizard-step w-full max-w-2xl mx-auto hidden"
-          >
-            <div class="flex items-center gap-4 mb-6">
-              <div
-                class="w-12 h-12 rounded-2xl bg-primary flex items-center justify-center text-white shadow-lg shadow-primary/20"
-              >
-                <i class="fa-solid fa-lock text-xl"></i>
-              </div>
-              <div class="text-left">
-                <h2 class="text-2xl font-bold text-title">
-                  Personal Information
-                </h2>
-                <p class="text-xs text-slate-400">
-                  Enter your details to finalize and get quotes.
-                </p>
-              </div>
-            </div>
-
-            <form
-              id="wizard-info-form"
-              onsubmit="submitWizardForm(event)"
-              class="space-y-4 text-left"
-            >
-              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                <div class="space-y-1">
-                  <label
-                    class="text-xs font-bold text-title uppercase tracking-wider"
-                    >First Name</label
-                  >
-                  <input
-                    type="text"
-                    id="wizard-firstName"
-                    placeholder="John"
-                    onkeypress="return /[a-zA-Z\s]/.test(event.key);"
-                    class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary focus:bg-white transition-all font-semibold text-sm"
-                    required
-                  />
-                </div>
-                <div class="space-y-1">
-                  <label
-                    class="text-xs font-bold text-title uppercase tracking-wider"
-                    >Last Name</label
-                  >
-                  <input
-                    type="text"
-                    id="wizard-lastName"
-                    placeholder="Doe"
-                    onkeypress="return /[a-zA-Z\s]/.test(event.key);"
-                    class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary focus:bg-white transition-all font-semibold text-sm"
-                    required
-                  />
-                </div>
-              </div>
-
-              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                <div class="space-y-1">
-                  <label
-                    class="text-xs font-bold text-title uppercase tracking-wider"
-                    >Email</label
-                  >
-                  <input
-                    type="email"
-                    id="wizard-email"
-                    placeholder="example@email.com"
-                    class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary focus:bg-white transition-all font-semibold text-sm"
-                    required
-                  />
-                </div>
-                <div class="space-y-1">
-                  <label
-                    class="text-xs font-bold text-title uppercase tracking-wider"
-                    >Phone Number</label
-                  >
-                  <input
-                    type="tel"
-                    id="wizard-phoneNumber"
-                    placeholder="(555) 555-5555"
-                    class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary focus:bg-white transition-all font-semibold text-sm"
-                    required
-                  />
-                </div>
-              </div>
-
-              <div class="flex items-start gap-3 pt-2">
-                <div class="relative flex items-center mt-0.5">
-                  <input
-                    type="checkbox"
-                    id="wizard-smsConsent"
-                    required
-                    class="peer h-5 w-5 cursor-pointer appearance-none rounded-md border border-slate-200 bg-white transition-all checked:border-primary checked:bg-primary"
-                  />
-                  <svg
-                    class="pointer-events-none absolute left-1/2 top-1/2 h-3.5 w-3.5 -translate-x-1/2 -translate-y-1/2 text-white opacity-0 transition-opacity peer-checked:opacity-100"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="3"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      d="M5 13l4 4L19 7"
-                    />
-                  </svg>
-                </div>
-                <label
-                  for="wizard-smsConsent"
-                  class="text-xs text-slate-500 leading-relaxed cursor-pointer select-none"
-                >
-                  I agree to receive text messages about HomeLoanNYC promotions.
-                  Data rates may apply. Reply STOP to unsubscribe.
-                </label>
-              </div>
-
-              <button
-                type="submit"
-                class="w-full mt-4 bg-primary text-white py-4 rounded-xl font-bold hover:bg-primary-hover transition-all shadow-lg shadow-primary/20 flex items-center justify-center gap-2 group"
-              >
-                <i
-                  class="fa-solid fa-lock-open group-hover:scale-110 transition-transform"
-                ></i>
-                Get Rates
-              </button>
-            </form>
-          </div>
-
-          Step 10: Results Screen
-          <div
-            id="wizard-step-10"
-            class="wizard-step w-full max-w-4xl mx-auto hidden flex flex-col"
-          >
-            <div class="text-center mb-4 md:mb-6">
-              <h2 class="text-xl md:text-3xl font-extrabold text-title">
-                Your Custom Mortgage Calculation
-              </h2>
-              <p class="text-slate-500 text-xs md:text-sm mt-1">
-                Based on the details you provided, here is your estimated
-                monthly payment.
-              </p>
-            </div>
-
-            <div
-              class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8 items-start"
-            >
-              Column 1: Selected Details
-              <div
-                class="bg-slate-50 p-4 md:p-6 rounded-2xl border border-slate-200 shadow-sm flex flex-col gap-3 md:gap-4"
-              >
-                <h3
-                  class="font-extrabold text-title pb-2 md:pb-3 border-b border-slate-200 flex items-center gap-2 text-sm md:text-base"
-                >
-                  <i class="fa-solid fa-circle-info text-primary"></i>
-                  Selected Details
-                </h3>
-
-                <div class="space-y-2 md:space-y-3">
-                  Loan Purpose
-                  <div
-                    class="flex items-center justify-between p-2.5 md:p-3.5 bg-white border border-slate-150 rounded-xl hover:bg-slate-50 transition-all"
-                  >
-                    <div class="flex items-center gap-2 md:gap-3">
-                      <div
-                        class="w-8 h-8 md:w-9 md:h-9 rounded-lg bg-slate-50 flex items-center justify-center border border-slate-100"
-                      >
-                        <i
-                          class="fa-solid fa-arrows-spin text-slate-500 text-xs md:text-sm"
-                        ></i>
-                      </div>
-                      <span
-                        class="text-[10px] md:text-xs font-bold text-slate-500"
-                        >Loan Purpose</span
-                      >
-                    </div>
-                    <span
-                      class="font-black text-primary text-xs md:text-base capitalize"
-                      id="wizard-summary-purpose"
-                      >Purchase</span
-                    >
-                  </div>
-
-                  Home Price
-                  <div
-                    class="flex items-center justify-between p-2.5 md:p-3.5 bg-white border border-slate-150 rounded-xl hover:bg-slate-50 transition-all"
-                  >
-                    <div class="flex items-center gap-2 md:gap-3">
-                      <div
-                        class="w-8 h-8 md:w-9 md:h-9 rounded-lg bg-slate-50 flex items-center justify-center border border-slate-100"
-                      >
-                        <i
-                          class="fa-solid fa-house text-slate-500 text-xs md:text-sm"
-                        ></i>
-                      </div>
-                      <span
-                        class="text-[10px] md:text-xs font-bold text-slate-500"
-                        >Property Value</span
-                      >
-                    </div>
-                    <span
-                      class="font-black text-title text-xs md:text-base"
-                      id="wizard-summary-homePrice"
-                      >$0</span
-                    >
-                  </div>
-
-                  Down Payment
-                  <div
-                    class="flex items-center justify-between p-2.5 md:p-3.5 bg-white border border-slate-150 rounded-xl hover:bg-slate-50 transition-all"
-                  >
-                    <div class="flex items-center gap-2 md:gap-3">
-                      <div
-                        class="w-8 h-8 md:w-9 md:h-9 rounded-lg bg-slate-50 flex items-center justify-center border border-slate-100"
-                      >
-                        <i
-                          class="fa-solid fa-hand-holding-dollar text-slate-500 text-xs md:text-sm"
-                        ></i>
-                      </div>
-                      <span
-                        class="text-[10px] md:text-xs font-bold text-slate-500"
-                        id="wizard-summary-downPayment-label"
-                        >Down Payment</span
-                      >
-                    </div>
-                    <span
-                      class="font-black text-title text-xs md:text-base text-right"
-                      id="wizard-summary-downPayment"
-                      >$0</span
-                    >
-                  </div>
-
-                  Loan Term
-                  <div
-                    class="flex items-center justify-between p-2.5 md:p-3.5 bg-white border border-slate-150 rounded-xl hover:bg-slate-50 transition-all"
-                  >
-                    <div class="flex items-center gap-2 md:gap-3">
-                      <div
-                        class="w-8 h-8 md:w-9 md:h-9 rounded-lg bg-slate-50 flex items-center justify-center border border-slate-100"
-                      >
-                        <i
-                          class="fa-solid fa-calendar-days text-slate-500 text-xs md:text-sm"
-                        ></i>
-                      </div>
-                      <span
-                        class="text-[10px] md:text-xs font-bold text-slate-500"
-                        >Loan Term</span
-                      >
-                    </div>
-                    <span
-                      class="font-black text-title text-xs md:text-base text-right"
-                      >30 years fixed</span
-                    >
-                  </div>
-
-                  Interest Rate
-                  <div
-                    class="flex items-center justify-between p-2.5 md:p-3.5 bg-white border border-slate-150 rounded-xl hover:bg-slate-50 transition-all"
-                  >
-                    <div class="flex items-center gap-2 md:gap-3">
-                      <div
-                        class="w-8 h-8 md:w-9 md:h-9 rounded-lg bg-slate-50 flex items-center justify-center border border-slate-100"
-                      >
-                        <i
-                          class="fa-solid fa-percent text-slate-500 text-xs md:text-sm"
-                        ></i>
-                      </div>
-                      <span
-                        class="text-[10px] md:text-xs font-bold text-slate-500"
-                        >Interest Rate</span
-                      >
-                    </div>
-                    <span
-                      class="font-black text-title text-xs md:text-base text-right"
-                      id="wizard-summary-interestRate"
-                      >0%</span
-                    >
-                  </div>
-
-                  Credit Score
-                  <div
-                    class="flex items-center justify-between p-2.5 md:p-3.5 bg-white border border-slate-150 rounded-xl hover:bg-slate-50 transition-all"
-                  >
-                    <div class="flex items-center gap-2 md:gap-3">
-                      <div
-                        class="w-8 h-8 md:w-9 md:h-9 rounded-lg bg-slate-50 flex items-center justify-center border border-slate-100"
-                      >
-                        <i
-                          class="fa-solid fa-gauge-high text-slate-500 text-xs md:text-sm"
-                        ></i>
-                      </div>
-                      <span
-                        class="text-[10px] md:text-xs font-bold text-slate-500"
-                        >Credit Score</span
-                      >
-                    </div>
-                    <span
-                      class="font-black text-title text-xs md:text-base text-right"
-                      id="wizard-summary-creditScore"
-                      >0</span
-                    >
-                  </div>
-
-                  ZIP Code
-                  <div
-                    class="flex items-center justify-between p-2.5 md:p-3.5 bg-white border border-slate-150 rounded-xl hover:bg-slate-50 transition-all"
-                  >
-                    <div class="flex items-center gap-2 md:gap-3">
-                      <div
-                        class="w-8 h-8 md:w-9 md:h-9 rounded-lg bg-slate-50 flex items-center justify-center border border-slate-100"
-                      >
-                        <i
-                          class="fa-solid fa-location-dot text-slate-500 text-xs md:text-sm"
-                        ></i>
-                      </div>
-                      <span
-                        class="text-[10px] md:text-xs font-bold text-slate-500"
-                        >ZIP Code</span
-                      >
-                    </div>
-                    <span
-                      class="font-black text-title text-xs md:text-base text-right"
-                      id="wizard-summary-zipCode"
-                      >0</span
-                    >
-                  </div>
-                </div>
-              </div>
-
-              Column 2: Payment Breakdown and Pie Chart
-              <div class="flex flex-col gap-4 md:gap-6">
-                Doughnut Chart Canvas
-                <div
-                  class="flex flex-col items-center justify-center bg-slate-50 p-4 md:p-6 rounded-2xl border border-slate-200 shadow-sm relative"
-                >
-                  <div
-                    class="relative w-40 h-40 md:w-48 md:h-48 flex items-center justify-center"
-                  >
-                    <canvas id="wizard-payment-chart"></canvas>
-                    <div
-                      class="absolute inset-0 flex flex-col items-center justify-center pointer-events-none"
-                    >
-                      <span
-                        class="text-[8px] md:text-[9px] uppercase font-extrabold tracking-wider text-slate-400"
-                        >Total Payment</span
-                      >
-                      <span
-                        class="text-lg md:text-2xl font-black text-title mt-0.5"
-                        id="wizard-summary-totalPayment"
-                        >$0</span
-                      >
-                      <span
-                        class="text-[8px] md:text-[9px] font-semibold text-slate-500 mt-0.5"
-                        >/ mo</span
-                      >
-                    </div>
-                  </div>
-                </div>
-
-                Breakdown Values
-                <div
-                  class="bg-slate-50 p-4 md:p-6 rounded-2xl border border-slate-200 shadow-sm space-y-2 md:space-y-3"
-                >
-                  P&I
-                  <div
-                    class="flex justify-between items-center p-2.5 md:p-3 bg-white border-l-4 border-primary rounded-r-xl border border-y-slate-100 border-r-slate-100 shadow-sm"
-                  >
-                    <div class="flex items-center gap-2">
-                      <div
-                        class="w-2 h-2 md:w-2.5 md:h-2.5 rounded-full bg-primary"
-                      ></div>
-                      <span class="font-bold text-title text-[10px] md:text-xs"
-                        >Principal & Interest</span
-                      >
-                    </div>
-                    <span
-                      class="font-extrabold text-title text-xs md:text-sm"
-                      id="wizard-breakdown-pi"
-                      >$0</span
-                    >
-                  </div>
-
-                  Property Tax
-                  <div
-                    class="flex justify-between items-center p-2.5 md:p-3 bg-white border-l-4 border-blue-500 rounded-r-xl border border-y-slate-100 border-r-slate-100 shadow-sm"
-                  >
-                    <div class="flex items-center gap-2">
-                      <div
-                        class="w-2 h-2 md:w-2.5 md:h-2.5 rounded-full bg-blue-500"
-                      ></div>
-                      <span class="font-bold text-title text-[10px] md:text-xs"
-                        >Property Tax</span
-                      >
-                    </div>
-                    <span
-                      class="font-extrabold text-title text-xs md:text-sm"
-                      id="wizard-breakdown-tax"
-                      >$0</span
-                    >
-                  </div>
-
-                  Insurance
-                  <div
-                    class="flex justify-between items-center p-2.5 md:p-3 bg-white border-l-4 border-purple-500 rounded-r-xl border border-y-slate-100 border-r-slate-100 shadow-sm"
-                  >
-                    <div class="flex items-center gap-2">
-                      <div
-                        class="w-2 h-2 md:w-2.5 md:h-2.5 rounded-full bg-purple-500"
-                      ></div>
-                      <span class="font-bold text-title text-[10px] md:text-xs"
-                        >Homeowner's Insurance</span
-                      >
-                    </div>
-                    <span
-                      class="font-extrabold text-title text-xs md:text-sm"
-                      id="wizard-breakdown-ins"
-                      >$0</span
-                    >
-                  </div>
-
-                  PMI
-                  <div
-                    id="wizard-breakdown-pmi-row"
-                    class="flex justify-between items-center p-2.5 md:p-3 bg-white border-l-4 border-orange-500 rounded-r-xl border border-y-slate-100 border-r-slate-100 shadow-sm"
-                  >
-                    <div class="flex items-center gap-2">
-                      <div
-                        class="w-2 h-2 md:w-2.5 md:h-2.5 rounded-full bg-orange-500"
-                      ></div>
-                      <span class="font-bold text-title text-[10px] md:text-xs"
-                        >PMI</span
-                      >
-                    </div>
-                    <span
-                      class="font-extrabold text-title text-xs md:text-sm"
-                      id="wizard-breakdown-pmi"
-                      >$0</span
-                    >
-                  </div>
-
-                  HOA
-                  <div
-                    id="wizard-breakdown-hoa-row"
-                    class="flex justify-between items-center p-2.5 md:p-3 bg-white border-l-4 border-pink-500 rounded-r-xl border border-y-slate-100 border-r-slate-100 shadow-sm"
-                  >
-                    <div class="flex items-center gap-2">
-                      <div
-                        class="w-2 h-2 md:w-2.5 md:h-2.5 rounded-full bg-pink-500"
-                      ></div>
-                      <span class="font-bold text-title text-[10px] md:text-xs"
-                        >HOA Fees</span
-                      >
-                    </div>
-                    <span
-                      class="font-extrabold text-title text-xs md:text-sm"
-                      id="wizard-breakdown-hoa"
-                      >$0</span
-                    >
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            Action Button
-            <div class="text-center mt-6">
-              <button
-                onclick="closeWizard()"
-                class="bg-primary text-white px-12 py-3.5 rounded-full font-bold hover:bg-primary-hover transition-all"
-              >
-                Close Results
-              </button>
-            </div>
-          </div>
-        </div>
+          <i class="fa-solid fa-phone-volume"></i> Tap to Call
+        </a>
       </div>
-    </div> -->
-
-    <!-- Range slider custom style -->
-    <style>
-      .wizard-slider {
-        -webkit-appearance: none;
-        width: 100%;
-        height: 6px;
-        border-radius: 9999px;
-        background: #cbd5e1;
-        outline: none;
-        transition: background 0.3s;
-      }
-      .wizard-slider::-webkit-slider-thumb {
-        -webkit-appearance: none;
-        appearance: none;
-        width: 24px;
-        height: 24px;
-        border-radius: 50%;
-        background: var(--color-primary, #d96b27);
-        cursor: pointer;
-        border: 4px solid #ffffff;
-        box-shadow:
-          0 4px 6px -1px rgba(0, 0, 0, 0.1),
-          0 2px 4px -1px rgba(0, 0, 0, 0.06);
-        transition:
-          transform 0.1s,
-          background-color 0.2s;
-      }
-      .wizard-slider::-webkit-slider-thumb:hover {
-        transform: scale(1.1);
-        background: var(--color-primary-hover, #b45a20);
-      }
-      .wizard-slider::-moz-range-thumb {
-        width: 24px;
-        height: 24px;
-        border-radius: 50%;
-        background: var(--color-primary, #d96b27);
-        cursor: pointer;
-        border: 4px solid #ffffff;
-        box-shadow:
-          0 4px 6px -1px rgba(0, 0, 0, 0.1),
-          0 2px 4px -1px rgba(0, 0, 0, 0.06);
-        transition:
-          transform 0.1s,
-          background-color 0.2s;
-      }
-      .wizard-slider::-moz-range-thumb:hover {
-        transform: scale(1.1);
-        background: var(--color-primary-hover, #b45a20);
-      }
-    </style>
+      <a
+        id="phone-fab-btn"
+        href="tel:9297280155"
+        aria-label="Call us"
+        onclick="return handleFabClick(event);"
+      >
+        <i id="phone-fab-icon" class="fa-solid fa-phone"></i>
+      </a>
+      <h2
+        class="bg-white rounded-2xl px-4 py-1 cursor-pointer select-none"
+        onclick="document.getElementById('phone-fab-btn').click()"
+      >
+        Call Now
+      </h2>
+    </div>
 
     <!-- jQuery and Slick Carousel -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"></script>
 
     <script src="dist/js/nav.js"></script>
-    <script src="dist/js/slider.js"></script>
-    <script src="dist/js/theme.js"></script>
-    <script src="dist/js/popup.js"></script>
-    <script src="dist/js/customDinput.js"></script>
+    <script src="dist/js/call-popup.js"></script>
   </body>
 </html>

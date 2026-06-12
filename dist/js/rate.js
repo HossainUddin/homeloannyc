@@ -4,17 +4,17 @@ const refinanceBtn = document.getElementById("toggle-refinance");
 
 purchaseBtn.addEventListener("click", () => {
   purchaseBtn.className =
-    "px-10 py-3 rounded-full font-bold text-sm transition-all bg-primary text-w-color";
+    "px-10 py-3 rounded-2xl font-bold text-sm transition-all bg-primary text-w-color";
   refinanceBtn.className =
-    "px-10 py-3 rounded-full font-bold text-sm transition-all text-title hover:bg-w-color";
+    "px-10 py-3 rounded-2xl font-bold text-sm transition-all text-title hover:bg-w-color";
   updateRates("Purchase");
 });
 
 refinanceBtn.addEventListener("click", () => {
   refinanceBtn.className =
-    "px-10 py-3 rounded-full font-bold text-sm transition-all bg-primary text-w-color";
+    "px-10 py-3 rounded-2xl font-bold text-sm transition-all bg-primary text-w-color";
   purchaseBtn.className =
-    "px-10 py-3 rounded-full font-bold text-sm transition-all text-title hover:bg-w-color";
+    "px-10 py-3 rounded-2xl font-bold text-sm transition-all text-title hover:bg-w-color";
   updateRates("Refinance");
 });
 
