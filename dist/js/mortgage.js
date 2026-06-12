@@ -96,8 +96,13 @@ function updatePercentFromAmount() {
   const hp = parseFormattedNumber(homePriceInput.value);
   const dpa = parseFormattedNumber(dpAmountInput.value);
   if (hp > 0) {
-    const dpp = (dpa / hp) * 100;
-    dpPercentInput.value = dpp.toFixed(2).replace(/\.00$/, "");
+    let dpp = (dpa / hp) * 100;
+    if (dpp > 99) dpp = 99;
+    if (dpp >= 10) {
+      dpPercentInput.value = Math.round(dpp).toString();
+    } else {
+      dpPercentInput.value = dpp.toFixed(1).replace(/\.0$/, "");
+    }
   }
 }
 
@@ -238,8 +243,8 @@ document.addEventListener("DOMContentLoaded", () => {
 document.addEventListener("DOMContentLoaded", () => {
   const integerIds = ["homePrice", "downPaymentAmount", "zipCode", "propTax", "homeIns", "pmi", "hoa"];
   const decimalIds = ["downPaymentPercent", "interestRate"];
-  const max9DigitIds = ["homePrice", "downPaymentAmount", "downPaymentPercent", "propTax", "homeIns", "pmi", "hoa"];
-  const max2DigitIds = ["interestRate"];
+  const max9DigitIds = ["homePrice", "downPaymentAmount", "propTax", "homeIns", "pmi", "hoa"];
+  const max2DigitIds = ["interestRate", "downPaymentPercent"];
 
   integerIds.forEach(id => {
     const input = document.getElementById(id);
